@@ -30,7 +30,7 @@ import io.reactivex.*;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.exceptions.TestException;
 import io.reactivex.functions.*;
-import io.reactivex.internal.util.CrashingMappedIterable;
+import io.reactivex.helpers.CrashingMappedIterable;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.processors.PublishProcessor;
 import io.reactivex.schedulers.*;

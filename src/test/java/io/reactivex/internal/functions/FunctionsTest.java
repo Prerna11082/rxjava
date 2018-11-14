@@ -24,7 +24,7 @@ import io.reactivex.TestHelper;
 import io.reactivex.exceptions.TestException;
 import io.reactivex.functions.*;
 import io.reactivex.internal.functions.Functions.*;
-import io.reactivex.internal.util.ExceptionHelper;
+import io.reactivex.helpers.ExceptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 
 public class FunctionsTest {

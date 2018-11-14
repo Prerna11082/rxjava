@@ -36,7 +36,7 @@ import io.reactivex.internal.operators.completable.CompletableToFlowable;
 import io.reactivex.internal.operators.maybe.MaybeToFlowable;
 import io.reactivex.internal.operators.single.SingleToFlowable;
 import io.reactivex.internal.subscriptions.BooleanSubscription;
-import io.reactivex.internal.util.ExceptionHelper;
+import io.reactivex.helpers.ExceptionHelper;
 import io.reactivex.observers.TestObserver;
 import io.reactivex.parallel.ParallelFlowable;
 import io.reactivex.plugins.RxJavaPlugins;

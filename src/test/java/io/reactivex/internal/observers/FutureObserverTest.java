@@ -13,7 +13,7 @@
 
 package io.reactivex.internal.observers;
 
-import static io.reactivex.internal.util.ExceptionHelper.timeoutMessage;
+import static io.reactivex.helpers.ExceptionHelper.timeoutMessage;
 import static org.junit.Assert.*;
 
 import java.util.*;

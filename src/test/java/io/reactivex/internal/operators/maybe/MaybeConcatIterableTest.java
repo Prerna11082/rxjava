@@ -22,7 +22,7 @@ import org.junit.Test;
 import io.reactivex.*;
 import io.reactivex.exceptions.TestException;
 import io.reactivex.functions.Function;
-import io.reactivex.internal.util.CrashingMappedIterable;
+import io.reactivex.helpers.CrashingMappedIterable;
 import io.reactivex.processors.PublishProcessor;
 import io.reactivex.subscribers.TestSubscriber;
 

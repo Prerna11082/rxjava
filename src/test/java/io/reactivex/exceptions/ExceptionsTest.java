@@ -27,7 +27,7 @@ import org.reactivestreams.*;
 import io.reactivex.*;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.*;
-import io.reactivex.internal.util.ExceptionHelper;
+import io.reactivex.helpers.ExceptionHelper;
 import io.reactivex.observables.GroupedObservable;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.subjects.PublishSubject;

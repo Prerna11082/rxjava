@@ -23,7 +23,7 @@ import io.reactivex.*;
 import io.reactivex.exceptions.TestException;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.functions.Functions;
-import io.reactivex.internal.util.CrashingMappedIterable;
+import io.reactivex.helpers.CrashingMappedIterable;
 import io.reactivex.observers.TestObserver;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.processors.PublishProcessor;

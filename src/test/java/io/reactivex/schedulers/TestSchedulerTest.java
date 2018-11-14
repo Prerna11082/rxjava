@@ -23,12 +23,11 @@ import org.junit.Test;
 import org.mockito.*;
 import org.reactivestreams.*;
 
-import io.reactivex.*;
 import io.reactivex.Scheduler.Worker;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.subscriptions.BooleanSubscription;
-import io.reactivex.internal.util.ExceptionHelper;
+import io.reactivex.helpers.ExceptionHelper;
 import io.reactivex.schedulers.TestScheduler.*;
 
 public class TestSchedulerTest {

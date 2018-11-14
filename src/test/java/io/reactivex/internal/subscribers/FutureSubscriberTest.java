@@ -13,7 +13,7 @@
 
 package io.reactivex.internal.subscribers;
 
-import static io.reactivex.internal.util.ExceptionHelper.timeoutMessage;
+import static io.reactivex.helpers.ExceptionHelper.timeoutMessage;
 import static org.junit.Assert.*;
 
 import java.util.*;
@@ -23,7 +23,6 @@ import org.junit.*;
 
 import io.reactivex.TestHelper;
 import io.reactivex.exceptions.TestException;
-import io.reactivex.internal.subscribers.FutureSubscriber;
 import io.reactivex.internal.subscriptions.BooleanSubscription;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;

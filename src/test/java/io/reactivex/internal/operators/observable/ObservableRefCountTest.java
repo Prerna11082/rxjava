@@ -34,7 +34,7 @@ import io.reactivex.exceptions.*;
 import io.reactivex.functions.*;
 import io.reactivex.internal.functions.Functions;
 import io.reactivex.internal.operators.observable.ObservableRefCount.RefConnection;
-import io.reactivex.internal.util.ExceptionHelper;
+import io.reactivex.helpers.ExceptionHelper;
 import io.reactivex.observables.ConnectableObservable;
 import io.reactivex.observers.TestObserver;
 import io.reactivex.plugins.RxJavaPlugins;

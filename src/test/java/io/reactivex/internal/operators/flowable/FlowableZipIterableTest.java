@@ -28,7 +28,7 @@ import io.reactivex.*;
 import io.reactivex.exceptions.TestException;
 import io.reactivex.functions.*;
 import io.reactivex.internal.subscriptions.BooleanSubscription;
-import io.reactivex.internal.util.CrashingIterable;
+import io.reactivex.helpers.CrashingIterable;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.processors.PublishProcessor;
 

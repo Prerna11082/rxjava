@@ -1,0 +1,3 @@
+module rxInternals{
+    requires rxCommon;
+}

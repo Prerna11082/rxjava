@@ -13,7 +13,7 @@
 
 package io.reactivex.internal.operators.observable;
 
-import static io.reactivex.internal.util.TestingHelper.*;
+import static io.reactivex.helpers.TestingHelper.*;
 import static org.junit.Assert.*;
 
 import java.util.*;

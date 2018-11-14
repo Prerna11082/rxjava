@@ -29,7 +29,7 @@ import io.reactivex.internal.functions.Functions;
 import io.reactivex.internal.fuseable.*;
 import io.reactivex.internal.operators.flowable.FlowableFlattenIterable.FlattenIterableSubscriber;
 import io.reactivex.internal.subscriptions.BooleanSubscription;
-import io.reactivex.internal.util.ExceptionHelper;
+import io.reactivex.helpers.ExceptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.processors.PublishProcessor;
 import io.reactivex.subscribers.*;

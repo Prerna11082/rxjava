@@ -25,7 +25,7 @@ import io.reactivex.*;
 import io.reactivex.exceptions.TestException;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.fuseable.*;
-import io.reactivex.internal.util.CrashingIterable;
+import io.reactivex.helpers.CrashingIterable;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.PublishSubject;
 import io.reactivex.subscribers.*;

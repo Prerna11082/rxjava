@@ -26,7 +26,7 @@ import org.reactivestreams.Subscriber;
 
 import io.reactivex.*;
 import io.reactivex.functions.Action;
-import io.reactivex.internal.util.ExceptionHelper;
+import io.reactivex.helpers.ExceptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.subscribers.TestSubscriber;
 

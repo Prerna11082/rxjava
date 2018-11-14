@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.*;
 
+import io.reactivex.internal.util.ListAddBiConsumer;
+import io.reactivex.internal.util.MergerBiFunction;
 import org.junit.*;
 import org.reactivestreams.*;
 
@@ -26,7 +28,6 @@ import io.reactivex.*;
 import io.reactivex.exceptions.*;
 import io.reactivex.functions.*;
 import io.reactivex.internal.functions.Functions;
-import io.reactivex.internal.util.*;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.processors.UnicastProcessor;
 import io.reactivex.schedulers.Schedulers;

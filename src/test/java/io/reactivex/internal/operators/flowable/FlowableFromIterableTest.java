@@ -30,7 +30,7 @@ import io.reactivex.exceptions.TestException;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.functions.Functions;
 import io.reactivex.internal.fuseable.*;
-import io.reactivex.internal.util.CrashingIterable;
+import io.reactivex.helpers.CrashingIterable;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subscribers.*;

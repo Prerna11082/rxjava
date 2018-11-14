@@ -15,6 +15,15 @@ buildscript {
   }
 }
 
+
+configurations {
+    umlDoclet
+}
+
+dependencies {
+    umlDoclet "nl.talsmasoftware:umldoclet:2.0.0-rc.4"
+}
+
 group = "io.reactivex.rxjava2"
 ext.githubProjectName = "rxjava"
 
@@ -45,13 +54,13 @@ apply plugin: "com.jfrog.bintray"
 apply plugin: "com.jfrog.artifactory"
 apply plugin: "eclipse"
 
-sourceCompatibility = JavaVersion.VERSION_1_6
-targetCompatibility = JavaVersion.VERSION_1_6
+sourceCompatibility = JavaVersion.VERSION_1_9
+targetCompatibility = JavaVersion.VERSION_1_9
 
 // Dependency versions
 // ---------------------------------------
 
-def junitVersion = "4.12"
+def junitVersion = "5.0"
 def reactiveStreamsVersion = "1.0.2"
 def mockitoVersion = "2.1.0"
 def jmhLibVersion = "1.20"
@@ -68,9 +77,12 @@ dependencies {
     signature "org.codehaus.mojo.signature:java16:1.1@signature"
 
     api "org.reactivestreams:reactive-streams:$reactiveStreamsVersion"
+	    api "org.reactivestreams:reactive-streams-tck:$reactiveStreamsVersion"
+		api "org.reactivestreams:reactive-streams-examples:$reactiveStreamsVersion"
     jmh "org.reactivestreams:reactive-streams:$reactiveStreamsVersion"
 
-    testImplementation "junit:junit:$junitVersion"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.1'
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
 
     testImplementation "org.reactivestreams:reactive-streams-tck:$reactiveStreamsVersion"
@@ -78,7 +90,22 @@ dependencies {
     testImplementation "com.google.guava:guava:$guavaVersion"
 }
 
+
+
+compileJava {
+    doFirst {
+        options.compilerArgs = [
+            '--module-path', classpath.asPath
+        ]
+        classpath = files()  
+    }
+}
+
 javadoc {
+	doFirst {
+		options.addStringOption('-module-path', classpath.asPath)
+		options.addStringOption("-class-path", "")
+	}
     failOnError = false
     exclude "**/internal/**"
     exclude "**/test/**"
@@ -91,12 +118,18 @@ javadoc {
     options.addStringOption("top").value = ""
     options.addStringOption("doctitle").value = ""
     options.addStringOption("header").value = ""
+	options.addStringOption("-source-path").value = "src/main/java"
     options.stylesheetFile = new File(projectDir, "gradle/stylesheet.css");
+	options.docletpath = configurations.umlDoclet.files.asType(List)
+    options.doclet = "nl.talsmasoftware.umldoclet.UMLDoclet"
+	source = sourceSets.main.allJava
+	
 
     options.links(
         "https://docs.oracle.com/javase/7/docs/api/",
         "http://www.reactive-streams.org/reactive-streams-${reactiveStreamsVersion}-javadoc/"
     )
+	
 
     if (JavaVersion.current().isJava7()) {
         // "./gradle/stylesheet.css" only supports Java 7
@@ -131,7 +164,7 @@ jar {
         instruction "Bundle-DocURL", "https://github.com/ReactiveX/RxJava"
         instruction "Import-Package", "!org.junit,!junit.framework,!org.mockito.*,!org.testng.*,*"
         instruction "Eclipse-ExtensibleAPI", "true"
-        instruction "Automatic-Module-Name", "io.reactivex.rxjava2"
+        instruction "Automatic-Module-Name", "rxjava"
     }
 }
 
@@ -305,7 +338,7 @@ build.dependsOn jacocoTestReport
 checkstyle {
     configFile file("checkstyle.xml")
     ignoreFailures = true
-    toolVersion ="6.19" 
+    toolVersion ="8.14" 
 }
 
 if (rootProject.hasProperty("releaseMode")) {
