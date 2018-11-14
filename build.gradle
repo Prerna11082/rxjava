@@ -92,6 +92,10 @@ dependencies {
 
 
 
+sourceSets {
+    main.java.srcDirs = ['src/rxCommon/java','src/rxInternals/java','src/rxUtil/java']
+}
+
 compileJava {
     doFirst {
         options.compilerArgs = [
