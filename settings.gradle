@@ -1,1 +1,3 @@
 rootProject.name='rxjava'
+include 'io.reactivex.common'
+//include 'io.reactivex.core'

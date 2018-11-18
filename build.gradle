@@ -14,33 +14,17 @@ buildscript {
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.5.2"
     }
 }
-
-
-configurations {
-    umlDoclet
-}
-
-dependencies {
-    umlDoclet "nl.talsmasoftware:umldoclet:2.0.0-rc.4"
+repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
 }
 
 group = "io.reactivex.rxjava2"
 ext.githubProjectName = "rxjava"
 
 version = project.properties["release.version"]
-
-def releaseTag = System.getenv("TRAVIS_TAG");
-if (releaseTag != null && !releaseTag.isEmpty()) {
-    if (releaseTag.startsWith("v")) {
-        releaseTag = releaseTag.substring(1);
-    }
-    version = releaseTag;
-    project.properties.put("release.version", releaseTag);
-
-    println("Releasing with version " + version);
-}
-
-description = "RxJava: Reactive Extensions for the JVM – a library for composing asynchronous and event-based programs using observable sequences for the Java VM."
 
 apply plugin: "java-library"
 apply plugin: "checkstyle"
@@ -69,10 +53,6 @@ def guavaVersion = "24.0-jre"
 def jacocoVersion = "0.8.0"
 // --------------------------------------
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     signature "org.codehaus.mojo.signature:java16:1.1@signature"
 
@@ -92,18 +72,33 @@ dependencies {
 
 
 
-sourceSets {
-    main.java.srcDirs = ['io.reactivex.common/src','io.reactivex.core/src']
-}
-
-compileJava {
-    doFirst {
-        options.compilerArgs = [
-                '--module-path', classpath.asPath
-        ]
-        classpath = files()
+allprojects {
+   
+    if (project.name.startsWith("io.reactivex")) {
+	    if (project.name.startsWith("io.reactivex.common")) {
+			sourceSets {
+	    		main.java.srcDirs = ['io.reactivex.common/src']
+			}
+	    }
+	    if (project.name.startsWith("io.reactivex.core")) {
+			sourceSets {
+	    		main.java.srcDirs = ['io.reactivex.core/src']
+			}
+	    }
+		
+		compileJava {
+		    doFirst {
+		        options.compilerArgs = [
+		                '--module-path', classpath.asPath
+		        ]
+		        classpath = files()
+		    }
+		}	
+        
     }
 }
+
+
 
 javadoc {
     doFirst {
@@ -122,10 +117,8 @@ javadoc {
     options.addStringOption("top").value = ""
     options.addStringOption("doctitle").value = ""
     options.addStringOption("header").value = ""
-    options.addStringOption("-source-path").value = "src/main/java"
     options.stylesheetFile = new File(projectDir, "gradle/stylesheet.css");
-    options.docletpath = configurations.umlDoclet.files.asType(List)
-    options.doclet = "nl.talsmasoftware.umldoclet.UMLDoclet"
+
     source = sourceSets.main.allJava
 
 
