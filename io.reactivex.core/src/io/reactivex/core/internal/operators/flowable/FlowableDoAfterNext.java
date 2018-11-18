@@ -17,8 +17,8 @@ import org.reactivestreams.Subscriber;
 
 import io.reactivex.Flowable;
 import io.reactivex.annotations.*;
-import io.reactivex.functions.Consumer;
-import io.reactivex.internal.fuseable.ConditionalSubscriber;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.internal.subscribers.*;
 
 /**

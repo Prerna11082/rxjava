@@ -17,8 +17,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.reactivestreams.*;
 
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.BiPredicate;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.BiPredicate;
 import io.reactivex.core.internal.subscriptions.SubscriptionArbiter;
 
 public final class FlowableRetryBiPredicate<T> extends AbstractFlowableWithUpstream<T, T> {

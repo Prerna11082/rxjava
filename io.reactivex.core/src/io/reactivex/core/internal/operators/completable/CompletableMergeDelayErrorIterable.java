@@ -17,7 +17,7 @@ import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.exceptions.Exceptions;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.operators.completable.CompletableMergeDelayErrorArray.MergeInnerCompletableObserver;
 import io.reactivex.internal.util.AtomicThrowable;

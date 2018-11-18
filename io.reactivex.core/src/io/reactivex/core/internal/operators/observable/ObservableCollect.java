@@ -16,7 +16,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.Callable;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.BiConsumer;
+import io.reactivex.common.functions.BiConsumer;
 import io.reactivex.internal.disposables.*;
 import io.reactivex.plugins.RxJavaPlugins;
 

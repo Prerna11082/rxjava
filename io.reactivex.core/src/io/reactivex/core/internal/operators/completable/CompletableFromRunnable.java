@@ -17,7 +17,7 @@ import io.reactivex.Completable;
 import io.reactivex.CompletableObserver;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.disposables.Disposables;
-import io.reactivex.exceptions.Exceptions;
+import io.reactivex.common.exceptions.Exceptions;
 
 public final class CompletableFromRunnable extends Completable {
 

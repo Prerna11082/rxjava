@@ -21,7 +21,7 @@ import org.reactivestreams.*;
 
 import io.reactivex.Scheduler.Worker;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.queue.MpscLinkedQueue;

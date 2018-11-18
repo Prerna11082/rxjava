@@ -20,6 +20,7 @@ import io.reactivex.common.disposables.*;
 import io.reactivex.common.functions.Action;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.common.internal.functions.*;
+import io.reactivex.core.internal.functions.Functions;
 import org.reactivestreams.Subscription;
 
 /**

@@ -15,14 +15,14 @@ package io.reactivex.core.internal.operators.maybe;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-import io.reactivex.MaybeObserver;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.*;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.*;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.Functions;
-import io.reactivex.observers.LambdaConsumerIntrospection;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.functions.Functions;
+import io.reactivex.core.observers.LambdaConsumerIntrospection;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * MaybeObserver that delegates the onSuccess, onError and onComplete method calls to callbacks.

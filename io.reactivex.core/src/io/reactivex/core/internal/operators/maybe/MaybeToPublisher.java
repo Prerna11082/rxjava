@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.maybe;
 import org.reactivestreams.Publisher;
 
 import io.reactivex.MaybeSource;
-import io.reactivex.functions.Function;
+import io.reactivex.common.functions.Function;
 
 /**
  * Helper function to merge/concat values of each MaybeSource provided by a Publisher.

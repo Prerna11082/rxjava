@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.observable;
 
 import io.reactivex.annotations.Nullable;
-import io.reactivex.functions.Predicate;
+import io.reactivex.common.functions.Predicate;
 import io.reactivex.internal.observers.BasicFuseableObserver;
 
 public final class ObservableFilter<T> extends AbstractObservableWithUpstream<T, T> {

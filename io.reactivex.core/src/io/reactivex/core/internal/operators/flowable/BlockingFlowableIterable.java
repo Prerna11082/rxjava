@@ -20,7 +20,7 @@ import java.util.concurrent.locks.*;
 import org.reactivestreams.Subscription;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.MissingBackpressureException;
+import io.reactivex.common.exceptions.MissingBackpressureException;
 import io.reactivex.internal.queue.SpscArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.internal.util.*;

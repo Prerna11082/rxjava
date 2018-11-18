@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.reactivestreams.*;
 
-import io.reactivex.exceptions.CompositeException;
+import io.reactivex.common.exceptions.CompositeException;
 import io.reactivex.core.internal.subscriptions.SubscriptionArbiter;
 
 public final class FlowableConcatArray<T> extends Flowable<T> {

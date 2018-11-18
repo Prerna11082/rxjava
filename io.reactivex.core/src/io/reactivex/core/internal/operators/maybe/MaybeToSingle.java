@@ -17,7 +17,7 @@ import java.util.NoSuchElementException;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
+import io.reactivex.core.internal.fuseable.HasUpstreamMaybeSource;
 
 /**
  * Wraps a MaybeSource and exposes its onSuccess and onError signals and signals

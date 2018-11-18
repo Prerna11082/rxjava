@@ -16,10 +16,10 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.concurrent.atomic.*;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Consumer;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Consumer;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.fuseable.HasUpstreamObservableSource;
+import io.reactivex.core.internal.fuseable.HasUpstreamObservableSource;
 import io.reactivex.internal.util.ExceptionHelper;
 import io.reactivex.observables.ConnectableObservable;
 import io.reactivex.plugins.RxJavaPlugins;

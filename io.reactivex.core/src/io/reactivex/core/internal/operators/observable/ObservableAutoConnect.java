@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
+import io.reactivex.common.functions.Consumer;
 import io.reactivex.observables.ConnectableObservable;
 
 /**

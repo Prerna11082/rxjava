@@ -15,7 +15,8 @@ package io.reactivex.core.internal.operators.completable;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
 
 public final class CompletableConcatArray extends Completable {

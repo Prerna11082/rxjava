@@ -14,8 +14,8 @@
 package io.reactivex.core.internal.operators.single;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.Consumer;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.Consumer;
 
 public final class SingleDoOnError<T> extends Single<T> {
 

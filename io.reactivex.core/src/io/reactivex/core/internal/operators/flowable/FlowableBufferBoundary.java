@@ -20,8 +20,8 @@ import java.util.concurrent.atomic.*;
 import org.reactivestreams.*;
 
 import io.reactivex.disposables.*;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Function;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;

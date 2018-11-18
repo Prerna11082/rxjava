@@ -17,9 +17,9 @@ import org.reactivestreams.Subscriber;
 
 import io.reactivex.Flowable;
 import io.reactivex.annotations.Nullable;
-import io.reactivex.functions.Function;
+import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.fuseable.ConditionalSubscriber;
+import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.internal.subscribers.*;
 
 public final class FlowableMap<T, U> extends AbstractFlowableWithUpstream<T, U> {

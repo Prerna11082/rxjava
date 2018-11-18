@@ -15,8 +15,8 @@ package io.reactivex.core.internal.util;
 
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.Observer;
-import io.reactivex.functions.*;
+import io.reactivex.core.Observer;
+import io.reactivex.common.functions.*;
 
 /**
  * A linked-array-list implementation that only supports appending and consumption.

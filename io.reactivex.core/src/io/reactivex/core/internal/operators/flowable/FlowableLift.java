@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.flowable;
 
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.exceptions.Exceptions;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**

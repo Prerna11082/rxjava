@@ -18,7 +18,7 @@ import java.util.concurrent.*;
 import org.reactivestreams.Subscriber;
 
 import io.reactivex.Flowable;
-import io.reactivex.exceptions.Exceptions;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.core.internal.subscriptions.DeferredScalarSubscription;
 
 public final class FlowableFromFuture<T> extends Flowable<T> {

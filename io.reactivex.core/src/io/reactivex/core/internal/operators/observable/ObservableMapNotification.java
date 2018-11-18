@@ -16,8 +16,8 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.concurrent.Callable;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.Function;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.Function;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 

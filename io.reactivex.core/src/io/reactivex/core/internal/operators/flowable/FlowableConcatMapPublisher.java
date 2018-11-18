@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.flowable;
 import org.reactivestreams.*;
 
 import io.reactivex.Flowable;
-import io.reactivex.functions.Function;
+import io.reactivex.common.functions.Function;
 import io.reactivex.internal.util.ErrorMode;
 
 public final class FlowableConcatMapPublisher<T, R> extends Flowable<R> {

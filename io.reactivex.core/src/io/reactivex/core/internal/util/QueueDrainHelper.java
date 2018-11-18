@@ -18,12 +18,12 @@ import java.util.concurrent.atomic.AtomicLong;
 import io.reactivex.common.internal.util.QueueDrain;
 import org.reactivestreams.*;
 
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.BooleanSupplier;
-import io.reactivex.internal.fuseable.*;
-import io.reactivex.internal.queue.*;
+import io.reactivex.core.Observer;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.BooleanSupplier;
+import io.reactivex.core.internal.fuseable.*;
+import io.reactivex.core.internal.queue.*;
 
 /**
  * Utility class to help with the queue-drain serialization idiom.

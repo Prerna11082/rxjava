@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.parallel;
 
 import org.reactivestreams.*;
 
-import io.reactivex.functions.Function;
+import io.reactivex.common.functions.Function;
 import io.reactivex.internal.operators.flowable.FlowableFlatMap;
 import io.reactivex.parallel.ParallelFlowable;
 

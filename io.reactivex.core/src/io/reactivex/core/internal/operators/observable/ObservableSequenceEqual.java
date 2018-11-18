@@ -16,8 +16,8 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.BiPredicate;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.BiPredicate;
 import io.reactivex.core.internal.disposables.ArrayCompositeDisposable;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 

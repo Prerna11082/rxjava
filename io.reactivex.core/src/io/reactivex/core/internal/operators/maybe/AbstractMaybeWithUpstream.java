@@ -13,7 +13,8 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
+import io.reactivex.core.*;
+import io.reactivex.core.internal.fuseable.HasUpstreamMaybeSource;
 
 /**
  * Abstract base class for intermediate Maybe operators that take an upstream MaybeSource.

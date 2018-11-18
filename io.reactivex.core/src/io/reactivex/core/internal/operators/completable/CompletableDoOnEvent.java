@@ -17,9 +17,9 @@ import io.reactivex.Completable;
 import io.reactivex.CompletableObserver;
 import io.reactivex.CompletableSource;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.CompositeException;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Consumer;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Consumer;
 
 public final class CompletableDoOnEvent extends Completable {
     final CompletableSource source;

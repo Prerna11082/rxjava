@@ -15,12 +15,13 @@ package io.reactivex.core.internal.operators.flowable;
 
 import org.reactivestreams.*;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.BiFunction;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.BiFunction;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Reduce a sequence of values, starting from a seed value and by using

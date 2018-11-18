@@ -13,10 +13,10 @@
 
 package io.reactivex.core.internal.disposables;
 
-import io.reactivex.annotations.Experimental;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.flowables.ConnectableFlowable;
-import io.reactivex.observables.ConnectableObservable;
+import io.reactivex.common.annotations.Experimental;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.flowables.ConnectableFlowable;
+import io.reactivex.core.observables.ConnectableObservable;
 
 /**
  * Interface allowing conditional resetting of connections in {@link ConnectableObservable}s

@@ -15,7 +15,7 @@ package io.reactivex.core.annotations;
 
 import java.lang.annotation.*;
 
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.core.schedulers.Schedulers;
 
 /**
  * Indicates what kind of scheduler the class or method uses.

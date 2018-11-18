@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.completable;
 import java.util.concurrent.Callable;
 
 import io.reactivex.disposables.*;
-import io.reactivex.exceptions.Exceptions;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.plugins.RxJavaPlugins;
 
 public final class CompletableFromCallable extends Completable {

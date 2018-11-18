@@ -20,7 +20,7 @@ import org.reactivestreams.Subscriber;
 import io.reactivex.Flowable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.flowables.ConnectableFlowable;
-import io.reactivex.functions.Consumer;
+import io.reactivex.common.functions.Consumer;
 
 /**
  * Wraps a {@link ConnectableFlowable} and calls its {@code connect()} method once

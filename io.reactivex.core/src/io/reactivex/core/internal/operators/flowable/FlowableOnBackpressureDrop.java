@@ -17,8 +17,8 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.reactivestreams.*;
 
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Consumer;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Consumer;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.internal.util.BackpressureHelper;
 import io.reactivex.plugins.RxJavaPlugins;

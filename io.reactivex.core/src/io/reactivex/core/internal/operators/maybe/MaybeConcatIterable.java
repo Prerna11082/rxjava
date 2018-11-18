@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.*;
 import org.reactivestreams.*;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.subscriptions.*;

@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.maybe;
 import java.util.concurrent.*;
 
 import io.reactivex.disposables.*;
-import io.reactivex.exceptions.Exceptions;
+import io.reactivex.common.exceptions.Exceptions;
 
 /**
  * Waits until the source Future completes or the wait times out; treats a {@code null}

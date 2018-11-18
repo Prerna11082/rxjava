@@ -19,9 +19,9 @@ package io.reactivex.core.internal.schedulers;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicReference;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.functions.Functions;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.functions.Functions;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Wrapper for a regular task that gets immediately rescheduled when the task completed.

@@ -17,10 +17,10 @@ import java.util.concurrent.atomic.*;
 
 import org.reactivestreams.*;
 
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.Function;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.fuseable.SimpleQueue;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.internal.subscribers.*;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;

@@ -16,9 +16,9 @@ package io.reactivex.core.internal.operators.flowable;
 import org.reactivestreams.*;
 
 import io.reactivex.annotations.*;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Action;
-import io.reactivex.internal.fuseable.*;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Action;
+import io.reactivex.core.internal.fuseable.*;
 import io.reactivex.internal.subscriptions.*;
 import io.reactivex.plugins.RxJavaPlugins;
 

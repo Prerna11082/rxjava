@@ -12,11 +12,11 @@
  */
 package io.reactivex.core.internal.schedulers;
 
-import io.reactivex.Scheduler;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.*;
+import io.reactivex.core.Scheduler;
+import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.disposables.*;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicReference;

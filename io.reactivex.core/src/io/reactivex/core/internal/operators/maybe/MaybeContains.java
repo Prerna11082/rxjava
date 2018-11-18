@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.maybe;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
+import io.reactivex.core.internal.fuseable.HasUpstreamMaybeSource;
 
 /**
  * Signals true if the source signals a value that is object-equals with the provided

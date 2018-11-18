@@ -17,9 +17,9 @@ import java.util.concurrent.atomic.*;
 
 import org.reactivestreams.*;
 
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.BiPredicate;
-import io.reactivex.internal.fuseable.*;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.BiPredicate;
+import io.reactivex.core.internal.fuseable.*;
 import io.reactivex.internal.queue.SpscArrayQueue;
 import io.reactivex.internal.subscriptions.*;
 import io.reactivex.internal.util.AtomicThrowable;

@@ -17,16 +17,17 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.Scheduler.Worker;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.core.Observable;
+import io.reactivex.core.Observer;
+import io.reactivex.core.Scheduler.Worker;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.observers.QueueDrainObserver;
-import io.reactivex.internal.queue.MpscLinkedQueue;
-import io.reactivex.internal.util.NotificationLite;
-import io.reactivex.observers.SerializedObserver;
-import io.reactivex.subjects.UnicastSubject;
+import io.reactivex.core.internal.observers.QueueDrainObserver;
+import io.reactivex.core.internal.queue.MpscLinkedQueue;
+import io.reactivex.core.internal.util.NotificationLite;
+import io.reactivex.core.observers.SerializedObserver;
+import io.reactivex.core.subjects.UnicastSubject;
 
 public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final long timespan;

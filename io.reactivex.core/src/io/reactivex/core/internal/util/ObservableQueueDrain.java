@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.util;
 
-import io.reactivex.Observer;
+import io.reactivex.core.Observer;
 
 public interface ObservableQueueDrain<T, U> {
 

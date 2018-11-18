@@ -18,9 +18,10 @@ import java.util.concurrent.atomic.*;
 
 import org.reactivestreams.*;
 
-import io.reactivex.exceptions.MissingBackpressureException;
+import io.reactivex.core.*;
+import io.reactivex.common.exceptions.MissingBackpressureException;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 
 /**
  * Emits the next or latest item when the given time elapses.

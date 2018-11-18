@@ -18,8 +18,8 @@ import java.util.concurrent.Callable;
 import org.reactivestreams.*;
 
 import io.reactivex.Flowable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Function;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.subscriptions.*;
 import io.reactivex.plugins.RxJavaPlugins;

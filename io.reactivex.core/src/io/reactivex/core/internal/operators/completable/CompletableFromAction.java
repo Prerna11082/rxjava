@@ -14,8 +14,8 @@
 package io.reactivex.core.internal.operators.completable;
 
 import io.reactivex.disposables.*;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Action;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Action;
 
 public final class CompletableFromAction extends Completable {
 

@@ -15,10 +15,10 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.concurrent.Callable;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.BiConsumer;
+import io.reactivex.common.functions.BiConsumer;
 import io.reactivex.internal.disposables.*;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.fuseable.FuseToObservable;
+import io.reactivex.core.internal.fuseable.FuseToObservable;
 import io.reactivex.plugins.RxJavaPlugins;
 
 public final class ObservableCollectSingle<T, U> extends Single<U> implements FuseToObservable<U> {

@@ -20,10 +20,10 @@ import org.reactivestreams.Subscriber;
 
 import io.reactivex.Flowable;
 import io.reactivex.annotations.Nullable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Function;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.fuseable.QueueFuseable;
+import io.reactivex.core.internal.fuseable.QueueFuseable;
 import io.reactivex.core.internal.subscribers.BasicFuseableSubscriber;
 import io.reactivex.core.internal.subscriptions.EmptySubscription;
 import io.reactivex.plugins.RxJavaPlugins;

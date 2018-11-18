@@ -16,8 +16,8 @@ package io.reactivex.core.internal.operators.parallel;
 import org.reactivestreams.*;
 
 import io.reactivex.FlowableSubscriber;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.*;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.*;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.subscriptions.*;
 import io.reactivex.parallel.ParallelFlowable;

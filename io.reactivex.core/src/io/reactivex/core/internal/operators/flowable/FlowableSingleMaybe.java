@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.flowable;
 import org.reactivestreams.Subscription;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.fuseable.FuseToFlowable;
+import io.reactivex.core.internal.fuseable.FuseToFlowable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 
