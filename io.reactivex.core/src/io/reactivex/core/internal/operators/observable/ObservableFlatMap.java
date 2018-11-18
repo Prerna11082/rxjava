@@ -17,17 +17,17 @@ import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.ObservableSource;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.Function;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.Function;
 import io.reactivex.common.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.fuseable.*;
-import io.reactivex.internal.queue.*;
-import io.reactivex.internal.util.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.fuseable.*;
+import io.reactivex.core.internal.queue.*;
+import io.reactivex.common.internal.util.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstream<T, U> {
     final Function<? super T, ? extends ObservableSource<? extends U>> mapper;

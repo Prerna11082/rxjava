@@ -12,7 +12,7 @@
  */
 package io.reactivex.common.internal.functions;
 
-import io.reactivex.functions.BiPredicate;
+import io.reactivex.common.functions.BiPredicate;
 
 /**
  * Utility methods containing the backport of Java 7's Objects utility class.

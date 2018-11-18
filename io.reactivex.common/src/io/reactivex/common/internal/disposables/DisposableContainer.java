@@ -13,7 +13,7 @@
 
 package io.reactivex.common.internal.disposables;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 
 /**
  * Common interface to add and remove disposables from a container.

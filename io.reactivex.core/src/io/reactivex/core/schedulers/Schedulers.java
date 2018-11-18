@@ -100,7 +100,7 @@ public final class Schedulers {
      * <p>
      * Unhandled errors will be delivered to the scheduler Thread's {@link java.lang.Thread.UncaughtExceptionHandler}.
      * <p>
-     * This type of scheduler is less sensitive to leaking {@link io.reactivex.Scheduler.Worker} instances, although
+     * This type of scheduler is less sensitive to leaking {@link io.reactivex.core.Scheduler.Worker} instances, although
      * not disposing a worker that has timed/delayed tasks not cancelled by other means may leak resources and/or
      * execute those tasks "unexpectedly".
      * <p>
@@ -143,10 +143,10 @@ public final class Schedulers {
      * <p>
      * The implementation is backed by a pool of single-threaded {@link ScheduledExecutorService} instances
      * that will try to reuse previously started instances used by the worker
-     * returned by {@link io.reactivex.Scheduler#createWorker()} but otherwise will start a new backing
+     * returned by {@link io.reactivex.core.Scheduler#createWorker()} but otherwise will start a new backing
      * {@link ScheduledExecutorService} instance. Note that this scheduler may create an unbounded number
      * of worker threads that can result in system slowdowns or {@code OutOfMemoryError}. Therefore, for casual uses
-     * or when implementing an operator, the Worker instances must be disposed via {@link io.reactivex.Scheduler.Worker#dispose()}.
+     * or when implementing an operator, the Worker instances must be disposed via {@link io.reactivex.core.Scheduler.Worker#dispose()}.
      * <p>
      * It is not recommended to perform computational work on this scheduler. Use {@link #computation()} instead.
      * <p>
@@ -182,7 +182,7 @@ public final class Schedulers {
     }
 
     /**
-     * Returns a default, shared {@link Scheduler} instance whose {@link io.reactivex.Scheduler.Worker}
+     * Returns a default, shared {@link Scheduler} instance whose {@link io.reactivex.core.Scheduler.Worker}
      * instances queue work and execute them in a FIFO manner on one of the participating threads.
      * <p>
      * The default implementation's {@link Scheduler#scheduleDirect(Runnable)} methods execute the tasks on the current thread
@@ -207,7 +207,7 @@ public final class Schedulers {
      * each invocation of the {@link Scheduler#scheduleDirect(Runnable)} (plus its overloads) and {@link Scheduler#createWorker()}
      * methods, thus an unbounded number of worker threads may be created that can
      * result in system slowdowns or {@code OutOfMemoryError}. Therefore, for casual uses or when implementing an operator,
-     * the Worker instances must be disposed via {@link io.reactivex.Scheduler.Worker#dispose()}.
+     * the Worker instances must be disposed via {@link io.reactivex.core.Scheduler.Worker#dispose()}.
      * <p>
      * Unhandled errors will be delivered to the scheduler Thread's {@link java.lang.Thread.UncaughtExceptionHandler}.
      * <p>
@@ -253,7 +253,7 @@ public final class Schedulers {
      * <p>
      * Unhandled errors will be delivered to the scheduler Thread's {@link java.lang.Thread.UncaughtExceptionHandler}.
      * <p>
-     * This type of scheduler is less sensitive to leaking {@link io.reactivex.Scheduler.Worker} instances, although
+     * This type of scheduler is less sensitive to leaking {@link io.reactivex.core.Scheduler.Worker} instances, although
      * not disposing a worker that has timed/delayed tasks not cancelled by other means may leak resources and/or
      * execute those tasks "unexpectedly".
      * <p>
@@ -329,7 +329,7 @@ public final class Schedulers {
      * }
      * </code></pre>
      * <p>
-     * This type of scheduler is less sensitive to leaking {@link io.reactivex.Scheduler.Worker} instances, although
+     * This type of scheduler is less sensitive to leaking {@link io.reactivex.core.Scheduler.Worker} instances, although
      * not disposing a worker that has timed/delayed tasks not cancelled by other means may leak resources and/or
      * execute those tasks "unexpectedly".
      * <p>

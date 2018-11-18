@@ -18,8 +18,9 @@ import java.util.concurrent.Callable;
 
 import org.reactivestreams.Publisher;
 
-import io.reactivex.Observable;
-import io.reactivex.functions.Function;
+import io.reactivex.core.*;
+import io.reactivex.core.Observable;
+import io.reactivex.common.functions.Function;
 
 /**
  * Helper utility class to support Single with inner classes.

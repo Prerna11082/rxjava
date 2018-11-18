@@ -15,7 +15,7 @@ package io.reactivex.common.internal.util;
 
 import java.util.List;
 
-import io.reactivex.functions.*;
+import io.reactivex.common.functions.*;
 
 @SuppressWarnings("rawtypes")
 public enum ListAddBiConsumer implements BiFunction<List, Object, List> {

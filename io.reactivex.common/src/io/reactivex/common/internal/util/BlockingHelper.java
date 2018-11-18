@@ -15,7 +15,7 @@ package io.reactivex.common.internal.util;
 
 import java.util.concurrent.CountDownLatch;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.schedulers.NonBlockingThread;
 import io.reactivex.plugins.RxJavaPlugins;
 

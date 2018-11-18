@@ -15,11 +15,12 @@ package io.reactivex.core.internal.operators.flowable;
 
 import org.reactivestreams.*;
 
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.BiFunction;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.*;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.BiFunction;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Reduces a sequence via a function into a single value or signals NoSuchElementException for

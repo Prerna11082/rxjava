@@ -16,9 +16,10 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.internal.disposables.DisposableHelper;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 
 public final class ObservableTakeLastTimed<T> extends AbstractObservableWithUpstream<T, T> {
     final long count;

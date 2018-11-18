@@ -15,9 +15,9 @@ package io.reactivex.common.internal.disposables;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.ProtocolViolationException;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.ProtocolViolationException;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**

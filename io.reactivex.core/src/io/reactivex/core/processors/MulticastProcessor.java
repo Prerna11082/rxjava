@@ -15,13 +15,14 @@ package io.reactivex.core.processors;
 
 import java.util.concurrent.atomic.*;
 
+import io.reactivex.core.internal.queue.SpscArrayQueue;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import org.reactivestreams.*;
 
 import io.reactivex.common.annotations.*;
 import io.reactivex.common.exceptions.*;
 import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.common.internal.queue.*;
 import io.reactivex.core.internal.subscriptions.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
 

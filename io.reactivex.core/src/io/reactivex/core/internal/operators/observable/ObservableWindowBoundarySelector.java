@@ -16,20 +16,20 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.*;
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.Observer;
-import io.reactivex.disposables.*;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Function;
+import io.reactivex.core.Observable;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
+import io.reactivex.common.disposables.*;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Function;
 import io.reactivex.common.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.observers.QueueDrainObserver;
-import io.reactivex.internal.queue.MpscLinkedQueue;
-import io.reactivex.internal.util.NotificationLite;
-import io.reactivex.observers.*;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.subjects.UnicastSubject;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.observers.QueueDrainObserver;
+import io.reactivex.core.internal.queue.MpscLinkedQueue;
+import io.reactivex.core.internal.util.NotificationLite;
+import io.reactivex.core.observers.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.subjects.UnicastSubject;
 
 public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final ObservableSource<B> open;

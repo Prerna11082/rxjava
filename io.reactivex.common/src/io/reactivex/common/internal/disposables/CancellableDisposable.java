@@ -15,9 +15,9 @@ package io.reactivex.common.internal.disposables;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Cancellable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Cancellable;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**

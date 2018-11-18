@@ -16,11 +16,11 @@
  * https://github.com/JCTools/JCTools/blob/master/jctools-core/src/main/java/org/jctools/queues/atomic
  */
 
-package io.reactivex.common.internal.queue;
+package io.reactivex.core.internal.queue;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-import io.reactivex.annotations.Nullable;
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.core.internal.fuseable.SimplePlainQueue;
 
 /**

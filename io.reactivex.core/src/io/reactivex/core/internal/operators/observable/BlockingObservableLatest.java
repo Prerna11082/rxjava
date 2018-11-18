@@ -17,10 +17,11 @@ import java.util.*;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicReference;
 
-import io.reactivex.Observable;
-import io.reactivex.internal.util.*;
-import io.reactivex.observers.DisposableObserver;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.*;
+import io.reactivex.core.Observable;
+import io.reactivex.common.internal.util.*;
+import io.reactivex.core.observers.DisposableObserver;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Wait for and iterate over the latest values of the source observable. If the source works faster than the

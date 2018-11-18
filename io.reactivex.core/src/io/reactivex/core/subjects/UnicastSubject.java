@@ -26,7 +26,7 @@ import io.reactivex.common.internal.disposables.EmptyDisposable;
 import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.SimpleQueue;
 import io.reactivex.core.internal.observers.BasicIntQueueDisposable;
-import io.reactivex.common.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 
 /**
  * A Subject that queues up events until a single {@link Observer} subscribes to it, replays

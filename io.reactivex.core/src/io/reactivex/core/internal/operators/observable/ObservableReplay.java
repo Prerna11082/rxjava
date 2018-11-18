@@ -17,18 +17,20 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.*;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.fuseable.HasUpstreamObservableSource;
-import io.reactivex.internal.util.*;
-import io.reactivex.observables.ConnectableObservable;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.schedulers.Timed;
+import io.reactivex.core.*;
+import io.reactivex.core.Observable;
+import io.reactivex.core.Observer;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.*;
+import io.reactivex.common.internal.disposables.*;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.fuseable.HasUpstreamObservableSource;
+import io.reactivex.common.internal.util.*;
+import io.reactivex.core.internal.util.NotificationLite;
+import io.reactivex.core.observables.ConnectableObservable;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.schedulers.Timed;
 
 public final class ObservableReplay<T> extends ConnectableObservable<T> implements HasUpstreamObservableSource<T>, ResettableConnectable {
     /** The source observable. */

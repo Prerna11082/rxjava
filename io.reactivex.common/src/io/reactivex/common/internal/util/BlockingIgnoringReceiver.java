@@ -15,7 +15,7 @@ package io.reactivex.common.internal.util;
 
 import java.util.concurrent.CountDownLatch;
 
-import io.reactivex.functions.*;
+import io.reactivex.common.functions.*;
 
 /**
  * Stores an incoming Throwable (if any) and counts itself down.

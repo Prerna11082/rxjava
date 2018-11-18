@@ -93,7 +93,7 @@ dependencies {
 
 
 sourceSets {
-    main.java.srcDirs = ['src/rxCommon/java','src/rxInternals/java','src/rxUtil/java']
+    main.java.srcDirs = ['io.reactivex.common/src','io.reactivex.core/src']
 }
 
 compileJava {

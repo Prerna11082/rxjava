@@ -17,16 +17,16 @@ import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.ObservableSource;
-import io.reactivex.Observer;
-import io.reactivex.disposables.*;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Function;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
+import io.reactivex.common.disposables.*;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Function;
 import io.reactivex.common.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.internal.util.AtomicThrowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableBufferBoundary<T, U extends Collection<? super T>, Open, Close>
 extends AbstractObservableWithUpstream<T, U> {

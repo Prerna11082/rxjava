@@ -15,7 +15,7 @@ package io.reactivex.common.internal.util;
 
 import java.util.*;
 
-import io.reactivex.functions.Function;
+import io.reactivex.common.functions.Function;
 
 public final class SorterFunction<T> implements Function<List<T>, List<T>> {
 

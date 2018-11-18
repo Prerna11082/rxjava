@@ -15,6 +15,7 @@ module io.reactivex.core {
     exports io.reactivex.core.internal.operators.parallel;
     exports io.reactivex.core.internal.operators.single;
 
+    exports io.reactivex.core.internal.queue;
     exports io.reactivex.core.internal.schedulers;
     exports io.reactivex.core.internal.subscribers;
     exports io.reactivex.core.internal.subscriptions;

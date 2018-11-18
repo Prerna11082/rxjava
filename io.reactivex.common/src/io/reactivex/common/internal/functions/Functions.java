@@ -18,8 +18,8 @@ import java.util.concurrent.*;
 import org.reactivestreams.Subscription;
 
 import io.reactivex.*;
-import io.reactivex.exceptions.OnErrorNotImplementedException;
-import io.reactivex.functions.*;
+import io.reactivex.common.exceptions.OnErrorNotImplementedException;
+import io.reactivex.common.functions.*;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Timed;
 

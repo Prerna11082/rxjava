@@ -13,18 +13,19 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import java.util.*;
 import java.util.concurrent.Callable;
 
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.internal.functions.Functions;
-import io.reactivex.internal.fuseable.FuseToObservable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.*;
+import io.reactivex.core.Observable;
+import io.reactivex.core.Observer;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.disposables.*;
+import io.reactivex.common.internal.functions.Functions;
+import io.reactivex.core.internal.fuseable.FuseToObservable;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableToListSingle<T, U extends Collection<? super T>>
 extends Single<U> implements FuseToObservable<U> {

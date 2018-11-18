@@ -13,8 +13,8 @@
 
 package io.reactivex.common.internal.util;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.functions.Consumer;
 
 /**
  * Store the Disposable received from the connection.

@@ -16,7 +16,7 @@ package io.reactivex.common.internal.util;
 import org.reactivestreams.*;
 
 import io.reactivex.*;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**

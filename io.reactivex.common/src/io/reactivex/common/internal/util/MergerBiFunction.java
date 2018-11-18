@@ -15,7 +15,7 @@ package io.reactivex.common.internal.util;
 
 import java.util.*;
 
-import io.reactivex.functions.BiFunction;
+import io.reactivex.common.functions.BiFunction;
 
 /**
  * A BiFunction that merges two Lists into a new list.
