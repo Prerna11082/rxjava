@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.maybe;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.fuseable.HasUpstreamCompletableSource;
+import io.reactivex.core.internal.fuseable.HasUpstreamCompletableSource;
 
 /**
  * Wrap a Single into a Maybe.

@@ -19,8 +19,8 @@ import org.reactivestreams.*;
 
 import io.reactivex.Scheduler.Worker;
 import io.reactivex.annotations.Nullable;
-import io.reactivex.exceptions.*;
-import io.reactivex.internal.fuseable.*;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.core.internal.fuseable.*;
 import io.reactivex.internal.queue.SpscArrayQueue;
 import io.reactivex.internal.subscriptions.*;
 import io.reactivex.internal.util.BackpressureHelper;

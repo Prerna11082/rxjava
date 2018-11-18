@@ -16,8 +16,8 @@ package io.reactivex.core.internal.operators.single;
 import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Function;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Function;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 

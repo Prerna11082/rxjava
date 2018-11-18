@@ -13,14 +13,14 @@
 
 package io.reactivex.core.internal.schedulers;
 
-import io.reactivex.Scheduler;
-import io.reactivex.annotations.*;
+import io.reactivex.core.Scheduler;
+import io.reactivex.common.annotations.*;
 
 /**
  * Allows retrieving multiple workers from the implementing
- * {@link io.reactivex.Scheduler} in a way that when asking for
+ * {@link io.reactivex.core.Scheduler} in a way that when asking for
  * at most the parallelism level of the Scheduler, those
- * {@link io.reactivex.Scheduler.Worker} instances will be running
+ * {@link io.reactivex.core.Scheduler.Worker} instances will be running
  * with different backing threads.
  * <p>History: 2.1.8 - experimental
  * @since 2.2
@@ -28,7 +28,7 @@ import io.reactivex.annotations.*;
 public interface SchedulerMultiWorkerSupport {
 
     /**
-     * Creates the given number of {@link io.reactivex.Scheduler.Worker} instances
+     * Creates the given number of {@link io.reactivex.core.Scheduler.Worker} instances
      * that are possibly backed by distinct threads
      * and calls the specified {@code Consumer} with them.
      * @param number the number of workers to create, positive

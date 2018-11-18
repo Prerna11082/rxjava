@@ -17,8 +17,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.reactivestreams.*;
 
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.Predicate;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.Predicate;
 import io.reactivex.core.internal.subscriptions.SubscriptionArbiter;
 
 public final class FlowableRetryPredicate<T> extends AbstractFlowableWithUpstream<T, T> {

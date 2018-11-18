@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.observable;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.fuseable.FuseToObservable;
+import io.reactivex.core.internal.fuseable.FuseToObservable;
 
 import java.util.NoSuchElementException;
 import io.reactivex.plugins.RxJavaPlugins;

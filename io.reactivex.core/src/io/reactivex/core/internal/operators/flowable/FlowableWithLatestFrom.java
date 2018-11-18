@@ -17,10 +17,10 @@ import java.util.concurrent.atomic.*;
 
 import org.reactivestreams.*;
 
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.BiFunction;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.BiFunction;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.fuseable.ConditionalSubscriber;
+import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.subscribers.SerializedSubscriber;
 

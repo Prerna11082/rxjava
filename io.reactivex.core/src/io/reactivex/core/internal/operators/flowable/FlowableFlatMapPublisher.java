@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.flowable;
 import org.reactivestreams.*;
 
 import io.reactivex.Flowable;
-import io.reactivex.functions.Function;
+import io.reactivex.common.functions.Function;
 
 public final class FlowableFlatMapPublisher<T, U> extends Flowable<U> {
     final Publisher<T> source;

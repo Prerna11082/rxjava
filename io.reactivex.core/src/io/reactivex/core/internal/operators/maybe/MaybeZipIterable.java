@@ -15,8 +15,8 @@ package io.reactivex.core.internal.operators.maybe;
 
 import java.util.Arrays;
 
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Function;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Function;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.operators.maybe.MaybeZipArray.ZipCoordinator;

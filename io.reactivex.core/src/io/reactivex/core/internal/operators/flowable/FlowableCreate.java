@@ -18,10 +18,10 @@ import java.util.concurrent.atomic.*;
 import org.reactivestreams.*;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.Cancellable;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.Cancellable;
 import io.reactivex.internal.disposables.*;
-import io.reactivex.internal.fuseable.SimplePlainQueue;
+import io.reactivex.core.internal.fuseable.SimplePlainQueue;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.internal.util.*;

@@ -18,11 +18,11 @@ import java.util.concurrent.*;
 import io.reactivex.common.internal.functions.ObjectHelper;
 import org.reactivestreams.Subscription;
 
-import io.reactivex.*;
+import io.reactivex.core.*;
 import io.reactivex.common.exceptions.OnErrorNotImplementedException;
 import io.reactivex.common.functions.*;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.schedulers.Timed;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.schedulers.Timed;
 
 /**
  * Utility methods to convert the BiFunction, Function3..Function9 instances to Function of Object array.

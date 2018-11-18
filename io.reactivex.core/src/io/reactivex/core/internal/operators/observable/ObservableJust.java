@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.internal.fuseable.ScalarCallable;
+import io.reactivex.core.internal.fuseable.ScalarCallable;
 import io.reactivex.core.internal.operators.observable.ObservableScalarXMap.ScalarDisposable;
 
 /**

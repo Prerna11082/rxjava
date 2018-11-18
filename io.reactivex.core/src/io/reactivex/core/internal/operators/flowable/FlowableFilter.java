@@ -17,8 +17,8 @@ import org.reactivestreams.Subscriber;
 
 import io.reactivex.Flowable;
 import io.reactivex.annotations.Nullable;
-import io.reactivex.functions.Predicate;
-import io.reactivex.internal.fuseable.*;
+import io.reactivex.common.functions.Predicate;
+import io.reactivex.core.internal.fuseable.*;
 import io.reactivex.internal.subscribers.*;
 
 public final class FlowableFilter<T> extends AbstractFlowableWithUpstream<T, T> {

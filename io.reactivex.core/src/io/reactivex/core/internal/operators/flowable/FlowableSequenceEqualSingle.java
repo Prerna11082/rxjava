@@ -18,9 +18,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.reactivestreams.Publisher;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.BiPredicate;
-import io.reactivex.internal.fuseable.*;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.BiPredicate;
+import io.reactivex.core.internal.fuseable.*;
 import io.reactivex.internal.operators.flowable.FlowableSequenceEqual.*;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.internal.util.AtomicThrowable;

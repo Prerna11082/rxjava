@@ -15,13 +15,13 @@ package io.reactivex.core.internal.operators.parallel;
 
 import org.reactivestreams.*;
 
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.*;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.fuseable.ConditionalSubscriber;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.*;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.parallel.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.parallel.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Maps each 'rail' of the source ParallelFlowable with a mapper function

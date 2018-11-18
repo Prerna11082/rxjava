@@ -15,8 +15,8 @@ package io.reactivex.core.internal.operators.observable;
 
 import java.util.concurrent.Callable;
 
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.BiFunction;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.BiFunction;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.operators.observable.ObservableReduceSeedSingle.ReduceSeedObserver;

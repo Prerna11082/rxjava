@@ -16,8 +16,8 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.Predicate;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.Predicate;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
 
 public final class ObservableRetryPredicate<T> extends AbstractObservableWithUpstream<T, T> {

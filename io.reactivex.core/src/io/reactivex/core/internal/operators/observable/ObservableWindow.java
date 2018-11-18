@@ -16,9 +16,10 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.ArrayDeque;
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.subjects.UnicastSubject;
+import io.reactivex.core.subjects.UnicastSubject;
 
 public final class ObservableWindow<T> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final long count;

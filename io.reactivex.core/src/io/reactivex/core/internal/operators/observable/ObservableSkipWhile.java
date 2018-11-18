@@ -14,8 +14,8 @@
 package io.reactivex.core.internal.operators.observable;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Predicate;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Predicate;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 
 public final class ObservableSkipWhile<T> extends AbstractObservableWithUpstream<T, T> {

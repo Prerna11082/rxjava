@@ -17,7 +17,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.Callable;
 
 import io.reactivex.disposables.Disposables;
-import io.reactivex.exceptions.Exceptions;
+import io.reactivex.common.exceptions.Exceptions;
 
 /**
  * Signals a Throwable returned by a Callable.

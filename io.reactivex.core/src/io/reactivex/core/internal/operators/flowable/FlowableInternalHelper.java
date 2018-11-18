@@ -18,7 +18,7 @@ import java.util.concurrent.*;
 import org.reactivestreams.*;
 
 import io.reactivex.flowables.ConnectableFlowable;
-import io.reactivex.functions.*;
+import io.reactivex.common.functions.*;
 import io.reactivex.internal.functions.*;
 
 /**

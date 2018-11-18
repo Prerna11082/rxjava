@@ -17,8 +17,8 @@ import io.reactivex.Single;
 import io.reactivex.SingleObserver;
 import io.reactivex.SingleSource;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Action;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Action;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 

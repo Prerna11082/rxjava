@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * A Disposable container that allows atomically updating/replacing the contained

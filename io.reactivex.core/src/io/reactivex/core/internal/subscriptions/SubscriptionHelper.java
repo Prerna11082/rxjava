@@ -17,10 +17,10 @@ import java.util.concurrent.atomic.*;
 
 import org.reactivestreams.Subscription;
 
-import io.reactivex.exceptions.ProtocolViolationException;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.util.BackpressureHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.exceptions.ProtocolViolationException;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Utility methods to validate Subscriptions in the various onSubscribe calls.

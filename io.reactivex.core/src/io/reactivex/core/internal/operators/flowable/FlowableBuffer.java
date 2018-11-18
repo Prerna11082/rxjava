@@ -19,12 +19,13 @@ import java.util.concurrent.atomic.*;
 
 import org.reactivestreams.*;
 
-import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.BooleanSupplier;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.core.*;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.BooleanSupplier;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.util.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class FlowableBuffer<T, C extends Collection<? super T>> extends AbstractFlowableWithUpstream<T, C> {
     final int size;

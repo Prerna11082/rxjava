@@ -20,7 +20,7 @@ import org.reactivestreams.*;
 
 import io.reactivex.Scheduler.Worker;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.MissingBackpressureException;
+import io.reactivex.common.exceptions.MissingBackpressureException;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.schedulers.TrampolineScheduler;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;

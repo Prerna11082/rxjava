@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.List;
 import java.util.concurrent.*;
 
-import io.reactivex.functions.*;
+import io.reactivex.common.functions.*;
 import io.reactivex.internal.functions.*;
 import io.reactivex.observables.ConnectableObservable;
 

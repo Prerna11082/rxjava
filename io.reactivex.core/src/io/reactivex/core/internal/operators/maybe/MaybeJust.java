@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.maybe;
 
 import io.reactivex.disposables.Disposables;
-import io.reactivex.internal.fuseable.ScalarCallable;
+import io.reactivex.core.internal.fuseable.ScalarCallable;
 
 /**
  * Signals a constant value.

@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.observable;
 
 import io.reactivex.annotations.Nullable;
-import io.reactivex.functions.Consumer;
+import io.reactivex.common.functions.Consumer;
 import io.reactivex.internal.observers.BasicFuseableObserver;
 
 /**

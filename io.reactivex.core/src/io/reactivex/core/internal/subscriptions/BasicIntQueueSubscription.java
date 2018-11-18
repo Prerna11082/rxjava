@@ -15,7 +15,7 @@ package io.reactivex.core.internal.subscriptions;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import io.reactivex.internal.fuseable.QueueSubscription;
+import io.reactivex.core.internal.fuseable.QueueSubscription;
 
 /**
  * Base class extending AtomicInteger (wip or request accounting) and QueueSubscription (fusion).

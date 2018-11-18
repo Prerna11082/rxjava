@@ -17,7 +17,7 @@ import java.util.Iterator;
 import java.util.concurrent.atomic.*;
 
 import io.reactivex.disposables.*;
-import io.reactivex.exceptions.Exceptions;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 

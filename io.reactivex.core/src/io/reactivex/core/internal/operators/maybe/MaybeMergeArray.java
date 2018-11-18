@@ -21,7 +21,7 @@ import org.reactivestreams.Subscriber;
 
 import io.reactivex.disposables.*;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.fuseable.SimpleQueue;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
 import io.reactivex.internal.subscriptions.*;
 import io.reactivex.internal.util.*;
 import io.reactivex.plugins.RxJavaPlugins;

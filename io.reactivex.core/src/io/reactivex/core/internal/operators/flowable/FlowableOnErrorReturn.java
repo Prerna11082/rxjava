@@ -16,8 +16,8 @@ package io.reactivex.core.internal.operators.flowable;
 import org.reactivestreams.Subscriber;
 
 import io.reactivex.Flowable;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.Function;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.subscribers.SinglePostCompleteSubscriber;
 

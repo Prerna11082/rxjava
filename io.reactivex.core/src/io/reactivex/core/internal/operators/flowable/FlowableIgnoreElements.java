@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.flowable;
 import org.reactivestreams.*;
 
 import io.reactivex.annotations.Nullable;
-import io.reactivex.internal.fuseable.QueueSubscription;
+import io.reactivex.core.internal.fuseable.QueueSubscription;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 
 public final class FlowableIgnoreElements<T> extends AbstractFlowableWithUpstream<T, T> {
