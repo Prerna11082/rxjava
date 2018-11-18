@@ -16,8 +16,8 @@ package io.reactivex.core.subjects;
 import io.reactivex.core.Observer;
 import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.internal.util.*;
-import io.reactivex.common.internal.util.AppendOnlyLinkedArrayList.NonThrowingPredicate;
+import io.reactivex.core.internal.util.AppendOnlyLinkedArrayList;
+import io.reactivex.core.internal.util.AppendOnlyLinkedArrayList.NonThrowingPredicate;
 import io.reactivex.core.internal.util.NotificationLite;
 import io.reactivex.core.plugins.RxJavaPlugins;
 

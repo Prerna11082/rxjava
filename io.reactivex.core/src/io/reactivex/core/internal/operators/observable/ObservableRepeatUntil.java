@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.BooleanSupplier;
-import io.reactivex.common.internal.disposables.SequentialDisposable;
+import io.reactivex.core.internal.disposables.SequentialDisposable;
 
 public final class ObservableRepeatUntil<T> extends AbstractObservableWithUpstream<T, T> {
     final BooleanSupplier until;

@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.single;
 
 import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * Breaks the references between the upstream and downstream when the Maybe terminates.

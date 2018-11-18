@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import io.reactivex.disposables.*;
 import io.reactivex.exceptions.Exceptions;
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 
 public final class CompletableAmb extends Completable {

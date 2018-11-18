@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.*;
 import io.reactivex.functions.BiPredicate;
-import io.reactivex.common.internal.disposables.SequentialDisposable;
+import io.reactivex.core.internal.disposables.SequentialDisposable;
 
 public final class ObservableRetryBiPredicate<T> extends AbstractObservableWithUpstream<T, T> {
     final BiPredicate<? super Integer, ? super Throwable> predicate;

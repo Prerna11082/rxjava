@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.*;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.observers.SerializedObserver;
 
 public final class ObservableSampleTimed<T> extends AbstractObservableWithUpstream<T, T> {

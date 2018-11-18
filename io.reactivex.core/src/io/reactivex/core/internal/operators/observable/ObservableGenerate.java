@@ -18,7 +18,7 @@ import java.util.concurrent.Callable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.*;
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 
 public final class ObservableGenerate<T, S> extends Observable<T> {

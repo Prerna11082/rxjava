@@ -11,13 +11,14 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.common.disposables;
+package io.reactivex.core.disposables;
 
 import java.util.concurrent.Future;
 
 import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.disposables.*;
 import io.reactivex.common.functions.Action;
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.common.internal.functions.*;
 import org.reactivestreams.Subscription;
 

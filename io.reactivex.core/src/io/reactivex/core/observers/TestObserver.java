@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.functions.Consumer;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.fuseable.*;
 import io.reactivex.common.internal.util.ExceptionHelper;
 

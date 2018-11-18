@@ -16,7 +16,7 @@ package io.reactivex.core.internal.observers;
 import io.reactivex.core.Observer;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.fuseable.QueueDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
 

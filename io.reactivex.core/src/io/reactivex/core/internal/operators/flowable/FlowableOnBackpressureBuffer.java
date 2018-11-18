@@ -24,7 +24,7 @@ import io.reactivex.common.functions.Action;
 import io.reactivex.core.internal.fuseable.SimplePlainQueue;
 import io.reactivex.core.internal.queue.*;
 import io.reactivex.core.internal.subscriptions.*;
-import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 
 public final class FlowableOnBackpressureBuffer<T> extends AbstractFlowableWithUpstream<T, T> {
     final int bufferSize;

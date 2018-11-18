@@ -22,7 +22,7 @@ import io.reactivex.core.Observer;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.*;
 import io.reactivex.common.functions.Function;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.*;
 import io.reactivex.core.internal.queue.*;

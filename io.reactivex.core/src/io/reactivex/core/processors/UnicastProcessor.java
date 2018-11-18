@@ -24,7 +24,7 @@ import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.QueueSubscription;
 import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.internal.subscriptions.*;
-import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**

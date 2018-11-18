@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.maybe;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * Signals true if the source Maybe signals onComplete, signals false if the source Maybe

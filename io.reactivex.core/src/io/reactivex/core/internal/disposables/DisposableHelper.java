@@ -11,14 +11,14 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.common.internal.disposables;
+package io.reactivex.core.internal.disposables;
 
 import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.ProtocolViolationException;
 import io.reactivex.common.internal.functions.ObjectHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Utility methods for working with Disposables atomically.

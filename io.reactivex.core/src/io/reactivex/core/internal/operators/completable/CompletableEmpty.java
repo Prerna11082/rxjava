@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 
 public final class CompletableEmpty extends Completable {
     public static final Completable INSTANCE = new CompletableEmpty();

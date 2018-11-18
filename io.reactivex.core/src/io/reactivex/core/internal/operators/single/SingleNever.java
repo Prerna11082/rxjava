@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 
 public final class SingleNever extends Single<Object> {
     public static final Single<Object> INSTANCE = new SingleNever();

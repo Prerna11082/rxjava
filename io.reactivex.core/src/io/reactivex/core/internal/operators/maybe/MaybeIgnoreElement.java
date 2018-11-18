@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.maybe;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * Turns an onSuccess into an onComplete, onError and onComplete is relayed as is.

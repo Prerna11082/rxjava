@@ -15,9 +15,10 @@ package io.reactivex.core;
 import java.util.*;
 import java.util.concurrent.*;
 
+import io.reactivex.core.annotations.SchedulerSupport;
+import io.reactivex.core.internal.functions.Functions;
 import org.reactivestreams.*;
 
-import io.reactivex.core.Observable;
 import io.reactivex.common.annotations.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;

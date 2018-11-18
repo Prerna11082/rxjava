@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.maybe;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.*;
 import io.reactivex.functions.Predicate;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * Emits an onComplete if the source emits an onError and the predicate returns true for

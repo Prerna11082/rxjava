@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 
 /**
  * Doesn't signal any event other than onSubscribe.

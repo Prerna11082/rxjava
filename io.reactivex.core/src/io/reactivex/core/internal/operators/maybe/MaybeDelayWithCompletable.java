@@ -19,7 +19,7 @@ import io.reactivex.Maybe;
 import io.reactivex.MaybeObserver;
 import io.reactivex.MaybeSource;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import java.util.concurrent.atomic.AtomicReference;
 
 public final class MaybeDelayWithCompletable<T> extends Maybe<T> {

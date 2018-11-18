@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.*;
 import io.reactivex.core.*;
 import io.reactivex.common.annotations.CheckReturnValue;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.SimpleQueue;
 import io.reactivex.core.internal.observers.BasicIntQueueDisposable;

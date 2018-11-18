@@ -15,6 +15,8 @@ package io.reactivex.core.flowables;
 
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.core.annotations.SchedulerSupport;
+import io.reactivex.core.internal.functions.Functions;
 import org.reactivestreams.Subscriber;
 
 import io.reactivex.core.*;

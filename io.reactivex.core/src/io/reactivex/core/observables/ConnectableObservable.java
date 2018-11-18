@@ -20,6 +20,8 @@ import io.reactivex.common.annotations.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.functions.Consumer;
 import io.reactivex.common.internal.functions.*;
+import io.reactivex.core.annotations.SchedulerSupport;
+import io.reactivex.core.internal.functions.Functions;
 import io.reactivex.core.internal.operators.observable.*;
 import io.reactivex.common.internal.util.ConnectConsumer;
 import io.reactivex.core.plugins.RxJavaPlugins;

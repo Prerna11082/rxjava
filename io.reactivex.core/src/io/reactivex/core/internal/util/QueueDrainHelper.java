@@ -10,11 +10,12 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.common.internal.util;
+package io.reactivex.core.internal.util;
 
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicLong;
 
+import io.reactivex.common.internal.util.QueueDrain;
 import org.reactivestreams.*;
 
 import io.reactivex.Observer;

@@ -17,6 +17,8 @@ import java.lang.reflect.Array;
 import java.util.concurrent.atomic.*;
 import java.util.concurrent.locks.*;
 
+import io.reactivex.core.internal.util.AppendOnlyLinkedArrayList;
+import io.reactivex.core.internal.util.BackpressureHelper;
 import io.reactivex.core.internal.util.NotificationLite;
 import org.reactivestreams.*;
 
@@ -25,7 +27,7 @@ import io.reactivex.common.exceptions.MissingBackpressureException;
 import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.common.internal.util.*;
-import io.reactivex.common.internal.util.AppendOnlyLinkedArrayList.NonThrowingPredicate;
+import io.reactivex.core.internal.util.AppendOnlyLinkedArrayList.NonThrowingPredicate;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**

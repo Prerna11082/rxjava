@@ -19,7 +19,7 @@ import io.reactivex.core.SingleObserver;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.*;
 import io.reactivex.common.functions.BiConsumer;
-import io.reactivex.common.internal.disposables.*;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class BiConsumerSingleObserver<T>

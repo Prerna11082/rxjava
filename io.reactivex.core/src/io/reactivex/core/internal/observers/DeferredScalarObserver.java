@@ -15,7 +15,7 @@ package io.reactivex.core.internal.observers;
 
 import io.reactivex.core.Observer;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * A fuseable Observer that can generate 0 or 1 resulting value.

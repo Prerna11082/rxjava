@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.maybe;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.*;
 import io.reactivex.functions.BiConsumer;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * Calls a BiConsumer with the success, error values of the upstream Maybe or with two nulls if

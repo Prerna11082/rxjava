@@ -12,12 +12,12 @@
  */
 package io.reactivex.core.subscribers;
 
+import io.reactivex.core.internal.util.AppendOnlyLinkedArrayList;
 import io.reactivex.core.internal.util.NotificationLite;
 import org.reactivestreams.*;
 
 import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.common.internal.util.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**

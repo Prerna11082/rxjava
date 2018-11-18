@@ -15,8 +15,8 @@ package io.reactivex.core.observers;
 import io.reactivex.core.Observer;
 import io.reactivex.common.annotations.*;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
-import io.reactivex.common.internal.util.*;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.util.AppendOnlyLinkedArrayList;
 import io.reactivex.core.internal.util.NotificationLite;
 import io.reactivex.core.plugins.RxJavaPlugins;
 

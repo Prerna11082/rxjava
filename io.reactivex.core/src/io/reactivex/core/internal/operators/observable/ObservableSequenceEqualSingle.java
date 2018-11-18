@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.BiPredicate;
-import io.reactivex.common.internal.disposables.ArrayCompositeDisposable;
+import io.reactivex.core.internal.disposables.ArrayCompositeDisposable;
 import io.reactivex.internal.fuseable.FuseToObservable;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.plugins.RxJavaPlugins;

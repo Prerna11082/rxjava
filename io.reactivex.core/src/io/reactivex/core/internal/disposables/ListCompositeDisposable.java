@@ -10,10 +10,11 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.common.internal.disposables;
+package io.reactivex.core.internal.disposables;
 
 import java.util.*;
 
+import io.reactivex.common.internal.disposables.DisposableContainer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.*;
 import io.reactivex.internal.functions.ObjectHelper;

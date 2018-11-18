@@ -19,7 +19,7 @@ package io.reactivex.core.internal.schedulers;
 import io.reactivex.Scheduler;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.*;
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;

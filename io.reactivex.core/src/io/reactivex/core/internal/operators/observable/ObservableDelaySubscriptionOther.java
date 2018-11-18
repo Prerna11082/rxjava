@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.observable;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.SequentialDisposable;
+import io.reactivex.core.internal.disposables.SequentialDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**

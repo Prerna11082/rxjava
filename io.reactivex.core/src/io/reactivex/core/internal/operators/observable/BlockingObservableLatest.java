@@ -20,6 +20,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import io.reactivex.core.*;
 import io.reactivex.core.Observable;
 import io.reactivex.common.internal.util.*;
+import io.reactivex.core.internal.util.BlockingHelper;
 import io.reactivex.core.observers.DisposableObserver;
 import io.reactivex.core.plugins.RxJavaPlugins;
 

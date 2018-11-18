@@ -21,6 +21,8 @@ import io.reactivex.common.annotations.*;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.*;
 import io.reactivex.common.internal.functions.*;
+import io.reactivex.core.annotations.SchedulerSupport;
+import io.reactivex.core.internal.functions.Functions;
 import io.reactivex.core.internal.operators.parallel.*;
 import io.reactivex.core.internal.subscriptions.EmptySubscription;
 import io.reactivex.common.internal.util.*;

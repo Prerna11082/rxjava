@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.ArrayDeque;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 public final class ObservableTakeLast<T> extends AbstractObservableWithUpstream<T, T> {
     final int count;

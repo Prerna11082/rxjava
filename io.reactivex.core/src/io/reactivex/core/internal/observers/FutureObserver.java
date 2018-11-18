@@ -19,8 +19,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.core.Observer;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
-import io.reactivex.common.internal.util.BlockingHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.util.BlockingHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
 import static io.reactivex.common.internal.util.ExceptionHelper.timeoutMessage;

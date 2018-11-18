@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.mixed;
 
 import io.reactivex.annotations.Experimental;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * A consumer that implements the consumer types of Maybe, Single and Completable

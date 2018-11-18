@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.single;
 import java.util.concurrent.Callable;
 
 import io.reactivex.exceptions.Exceptions;
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 
 public final class SingleDefer<T> extends Single<T> {

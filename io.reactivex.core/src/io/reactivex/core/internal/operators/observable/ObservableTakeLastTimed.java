@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 
 public final class ObservableTakeLastTimed<T> extends AbstractObservableWithUpstream<T, T> {

@@ -19,7 +19,8 @@ import java.util.concurrent.*;
 import io.reactivex.core.Scheduler;
 import io.reactivex.common.annotations.NonNull;
 import io.reactivex.common.disposables.*;
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.disposables.Disposables;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.common.internal.functions.ObjectHelper;
 
 /**

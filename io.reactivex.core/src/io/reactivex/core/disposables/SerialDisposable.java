@@ -11,11 +11,12 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.common.disposables;
+package io.reactivex.core.disposables;
 
 import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.internal.disposables.DisposableHelper;
 
 /**

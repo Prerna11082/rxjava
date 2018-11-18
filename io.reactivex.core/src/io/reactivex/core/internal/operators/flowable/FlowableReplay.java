@@ -23,7 +23,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.flowables.ConnectableFlowable;
 import io.reactivex.functions.*;
-import io.reactivex.common.internal.disposables.ResettableConnectable;
+import io.reactivex.core.internal.disposables.ResettableConnectable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.fuseable.HasUpstreamPublisher;
 import io.reactivex.core.internal.subscribers.SubscriberResourceWrapper;

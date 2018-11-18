@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.maybe;
 import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * Makes sure a dispose() call from downstream happens on the specified scheduler.

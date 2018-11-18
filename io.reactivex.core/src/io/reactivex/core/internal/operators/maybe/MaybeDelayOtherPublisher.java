@@ -19,7 +19,7 @@ import org.reactivestreams.*;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.CompositeException;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 
 /**

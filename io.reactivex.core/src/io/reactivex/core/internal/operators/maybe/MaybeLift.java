@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.maybe;
 
 import io.reactivex.exceptions.Exceptions;
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 
 /**

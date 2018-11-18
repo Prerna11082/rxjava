@@ -17,6 +17,7 @@ import java.util.concurrent.*;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.internal.util.*;
+import io.reactivex.core.internal.util.BlockingHelper;
 
 import static io.reactivex.internal.util.ExceptionHelper.timeoutMessage;
 

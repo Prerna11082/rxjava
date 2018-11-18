@@ -17,7 +17,7 @@ import java.util.Iterator;
 
 import io.reactivex.annotations.Nullable;
 import io.reactivex.exceptions.Exceptions;
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.observers.BasicQueueDisposable;
 

@@ -22,6 +22,7 @@ import io.reactivex.common.exceptions.CompositeException;
 import io.reactivex.common.functions.Predicate;
 import io.reactivex.common.internal.functions.*;
 import io.reactivex.common.internal.util.*;
+import io.reactivex.core.internal.functions.Functions;
 
 /**
  * Base class with shared infrastructure to support TestSubscriber and TestObserver.

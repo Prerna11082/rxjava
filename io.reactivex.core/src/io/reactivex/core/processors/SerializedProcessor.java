@@ -14,10 +14,10 @@
 package io.reactivex.core.processors;
 
 import io.reactivex.common.annotations.Nullable;
+import io.reactivex.core.internal.util.AppendOnlyLinkedArrayList;
 import io.reactivex.core.internal.util.NotificationLite;
 import org.reactivestreams.*;
 
-import io.reactivex.common.internal.util.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**

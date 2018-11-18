@@ -17,7 +17,7 @@ import org.reactivestreams.Subscription;
 
 import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.common.internal.util.EndConsumerHelper;
+import io.reactivex.core.internal.util.EndConsumerHelper;
 
 /**
  * Abstract base implementation of a {@link org.reactivestreams.Subscriber Subscriber} with

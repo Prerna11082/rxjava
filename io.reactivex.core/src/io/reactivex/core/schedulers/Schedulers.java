@@ -15,6 +15,7 @@ package io.reactivex.core.schedulers;
 
 import io.reactivex.core.Scheduler;
 import io.reactivex.common.annotations.NonNull;
+import io.reactivex.core.annotations.SchedulerSupport;
 import io.reactivex.core.internal.schedulers.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
@@ -127,7 +128,7 @@ public final class Schedulers {
      * instances require a manual call to {@link Scheduler#shutdown()} to allow the JVM to exit or the
      * (J2EE) container to unload properly.
      * <p>Operators on the base reactive classes that use this scheduler are marked with the
-     * &#64;{@link io.reactivex.common.annotations.SchedulerSupport SchedulerSupport}({@link io.reactivex.common.annotations.SchedulerSupport#COMPUTATION COMPUTATION})
+     * &#64;{@link SchedulerSupport SchedulerSupport}({@link SchedulerSupport#COMPUTATION COMPUTATION})
      * annotation.
      * @return a {@link Scheduler} meant for computation-bound work
      */
@@ -172,7 +173,7 @@ public final class Schedulers {
      * instances require a manual call to {@link Scheduler#shutdown()} to allow the JVM to exit or the
      * (J2EE) container to unload properly.
      * <p>Operators on the base reactive classes that use this scheduler are marked with the
-     * &#64;{@link io.reactivex.common.annotations.SchedulerSupport SchedulerSupport}({@link io.reactivex.common.annotations.SchedulerSupport#IO IO})
+     * &#64;{@link SchedulerSupport SchedulerSupport}({@link SchedulerSupport#IO IO})
      * annotation.
      * @return a {@link Scheduler} meant for IO-bound work
      */
@@ -230,7 +231,7 @@ public final class Schedulers {
      * instances require a manual call to {@link Scheduler#shutdown()} to allow the JVM to exit or the
      * (J2EE) container to unload properly.
      * <p>Operators on the base reactive classes that use this scheduler are marked with the
-     * &#64;{@link io.reactivex.common.annotations.SchedulerSupport SchedulerSupport}({@link io.reactivex.common.annotations.SchedulerSupport#NEW_THREAD NEW_TRHEAD})
+     * &#64;{@link SchedulerSupport SchedulerSupport}({@link SchedulerSupport#NEW_THREAD NEW_TRHEAD})
      * annotation.
      * @return a {@link Scheduler} that creates new threads
      */
@@ -279,7 +280,7 @@ public final class Schedulers {
      * instances require a manual call to {@link Scheduler#shutdown()} to allow the JVM to exit or the
      * (J2EE) container to unload properly.
      * <p>Operators on the base reactive classes that use this scheduler are marked with the
-     * &#64;{@link io.reactivex.common.annotations.SchedulerSupport SchedulerSupport}({@link io.reactivex.common.annotations.SchedulerSupport#SINGLE SINGLE})
+     * &#64;{@link SchedulerSupport SchedulerSupport}({@link SchedulerSupport#SINGLE SINGLE})
      * annotation.
      * @return a {@link Scheduler} that shares a single backing thread.
      * @since 2.0

@@ -11,13 +11,13 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.common.internal.util;
+package io.reactivex.core.internal.util;
 
 import java.util.concurrent.CountDownLatch;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.schedulers.NonBlockingThread;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Utility methods for helping common blocking operations.

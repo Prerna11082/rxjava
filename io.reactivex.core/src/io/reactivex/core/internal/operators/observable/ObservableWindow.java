@@ -17,7 +17,7 @@ import java.util.ArrayDeque;
 import java.util.concurrent.atomic.*;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.subjects.UnicastSubject;
 
 public final class ObservableWindow<T> extends AbstractObservableWithUpstream<T, Observable<T>> {

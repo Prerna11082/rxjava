@@ -21,11 +21,12 @@ import io.reactivex.core.Observer;
 import io.reactivex.core.Scheduler.Worker;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.common.internal.disposables.*;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.internal.observers.QueueDrainObserver;
 import io.reactivex.core.internal.queue.MpscLinkedQueue;
-import io.reactivex.common.internal.util.QueueDrainHelper;
+import io.reactivex.core.internal.util.QueueDrainHelper;
 import io.reactivex.core.observers.SerializedObserver;
 
 public final class ObservableBufferTimed<T, U extends Collection<? super T>>

@@ -14,6 +14,8 @@ package io.reactivex.core;
 
 import java.util.concurrent.*;
 
+import io.reactivex.core.annotations.SchedulerSupport;
+import io.reactivex.core.internal.functions.Functions;
 import org.reactivestreams.Publisher;
 
 import io.reactivex.common.annotations.*;

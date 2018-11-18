@@ -11,7 +11,7 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.common.internal.util;
+package io.reactivex.core.internal.util;
 
 import java.util.concurrent.atomic.*;
 

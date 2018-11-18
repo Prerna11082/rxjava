@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.maybe;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Predicate;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * Filters the upstream via a predicate, returning the success item or completing if

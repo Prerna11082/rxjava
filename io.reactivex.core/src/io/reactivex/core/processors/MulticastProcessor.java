@@ -15,6 +15,7 @@ package io.reactivex.core.processors;
 
 import java.util.concurrent.atomic.*;
 
+import io.reactivex.core.annotations.SchedulerSupport;
 import io.reactivex.core.internal.queue.SpscArrayQueue;
 import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import org.reactivestreams.*;

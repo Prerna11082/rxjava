@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.maybe;
 import org.reactivestreams.Subscriber;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 import io.reactivex.core.internal.subscriptions.DeferredScalarSubscription;
 

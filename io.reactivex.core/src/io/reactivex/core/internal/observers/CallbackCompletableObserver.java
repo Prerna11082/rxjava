@@ -19,7 +19,7 @@ import io.reactivex.core.CompletableObserver;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.*;
 import io.reactivex.common.functions.*;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.observers.LambdaConsumerIntrospection;
 import io.reactivex.core.plugins.RxJavaPlugins;
 

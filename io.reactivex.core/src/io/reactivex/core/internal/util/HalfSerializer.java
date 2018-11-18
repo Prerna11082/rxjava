@@ -10,14 +10,15 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.common.internal.util;
+package io.reactivex.core.internal.util;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import io.reactivex.common.internal.util.AtomicThrowable;
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.Observer;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.Observer;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Utility methods to perform half-serialization: a form of serialization

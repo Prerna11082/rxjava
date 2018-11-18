@@ -18,9 +18,10 @@ import java.util.concurrent.atomic.AtomicReference;
 import io.reactivex.core.SingleObserver;
 import io.reactivex.common.annotations.NonNull;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.internal.disposables.*;
 import io.reactivex.common.internal.functions.ObjectHelper;
-import io.reactivex.common.internal.util.EndConsumerHelper;
+import io.reactivex.core.internal.disposables.ListCompositeDisposable;
+import io.reactivex.core.internal.util.EndConsumerHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * An abstract {@link SingleObserver} that allows asynchronous cancellation of its subscription

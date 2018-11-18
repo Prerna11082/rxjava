@@ -14,7 +14,7 @@ package io.reactivex.core.internal.operators.observable;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
-import io.reactivex.common.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 
 public final class ObservableNever extends Observable<Object> {
     public static final Observable<Object> INSTANCE = new ObservableNever();

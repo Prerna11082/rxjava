@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.*;
 import org.reactivestreams.*;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.SequentialDisposable;
+import io.reactivex.core.internal.disposables.SequentialDisposable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.internal.util.*;
 

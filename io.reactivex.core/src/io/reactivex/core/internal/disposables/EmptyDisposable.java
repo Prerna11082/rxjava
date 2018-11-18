@@ -11,11 +11,11 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.common.internal.disposables;
+package io.reactivex.core.internal.disposables;
 
-import io.reactivex.*;
+import io.reactivex.core.*;
 import io.reactivex.common.annotations.Nullable;
-import io.reactivex.internal.fuseable.QueueDisposable;
+import io.reactivex.core.internal.fuseable.QueueDisposable;
 
 /**
  * Represents a stateless empty Disposable that reports being always

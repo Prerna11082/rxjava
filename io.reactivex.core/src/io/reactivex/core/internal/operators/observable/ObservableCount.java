@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.observable;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 public final class ObservableCount<T> extends AbstractObservableWithUpstream<T, Long> {
     public ObservableCount(ObservableSource<T> source) {

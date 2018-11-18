@@ -17,9 +17,9 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.core.Observer;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.common.internal.util.QueueDrainHelper;
+import io.reactivex.core.internal.util.QueueDrainHelper;
 
 /**
  * Subscriber that can fuse with the upstream and calls a support interface

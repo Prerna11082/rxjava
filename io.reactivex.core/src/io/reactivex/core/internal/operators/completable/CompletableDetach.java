@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.completable;
 
 import io.reactivex.disposables.Disposable;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * Breaks the references between the upstream and downstream when the Completable terminates.

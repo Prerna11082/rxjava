@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.*;
 import io.reactivex.functions.Function;
-import io.reactivex.common.internal.disposables.SequentialDisposable;
+import io.reactivex.core.internal.disposables.SequentialDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 
 public final class ObservableOnErrorNext<T> extends AbstractObservableWithUpstream<T, T> {

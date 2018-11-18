@@ -20,7 +20,7 @@ import org.reactivestreams.Subscription;
 import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.common.internal.util.EndConsumerHelper;
+import io.reactivex.core.internal.util.EndConsumerHelper;
 
 /**
  * An abstract Subscriber that allows asynchronous, external cancellation by implementing Disposable.

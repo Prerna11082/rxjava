@@ -10,11 +10,11 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.common.internal.util;
+package io.reactivex.core.internal.util;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Utility class to help with backpressure-related operations such as request aggregation.

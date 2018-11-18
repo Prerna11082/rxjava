@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.*;
 import io.reactivex.functions.Function;
-import io.reactivex.common.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 public final class ObservableOnErrorReturn<T> extends AbstractObservableWithUpstream<T, T> {
     final Function<? super Throwable, ? extends T> valueSupplier;
