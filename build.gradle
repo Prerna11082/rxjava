@@ -15,10 +15,10 @@ buildscript {
     }
 }
 repositories {
-        mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
 }
 
 group = "io.reactivex.rxjava2"
@@ -71,34 +71,9 @@ dependencies {
 }
 
 
+	
 
-allprojects {
-   
-    if (project.name.startsWith("io.reactivex")) {
-	    if (project.name.startsWith("io.reactivex.common")) {
-			sourceSets {
-	    		main.java.srcDirs = ['io.reactivex.common/src']
-			}
-	    }
-	    if (project.name.startsWith("io.reactivex.core")) {
-			sourceSets {
-	    		main.java.srcDirs = ['io.reactivex.core/src']
-			}
-	    }
-		
-		compileJava {
-		    doFirst {
-		        options.compilerArgs = [
-		                '--module-path', classpath.asPath
-		        ]
-		        classpath = files()
-		    }
-		}	
-        
-    }
-}
-
-
+ 
 
 javadoc {
     doFirst {
@@ -148,103 +123,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
-artifacts {
-    archives jar
-    archives sourcesJar
-    archives javadocJar
-}
 
-jar {
-    manifest {
-        name = "rxjava"
-        instruction "Bundle-Vendor", "RxJava Contributors"
-        instruction "Bundle-DocURL", "https://github.com/ReactiveX/RxJava"
-        instruction "Import-Package", "!org.junit,!junit.framework,!org.mockito.*,!org.testng.*,*"
-        instruction "Eclipse-ExtensibleAPI", "true"
-        instruction "Automatic-Module-Name", "rxjava"
-    }
-}
-
-license {
-    header rootProject.file("HEADER")
-    ext.year = Calendar.getInstance().get(Calendar.YEAR)
-    skipExistingHeaders true
-    ignoreFailures true
-    excludes(["**/*.md", "**/*.txt"])
-}
-
-apply plugin: "maven-publish"
-
-install {
-    repositories.mavenInstaller.pom.project {
-        name "RxJava"
-        description "Reactive Extensions for Java"
-        url "https://github.com/ReactiveX/RxJava"
-        licenses {
-            license {
-                name "The Apache Software License, Version 2.0"
-                url "http://www.apache.org/licenses/LICENSE-2.0.txt"
-                distribution "repo"
-            }
-        }
-        developers {
-            developer {
-                id "akarnokd"
-                name "David Karnok"
-                email "akarnokd@gmail.com"
-            }
-        }
-        scm {
-            connection "scm:git:git@github.com:ReactiveX/RxJava.git"
-            url "scm:git:git@github.com:ReactiveX/RxJava.git"
-            developerConnection "scm:git:git@github.com:ReactiveX/RxJava.git"
-        }
-        issueManagement {
-            system "github"
-            url "https://github.com/ReactiveX/RxJava/issues"
-        }
-    }
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            artifact (sourcesJar) {
-                classifier = "sources"
-            }
-        }
-    }
-}
-
-// Reactive-Streams as compile dependency
-publishing.publications.all {
-    pom.withXml {
-        asNode().dependencies."*".findAll() {
-            it.scope.text() == "runtime" && project.configurations.compile.allDependencies.find { dep ->
-                dep.name == it.artifactId.text()
-            }
-        }.each { it.scope*.value = "compile"}
-    }
-}
-
-jmh {
-    jmhVersion = jmhLibVersion
-    humanOutputFile = null
-    includeTests = false
-    jvmArgs = ["-Djmh.ignoreLock=true"]
-    jvmArgsAppend = ["-Djmh.separateClasspathJAR=true"]
-
-    if (project.hasProperty("jmh")) {
-        include = ".*" + project.jmh + ".*"
-        println("JMH: " + include);
-    }
-
-}
-
-plugins.withType(EclipsePlugin) {
-    project.eclipse.classpath.plusConfigurations += [ configurations.jmh ]
-}
 
 test {
 
@@ -336,69 +215,6 @@ checkstyle {
     configFile file("checkstyle.xml")
     ignoreFailures = true
     toolVersion ="8.14"
-}
-
-if (rootProject.hasProperty("releaseMode")) {
-
-    if ("branch".equals(rootProject.releaseMode)) {
-        // From https://github.com/ReactiveX/RxAndroid/blob/2.x/rxandroid/build.gradle#L94
-
-        println("ReleaseMode: " + rootProject.releaseMode);
-        artifactory {
-            contextUrl = "https://oss.jfrog.org"
-
-            publish {
-                repository {
-                    repoKey = "oss-snapshot-local"
-
-                    username = rootProject.bintrayUser
-                    password = rootProject.bintrayKey
-                }
-
-                defaults {
-                    publishConfigs("archives")
-                }
-            }
-        }
-
-        build.finalizedBy(artifactoryPublish)
-    }
-
-    if ("full".equals(rootProject.releaseMode)) {
-        // based on https://github.com/bintray/gradle-bintray-plugin
-        def rver = version;
-
-        println("ReleaseMode: " + rootProject.releaseMode + " version " + rver);
-
-        bintray {
-            user = rootProject.bintrayUser
-            key = rootProject.bintrayKey
-            configurations = ["archives"]
-            publish = true
-            pkg {
-                repo = "RxJava"
-                name = "RxJava"
-                userOrg = "reactivex"
-                labels = ["rxjava", "reactivex"]
-                licenses = ["Apache-2.0"]
-                vcsUrl = "https://github.com/ReactiveX/RxJava.git"
-                version {
-                    name = rver
-                    gpg {
-                        sign = true
-                    }
-                    mavenCentralSync {
-                        sync = true
-                        user = rootProject.sonatypeUsername
-                        password = rootProject.sonatypePassword
-                        close = "1"
-                    }
-                }
-            }
-        }
-
-        build.finalizedBy(bintrayUpload)
-    }
 }
 
 apply from: file("gradle/javadoc_cleanup.gradle")

@@ -1,0 +1,2 @@
+rootProject.name = "io.reactivex.common"
+include 'io.reactivex.core'
