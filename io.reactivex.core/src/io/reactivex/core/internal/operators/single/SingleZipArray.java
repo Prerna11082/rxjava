@@ -13,14 +13,18 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.concurrent.atomic.*;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
+import io.reactivex.core.SingleSource;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class SingleZipArray<T, R> extends Single<R> {
 

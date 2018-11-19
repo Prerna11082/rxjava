@@ -13,8 +13,11 @@
 
 package io.reactivex.core.internal.disposables;
 
-import io.reactivex.core.*;
 import io.reactivex.common.annotations.Nullable;
+import io.reactivex.core.CompletableObserver;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.Observer;
+import io.reactivex.core.SingleObserver;
 import io.reactivex.core.internal.fuseable.QueueDisposable;
 
 /**

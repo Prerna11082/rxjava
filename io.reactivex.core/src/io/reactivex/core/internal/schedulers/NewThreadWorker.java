@@ -13,14 +13,15 @@
 
 package io.reactivex.core.internal.schedulers;
 
-import java.util.concurrent.*;
-
-import io.reactivex.Scheduler;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.annotations.Nullable;
-import io.reactivex.disposables.*;
-import io.reactivex.core.internal.disposables.*;
+import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.internal.disposables.DisposableContainer;
+import io.reactivex.core.Scheduler;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.*;
 
 /**
  * Base class that manages a single-threaded ScheduledExecutorService as a

@@ -13,14 +13,13 @@
 
 package io.reactivex.core.internal.subscribers;
 
-import java.util.concurrent.atomic.AtomicReference;
-
+import io.reactivex.FlowableSubscriber;
+import io.reactivex.common.internal.util.QueueDrainHelper;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.internal.fuseable.*;
 import org.reactivestreams.Subscription;
 
-import io.reactivex.FlowableSubscriber;
-import io.reactivex.internal.fuseable.*;
-import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.common.internal.util.QueueDrainHelper;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Subscriber that can fuse with the upstream and calls a support interface

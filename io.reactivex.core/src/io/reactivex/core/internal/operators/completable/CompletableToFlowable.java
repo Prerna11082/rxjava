@@ -13,9 +13,9 @@
 
 package io.reactivex.core.internal.operators.completable;
 
+import io.reactivex.core.internal.observers.SubscriberCompletableObserver;
 import org.reactivestreams.Subscriber;
-
-import io.reactivex.internal.observers.SubscriberCompletableObserver;
+import io.reactivex.core.*;
 
 public final class CompletableToFlowable<T> extends Flowable<T> {
 

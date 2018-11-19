@@ -14,8 +14,8 @@
 package io.reactivex.core.internal.operators.maybe;
 
 import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
-import io.reactivex.internal.functions.ObjectHelper;
 
 /**
  * Calls a MaybeOperator for the incoming MaybeObserver.

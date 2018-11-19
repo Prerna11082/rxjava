@@ -16,19 +16,25 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.*;
-import java.util.concurrent.atomic.*;
-
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.BiFunction;
+import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.util.ExceptionHelper;
 import io.reactivex.core.ObservableSource;
 import io.reactivex.core.Observer;
-import io.reactivex.common.disposables.*;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.common.functions.*;
-import io.reactivex.common.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.operators.observable.ObservableGroupJoin.*;
+import io.reactivex.core.internal.operators.observable.ObservableGroupJoin.JoinSupport;
+import io.reactivex.core.internal.operators.observable.ObservableGroupJoin.LeftRightEndObserver;
+import io.reactivex.core.internal.operators.observable.ObservableGroupJoin.LeftRightObserver;
 import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.common.internal.util.ExceptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObservableJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> extends AbstractObservableWithUpstream<TLeft, R> {
 

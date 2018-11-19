@@ -13,8 +13,8 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import io.reactivex.annotations.Experimental;
-import io.reactivex.internal.operators.mixed.MaterializeSingleObserver;
+import io.reactivex.common.annotations.Experimental;
+import io.reactivex.core.internal.operators.mixed.MaterializeSingleObserver;
 
 /**
  * Turn the signal types of a Single source into a single Notification of

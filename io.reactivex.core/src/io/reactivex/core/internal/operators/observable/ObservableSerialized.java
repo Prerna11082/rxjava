@@ -12,9 +12,9 @@
  */
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.observers.SerializedObserver;
+import io.reactivex.core.Observable;
+import io.reactivex.core.Observer;
+import io.reactivex.core.observers.SerializedObserver;
 
 public final class ObservableSerialized<T> extends AbstractObservableWithUpstream<T, T> {
     public ObservableSerialized(Observable<T> upstream) {

@@ -13,12 +13,14 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.concurrent.Callable;
-
-import io.reactivex.core.*;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
+import io.reactivex.core.SingleSource;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+
+import java.util.concurrent.Callable;
 
 public final class SingleDefer<T> extends Single<T> {
 

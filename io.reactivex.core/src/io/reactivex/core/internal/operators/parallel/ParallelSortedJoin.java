@@ -13,16 +13,22 @@
 
 package io.reactivex.core.internal.operators.parallel;
 
-import java.util.*;
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.common.internal.util.BackpressureHelper;
-import io.reactivex.parallel.ParallelFlowable;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.parallel.ParallelFlowable;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Given sorted rail sequences (according to the provided comparator) as List

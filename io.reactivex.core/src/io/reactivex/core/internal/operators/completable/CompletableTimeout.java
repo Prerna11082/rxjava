@@ -13,11 +13,13 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import io.reactivex.disposables.*;
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static io.reactivex.common.internal.util.ExceptionHelper.timeoutMessage;
 

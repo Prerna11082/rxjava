@@ -13,15 +13,17 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.core.*;
 import io.reactivex.common.disposables.CompositeDisposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.operators.completable.CompletableMergeDelayErrorArray.MergeInnerCompletableObserver;
 import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.Completable;
+import io.reactivex.core.CompletableObserver;
+import io.reactivex.core.CompletableSource;
+import io.reactivex.core.internal.operators.completable.CompletableMergeDelayErrorArray.MergeInnerCompletableObserver;
+
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public final class CompletableMergeDelayErrorIterable extends Completable {
 

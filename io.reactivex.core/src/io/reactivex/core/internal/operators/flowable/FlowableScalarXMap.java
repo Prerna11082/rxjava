@@ -13,16 +13,17 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.Callable;
-
-import org.reactivestreams.*;
-
-import io.reactivex.Flowable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import io.reactivex.core.internal.subscriptions.ScalarSubscription;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+
+import java.util.concurrent.Callable;
 
 /**
  * Utility classes to work with scalar-sourced XMap operators (where X == { flat, concat, switch }).

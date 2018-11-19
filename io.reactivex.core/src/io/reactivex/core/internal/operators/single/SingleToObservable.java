@@ -12,9 +12,11 @@
  */
 package io.reactivex.core.internal.operators.single;
 
+import io.reactivex.core.*;
+
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.observers.DeferredScalarDisposable;
+import io.reactivex.core.internal.observers.DeferredScalarDisposable;
 
 /**
  * Wraps a Single and exposes it as an Observable.

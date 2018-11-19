@@ -13,11 +13,11 @@
 
 package io.reactivex.core.internal.operators.completable;
 
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.common.disposables.Disposable;
-import io.reactivex.core.internal.disposables.DisposableHelper;
 
 public final class CompletableDelay extends Completable {
 

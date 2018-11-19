@@ -13,13 +13,10 @@
 
 package io.reactivex.core.internal.operators.parallel;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.core.*;
-import io.reactivex.core.Scheduler.Worker;
 import io.reactivex.common.exceptions.MissingBackpressureException;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.Scheduler;
+import io.reactivex.core.Scheduler.Worker;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.core.internal.queue.SpscArrayQueue;
 import io.reactivex.core.internal.schedulers.SchedulerMultiWorkerSupport;
@@ -28,6 +25,11 @@ import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.internal.util.BackpressureHelper;
 import io.reactivex.core.parallel.ParallelFlowable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Ensures each 'rail' from upstream runs on a Worker from a Scheduler.

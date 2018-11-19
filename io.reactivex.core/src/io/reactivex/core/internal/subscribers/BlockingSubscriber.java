@@ -13,14 +13,13 @@
 
 package io.reactivex.core.internal.subscribers;
 
-import java.util.Queue;
-import java.util.concurrent.atomic.AtomicReference;
-
+import io.reactivex.FlowableSubscriber;
+import io.reactivex.common.internal.util.NotificationLite;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import org.reactivestreams.Subscription;
 
-import io.reactivex.FlowableSubscriber;
-import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.common.internal.util.NotificationLite;
+import java.util.Queue;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class BlockingSubscriber<T> extends AtomicReference<Subscription> implements FlowableSubscriber<T>, Subscription {
 

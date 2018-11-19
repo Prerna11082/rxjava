@@ -13,12 +13,14 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.atomic.*;
-
-import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.observers.SerializedObserver;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObservableSampleWithObservable<T> extends AbstractObservableWithUpstream<T, T> {
 

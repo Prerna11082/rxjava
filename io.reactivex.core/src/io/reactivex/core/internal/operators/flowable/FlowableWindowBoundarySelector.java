@@ -13,25 +13,30 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.*;
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.Flowable;
-import io.reactivex.disposables.*;
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.MissingBackpressureException;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.util.NotificationLite;
+import io.reactivex.core.Flowable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.SimplePlainQueue;
 import io.reactivex.core.internal.queue.MpscLinkedQueue;
 import io.reactivex.core.internal.subscribers.QueueDrainSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.common.internal.util.NotificationLite;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.subscribers.DisposableSubscriber;
+import io.reactivex.core.subscribers.SerializedSubscriber;
 import io.reactivex.processors.UnicastProcessor;
-import io.reactivex.subscribers.*;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class FlowableWindowBoundarySelector<T, B, V> extends AbstractFlowableWithUpstream<T, Flowable<T>> {
     final Publisher<B> open;

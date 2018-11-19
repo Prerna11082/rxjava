@@ -13,9 +13,9 @@
 
 package io.reactivex.core.internal.disposables;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.common.disposables.Disposable;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A Disposable container that allows updating/replacing a Disposable

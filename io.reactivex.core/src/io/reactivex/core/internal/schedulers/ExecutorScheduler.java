@@ -13,18 +13,24 @@
 
 package io.reactivex.core.internal.schedulers;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.*;
-
 import io.reactivex.Scheduler;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.*;
-import io.reactivex.core.internal.disposables.*;
-import io.reactivex.internal.functions.Functions;
+import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.SequentialDisposable;
 import io.reactivex.core.internal.queue.MpscLinkedQueue;
-import io.reactivex.internal.schedulers.ExecutorScheduler.ExecutorWorker.BooleanRunnable;
 import io.reactivex.core.plugins.RxJavaPlugins;
-import io.reactivex.schedulers.*;
+import io.reactivex.core.schedulers.SchedulerRunnableIntrospection;
+import io.reactivex.core.schedulers.Schedulers;
+import io.reactivex.internal.functions.Functions;
+import io.reactivex.internal.schedulers.ExecutorScheduler.ExecutorWorker.BooleanRunnable;
+
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Wraps an Executor and provides the Scheduler API over it.

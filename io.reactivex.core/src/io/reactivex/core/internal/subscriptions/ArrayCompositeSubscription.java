@@ -13,11 +13,10 @@
 
 package io.reactivex.core.internal.subscriptions;
 
-import java.util.concurrent.atomic.AtomicReferenceArray;
-
+import io.reactivex.common.disposables.Disposable;
 import org.reactivestreams.Subscription;
 
-import io.reactivex.common.disposables.Disposable;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
 /**
  * A composite disposable with a fixed number of slots.

@@ -13,15 +13,15 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.Callable;
-
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.subscribers.SinglePostCompleteSubscriber;
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.Flowable;
-import io.reactivex.common.exceptions.*;
-import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.subscribers.SinglePostCompleteSubscriber;
+import java.util.concurrent.Callable;
 
 public final class FlowableMapNotification<T, R> extends AbstractFlowableWithUpstream<T, R> {
 

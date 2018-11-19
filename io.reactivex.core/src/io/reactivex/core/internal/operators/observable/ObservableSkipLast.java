@@ -13,10 +13,12 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.ArrayDeque;
-
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.disposables.DisposableHelper;
+
+import java.util.ArrayDeque;
 
 public final class ObservableSkipLast<T> extends AbstractObservableWithUpstream<T, T> {
     final int skip;

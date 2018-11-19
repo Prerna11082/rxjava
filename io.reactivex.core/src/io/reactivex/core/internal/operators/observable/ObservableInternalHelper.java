@@ -12,14 +12,15 @@
  */
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.List;
-import java.util.concurrent.*;
-
-import io.reactivex.core.*;
 import io.reactivex.common.functions.*;
-import io.reactivex.common.internal.functions.*;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.*;
 import io.reactivex.core.internal.functions.Functions;
 import io.reactivex.core.observables.ConnectableObservable;
+
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Helper utility class to support Observable with inner classes.

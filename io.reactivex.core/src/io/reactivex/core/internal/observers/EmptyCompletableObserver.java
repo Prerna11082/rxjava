@@ -13,14 +13,14 @@
 
 package io.reactivex.core.internal.observers;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.core.CompletableObserver;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.OnErrorNotImplementedException;
+import io.reactivex.core.CompletableObserver;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.observers.LambdaConsumerIntrospection;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class EmptyCompletableObserver
 extends AtomicReference<Disposable>

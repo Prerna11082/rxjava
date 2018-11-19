@@ -16,8 +16,10 @@ package io.reactivex.core.internal.operators.maybe;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeSource;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
 
 /**
  * Maps the upstream success value into some other value.

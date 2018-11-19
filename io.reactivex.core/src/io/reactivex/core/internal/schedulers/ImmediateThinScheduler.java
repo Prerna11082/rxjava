@@ -13,11 +13,11 @@
 
 package io.reactivex.core.internal.schedulers;
 
-import java.util.concurrent.TimeUnit;
-
 import io.reactivex.Scheduler;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.*;
+import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.disposables.Disposable;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * A Scheduler partially implementing the API by allowing only non-delayed, non-periodic

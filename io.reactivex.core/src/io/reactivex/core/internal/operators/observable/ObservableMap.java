@@ -13,10 +13,12 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.annotations.Nullable;
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.observers.BasicFuseableObserver;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
+import io.reactivex.core.internal.observers.BasicFuseableObserver;
 
 public final class ObservableMap<T, U> extends AbstractObservableWithUpstream<T, U> {
     final Function<? super T, ? extends U> function;

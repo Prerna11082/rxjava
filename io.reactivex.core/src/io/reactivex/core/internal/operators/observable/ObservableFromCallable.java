@@ -13,13 +13,14 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.Callable;
-
-import io.reactivex.core.*;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Observable;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.observers.DeferredScalarDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.Callable;
 
 /**
  * Calls a Callable and emits its resulting single value or signals its exception.

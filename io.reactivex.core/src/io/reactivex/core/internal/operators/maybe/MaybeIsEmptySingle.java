@@ -15,7 +15,8 @@ package io.reactivex.core.internal.operators.maybe;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.core.internal.fuseable.*;
+import io.reactivex.core.internal.fuseable.FuseToMaybe;
+import io.reactivex.core.internal.fuseable.HasUpstreamMaybeSource;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**

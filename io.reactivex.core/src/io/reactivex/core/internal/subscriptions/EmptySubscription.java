@@ -13,10 +13,9 @@
 
 package io.reactivex.core.internal.subscriptions;
 
-import io.reactivex.annotations.Nullable;
-import org.reactivestreams.Subscriber;
-
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.internal.fuseable.QueueSubscription;
+import org.reactivestreams.Subscriber;
 
 /**
  * An empty subscription that does nothing other than validates the request amount.

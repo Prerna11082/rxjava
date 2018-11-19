@@ -13,7 +13,8 @@
 
 package io.reactivex.core.internal.fuseable;
 
-import io.reactivex.common.annotations.*;
+import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.annotations.Nullable;
 
 /**
  * A minimalist queue interface without the method bloat of java.util.Collection and java.util.Queue.

@@ -13,12 +13,14 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import java.util.concurrent.Callable;
-
-import io.reactivex.core.*;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Completable;
+import io.reactivex.core.CompletableObserver;
+import io.reactivex.core.CompletableSource;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+
+import java.util.concurrent.Callable;
 
 public final class CompletableDefer extends Completable {
 

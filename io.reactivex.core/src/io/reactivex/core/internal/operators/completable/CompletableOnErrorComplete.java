@@ -13,8 +13,9 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.exceptions.*;
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Predicate;
 
 public final class CompletableOnErrorComplete extends Completable {

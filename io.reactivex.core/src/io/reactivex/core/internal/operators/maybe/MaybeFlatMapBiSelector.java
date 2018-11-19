@@ -13,13 +13,15 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.concurrent.atomic.AtomicReference;
-
+import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.common.functions.*;
+import io.reactivex.common.functions.BiFunction;
+import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Maps a source item to another MaybeSource then calls a BiFunction with the

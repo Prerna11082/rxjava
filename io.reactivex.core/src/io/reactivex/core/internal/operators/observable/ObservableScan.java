@@ -16,8 +16,8 @@ package io.reactivex.core.internal.operators.observable;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiFunction;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableScan<T> extends AbstractObservableWithUpstream<T, T> {

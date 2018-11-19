@@ -13,17 +13,19 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.common.internal.functions.ObjectHelper;
-import java.util.*;
-import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import io.reactivex.core.ObservableSource;
-import io.reactivex.core.Observer;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
+
+import java.util.ArrayDeque;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public final class ObservableBuffer<T, U extends Collection<? super T>> extends AbstractObservableWithUpstream<T, U> {
     final int count;

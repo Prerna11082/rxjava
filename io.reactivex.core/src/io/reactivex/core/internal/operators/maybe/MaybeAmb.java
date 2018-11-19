@@ -13,12 +13,14 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import io.reactivex.disposables.*;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Signals the event of the first MaybeSource that signals.

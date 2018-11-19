@@ -13,19 +13,19 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicLong;
-
-import io.reactivex.annotations.Nullable;
-import org.reactivestreams.Subscriber;
-
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.subscriptions.BasicIntQueueSubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import org.reactivestreams.Subscriber;
+
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Maps a success value into an Iterable and streams it back as a Flowable.

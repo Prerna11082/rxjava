@@ -13,15 +13,20 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeSource;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.common.internal.util.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Concatenate values of each MaybeSource provided in an array and delays

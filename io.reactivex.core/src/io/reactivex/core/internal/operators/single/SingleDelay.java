@@ -13,10 +13,10 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.concurrent.TimeUnit;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
+
+import java.util.concurrent.TimeUnit;
 
 public final class SingleDelay<T> extends Single<T> {
 

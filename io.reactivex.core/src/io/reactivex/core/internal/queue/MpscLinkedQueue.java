@@ -18,10 +18,10 @@
 
 package io.reactivex.core.internal.queue;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.common.annotations.Nullable;
 import io.reactivex.core.internal.fuseable.SimplePlainQueue;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A multi-producer single consumer unbounded queue.

@@ -13,9 +13,9 @@
 
 package io.reactivex.core.internal.observers;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 import io.reactivex.core.internal.fuseable.QueueDisposable;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * An abstract QueueDisposable implementation, extending an AtomicInteger,

@@ -12,13 +12,14 @@
  */
 
 package io.reactivex.core.internal.operators.observable;
+import io.reactivex.core.*;
 
-import java.util.concurrent.TimeUnit;
-
-import io.reactivex.Scheduler.Worker;
+import io.reactivex.core.Scheduler.Worker;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.observers.SerializedObserver;
+import io.reactivex.core.observers.SerializedObserver;
+
+import java.util.concurrent.TimeUnit;
 
 public final class ObservableDelay<T> extends AbstractObservableWithUpstream<T, T> {
     final long delay;

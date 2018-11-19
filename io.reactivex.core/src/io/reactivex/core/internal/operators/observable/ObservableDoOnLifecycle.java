@@ -11,10 +11,11 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 package io.reactivex.core.internal.operators.observable;
-
+import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.functions.*;
-import io.reactivex.internal.observers.DisposableLambdaObserver;
+import io.reactivex.common.functions.Action;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.core.internal.observers.DisposableLambdaObserver;
 
 public final class ObservableDoOnLifecycle<T> extends AbstractObservableWithUpstream<T, T> {
     private final Consumer<? super Disposable> onSubscribe;

@@ -12,12 +12,13 @@
  */
 
 package io.reactivex.core.internal.operators.observable;
-
-import java.util.concurrent.*;
-
+import io.reactivex.core.*;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.observers.DeferredScalarDisposable;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.observers.DeferredScalarDisposable;
+
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 public final class ObservableFromFuture<T> extends Observable<T> {
     final Future<? extends T> future;

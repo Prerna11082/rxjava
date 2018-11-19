@@ -13,20 +13,24 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.common.internal.functions.ObjectHelper;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.*;
-
-import io.reactivex.core.ObservableSource;
-import io.reactivex.core.Observer;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.observables.GroupedObservable;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObservableGroupBy<T, K, V> extends AbstractObservableWithUpstream<T, GroupedObservable<K, V>> {
     final Function<? super T, ? extends K> keySelector;

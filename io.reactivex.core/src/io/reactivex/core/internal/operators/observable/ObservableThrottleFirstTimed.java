@@ -13,14 +13,14 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.Scheduler.Worker;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.core.internal.disposables.*;
-import io.reactivex.observers.SerializedObserver;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.observers.SerializedObserver;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObservableThrottleFirstTimed<T> extends AbstractObservableWithUpstream<T, T> {
     final long timeout;

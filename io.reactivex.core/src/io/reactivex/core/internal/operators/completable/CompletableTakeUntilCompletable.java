@@ -13,11 +13,12 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import java.util.concurrent.atomic.*;
-
-import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Terminates the sequence if either the main or the other Completable terminate.

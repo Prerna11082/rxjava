@@ -12,9 +12,10 @@
  */
 package io.reactivex.core.internal.schedulers;
 
-import io.reactivex.core.Scheduler;
 import io.reactivex.common.annotations.NonNull;
-import io.reactivex.common.disposables.*;
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.Scheduler;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
 

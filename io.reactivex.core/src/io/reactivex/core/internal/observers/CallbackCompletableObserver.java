@@ -13,15 +13,17 @@
 
 package io.reactivex.core.internal.observers;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.core.CompletableObserver;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.exceptions.*;
-import io.reactivex.common.functions.*;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.exceptions.OnErrorNotImplementedException;
+import io.reactivex.common.functions.Action;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.core.CompletableObserver;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.observers.LambdaConsumerIntrospection;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class CallbackCompletableObserver
 extends AtomicReference<Disposable>

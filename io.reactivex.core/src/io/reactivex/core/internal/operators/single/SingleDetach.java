@@ -13,8 +13,10 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
+import io.reactivex.core.SingleSource;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**

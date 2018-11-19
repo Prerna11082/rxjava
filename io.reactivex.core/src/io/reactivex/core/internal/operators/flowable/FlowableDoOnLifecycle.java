@@ -12,12 +12,17 @@
  */
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.*;
-
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.common.functions.*;
-import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.functions.Action;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.common.functions.LongConsumer;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 public final class FlowableDoOnLifecycle<T> extends AbstractFlowableWithUpstream<T, T> {
     private final Consumer<? super Subscription> onSubscribe;

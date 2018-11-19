@@ -13,9 +13,9 @@
 
 package io.reactivex.core.internal.operators.parallel;
 
-import org.reactivestreams.*;
-
 import io.reactivex.parallel.ParallelFlowable;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
 
 /**
  * Wraps multiple Publishers into a ParallelFlowable which runs them

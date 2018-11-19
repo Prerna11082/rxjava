@@ -13,17 +13,21 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.atomic.*;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.fuseable.QueueDisposable;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObservableSwitchMap<T, R> extends AbstractObservableWithUpstream<T, R> {
     final Function<? super T, ? extends ObservableSource<? extends R>> mapper;

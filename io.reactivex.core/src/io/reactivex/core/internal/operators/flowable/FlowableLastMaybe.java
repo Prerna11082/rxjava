@@ -13,10 +13,13 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.*;
-
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.Maybe;
+import io.reactivex.core.MaybeObserver;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscription;
 
 /**
  * Consumes the source Publisher and emits its last item or completes.

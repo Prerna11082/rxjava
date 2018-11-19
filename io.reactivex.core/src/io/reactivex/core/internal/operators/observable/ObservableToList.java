@@ -13,13 +13,14 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.Collection;
-import java.util.concurrent.Callable;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.core.internal.disposables.*;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.*;
+
+import java.util.Collection;
+import java.util.concurrent.Callable;
 
 public final class ObservableToList<T, U extends Collection<? super T>>
 extends AbstractObservableWithUpstream<T, U> {

@@ -13,11 +13,14 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.*;
+import io.reactivex.core.*;
 
-import io.reactivex.ObservableSource;
-import io.reactivex.common.internal.util.*;
-import io.reactivex.observers.DefaultObserver;
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.core.internal.util.NotificationLite;
+import io.reactivex.core.observers.DefaultObserver;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Returns an Iterable that always returns the item most recently emitted by an Observable, or a

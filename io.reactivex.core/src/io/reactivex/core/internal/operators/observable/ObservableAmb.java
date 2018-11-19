@@ -13,12 +13,16 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.atomic.*;
+import io.reactivex.core.*;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.core.internal.disposables.*;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObservableAmb<T> extends Observable<T> {
     final ObservableSource<? extends T>[] sources;

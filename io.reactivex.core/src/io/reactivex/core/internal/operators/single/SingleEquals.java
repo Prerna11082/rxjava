@@ -13,11 +13,12 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.disposables.*;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public final class SingleEquals<T> extends Single<Boolean> {
 

@@ -13,19 +13,28 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.exceptions.*;
-import io.reactivex.flowables.ConnectableFlowable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.exceptions.MissingBackpressureException;
 import io.reactivex.common.functions.Consumer;
-import io.reactivex.core.internal.fuseable.*;
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.flowables.ConnectableFlowable;
+import io.reactivex.core.internal.fuseable.HasUpstreamPublisher;
+import io.reactivex.core.internal.fuseable.QueueSubscription;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
 import io.reactivex.core.internal.queue.SpscArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.common.internal.util.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A connectable observable which shares an underlying source and dispatches source values to subscribers in a backpressure-aware

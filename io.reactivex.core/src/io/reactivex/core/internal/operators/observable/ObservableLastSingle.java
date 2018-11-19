@@ -13,11 +13,14 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.NoSuchElementException;
-
-import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
 import io.reactivex.core.internal.disposables.DisposableHelper;
+
+import java.util.NoSuchElementException;
 
 /**
  * Consumes the source ObservableSource and emits its last item, the defaultItem

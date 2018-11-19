@@ -13,13 +13,13 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.NoSuchElementException;
-
-import org.reactivestreams.*;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscription;
+
+import java.util.NoSuchElementException;
 
 public final class SingleFromPublisher<T> extends Single<T> {
 

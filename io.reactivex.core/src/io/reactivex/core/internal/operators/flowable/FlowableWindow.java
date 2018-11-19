@@ -13,16 +13,21 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.ArrayDeque;
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
-import io.reactivex.processors.UnicastProcessor;
+import io.reactivex.core.processors.UnicastProcessor;
+import org.reactivestreams.Processor;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.ArrayDeque;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 public final class FlowableWindow<T> extends AbstractFlowableWithUpstream<T, Flowable<T>> {
     final long size;

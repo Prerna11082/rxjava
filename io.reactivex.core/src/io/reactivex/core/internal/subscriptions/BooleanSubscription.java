@@ -12,9 +12,9 @@
  */
 package io.reactivex.core.internal.subscriptions;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Subscription implementation that ignores request but remembers the cancellation

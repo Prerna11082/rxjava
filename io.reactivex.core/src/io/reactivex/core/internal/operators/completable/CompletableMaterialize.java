@@ -13,8 +13,9 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import io.reactivex.annotations.Experimental;
-import io.reactivex.internal.operators.mixed.MaterializeSingleObserver;
+import io.reactivex.common.annotations.Experimental;
+import io.reactivex.core.internal.operators.mixed.MaterializeSingleObserver;
+import io.reactivex.core.*;
 
 /**
  * Turn the signal types of a Completable source into a single Notification of

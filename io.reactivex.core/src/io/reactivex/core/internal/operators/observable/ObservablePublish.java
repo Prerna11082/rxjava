@@ -13,16 +13,17 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.atomic.*;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Consumer;
+import io.reactivex.common.internal.util.ExceptionHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.fuseable.HasUpstreamObservableSource;
-import io.reactivex.common.internal.util.ExceptionHelper;
-import io.reactivex.observables.ConnectableObservable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.observables.ConnectableObservable;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A connectable observable which shares an underlying source and dispatches source values to observers in a backpressure-aware

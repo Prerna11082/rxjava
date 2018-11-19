@@ -13,14 +13,13 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.flowables.ConnectableFlowable;
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.Flowable;
-import io.reactivex.common.disposables.Disposable;
-import io.reactivex.flowables.ConnectableFlowable;
-import io.reactivex.common.functions.Consumer;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Wraps a {@link ConnectableFlowable} and calls its {@code connect()} method once

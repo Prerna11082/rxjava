@@ -13,11 +13,11 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.*;
-
-import io.reactivex.Flowable;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.operators.flowable.FlowableMap.MapSubscriber;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.operators.flowable.FlowableMap.MapSubscriber;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
 
 /**
  * Map working with an arbitrary Publisher source.

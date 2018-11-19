@@ -13,11 +13,11 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Delays all signal types by the given amount and re-emits them on the given scheduler.

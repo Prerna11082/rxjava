@@ -13,14 +13,18 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.concurrent.atomic.*;
-
-import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiPredicate;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeSource;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Compares two MaybeSources to see if they are both empty or emit the same value compared

@@ -13,14 +13,15 @@
 
 package io.reactivex.core.internal.observers;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.core.SingleObserver;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.exceptions.*;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiConsumer;
+import io.reactivex.core.SingleObserver;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class BiConsumerSingleObserver<T>
 extends AtomicReference<Disposable>

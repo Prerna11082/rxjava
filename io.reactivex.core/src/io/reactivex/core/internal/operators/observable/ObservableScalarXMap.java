@@ -13,16 +13,19 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.annotations.Nullable;
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Observable;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
-import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.QueueDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Utility classes to work with scalar-sourced XMap operators (where X == { flat, concat, switch }).

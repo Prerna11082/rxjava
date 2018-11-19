@@ -13,9 +13,9 @@
 
 package io.reactivex.core.internal.subscriptions;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 import io.reactivex.core.internal.fuseable.QueueSubscription;
+
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Base class extending AtomicLong (wip or request accounting) and QueueSubscription (fusion).

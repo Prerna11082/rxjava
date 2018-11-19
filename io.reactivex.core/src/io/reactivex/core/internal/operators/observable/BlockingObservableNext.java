@@ -13,13 +13,18 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.common.internal.util.*;
-import io.reactivex.observers.DisposableObserver;
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.core.Notification;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.internal.util.BlockingHelper;
+import io.reactivex.core.observers.DisposableObserver;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Returns an Iterable that blocks until the Observable emits another item, then returns that item.

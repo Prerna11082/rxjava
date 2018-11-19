@@ -13,14 +13,15 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.atomic.*;
-
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.internal.util.AtomicThrowable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.fuseable.SimplePlainQueue;
 import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.common.internal.util.AtomicThrowable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Merges an Observable and a Single by emitting the items of the Observable and the success

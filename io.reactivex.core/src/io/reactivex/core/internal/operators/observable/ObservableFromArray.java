@@ -12,10 +12,10 @@
  */
 
 package io.reactivex.core.internal.operators.observable;
-
-import io.reactivex.annotations.Nullable;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.observers.BasicQueueDisposable;
+import io.reactivex.core.*;
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.observers.BasicQueueDisposable;
 
 public final class ObservableFromArray<T> extends Observable<T> {
     final T[] array;

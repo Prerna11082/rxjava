@@ -15,22 +15,18 @@
  */
 package io.reactivex.core.internal.schedulers;
 
+import io.reactivex.*;
+import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.disposables.Disposables;
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.functions.Function;
+import io.reactivex.processors.FlowableProcessor;
+import io.reactivex.processors.UnicastProcessor;
+
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.Completable;
-import io.reactivex.CompletableObserver;
-import io.reactivex.Flowable;
-import io.reactivex.Observable;
-import io.reactivex.Scheduler;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.disposables.Disposables;
-import io.reactivex.functions.Function;
-import io.reactivex.common.internal.util.ExceptionHelper;
-import io.reactivex.processors.FlowableProcessor;
-import io.reactivex.processors.UnicastProcessor;
 
 /**
  * Allows the use of operators for controlling the timing around when actions

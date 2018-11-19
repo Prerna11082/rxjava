@@ -12,19 +12,21 @@
  */
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.Callable;
-
-import org.reactivestreams.*;
-
-import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiConsumer;
-import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.internal.fuseable.FuseToFlowable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.Callable;
 
 public final class FlowableCollectSingle<T, U> extends Single<U> implements FuseToFlowable<U> {
 

@@ -16,6 +16,7 @@ package io.reactivex.core.internal.operators.observable;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
 import java.util.NoSuchElementException;
 
 public final class ObservableSingleSingle<T> extends Single<T> {

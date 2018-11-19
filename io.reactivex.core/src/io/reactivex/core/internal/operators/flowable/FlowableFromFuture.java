@@ -13,13 +13,13 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.*;
-
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.subscriptions.DeferredScalarSubscription;
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.Flowable;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.core.internal.subscriptions.DeferredScalarSubscription;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 public final class FlowableFromFuture<T> extends Flowable<T> {
     final Future<? extends T> future;

@@ -13,17 +13,18 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.Iterator;
-
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
+import io.reactivex.core.internal.subscriptions.BasicQueueSubscription;
+import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.Flowable;
-import io.reactivex.annotations.Nullable;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
-import io.reactivex.core.internal.subscriptions.*;
-import io.reactivex.common.internal.util.BackpressureHelper;
+import java.util.Iterator;
 
 public final class FlowableFromIterable<T> extends Flowable<T> {
 

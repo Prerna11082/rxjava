@@ -14,11 +14,12 @@
 package io.reactivex.core.internal.operators.observable;
 
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.*;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.fuseable.FuseToObservable;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 import java.util.NoSuchElementException;
-import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableElementAtSingle<T> extends Single<T> implements FuseToObservable<T> {
     final ObservableSource<T> source;

@@ -13,18 +13,20 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.*;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.queue.MpscLinkedQueue;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.common.internal.util.AtomicThrowable;
-import io.reactivex.observers.DisposableObserver;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.queue.MpscLinkedQueue;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.observers.DisposableObserver;
 import io.reactivex.subjects.UnicastSubject;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObservableWindowBoundarySupplier<T, B> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final Callable<? extends ObservableSource<B>> other;

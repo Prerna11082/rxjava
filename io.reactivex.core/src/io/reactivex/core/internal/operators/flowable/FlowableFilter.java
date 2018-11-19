@@ -13,13 +13,14 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.Subscriber;
-
-import io.reactivex.Flowable;
-import io.reactivex.annotations.Nullable;
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.functions.Predicate;
-import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.internal.subscribers.*;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
+import io.reactivex.core.internal.fuseable.QueueSubscription;
+import io.reactivex.core.internal.subscribers.BasicFuseableConditionalSubscriber;
+import io.reactivex.core.internal.subscribers.BasicFuseableSubscriber;
+import org.reactivestreams.Subscriber;
 
 public final class FlowableFilter<T> extends AbstractFlowableWithUpstream<T, T> {
     final Predicate<? super T> predicate;

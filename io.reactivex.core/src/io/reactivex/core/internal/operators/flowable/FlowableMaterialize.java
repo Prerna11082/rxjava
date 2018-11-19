@@ -13,10 +13,9 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.Subscriber;
-
 import io.reactivex.core.internal.subscribers.SinglePostCompleteSubscriber;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
 
 public final class FlowableMaterialize<T> extends AbstractFlowableWithUpstream<T, Notification<T>> {
 

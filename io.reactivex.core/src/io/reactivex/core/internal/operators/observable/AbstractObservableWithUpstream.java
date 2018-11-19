@@ -13,7 +13,8 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.core.*;
+import io.reactivex.core.Observable;
+import io.reactivex.core.ObservableSource;
 import io.reactivex.core.internal.fuseable.HasUpstreamObservableSource;
 
 /**

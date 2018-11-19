@@ -13,12 +13,13 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.*;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.observers.ResumeSingleObserver;
+import io.reactivex.core.internal.observers.ResumeSingleObserver;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class SingleDelayWithObservable<T, U> extends Single<T> {
 

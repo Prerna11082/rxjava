@@ -13,14 +13,16 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeSource;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.subscribers.SinglePostCompleteSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import org.reactivestreams.Subscriber;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Subscribe to a main Flowable first, then when it completes normally, subscribe to a Maybe,

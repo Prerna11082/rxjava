@@ -13,15 +13,18 @@
 
 package io.reactivex.core.internal.operators.parallel;
 
-import org.reactivestreams.*;
-
-import io.reactivex.common.exceptions.*;
-import io.reactivex.common.functions.*;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.BiFunction;
+import io.reactivex.common.functions.Consumer;
 import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.core.parallel.*;
+import io.reactivex.core.parallel.ParallelFailureHandling;
+import io.reactivex.core.parallel.ParallelFlowable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 /**
  * Calls a Consumer for each upstream value passing by

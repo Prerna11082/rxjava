@@ -13,17 +13,23 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.exceptions.*;
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.exceptions.MissingBackpressureException;
+import io.reactivex.core.*;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.core.internal.queue.*;
+import io.reactivex.core.internal.fuseable.QueueSubscription;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
+import io.reactivex.core.internal.queue.SpscArrayQueue;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class CompletableConcat extends Completable {
     final Publisher<? extends CompletableSource> sources;

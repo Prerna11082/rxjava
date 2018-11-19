@@ -13,10 +13,12 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Consumer;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
+import io.reactivex.core.SingleSource;
 
 public final class SingleDoOnSuccess<T> extends Single<T> {
 

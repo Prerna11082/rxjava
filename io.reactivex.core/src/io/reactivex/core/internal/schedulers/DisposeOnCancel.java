@@ -13,9 +13,12 @@
 
 package io.reactivex.core.internal.schedulers;
 
-import java.util.concurrent.*;
-
 import io.reactivex.common.disposables.Disposable;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Implements the Future interface and calls dispose() on cancel() but

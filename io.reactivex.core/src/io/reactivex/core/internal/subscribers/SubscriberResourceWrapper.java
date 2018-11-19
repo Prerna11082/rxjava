@@ -13,14 +13,14 @@
 
 package io.reactivex.core.internal.subscribers;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import org.reactivestreams.*;
-
-import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class SubscriberResourceWrapper<T> extends AtomicReference<Disposable> implements FlowableSubscriber<T>, Disposable, Subscription {
 

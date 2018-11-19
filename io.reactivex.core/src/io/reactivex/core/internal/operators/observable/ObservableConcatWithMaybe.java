@@ -13,10 +13,12 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.atomic.AtomicReference;
+import io.reactivex.core.*;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Subscribe to a main Observable first, then when it completes normally, subscribe to a Maybe,

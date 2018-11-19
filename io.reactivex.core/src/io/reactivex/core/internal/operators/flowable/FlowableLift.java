@@ -13,10 +13,9 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.Subscriber;
-
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
 
 /**
  * Allows lifting operators into a chain of Publishers.

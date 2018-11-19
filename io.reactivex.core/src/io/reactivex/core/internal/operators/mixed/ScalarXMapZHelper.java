@@ -13,14 +13,16 @@
 
 package io.reactivex.core.internal.operators.mixed;
 
-import java.util.concurrent.Callable;
+import io.reactivex.core.*;
 
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.operators.maybe.MaybeToObservable;
+import io.reactivex.core.internal.operators.maybe.MaybeToObservable;
 import io.reactivex.core.internal.operators.single.SingleToObservable;
+
+import java.util.concurrent.Callable;
 
 /**
  * Utility class to extract a value from a scalar source reactive type,

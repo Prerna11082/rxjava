@@ -13,12 +13,13 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.*;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.observers.SerializedObserver;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObservableSampleTimed<T> extends AbstractObservableWithUpstream<T, T> {
     final long period;

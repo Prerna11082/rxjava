@@ -16,12 +16,13 @@
 
 package io.reactivex.core.internal.schedulers;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.internal.functions.Functions;
-import io.reactivex.schedulers.SchedulerRunnableIntrospection;
+import io.reactivex.core.internal.functions.Functions;
+import io.reactivex.core.schedulers.SchedulerRunnableIntrospection;
+
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Base functionality for direct tasks that manage a runnable and cancellation/completion.

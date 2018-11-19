@@ -12,14 +12,15 @@
  */
 
 package io.reactivex.core.internal.operators.observable;
-
-import java.util.concurrent.Callable;
-
+import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.common.functions.*;
+import io.reactivex.common.functions.BiFunction;
+import io.reactivex.common.functions.Consumer;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.Callable;
 
 public final class ObservableGenerate<T, S> extends Observable<T> {
     final Callable<S> stateSupplier;

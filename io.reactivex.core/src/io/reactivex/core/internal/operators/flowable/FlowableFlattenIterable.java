@@ -13,21 +13,28 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.exceptions.MissingBackpressureException;
+import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.internal.fuseable.QueueSubscription;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
+import io.reactivex.core.internal.queue.SpscArrayQueue;
+import io.reactivex.core.internal.subscriptions.BasicIntQueueSubscription;
+import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import java.util.Iterator;
 import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.annotations.Nullable;
-import io.reactivex.common.exceptions.*;
-import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.core.internal.queue.SpscArrayQueue;
-import io.reactivex.core.internal.subscriptions.*;
-import io.reactivex.common.internal.util.*;
-import io.reactivex.core.plugins.RxJavaPlugins;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class FlowableFlattenIterable<T, R> extends AbstractFlowableWithUpstream<T, R> {
 

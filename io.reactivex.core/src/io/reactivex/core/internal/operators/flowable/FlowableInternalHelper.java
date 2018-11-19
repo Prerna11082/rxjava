@@ -12,14 +12,19 @@
  */
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.List;
-import java.util.concurrent.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.flowables.ConnectableFlowable;
 import io.reactivex.common.functions.*;
+import io.reactivex.core.Emitter;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.Scheduler;
+import io.reactivex.core.flowables.ConnectableFlowable;
 import io.reactivex.internal.functions.*;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Helper utility class to support Flowable with inner classes.

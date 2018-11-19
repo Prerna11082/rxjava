@@ -13,11 +13,13 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.functions.Consumer;
-import io.reactivex.observables.ConnectableObservable;
+import io.reactivex.core.Observable;
+import io.reactivex.core.Observer;
+import io.reactivex.core.observables.ConnectableObservable;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Wraps a ConnectableObservable and calls its connect() method once

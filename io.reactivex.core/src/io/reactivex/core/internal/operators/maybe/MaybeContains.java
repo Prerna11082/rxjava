@@ -14,8 +14,8 @@
 package io.reactivex.core.internal.operators.maybe;
 
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.HasUpstreamMaybeSource;
 
 /**

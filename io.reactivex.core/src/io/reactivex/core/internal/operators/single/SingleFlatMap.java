@@ -16,8 +16,9 @@ package io.reactivex.core.internal.operators.single;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
+
 import java.util.concurrent.atomic.AtomicReference;
 
 public final class SingleFlatMap<T, R> extends Single<R> {

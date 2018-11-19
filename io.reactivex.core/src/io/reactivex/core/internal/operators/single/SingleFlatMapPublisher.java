@@ -13,23 +13,18 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.atomic.AtomicReference;
-
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.*;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
-import io.reactivex.Flowable;
-import io.reactivex.FlowableSubscriber;
-import io.reactivex.Scheduler;
-import io.reactivex.SingleObserver;
-import io.reactivex.SingleSource;
-import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A Flowable that emits items based on applying a specified function to the item emitted by the

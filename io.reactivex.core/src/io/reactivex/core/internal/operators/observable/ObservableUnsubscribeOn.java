@@ -13,12 +13,14 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
+import io.reactivex.core.Scheduler;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public final class ObservableUnsubscribeOn<T> extends AbstractObservableWithUpstream<T, T> {
     final Scheduler scheduler;

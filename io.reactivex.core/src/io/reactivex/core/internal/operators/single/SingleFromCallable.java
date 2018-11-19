@@ -13,13 +13,13 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.concurrent.Callable;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.disposables.Disposables;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.Callable;
 
 public final class SingleFromCallable<T> extends Single<T> {
 

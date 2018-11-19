@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.observable;
 
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**

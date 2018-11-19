@@ -12,11 +12,12 @@
  */
 
 package io.reactivex.core.internal.operators.mixed;
-
-import java.util.concurrent.atomic.AtomicReference;
+import io.reactivex.core.*;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * After Completable completes, it relays the signals

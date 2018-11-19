@@ -13,12 +13,13 @@
 
 package io.reactivex.core.internal.schedulers;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicReferenceArray;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.internal.disposables.DisposableContainer;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
 public final class ScheduledRunnable extends AtomicReferenceArray<Object>
 implements Runnable, Callable<Object>, Disposable {

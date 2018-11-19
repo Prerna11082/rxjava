@@ -13,12 +13,12 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import io.reactivex.annotations.Experimental;
+import io.reactivex.common.annotations.Experimental;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
 
 /**
  * Maps the success value of the source to a Notification, then

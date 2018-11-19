@@ -13,17 +13,22 @@
 
 package io.reactivex.core.internal.operators.mixed;
 
-import java.util.concurrent.atomic.*;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.common.internal.util.ErrorMode;
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.core.*;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.fuseable.*;
+import io.reactivex.core.internal.fuseable.QueueDisposable;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
 import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.common.internal.util.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Maps the upstream items into {@link CompletableSource}s and subscribes to them one after the

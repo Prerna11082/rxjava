@@ -12,11 +12,10 @@
  */
 package io.reactivex.core.internal.operators.single;
 
-import org.reactivestreams.Subscriber;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.subscriptions.DeferredScalarSubscription;
+import org.reactivestreams.Subscriber;
 
 /**
  * Wraps a Single and exposes it as a Flowable.

@@ -13,13 +13,14 @@
 
 package io.reactivex.core.internal.operators.completable;
 
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.SequentialDisposable;
+
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.core.internal.disposables.*;
-import io.reactivex.internal.functions.ObjectHelper;
 
 public final class CompletableConcatIterable extends Completable {
     final Iterable<? extends CompletableSource> sources;

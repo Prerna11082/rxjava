@@ -13,14 +13,15 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.*;
-import java.util.concurrent.Callable;
-
+import io.reactivex.common.functions.Function;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.Observable;
+import io.reactivex.core.SingleSource;
 import org.reactivestreams.Publisher;
 
-import io.reactivex.core.*;
-import io.reactivex.core.Observable;
-import io.reactivex.common.functions.Function;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.concurrent.Callable;
 
 /**
  * Helper utility class to support Single with inner classes.

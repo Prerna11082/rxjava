@@ -13,11 +13,11 @@
 
 package io.reactivex.core.internal.operators.parallel;
 
-import org.reactivestreams.*;
-
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.operators.flowable.FlowableFlatMap;
-import io.reactivex.parallel.ParallelFlowable;
+import io.reactivex.core.internal.operators.flowable.FlowableFlatMap;
+import io.reactivex.core.parallel.ParallelFlowable;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
 
 /**
  * Flattens the generated Publishers on each rail.

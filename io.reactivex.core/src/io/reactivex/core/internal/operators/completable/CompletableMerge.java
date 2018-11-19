@@ -13,15 +13,21 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.disposables.*;
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.Completable;
+import io.reactivex.core.CompletableObserver;
+import io.reactivex.core.CompletableSource;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.common.internal.util.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class CompletableMerge extends Completable {
     final Publisher<? extends CompletableSource> source;

@@ -13,16 +13,15 @@
 
 package io.reactivex.core.internal.util;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.Subscription;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.ProtocolViolationException;
-import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Utility class to help report multiple subscriptions with the same

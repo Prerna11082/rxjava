@@ -13,12 +13,12 @@
 
 package io.reactivex.core.internal.disposables;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.ProtocolViolationException;
 import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Utility methods for working with Disposables atomically.

@@ -13,17 +13,18 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.*;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicReference;
-
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.Notification;
 import io.reactivex.core.internal.util.BlockingHelper;
-import org.reactivestreams.Publisher;
-
-import io.reactivex.core.*;
-import io.reactivex.common.internal.util.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
 import io.reactivex.core.subscribers.DisposableSubscriber;
+import org.reactivestreams.Publisher;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Wait for and iterate over the latest values of the source observable. If the source works faster than the

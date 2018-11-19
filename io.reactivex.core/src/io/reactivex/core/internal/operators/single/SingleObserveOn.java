@@ -13,10 +13,10 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class SingleObserveOn<T> extends Single<T> {
 

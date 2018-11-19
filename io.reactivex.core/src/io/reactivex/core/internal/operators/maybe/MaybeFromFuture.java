@@ -13,10 +13,15 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.concurrent.*;
-
-import io.reactivex.disposables.*;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.core.Maybe;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.disposables.Disposables;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Waits until the source Future completes or the wait times out; treats a {@code null}

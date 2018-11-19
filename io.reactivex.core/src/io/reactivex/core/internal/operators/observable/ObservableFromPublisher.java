@@ -12,10 +12,13 @@
  */
 package io.reactivex.core.internal.operators.observable;
 
-import org.reactivestreams.*;
-
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.Observable;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscription;
 
 public final class ObservableFromPublisher<T> extends Observable<T> {
 

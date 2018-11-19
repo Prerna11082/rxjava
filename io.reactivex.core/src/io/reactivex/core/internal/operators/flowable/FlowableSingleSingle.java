@@ -13,14 +13,17 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.NoSuchElementException;
-
-import org.reactivestreams.Subscription;
-
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
 import io.reactivex.core.internal.fuseable.FuseToFlowable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscription;
+
+import java.util.NoSuchElementException;
 
 public final class FlowableSingleSingle<T> extends Single<T> implements FuseToFlowable<T> {
 

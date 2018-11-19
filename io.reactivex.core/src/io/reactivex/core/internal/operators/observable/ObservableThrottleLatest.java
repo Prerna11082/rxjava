@@ -13,11 +13,12 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.*;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Emits the next or latest item when the given time elapses.

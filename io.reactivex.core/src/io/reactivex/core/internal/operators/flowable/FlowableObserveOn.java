@@ -13,18 +13,25 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.atomic.AtomicLong;
-
-import org.reactivestreams.*;
-
-import io.reactivex.Scheduler.Worker;
-import io.reactivex.annotations.Nullable;
-import io.reactivex.common.exceptions.*;
-import io.reactivex.core.internal.fuseable.*;
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.exceptions.MissingBackpressureException;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.Scheduler;
+import io.reactivex.core.Scheduler.Worker;
+import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
+import io.reactivex.core.internal.fuseable.QueueSubscription;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
 import io.reactivex.core.internal.queue.SpscArrayQueue;
-import io.reactivex.core.internal.subscriptions.*;
-import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.subscriptions.BasicIntQueueSubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicLong;
 
 public final class FlowableObserveOn<T> extends AbstractFlowableWithUpstream<T, T> {
 final Scheduler scheduler;

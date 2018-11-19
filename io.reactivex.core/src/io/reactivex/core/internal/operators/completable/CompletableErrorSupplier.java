@@ -13,11 +13,13 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import io.reactivex.internal.functions.ObjectHelper;
-import java.util.concurrent.Callable;
-
 import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Completable;
+import io.reactivex.core.CompletableObserver;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
+
+import java.util.concurrent.Callable;
 
 public final class CompletableErrorSupplier extends Completable {
 

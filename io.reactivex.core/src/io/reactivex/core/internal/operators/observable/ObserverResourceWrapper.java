@@ -13,11 +13,11 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.Observer;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.core.internal.disposables.*;
+import io.reactivex.core.Observer;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObserverResourceWrapper<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable {
 

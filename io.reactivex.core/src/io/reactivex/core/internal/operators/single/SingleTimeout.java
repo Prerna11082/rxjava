@@ -13,12 +13,13 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static io.reactivex.common.internal.util.ExceptionHelper.timeoutMessage;
 

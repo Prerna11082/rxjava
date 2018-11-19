@@ -16,7 +16,9 @@
 
 package io.reactivex.core.internal.schedulers;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicReference;
 

@@ -13,16 +13,17 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.common.internal.functions.ObjectHelper;
-import java.util.Iterator;
-
-import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiFunction;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Observable;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.Iterator;
 
 public final class ObservableZipIterable<T, U, V> extends Observable<V> {
     final Observable<? extends T> source;

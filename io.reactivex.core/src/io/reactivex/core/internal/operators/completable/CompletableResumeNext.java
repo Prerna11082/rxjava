@@ -13,14 +13,17 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.core.*;
-import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.exceptions.*;
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Completable;
+import io.reactivex.core.CompletableObserver;
+import io.reactivex.core.CompletableSource;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class CompletableResumeNext extends Completable {
 

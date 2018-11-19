@@ -13,13 +13,13 @@
 
 package io.reactivex.core.internal.observers;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.core.Observer;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.core.internal.fuseable.*;
+import io.reactivex.core.Observer;
+import io.reactivex.core.internal.fuseable.SimplePlainQueue;
 import io.reactivex.core.internal.util.ObservableQueueDrain;
 import io.reactivex.core.internal.util.QueueDrainHelper;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Abstract base class for subscribers that hold another subscriber, a queue

@@ -13,11 +13,11 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import io.reactivex.internal.functions.ObjectHelper;
-import java.util.concurrent.Callable;
-
 import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
+
+import java.util.concurrent.Callable;
 
 public final class SingleError<T> extends Single<T> {
 

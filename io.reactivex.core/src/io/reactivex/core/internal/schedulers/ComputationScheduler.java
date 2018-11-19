@@ -15,14 +15,17 @@
  */
 package io.reactivex.core.internal.schedulers;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.Scheduler;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.*;
-import io.reactivex.core.internal.disposables.*;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.disposables.ListCompositeDisposable;
+
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Holds a fixed pool of worker threads and assigns them

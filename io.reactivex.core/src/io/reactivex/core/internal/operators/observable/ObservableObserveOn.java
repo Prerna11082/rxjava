@@ -13,15 +13,16 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.annotations.Nullable;
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.internal.observers.BasicIntQueueDisposable;
+import io.reactivex.core.internal.fuseable.QueueDisposable;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
 import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.internal.schedulers.TrampolineScheduler;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.observers.BasicIntQueueDisposable;
 
 public final class ObservableObserveOn<T> extends AbstractObservableWithUpstream<T, T> {
     final Scheduler scheduler;

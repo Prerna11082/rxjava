@@ -13,12 +13,20 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import java.util.concurrent.*;
+import io.reactivex.core.*;
 
-import io.reactivex.common.functions.*;
-import io.reactivex.internal.functions.*;
-import io.reactivex.internal.observers.*;
-import io.reactivex.common.internal.util.*;
+import io.reactivex.common.functions.Action;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.common.internal.util.BlockingIgnoringReceiver;
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.common.internal.functions.*;
+import io.reactivex.core.internal.functions.Functions;
+import io.reactivex.core.internal.observers.*;
+import io.reactivex.core.internal.util.BlockingHelper;
+import io.reactivex.core.internal.util.NotificationLite;
+
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Utility methods to consume an Observable in a blocking manner with callbacks or Observer.

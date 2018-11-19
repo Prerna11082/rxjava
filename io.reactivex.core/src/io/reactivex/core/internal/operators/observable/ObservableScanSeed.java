@@ -12,15 +12,17 @@
  */
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.common.internal.functions.ObjectHelper;
-import java.util.concurrent.Callable;
-
-import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiFunction;
-import io.reactivex.core.internal.disposables.*;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.Callable;
 
 public final class ObservableScanSeed<T, R> extends AbstractObservableWithUpstream<T, R> {
     final BiFunction<R, ? super T, R> accumulator;

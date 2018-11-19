@@ -13,15 +13,17 @@
 
 package io.reactivex.core.internal.operators.parallel;
 
-import org.reactivestreams.*;
-
-import io.reactivex.common.exceptions.*;
-import io.reactivex.common.functions.*;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.BiFunction;
+import io.reactivex.common.functions.Predicate;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.parallel.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.parallel.*;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 /**
  * Filters each 'rail' of the source ParallelFlowable with a predicate function.

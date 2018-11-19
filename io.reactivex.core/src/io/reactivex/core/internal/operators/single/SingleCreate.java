@@ -13,13 +13,14 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Cancellable;
-import io.reactivex.core.internal.disposables.*;
+import io.reactivex.core.internal.disposables.CancellableDisposable;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class SingleCreate<T> extends Single<T> {
 

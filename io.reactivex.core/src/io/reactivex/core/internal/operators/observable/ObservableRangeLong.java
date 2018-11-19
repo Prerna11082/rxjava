@@ -12,8 +12,8 @@
  */
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.annotations.Nullable;
-import io.reactivex.internal.observers.BasicIntQueueDisposable;
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.core.internal.observers.BasicIntQueueDisposable;
 
 public final class ObservableRangeLong extends Observable<Long> {
     private final long start;

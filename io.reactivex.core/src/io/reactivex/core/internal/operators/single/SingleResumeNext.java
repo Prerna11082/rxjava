@@ -13,14 +13,15 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.exceptions.*;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.observers.ResumeSingleObserver;
+import io.reactivex.core.internal.observers.ResumeSingleObserver;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class SingleResumeNext<T> extends Single<T> {
     final SingleSource<? extends T> source;
