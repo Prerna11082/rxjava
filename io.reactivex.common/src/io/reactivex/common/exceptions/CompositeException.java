@@ -236,7 +236,7 @@ public final class CompositeException extends RuntimeException {
         }
     }
 
-    static final class CompositeExceptionCausalChain extends RuntimeException {
+    public static final class CompositeExceptionCausalChain extends RuntimeException {
         private static final long serialVersionUID = 3875212506787802066L;
         /* package-private */static final String MESSAGE = "Chain of Causes for CompositeException In Order Received =>";
 
@@ -278,7 +278,7 @@ public final class CompositeException extends RuntimeException {
      * @param e the {@link Throwable} {@code e}.
      * @return The root cause of {@code e}. If {@code e.getCause()} returns {@code null} or {@code e}, just return {@code e} itself.
      */
-    /*private */Throwable getRootCause(Throwable e) {
+    public Throwable getRootCause(Throwable e) {
         Throwable root = e.getCause();
         if (root == null || cause == root) {
             return e;

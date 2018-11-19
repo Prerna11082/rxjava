@@ -146,7 +146,7 @@ public final class AsyncProcessor<T> extends FlowableProcessor<T> {
      * @since 2.0
      */
     @SuppressWarnings("unchecked")
-    AsyncProcessor() {
+    public AsyncProcessor() {
         this.subscribers = new AtomicReference<AsyncSubscription<T>[]>(EMPTY);
     }
 
@@ -371,7 +371,7 @@ public final class AsyncProcessor<T> extends FlowableProcessor<T> {
         return array;
     }
 
-    static final class AsyncSubscription<T> extends DeferredScalarSubscription<T> {
+    public static final class AsyncSubscription<T> extends DeferredScalarSubscription<T> {
         private static final long serialVersionUID = 5629876084736248016L;
 
         final AsyncProcessor<T> parent;
