@@ -11,12 +11,12 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.ArrayCompositeDisposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.observers.SerializedObserver;
+import io.reactivex.core.observers.SerializedObserver;
 
 public final class ObservableSkipUntil<T, U> extends AbstractObservableWithUpstream<T, T> {
     final ObservableSource<U> other;

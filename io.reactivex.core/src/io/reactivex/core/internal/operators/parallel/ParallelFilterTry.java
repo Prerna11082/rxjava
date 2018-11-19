@@ -21,7 +21,7 @@ import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
-import io.reactivex.parallel.*;
+import io.reactivex.core.parallel.*;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 

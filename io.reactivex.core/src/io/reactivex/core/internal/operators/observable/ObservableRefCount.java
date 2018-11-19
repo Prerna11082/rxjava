@@ -11,7 +11,7 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.functions.Consumer;
@@ -20,7 +20,7 @@ import io.reactivex.core.internal.disposables.ResettableConnectable;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
 import io.reactivex.core.schedulers.Schedulers;
-import io.reactivex.observables.ConnectableObservable;
+import io.reactivex.core.observables.ConnectableObservable;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;

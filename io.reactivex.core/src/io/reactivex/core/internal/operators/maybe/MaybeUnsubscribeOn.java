@@ -14,6 +14,9 @@
 package io.reactivex.core.internal.operators.maybe;
 
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeSource;
+import io.reactivex.core.Scheduler;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 
 import java.util.concurrent.atomic.AtomicReference;

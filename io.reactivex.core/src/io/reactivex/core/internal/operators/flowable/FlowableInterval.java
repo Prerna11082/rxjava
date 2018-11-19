@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.flowable;
 import io.reactivex.core.Scheduler.Worker;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.MissingBackpressureException;
-import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 import io.reactivex.core.Flowable;
 import io.reactivex.core.Scheduler;
 import io.reactivex.core.internal.disposables.DisposableHelper;

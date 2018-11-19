@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import io.reactivex.MaybeSource;
+import io.reactivex.core.MaybeSource;
 import io.reactivex.common.functions.Function;
 import org.reactivestreams.Publisher;
 

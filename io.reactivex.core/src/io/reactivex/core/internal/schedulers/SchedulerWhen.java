@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.reactivex.core.internal.schedulers;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
 
 import io.reactivex.*;
 import io.reactivex.common.annotations.NonNull;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.disposables.Disposables;
+import io.reactivex.core.disposables.Disposables;
 import io.reactivex.common.internal.util.ExceptionHelper;
-import io.reactivex.functions.Function;
-import io.reactivex.processors.FlowableProcessor;
-import io.reactivex.processors.UnicastProcessor;
+import io.reactivex.common.functions.Function;
+import io.reactivex.core.processors.FlowableProcessor;
+import io.reactivex.core.processors.UnicastProcessor;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -69,7 +69,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * Generally each {@link Observable} uses its own {@link io.reactivex.core.Scheduler.Worker Worker}. This means
  * that this will essentially limit the number of concurrent subscribes. The
  * danger comes from using operators like
- * {@link Flowable#zip(org.reactivestreams.Publisher, org.reactivestreams.Publisher, io.reactivex.functions.BiFunction)} where
+ * {@link Flowable#zip(org.reactivestreams.Publisher, org.reactivestreams.Publisher, io.reactivex.common.functions.BiFunction)} where
  * subscribing to the first {@link Observable} could deadlock the subscription
  * to the second.
  * 

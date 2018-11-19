@@ -16,6 +16,7 @@ package io.reactivex.core.internal.subscribers;
 import io.reactivex.common.internal.util.AtomicThrowable;
 import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.internal.util.HalfSerializer;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 

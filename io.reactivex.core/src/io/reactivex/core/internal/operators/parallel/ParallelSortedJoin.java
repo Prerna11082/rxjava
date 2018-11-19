@@ -14,12 +14,12 @@
 package io.reactivex.core.internal.operators.parallel;
 
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.common.internal.util.BackpressureHelper;
 import io.reactivex.core.Flowable;
 import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
-import io.reactivex.parallel.ParallelFlowable;
+import io.reactivex.core.parallel.ParallelFlowable;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 

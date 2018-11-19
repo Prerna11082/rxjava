@@ -11,10 +11,10 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.disposables.Disposables;
+import io.reactivex.core.disposables.Disposables;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;

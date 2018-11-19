@@ -11,15 +11,15 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.internal.util.AtomicThrowable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.queue.MpscLinkedQueue;
 import io.reactivex.core.plugins.RxJavaPlugins;
-import io.reactivex.observers.DisposableObserver;
-import io.reactivex.subjects.UnicastSubject;
+import io.reactivex.core.observers.DisposableObserver;
+import io.reactivex.core.subjects.UnicastSubject;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;

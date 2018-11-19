@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.subscriptions;
 
 import io.reactivex.common.annotations.Nullable;
-import io.reactivex.internal.fuseable.QueueSubscription;
+import io.reactivex.core.internal.fuseable.QueueSubscription;
 import org.reactivestreams.Subscriber;
 
 /**

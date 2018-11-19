@@ -17,7 +17,7 @@ import io.reactivex.common.functions.Function;
 import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.common.internal.util.ErrorMode;
 import io.reactivex.core.internal.operators.flowable.FlowableConcatMap;
-import io.reactivex.parallel.ParallelFlowable;
+import io.reactivex.core.parallel.ParallelFlowable;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 

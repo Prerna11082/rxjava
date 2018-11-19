@@ -13,10 +13,10 @@
 
 package io.reactivex.core.internal.subscribers;
 
-import io.reactivex.FlowableSubscriber;
-import io.reactivex.common.internal.util.QueueDrainHelper;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.internal.util.QueueDrainHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.fuseable.*;
+import io.reactivex.core.internal.fuseable.*;
 import org.reactivestreams.Subscription;
 
 import java.util.concurrent.atomic.AtomicReference;

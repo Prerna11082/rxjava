@@ -15,6 +15,9 @@ package io.reactivex.core.internal.operators.maybe;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.core.Maybe;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.disposables.Disposables;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
 import java.util.concurrent.Callable;

@@ -11,7 +11,7 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.internal.util.ExceptionHelper;
@@ -22,11 +22,11 @@ import io.reactivex.core.internal.util.BlockingHelper;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.Observer;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+
 
 public final class BlockingObservableIterable<T> implements Iterable<T> {
     final ObservableSource<? extends T> source;

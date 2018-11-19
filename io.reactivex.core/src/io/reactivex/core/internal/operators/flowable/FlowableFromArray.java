@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.flowable;
 
 import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.internal.functions.ObjectHelper;
-import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 import io.reactivex.core.Flowable;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.core.internal.subscriptions.BasicQueueSubscription;

@@ -22,7 +22,7 @@ import io.reactivex.core.internal.fuseable.SimpleQueue;
 import io.reactivex.core.internal.queue.SpscArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
-import io.reactivex.parallel.ParallelFlowable;
+import io.reactivex.core.parallel.ParallelFlowable;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 

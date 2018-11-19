@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.flowable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.exceptions.MissingBackpressureException;
 import io.reactivex.common.functions.Action;
-import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 import io.reactivex.core.BackpressureOverflowStrategy;
 import io.reactivex.core.Flowable;
 import io.reactivex.core.FlowableSubscriber;

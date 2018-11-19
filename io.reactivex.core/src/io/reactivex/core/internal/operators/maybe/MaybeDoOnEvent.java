@@ -17,6 +17,8 @@ import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.CompositeException;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiConsumer;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeSource;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**

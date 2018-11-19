@@ -13,12 +13,12 @@
 
 package io.reactivex.core.internal.subscribers;
 
-import io.reactivex.FlowableSubscriber;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.*;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.*;
 import org.reactivestreams.Subscription;
 
 import java.util.concurrent.atomic.AtomicReference;

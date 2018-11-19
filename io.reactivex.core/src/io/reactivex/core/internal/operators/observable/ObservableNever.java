@@ -10,10 +10,8 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Observer;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 
 public final class ObservableNever extends Observable<Object> {

@@ -11,21 +11,21 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.schedulers;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
 
-import io.reactivex.Scheduler;
+import io.reactivex.core.Scheduler;
 import io.reactivex.common.annotations.NonNull;
 import io.reactivex.common.disposables.CompositeDisposable;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
+import io.reactivex.core.internal.functions.Functions;
 import io.reactivex.core.internal.queue.MpscLinkedQueue;
 import io.reactivex.core.plugins.RxJavaPlugins;
 import io.reactivex.core.schedulers.SchedulerRunnableIntrospection;
 import io.reactivex.core.schedulers.Schedulers;
-import io.reactivex.internal.functions.Functions;
-import io.reactivex.internal.schedulers.ExecutorScheduler.ExecutorWorker.BooleanRunnable;
+import io.reactivex.core.internal.schedulers.ExecutorScheduler.ExecutorWorker.BooleanRunnable;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;

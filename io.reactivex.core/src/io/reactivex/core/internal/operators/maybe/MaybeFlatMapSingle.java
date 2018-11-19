@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import io.reactivex.*;
+import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;

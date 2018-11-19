@@ -13,12 +13,14 @@
 
 package io.reactivex.core.internal.subscribers;
 
-import io.reactivex.FlowableSubscriber;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.internal.util.QueueDrain;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.exceptions.MissingBackpressureException;
-import io.reactivex.internal.fuseable.*;
+import io.reactivex.common.exceptions.MissingBackpressureException;
+import io.reactivex.core.internal.fuseable.*;
+import io.reactivex.core.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.QueueDrainHelper;
 import org.reactivestreams.Subscriber;
 
 import java.util.concurrent.atomic.AtomicInteger;

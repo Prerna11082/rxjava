@@ -22,7 +22,7 @@ import io.reactivex.core.internal.subscriptions.EmptySubscription;
 import io.reactivex.core.internal.subscriptions.SubscriptionArbiter;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.subscribers.SerializedSubscriber;
-import io.reactivex.processors.*;
+import io.reactivex.core.processors.*;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;

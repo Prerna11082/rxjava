@@ -12,9 +12,10 @@
  */
 package io.reactivex.core.internal.subscribers;
 
-import io.reactivex.FlowableSubscriber;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.common.internal.util.ExceptionHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.internal.util.BlockingHelper;
 import org.reactivestreams.Subscription;
 
 import java.util.concurrent.CountDownLatch;

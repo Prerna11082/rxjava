@@ -20,7 +20,7 @@ import io.reactivex.core.internal.subscribers.DeferredScalarSubscriber;
 import io.reactivex.core.internal.subscriptions.EmptySubscription;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
-import io.reactivex.parallel.ParallelFlowable;
+import io.reactivex.core.parallel.ParallelFlowable;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
