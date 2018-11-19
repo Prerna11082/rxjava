@@ -23,10 +23,10 @@ import io.reactivex.disposables.*;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.util.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class FlowableBufferBoundary<T, U extends Collection<? super T>, Open, Close>
 extends AbstractFlowableWithUpstream<T, U> {

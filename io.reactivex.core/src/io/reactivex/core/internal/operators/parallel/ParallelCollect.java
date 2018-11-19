@@ -21,9 +21,9 @@ import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiConsumer;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.subscribers.DeferredScalarSubscriber;
-import io.reactivex.internal.subscriptions.*;
+import io.reactivex.core.internal.subscriptions.*;
 import io.reactivex.parallel.ParallelFlowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Reduce the sequence of values in each 'rail' to a single value.

@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import io.reactivex.disposables.*;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Signals the event of the first MaybeSource that signals.

@@ -17,8 +17,8 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.reactivestreams.*;
 
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Limits both the total request amount and items received from the upstream.

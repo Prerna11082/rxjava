@@ -15,10 +15,10 @@ package io.reactivex.core.internal.operators.observable;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.Callable;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.functions.BiConsumer;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.disposables.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableCollect<T, U> extends AbstractObservableWithUpstream<T, U> {
     final Callable<? extends U> initialSupplier;

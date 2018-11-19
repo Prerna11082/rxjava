@@ -12,7 +12,7 @@
  */
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 
 public final class ObservableTakeLastOne<T> extends AbstractObservableWithUpstream<T, T> {

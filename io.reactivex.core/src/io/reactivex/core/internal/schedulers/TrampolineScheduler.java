@@ -19,12 +19,13 @@ package io.reactivex.core.internal.schedulers;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import io.reactivex.Scheduler;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.*;
+import io.reactivex.core.Scheduler;
+import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.disposables.*;
+import io.reactivex.core.disposables.Disposables;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Schedules work on the current thread but does not execute immediately. Work is put in a queue and executed

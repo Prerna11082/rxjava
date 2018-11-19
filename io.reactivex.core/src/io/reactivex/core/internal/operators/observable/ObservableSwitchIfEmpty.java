@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
 
 public final class ObservableSwitchIfEmpty<T> extends AbstractObservableWithUpstream<T, T> {

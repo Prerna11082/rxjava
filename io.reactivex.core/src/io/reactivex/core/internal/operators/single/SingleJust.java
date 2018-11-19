@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import io.reactivex.disposables.Disposables;
+import io.reactivex.common.disposables.Disposables;
 
 public final class SingleJust<T> extends Single<T> {
 

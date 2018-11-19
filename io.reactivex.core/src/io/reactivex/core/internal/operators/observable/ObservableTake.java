@@ -13,9 +13,10 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.disposables.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableTake<T> extends AbstractObservableWithUpstream<T, T> {
     final long limit;

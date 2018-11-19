@@ -19,11 +19,11 @@ import org.reactivestreams.*;
 
 import io.reactivex.common.exceptions.MissingBackpressureException;
 import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.internal.queue.SpscArrayQueue;
+import io.reactivex.core.internal.queue.SpscArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.*;
+import io.reactivex.common.internal.util.*;
 import io.reactivex.parallel.ParallelFlowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Merges the individual 'rails' of the source ParallelFlowable, unordered,

@@ -13,8 +13,8 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.disposables.*;
 import io.reactivex.observers.SerializedObserver;
 
 public final class ObservableSkipUntil<T, U> extends AbstractObservableWithUpstream<T, T> {

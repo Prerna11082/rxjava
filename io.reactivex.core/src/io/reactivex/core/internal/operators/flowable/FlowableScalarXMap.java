@@ -21,8 +21,8 @@ import io.reactivex.Flowable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Utility classes to work with scalar-sourced XMap operators (where X == { flat, concat, switch }).

@@ -15,15 +15,16 @@ package io.reactivex.core.internal.operators.mixed;
 
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.SimplePlainQueue;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.internal.util.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.common.internal.util.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Maps each upstream item into a {@link MaybeSource}, subscribes to them one after the other terminates

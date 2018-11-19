@@ -15,12 +15,13 @@ package io.reactivex.core.internal.operators.flowable;
 
 import org.reactivestreams.*;
 
-import io.reactivex.annotations.*;
+import io.reactivex.core.*;
+import io.reactivex.common.annotations.*;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Action;
 import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Execute an action after an onError, onComplete or a cancel event.

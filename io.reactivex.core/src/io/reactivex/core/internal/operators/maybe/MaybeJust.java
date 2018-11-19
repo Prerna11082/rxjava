@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import io.reactivex.disposables.Disposables;
+import io.reactivex.common.disposables.Disposables;
 import io.reactivex.core.internal.fuseable.ScalarCallable;
 
 /**

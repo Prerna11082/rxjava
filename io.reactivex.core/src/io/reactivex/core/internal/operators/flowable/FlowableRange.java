@@ -18,8 +18,8 @@ import org.reactivestreams.Subscriber;
 import io.reactivex.Flowable;
 import io.reactivex.annotations.Nullable;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.internal.util.BackpressureHelper;
 
 /**
  * Emits a range of integer values.

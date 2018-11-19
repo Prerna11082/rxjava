@@ -17,7 +17,7 @@ import java.util.NoSuchElementException;
 
 import org.reactivestreams.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 
 /**

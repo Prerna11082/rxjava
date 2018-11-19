@@ -26,7 +26,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.QueueFuseable;
 import io.reactivex.core.internal.subscribers.BasicFuseableSubscriber;
 import io.reactivex.core.internal.subscriptions.EmptySubscription;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class FlowableDistinct<T, K> extends AbstractFlowableWithUpstream<T, T> {
 

@@ -22,7 +22,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.parallel.ParallelFlowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Maps each 'rail' of the source ParallelFlowable with a mapper function.

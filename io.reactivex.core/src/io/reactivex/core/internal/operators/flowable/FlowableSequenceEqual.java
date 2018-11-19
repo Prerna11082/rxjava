@@ -17,13 +17,14 @@ import java.util.concurrent.atomic.*;
 
 import org.reactivestreams.*;
 
+import io.reactivex.core.*;
 import io.reactivex.common.exceptions.*;
 import io.reactivex.common.functions.BiPredicate;
 import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.internal.queue.SpscArrayQueue;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.AtomicThrowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.queue.SpscArrayQueue;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class FlowableSequenceEqual<T> extends Flowable<Boolean> {
     final Publisher<? extends T> first;

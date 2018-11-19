@@ -15,10 +15,10 @@ package io.reactivex.core.internal.operators.flowable;
 
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.Flowable;
+import io.reactivex.core.Flowable;
 import io.reactivex.common.exceptions.*;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.subscribers.SinglePostCompleteSubscriber;
 
 public final class FlowableOnErrorReturn<T> extends AbstractFlowableWithUpstream<T, T> {

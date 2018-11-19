@@ -17,13 +17,13 @@ import java.util.concurrent.atomic.*;
 
 import org.reactivestreams.*;
 
-import io.reactivex.FlowableSubscriber;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.common.exceptions.*;
 import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.internal.queue.SpscArrayQueue;
+import io.reactivex.core.internal.queue.SpscArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.BackpressureHelper;
-import io.reactivex.parallel.ParallelFlowable;
+import io.reactivex.core.internal.util.BackpressureHelper;
+import io.reactivex.core.parallel.ParallelFlowable;
 
 /**
  * Dispatches the values from upstream in a round robin fashion to subscribers which are

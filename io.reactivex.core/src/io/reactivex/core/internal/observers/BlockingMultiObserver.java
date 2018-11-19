@@ -19,7 +19,7 @@ import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.internal.util.*;
 import io.reactivex.core.internal.util.BlockingHelper;
 
-import static io.reactivex.internal.util.ExceptionHelper.timeoutMessage;
+import static io.reactivex.common.internal.util.ExceptionHelper.timeoutMessage;
 
 /**
  * A combined Observer that awaits the success or error signal via a CountDownLatch.

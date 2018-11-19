@@ -17,6 +17,7 @@ import java.util.ArrayDeque;
 
 import org.reactivestreams.*;
 
+import io.reactivex.core.*;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 
 public final class FlowableSkipLast<T> extends AbstractFlowableWithUpstream<T, T> {

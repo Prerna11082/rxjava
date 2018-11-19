@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.*;
 import io.reactivex.disposables.*;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class CompletableMergeIterable extends Completable {
     final Iterable<? extends CompletableSource> sources;

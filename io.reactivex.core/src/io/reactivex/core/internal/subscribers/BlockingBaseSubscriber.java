@@ -18,7 +18,7 @@ import org.reactivestreams.Subscription;
 
 import io.reactivex.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.*;
+import io.reactivex.common.internal.util.*;
 
 public abstract class BlockingBaseSubscriber<T> extends CountDownLatch
 implements FlowableSubscriber<T> {

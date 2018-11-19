@@ -23,10 +23,10 @@ import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.operators.flowable.FlowableMap.MapSubscriber;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.internal.util.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Combines the latest values from multiple sources through a function.

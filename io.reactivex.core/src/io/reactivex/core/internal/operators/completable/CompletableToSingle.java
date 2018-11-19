@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.completable;
 
 import java.util.concurrent.Callable;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 
 public final class CompletableToSingle<T> extends Single<T> {

@@ -19,8 +19,8 @@ import io.reactivex.Scheduler;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.annotations.Nullable;
 import io.reactivex.disposables.*;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.disposables.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Base class that manages a single-threaded ScheduledExecutorService as a

@@ -19,11 +19,11 @@ import java.util.concurrent.atomic.*;
 import io.reactivex.Scheduler;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.*;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.core.internal.disposables.*;
 import io.reactivex.internal.functions.Functions;
-import io.reactivex.internal.queue.MpscLinkedQueue;
+import io.reactivex.core.internal.queue.MpscLinkedQueue;
 import io.reactivex.internal.schedulers.ExecutorScheduler.ExecutorWorker.BooleanRunnable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.*;
 
 /**

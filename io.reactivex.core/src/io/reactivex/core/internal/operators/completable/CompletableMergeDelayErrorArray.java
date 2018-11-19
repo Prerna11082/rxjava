@@ -16,8 +16,8 @@ package io.reactivex.core.internal.operators.completable;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.reactivex.disposables.*;
-import io.reactivex.internal.util.AtomicThrowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class CompletableMergeDelayErrorArray extends Completable {
 

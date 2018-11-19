@@ -19,14 +19,14 @@ import java.util.concurrent.TimeUnit;
 import org.reactivestreams.*;
 
 import io.reactivex.Scheduler.Worker;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.MissingBackpressureException;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.core.internal.disposables.*;
 import io.reactivex.core.internal.fuseable.SimplePlainQueue;
-import io.reactivex.internal.queue.MpscLinkedQueue;
+import io.reactivex.core.internal.queue.MpscLinkedQueue;
 import io.reactivex.core.internal.subscribers.QueueDrainSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.NotificationLite;
+import io.reactivex.common.internal.util.NotificationLite;
 import io.reactivex.processors.UnicastProcessor;
 import io.reactivex.subscribers.SerializedSubscriber;
 

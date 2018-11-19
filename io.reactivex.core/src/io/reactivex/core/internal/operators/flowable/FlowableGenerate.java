@@ -20,9 +20,9 @@ import org.reactivestreams.*;
 
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.*;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.BackpressureHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class FlowableGenerate<T, S> extends Flowable<T> {
     final Callable<S> stateSupplier;

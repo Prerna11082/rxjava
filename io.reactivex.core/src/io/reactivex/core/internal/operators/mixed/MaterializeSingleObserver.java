@@ -13,8 +13,9 @@
 
 package io.reactivex.core.internal.operators.mixed;
 
-import io.reactivex.annotations.Experimental;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.common.annotations.Experimental;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**

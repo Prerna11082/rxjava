@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.operators.single;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiPredicate;
 

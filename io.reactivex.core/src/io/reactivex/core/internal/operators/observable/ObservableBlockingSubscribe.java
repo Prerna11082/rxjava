@@ -18,7 +18,7 @@ import java.util.concurrent.*;
 import io.reactivex.common.functions.*;
 import io.reactivex.internal.functions.*;
 import io.reactivex.internal.observers.*;
-import io.reactivex.internal.util.*;
+import io.reactivex.common.internal.util.*;
 
 /**
  * Utility methods to consume an Observable in a blocking manner with callbacks or Observer.

@@ -15,12 +15,13 @@ package io.reactivex.core.internal.operators.observable;
 
 import java.util.Iterator;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Maps a sequence into an Iterable and emits its values.

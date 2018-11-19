@@ -16,9 +16,9 @@ package io.reactivex.core.internal.operators.completable;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.core.internal.disposables.*;
 import io.reactivex.internal.functions.ObjectHelper;
 
 public final class CompletableConcatIterable extends Completable {

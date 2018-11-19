@@ -21,8 +21,8 @@ import org.reactivestreams.*;
 import io.reactivex.common.exceptions.*;
 import io.reactivex.common.functions.Action;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.BackpressureHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Handle backpressure with a bounded buffer and custom strategy.

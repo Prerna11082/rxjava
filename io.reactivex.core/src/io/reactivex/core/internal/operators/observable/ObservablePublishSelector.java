@@ -15,12 +15,13 @@ package io.reactivex.core.internal.operators.observable;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.subjects.PublishSubject;
+import io.reactivex.core.internal.disposables.*;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.subjects.PublishSubject;
 
 /**
  * Shares a source Observable for the duration of a selector function.

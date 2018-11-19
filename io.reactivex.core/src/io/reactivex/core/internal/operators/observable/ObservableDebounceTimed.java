@@ -17,10 +17,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.*;
 
 import io.reactivex.Scheduler.Worker;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.disposables.*;
 import io.reactivex.observers.SerializedObserver;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableDebounceTimed<T> extends AbstractObservableWithUpstream<T, T> {
     final long timeout;

@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.completable;
 
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 
 /**
  * Consume the upstream source exactly once and cache its terminal event.

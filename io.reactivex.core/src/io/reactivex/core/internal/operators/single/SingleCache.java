@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.single;
 
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 
 public final class SingleCache<T> extends Single<T> implements SingleObserver<T> {
 

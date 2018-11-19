@@ -17,8 +17,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.reactivestreams.*;
 
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.*;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class FlowableTake<T> extends AbstractFlowableWithUpstream<T, T> {
     final long limit;

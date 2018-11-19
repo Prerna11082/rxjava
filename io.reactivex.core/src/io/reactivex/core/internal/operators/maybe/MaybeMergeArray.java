@@ -22,9 +22,9 @@ import org.reactivestreams.Subscriber;
 import io.reactivex.disposables.*;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.SimpleQueue;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.internal.util.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Run all MaybeSources of an array at once and signal their values as they become available.

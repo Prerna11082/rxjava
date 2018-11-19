@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.single;
 
 import io.reactivex.annotations.Experimental;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
 import io.reactivex.core.internal.disposables.DisposableHelper;

@@ -19,7 +19,7 @@ import org.reactivestreams.*;
 
 import io.reactivex.common.exceptions.MissingBackpressureException;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.BackpressureHelper;
+import io.reactivex.common.internal.util.BackpressureHelper;
 import io.reactivex.subscribers.SerializedSubscriber;
 
 public final class FlowableSamplePublisher<T> extends Flowable<T> {

@@ -16,8 +16,8 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.disposables.*;
 
 public final class ObserverResourceWrapper<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable {
 

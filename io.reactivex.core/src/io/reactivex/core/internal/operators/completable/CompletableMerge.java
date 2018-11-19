@@ -20,8 +20,8 @@ import org.reactivestreams.*;
 import io.reactivex.disposables.*;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.util.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class CompletableMerge extends Completable {
     final Publisher<? extends CompletableSource> source;

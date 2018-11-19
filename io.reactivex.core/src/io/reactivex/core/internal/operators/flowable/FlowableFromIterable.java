@@ -22,8 +22,8 @@ import io.reactivex.annotations.Nullable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.internal.util.BackpressureHelper;
 
 public final class FlowableFromIterable<T> extends Flowable<T> {
 

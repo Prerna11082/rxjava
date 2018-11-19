@@ -17,9 +17,9 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import io.reactivex.internal.util.*;
+import io.reactivex.common.internal.util.*;
 import io.reactivex.observers.DisposableObserver;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Returns an Iterable that blocks until the Observable emits another item, then returns that item.

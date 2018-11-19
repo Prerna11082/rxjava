@@ -19,12 +19,12 @@ import java.util.concurrent.atomic.*;
 import org.reactivestreams.*;
 
 import io.reactivex.Scheduler.Worker;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.MissingBackpressureException;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.schedulers.TrampolineScheduler;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.BackpressureHelper;
+import io.reactivex.common.internal.util.BackpressureHelper;
 
 public final class FlowableInterval extends Flowable<Long> {
     final Scheduler scheduler;

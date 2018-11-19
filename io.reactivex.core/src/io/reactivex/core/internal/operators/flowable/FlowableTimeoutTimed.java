@@ -19,10 +19,10 @@ import java.util.concurrent.atomic.*;
 import org.reactivestreams.*;
 
 import io.reactivex.core.internal.disposables.SequentialDisposable;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
-import static io.reactivex.internal.util.ExceptionHelper.timeoutMessage;
+import static io.reactivex.common.internal.util.ExceptionHelper.timeoutMessage;
 
 public final class FlowableTimeoutTimed<T> extends AbstractFlowableWithUpstream<T, T> {
     final long timeout;

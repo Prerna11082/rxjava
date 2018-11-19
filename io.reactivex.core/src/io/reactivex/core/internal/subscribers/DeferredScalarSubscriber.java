@@ -16,7 +16,7 @@ package io.reactivex.core.internal.subscribers;
 import org.reactivestreams.*;
 
 import io.reactivex.FlowableSubscriber;
-import io.reactivex.internal.subscriptions.*;
+import io.reactivex.core.internal.subscriptions.*;
 
 /**
  * A subscriber, extending a DeferredScalarSubscription,

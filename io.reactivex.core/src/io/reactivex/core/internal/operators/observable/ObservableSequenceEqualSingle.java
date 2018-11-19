@@ -15,13 +15,13 @@ package io.reactivex.core.internal.operators.observable;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiPredicate;
 import io.reactivex.core.internal.disposables.ArrayCompositeDisposable;
 import io.reactivex.core.internal.fuseable.FuseToObservable;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableSequenceEqualSingle<T> extends Single<Boolean> implements FuseToObservable<Boolean> {
     final ObservableSource<? extends T> first;

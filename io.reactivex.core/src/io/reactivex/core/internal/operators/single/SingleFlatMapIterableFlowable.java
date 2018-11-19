@@ -19,13 +19,13 @@ import java.util.concurrent.atomic.AtomicLong;
 import io.reactivex.annotations.Nullable;
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.internal.util.BackpressureHelper;
 
 /**
  * Maps a success value into an Iterable and streams it back as a Flowable.

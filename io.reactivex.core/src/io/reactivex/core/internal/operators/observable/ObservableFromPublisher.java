@@ -14,7 +14,7 @@ package io.reactivex.core.internal.operators.observable;
 
 import org.reactivestreams.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 
 public final class ObservableFromPublisher<T> extends Observable<T> {

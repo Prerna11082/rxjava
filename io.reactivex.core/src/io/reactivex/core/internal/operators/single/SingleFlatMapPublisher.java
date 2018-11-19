@@ -25,7 +25,7 @@ import io.reactivex.FlowableSubscriber;
 import io.reactivex.Scheduler;
 import io.reactivex.SingleObserver;
 import io.reactivex.SingleSource;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;

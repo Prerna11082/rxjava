@@ -15,7 +15,8 @@ package io.reactivex.core.internal.operators.observable;
 
 import java.util.NoSuchElementException;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**

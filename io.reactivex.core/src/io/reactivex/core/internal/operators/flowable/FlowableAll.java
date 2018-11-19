@@ -16,8 +16,8 @@ import org.reactivestreams.*;
 
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Predicate;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class FlowableAll<T> extends AbstractFlowableWithUpstream<T, Boolean> {
 

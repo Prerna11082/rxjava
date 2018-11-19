@@ -25,10 +25,10 @@ import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.Scheduler;
 import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.disposables.Disposables;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.disposables.Disposables;
 import io.reactivex.functions.Function;
-import io.reactivex.internal.util.ExceptionHelper;
+import io.reactivex.common.internal.util.ExceptionHelper;
 import io.reactivex.processors.FlowableProcessor;
 import io.reactivex.processors.UnicastProcessor;
 

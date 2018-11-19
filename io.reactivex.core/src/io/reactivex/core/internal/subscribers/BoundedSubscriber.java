@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.subscribers;
 
 import io.reactivex.FlowableSubscriber;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Action;
@@ -22,7 +22,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.internal.functions.Functions;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.observers.LambdaConsumerIntrospection;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscription;
 
 import java.util.concurrent.atomic.AtomicReference;

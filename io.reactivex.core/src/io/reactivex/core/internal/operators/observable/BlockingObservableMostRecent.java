@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.*;
 
 import io.reactivex.ObservableSource;
-import io.reactivex.internal.util.*;
+import io.reactivex.common.internal.util.*;
 import io.reactivex.observers.DefaultObserver;
 
 /**

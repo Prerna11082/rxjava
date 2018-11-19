@@ -15,12 +15,12 @@ package io.reactivex.core.internal.operators.observable;
 
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.fuseable.SimplePlainQueue;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.internal.util.AtomicThrowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Merges an Observable and a Maybe by emitting the items of the Observable and the success

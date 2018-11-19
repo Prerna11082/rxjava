@@ -14,7 +14,7 @@
 package io.reactivex.core.internal.operators.completable;
 
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class CompletableLift extends Completable {
 

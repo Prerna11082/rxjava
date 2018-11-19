@@ -17,7 +17,7 @@ import java.util.concurrent.Callable;
 
 import io.reactivex.disposables.*;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class CompletableFromCallable extends Completable {
 

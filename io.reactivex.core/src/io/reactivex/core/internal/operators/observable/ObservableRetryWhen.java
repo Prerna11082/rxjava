@@ -15,12 +15,12 @@ package io.reactivex.core.internal.operators.observable;
 
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.core.internal.disposables.*;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.util.*;
+import io.reactivex.common.internal.util.*;
 import io.reactivex.subjects.*;
 
 /**

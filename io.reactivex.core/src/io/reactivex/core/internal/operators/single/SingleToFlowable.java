@@ -14,7 +14,7 @@ package io.reactivex.core.internal.operators.single;
 
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.subscriptions.DeferredScalarSubscription;
 

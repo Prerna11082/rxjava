@@ -18,9 +18,9 @@ import java.util.concurrent.atomic.*;
 
 import org.reactivestreams.*;
 
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.BackpressureHelper;
+import io.reactivex.common.internal.util.BackpressureHelper;
 
 public final class FlowableTakeLastTimed<T> extends AbstractFlowableWithUpstream<T, T> {
     final long count;

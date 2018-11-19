@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.flowable;
 import java.util.*;
 
 import io.reactivex.Flowable;
-import io.reactivex.internal.util.*;
+import io.reactivex.common.internal.util.*;
 import io.reactivex.subscribers.DefaultSubscriber;
 
 /**

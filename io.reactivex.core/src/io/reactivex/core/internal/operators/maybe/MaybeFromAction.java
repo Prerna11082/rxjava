@@ -18,7 +18,7 @@ import java.util.concurrent.Callable;
 import io.reactivex.disposables.*;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Action;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Executes an Action and signals its exception or completes normally.

@@ -21,10 +21,10 @@ import org.reactivestreams.Subscription;
 
 import io.reactivex.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.BlockingHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.util.BlockingHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
-import static io.reactivex.internal.util.ExceptionHelper.timeoutMessage;
+import static io.reactivex.common.internal.util.ExceptionHelper.timeoutMessage;
 
 /**
  * A Subscriber + Future that expects exactly one upstream value and provides it

@@ -16,11 +16,11 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.disposables.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
-import static io.reactivex.internal.util.ExceptionHelper.timeoutMessage;
+import static io.reactivex.common.internal.util.ExceptionHelper.timeoutMessage;
 
 public final class ObservableTimeoutTimed<T> extends AbstractObservableWithUpstream<T, T> {
     final long timeout;

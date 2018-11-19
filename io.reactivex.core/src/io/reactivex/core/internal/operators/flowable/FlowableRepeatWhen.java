@@ -20,7 +20,7 @@ import org.reactivestreams.*;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.subscriptions.*;
+import io.reactivex.core.internal.subscriptions.*;
 import io.reactivex.processors.*;
 import io.reactivex.subscribers.SerializedSubscriber;
 

@@ -17,11 +17,11 @@ import io.reactivex.internal.functions.ObjectHelper;
 import java.util.Arrays;
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.internal.disposables.*;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 
 public final class ObservableZip<T, R> extends Observable<R> {
 

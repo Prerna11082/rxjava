@@ -18,10 +18,10 @@ import java.util.concurrent.atomic.*;
 
 import org.reactivestreams.*;
 
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.BackpressureHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
 import io.reactivex.processors.UnicastProcessor;
 
 public final class FlowableWindow<T> extends AbstractFlowableWithUpstream<T, Flowable<T>> {

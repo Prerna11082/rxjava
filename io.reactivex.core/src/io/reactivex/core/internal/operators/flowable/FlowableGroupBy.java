@@ -27,11 +27,11 @@ import io.reactivex.flowables.GroupedFlowable;
 import io.reactivex.common.functions.Consumer;
 import io.reactivex.common.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.BackpressureHelper;
-import io.reactivex.internal.util.EmptyComponent;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.internal.util.BackpressureHelper;
+import io.reactivex.common.internal.util.EmptyComponent;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class FlowableGroupBy<T, K, V> extends AbstractFlowableWithUpstream<T, GroupedFlowable<K, V>> {
     final Function<? super T, ? extends K> keySelector;

@@ -18,14 +18,14 @@ import java.util.concurrent.atomic.*;
 
 import org.reactivestreams.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.operators.flowable.FlowableTimeoutTimed.TimeoutSupport;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class FlowableTimeout<T, U, V> extends AbstractFlowableWithUpstream<T, T> {
     final Publisher<U> firstTimeoutIndicator;

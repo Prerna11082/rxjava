@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReferenceArray;
 
 import org.reactivestreams.Subscription;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 
 /**
  * A composite disposable with a fixed number of slots.

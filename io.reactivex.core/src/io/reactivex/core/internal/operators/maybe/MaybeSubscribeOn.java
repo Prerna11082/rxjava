@@ -15,8 +15,8 @@ package io.reactivex.core.internal.operators.maybe;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.disposables.*;
 /**
  * Subscribes to the upstream MaybeSource on the specified scheduler.
  *

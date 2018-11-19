@@ -30,7 +30,7 @@ import java.util.concurrent.atomic.*;
 import org.reactivestreams.Subscription;
 
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.util.BackpressureHelper;
+import io.reactivex.common.internal.util.BackpressureHelper;
 
 /**
  * Arbitrates requests and cancellation between Subscriptions.

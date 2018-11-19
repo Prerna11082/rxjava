@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.observable;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 
 public final class ObservableSubscribeOn<T> extends AbstractObservableWithUpstream<T, T> {

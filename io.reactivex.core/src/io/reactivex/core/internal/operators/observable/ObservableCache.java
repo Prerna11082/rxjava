@@ -15,7 +15,8 @@ package io.reactivex.core.internal.operators.observable;
 
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.Disposable;
 
 /**
  * An observable which auto-connects to another observable, caches the elements

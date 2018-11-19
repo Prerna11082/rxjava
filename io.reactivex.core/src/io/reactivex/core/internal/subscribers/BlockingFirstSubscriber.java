@@ -13,7 +13,7 @@
 
 package io.reactivex.core.internal.subscribers;
 
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Blocks until the upstream signals its first value or completes.

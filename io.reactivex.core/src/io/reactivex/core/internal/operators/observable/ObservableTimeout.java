@@ -16,13 +16,13 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.core.internal.disposables.*;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.operators.observable.ObservableTimeoutTimed.TimeoutSupport;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableTimeout<T, U, V> extends AbstractObservableWithUpstream<T, T> {
     final ObservableSource<U> firstTimeoutIndicator;

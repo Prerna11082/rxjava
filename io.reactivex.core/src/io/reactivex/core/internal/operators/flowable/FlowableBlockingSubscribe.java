@@ -20,7 +20,7 @@ import org.reactivestreams.*;
 import io.reactivex.common.functions.*;
 import io.reactivex.internal.functions.*;
 import io.reactivex.internal.subscribers.*;
-import io.reactivex.internal.util.*;
+import io.reactivex.common.internal.util.*;
 
 /**
  * Utility methods to consume a Publisher in a blocking manner with callbacks or Subscriber.

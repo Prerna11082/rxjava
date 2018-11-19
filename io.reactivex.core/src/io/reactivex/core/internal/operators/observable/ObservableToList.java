@@ -16,9 +16,9 @@ package io.reactivex.core.internal.operators.observable;
 import java.util.Collection;
 import java.util.concurrent.Callable;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.core.internal.disposables.*;
 import io.reactivex.internal.functions.*;
 
 public final class ObservableToList<T, U extends Collection<? super T>>

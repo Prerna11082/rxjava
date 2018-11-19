@@ -20,7 +20,7 @@ import org.reactivestreams.Subscription;
 import io.reactivex.FlowableSubscriber;
 import io.reactivex.internal.fuseable.*;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.QueueDrainHelper;
+import io.reactivex.common.internal.util.QueueDrainHelper;
 
 /**
  * Subscriber that can fuse with the upstream and calls a support interface

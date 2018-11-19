@@ -17,12 +17,12 @@ import io.reactivex.internal.functions.ObjectHelper;
 import java.util.Collection;
 import java.util.concurrent.Callable;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.core.internal.disposables.*;
 import io.reactivex.internal.observers.QueueDrainObserver;
-import io.reactivex.internal.queue.MpscLinkedQueue;
-import io.reactivex.internal.util.QueueDrainHelper;
+import io.reactivex.core.internal.queue.MpscLinkedQueue;
+import io.reactivex.common.internal.util.QueueDrainHelper;
 import io.reactivex.observers.*;
 
 public final class ObservableBufferExactBoundary<T, U extends Collection<? super T>, B>

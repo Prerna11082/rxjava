@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.observable;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.*;
 import io.reactivex.common.functions.Predicate;
 import io.reactivex.core.internal.disposables.SequentialDisposable;

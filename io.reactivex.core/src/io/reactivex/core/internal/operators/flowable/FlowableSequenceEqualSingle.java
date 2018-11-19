@@ -17,14 +17,15 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.reactivestreams.Publisher;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiPredicate;
 import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.internal.operators.flowable.FlowableSequenceEqual.*;
+import io.reactivex.core.internal.operators.flowable.FlowableSequenceEqual.*;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.AtomicThrowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class FlowableSequenceEqualSingle<T> extends Single<Boolean> implements FuseToFlowable<Boolean> {
     final Publisher<? extends T> first;

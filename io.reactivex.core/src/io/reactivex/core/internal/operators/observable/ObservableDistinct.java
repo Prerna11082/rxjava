@@ -22,7 +22,7 @@ import io.reactivex.common.functions.Function;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.observers.BasicFuseableObserver;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableDistinct<T, K> extends AbstractObservableWithUpstream<T, T> {
 

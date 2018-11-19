@@ -18,10 +18,10 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.*;
 
 import io.reactivex.ObservableSource;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.internal.util.*;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.common.internal.util.*;
 
 public final class BlockingObservableIterable<T> implements Iterable<T> {
     final ObservableSource<? extends T> source;

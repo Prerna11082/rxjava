@@ -25,11 +25,11 @@ import io.reactivex.common.functions.Function;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.SimplePlainQueue;
-import io.reactivex.internal.queue.MpscLinkedQueue;
+import io.reactivex.core.internal.queue.MpscLinkedQueue;
 import io.reactivex.core.internal.subscribers.QueueDrainSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.NotificationLite;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.util.NotificationLite;
+import io.reactivex.core.plugins.RxJavaPlugins;
 import io.reactivex.processors.UnicastProcessor;
 import io.reactivex.subscribers.*;
 

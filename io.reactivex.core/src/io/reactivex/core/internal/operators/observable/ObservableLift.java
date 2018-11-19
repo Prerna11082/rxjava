@@ -15,7 +15,7 @@ package io.reactivex.core.internal.operators.observable;
 
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Allows lifting operators into a chain of Observables.

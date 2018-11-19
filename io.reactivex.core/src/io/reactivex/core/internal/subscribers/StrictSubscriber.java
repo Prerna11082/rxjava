@@ -19,7 +19,7 @@ import org.reactivestreams.*;
 
 import io.reactivex.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.*;
+import io.reactivex.common.internal.util.*;
 
 /**
  * Ensures that the event flow between the upstream and downstream follow

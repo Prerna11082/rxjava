@@ -20,9 +20,9 @@ import org.reactivestreams.*;
 
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.BackpressureHelper;
+import io.reactivex.common.internal.util.BackpressureHelper;
 import io.reactivex.parallel.ParallelFlowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Given sorted rail sequences (according to the provided comparator) as List

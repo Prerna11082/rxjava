@@ -19,11 +19,11 @@ import java.util.concurrent.locks.*;
 
 import org.reactivestreams.Subscription;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.MissingBackpressureException;
-import io.reactivex.internal.queue.SpscArrayQueue;
+import io.reactivex.core.internal.queue.SpscArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.*;
+import io.reactivex.common.internal.util.*;
 
 public final class BlockingFlowableIterable<T> implements Iterable<T> {
     final Flowable<T> source;

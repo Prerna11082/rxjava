@@ -16,7 +16,7 @@
 
 package io.reactivex.core.internal.schedulers;
 
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * A Callable to be submitted to an ExecutorService that runs a Runnable

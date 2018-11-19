@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.completable;
 import java.util.concurrent.atomic.*;
 
 import io.reactivex.disposables.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class CompletableMergeArray extends Completable {
     final CompletableSource[] sources;

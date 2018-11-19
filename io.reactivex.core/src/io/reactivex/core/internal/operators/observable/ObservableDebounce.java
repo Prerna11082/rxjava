@@ -16,12 +16,12 @@ package io.reactivex.core.internal.operators.observable;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.atomic.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.core.internal.disposables.*;
 import io.reactivex.observers.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class ObservableDebounce<T, U> extends AbstractObservableWithUpstream<T, T> {
     final Function<? super T, ? extends ObservableSource<U>> debounceSelector;

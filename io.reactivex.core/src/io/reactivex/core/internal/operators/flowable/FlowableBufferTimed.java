@@ -20,14 +20,14 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.*;
 
 import io.reactivex.Scheduler.Worker;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.queue.MpscLinkedQueue;
+import io.reactivex.core.internal.queue.MpscLinkedQueue;
 import io.reactivex.core.internal.subscribers.QueueDrainSubscriber;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.QueueDrainHelper;
+import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.common.internal.util.QueueDrainHelper;
 import io.reactivex.subscribers.SerializedSubscriber;
 
 public final class FlowableBufferTimed<T, U extends Collection<? super T>> extends AbstractFlowableWithUpstream<T, U> {
