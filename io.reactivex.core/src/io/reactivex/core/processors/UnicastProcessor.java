@@ -156,7 +156,7 @@ public final class UnicastProcessor<T> extends FlowableProcessor<T> {
 
     final boolean delayError;
 
-    volatile boolean done;
+    public volatile boolean done;
 
     Throwable error;
 
@@ -166,7 +166,7 @@ public final class UnicastProcessor<T> extends FlowableProcessor<T> {
 
     final AtomicBoolean once;
 
-    final BasicIntQueueSubscription<T> wip;
+    public final BasicIntQueueSubscription<T> wip;
 
     final AtomicLong requested;
 

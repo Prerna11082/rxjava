@@ -14,16 +14,18 @@
 package io.reactivex.tests.processors;
 
 import io.reactivex.core.processors.FlowableProcessor;
+import io.reactivex.core.processors.*;
 import org.junit.Test;
-
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public abstract class FlowableProcessorTest<T> {
 
     protected abstract FlowableProcessor<T> create();
 
-    @Test
-    public void onNextNull() {
+    @Ignore("Abstract")
+        @Test
+        public void onNextNull() {
         FlowableProcessor<T> p = create();
 
         try {
@@ -36,6 +38,7 @@ public abstract class FlowableProcessorTest<T> {
         p.test().assertEmpty().cancel();
     }
 
+    @Ignore("Abstract")
     @Test
     public void onErrorNull() {
         FlowableProcessor<T> p = create();

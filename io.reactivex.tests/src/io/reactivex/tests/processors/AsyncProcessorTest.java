@@ -21,6 +21,7 @@ import io.reactivex.core.processors.FlowableProcessor;
 import io.reactivex.core.subscribers.TestSubscriber;
 import io.reactivex.tests.TestHelper;
 import io.reactivex.tests.exceptions.TestException;
+import io.reactivex.tests.subscribers.SubscriberFusion;
 import org.mockito.InOrder;
 import org.mockito.Mockito;
 import org.reactivestreams.Subscriber;
