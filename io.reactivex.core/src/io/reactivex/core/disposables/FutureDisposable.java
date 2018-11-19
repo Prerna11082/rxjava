@@ -20,13 +20,13 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * A Disposable container that cancels a Future instance.
  */
-final class FutureDisposable extends AtomicReference<Future<?>> implements Disposable {
+public final class FutureDisposable extends AtomicReference<Future<?>> implements Disposable {
 
     private static final long serialVersionUID = 6545242830671168775L;
 
     private final boolean allowInterrupt;
 
-    FutureDisposable(Future<?> run, boolean allowInterrupt) {
+    public FutureDisposable(Future<?> run, boolean allowInterrupt) {
         super(run);
         this.allowInterrupt = allowInterrupt;
     }

@@ -140,8 +140,6 @@ compileTestJava {
             '--add-modules', 'org.junit.jupiter.api',
             '--add-modules','io.reactivex.common',
             '--add-modules','io.reactivex.core',
-            '--patch-module', "io.reactivex.tests=" + files(sourceSets.test.java.srcDirs).asPath,
-            '--add-reads', "rxJava=org.junit.jupiter.api"
         ]
         classpath = files()
     }
@@ -155,11 +153,6 @@ tasks.withType(Test) {
 
 test {
 
- 	doFirst {
-        jvmArgs += [
-//            '--add-exports', "io.reactivex.tests/io.reactivex.com=junit",
-        ]
-    }
     testLogging  {
         // showing skipped occasionally should prevent CI timeout due to lack of standard output
         events=["skipped", "failed"] // "started", "passed"

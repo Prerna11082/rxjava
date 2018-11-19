@@ -20,7 +20,7 @@ module io.reactivex.core {
     exports io.reactivex.core.internal.subscribers;
     exports io.reactivex.core.internal.subscriptions;
     exports io.reactivex.core.internal.util;
-
+    exports io.reactivex.core.internal.functions;
     exports io.reactivex.core.observables;
     exports io.reactivex.core.observers;
     exports io.reactivex.core.parallel;
