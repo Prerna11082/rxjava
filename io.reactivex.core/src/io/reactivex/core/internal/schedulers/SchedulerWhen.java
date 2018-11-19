@@ -47,7 +47,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * Finally the actions scheduled on the parent {@link Scheduler} when the inner
  * most {@link Completable}s are subscribed to.
  * <p>
- * When the {@link io.reactivex.Scheduler.Worker Worker} is unsubscribed the {@link Completable} emits an
+ * When the {@link io.reactivex.core.Scheduler.Worker Worker} is unsubscribed the {@link Completable} emits an
  * onComplete and triggers any behavior in the flattening operator. The
  * {@link Observable} and all {@link Completable}s give to the flattening
  * function never onError.
@@ -65,8 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * This is a slightly different way to limit the concurrency but it has some
  * interesting benefits and drawbacks to the method above. It works by limited
- * the number of concurrent {@link io.reactivex.Scheduler.Worker Worker}s rather than individual actions.
- * Generally each {@link Observable} uses its own {@link io.reactivex.Scheduler.Worker Worker}. This means
+ * the number of concurrent {@link io.reactivex.core.Scheduler.Worker Worker}s rather than individual actions.
+ * Generally each {@link Observable} uses its own {@link io.reactivex.core.Scheduler.Worker Worker}. This means
  * that this will essentially limit the number of concurrent subscribes. The
  * danger comes from using operators like
  * {@link Flowable#zip(org.reactivestreams.Publisher, org.reactivestreams.Publisher, io.reactivex.functions.BiFunction)} where

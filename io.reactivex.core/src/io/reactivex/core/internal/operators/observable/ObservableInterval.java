@@ -13,7 +13,8 @@
 
 package io.reactivex.core.internal.operators.observable;
 
-import io.reactivex.Scheduler.Worker;
+import io.reactivex.core.*;
+import io.reactivex.core.Scheduler.Worker;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.schedulers.TrampolineScheduler;

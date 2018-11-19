@@ -19,6 +19,8 @@ import io.reactivex.core.internal.disposables.DisposableHelper;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import io.reactivex.core.*;
+import io.reactivex.core.internal.util.HalfSerializer;
 
 /**
  * Merges an Observable and a Completable by emitting the items of the Observable and waiting until
