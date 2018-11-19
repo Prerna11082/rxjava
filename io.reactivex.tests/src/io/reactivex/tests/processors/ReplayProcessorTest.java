@@ -42,7 +42,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.notNull;
 import static org.mockito.Mockito.*;
 
-public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
+public class ReplayProcessorTest extends FlowableProcessorTBase<Object> {
 
     private final Throwable testException = new Throwable();
 

@@ -40,7 +40,7 @@ import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-public class BehaviorProcessorTest extends FlowableProcessorTest<Object> {
+public class BehaviorProcessorTest extends FlowableProcessorTBase<Object> {
 
     private final Throwable testException = new Throwable();
 

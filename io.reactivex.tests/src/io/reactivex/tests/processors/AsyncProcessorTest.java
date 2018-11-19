@@ -28,14 +28,13 @@ import org.reactivestreams.Subscriber;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
-public class AsyncProcessorTest extends FlowableProcessorTest<Object> {
+public class AsyncProcessorTest extends FlowableProcessorTBase<Object> {
 
     private final Throwable testException = new Throwable();
 

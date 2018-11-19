@@ -19,11 +19,10 @@ import org.junit.Test;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-public abstract class FlowableProcessorTest<T> {
+public abstract class FlowableProcessorTBase<T> {
 
     protected abstract FlowableProcessor<T> create();
 
-    @Ignore("Abstract")
         @Test
         public void onNextNull() {
         FlowableProcessor<T> p = create();
@@ -38,7 +37,6 @@ public abstract class FlowableProcessorTest<T> {
         p.test().assertEmpty().cancel();
     }
 
-    @Ignore("Abstract")
     @Test
     public void onErrorNull() {
         FlowableProcessor<T> p = create();

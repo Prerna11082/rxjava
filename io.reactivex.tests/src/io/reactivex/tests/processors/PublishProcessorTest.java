@@ -37,7 +37,7 @@ import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-public class PublishProcessorTest extends FlowableProcessorTest<Object> {
+public class PublishProcessorTest extends FlowableProcessorTBase<Object> {
 
     @Override
     protected FlowableProcessor<Object> create() {
