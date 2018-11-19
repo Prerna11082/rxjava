@@ -65,8 +65,8 @@ subprojects {
 }
 
 dependencies{
-			compile project (':io.reactivex.core')
-		}
+    compile project (':io.reactivex.core')
+}
 
 apply plugin: "checkstyle"
 apply plugin: "jacoco"
