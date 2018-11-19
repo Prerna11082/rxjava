@@ -18,6 +18,7 @@ import io.reactivex.core.Flowable;
 import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.internal.util.HalfSerializer;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;

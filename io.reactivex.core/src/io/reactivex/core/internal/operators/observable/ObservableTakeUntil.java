@@ -16,6 +16,7 @@ package io.reactivex.core.internal.operators.observable; import io.reactivex.cor
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.internal.util.AtomicThrowable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.util.HalfSerializer;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;

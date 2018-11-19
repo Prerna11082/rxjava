@@ -16,7 +16,7 @@ package io.reactivex.core.internal.operators.flowable;
 import io.reactivex.core.Scheduler.Worker;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.MissingBackpressureException;
-import io.reactivex.common.internal.util.NotificationLite;
+import io.reactivex.core.internal.util.NotificationLite;
 import io.reactivex.core.Flowable;
 import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.Scheduler;
@@ -27,7 +27,7 @@ import io.reactivex.core.internal.queue.MpscLinkedQueue;
 import io.reactivex.core.internal.subscribers.QueueDrainSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.subscribers.SerializedSubscriber;
-import io.reactivex.processors.UnicastProcessor;
+import io.reactivex.core.processors.UnicastProcessor;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 

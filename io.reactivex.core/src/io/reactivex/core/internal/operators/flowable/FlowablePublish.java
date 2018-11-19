@@ -26,6 +26,8 @@ import io.reactivex.core.internal.fuseable.QueueSubscription;
 import io.reactivex.core.internal.fuseable.SimpleQueue;
 import io.reactivex.core.internal.queue.SpscArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.NotificationLite;
 import io.reactivex.core.plugins.RxJavaPlugins;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;

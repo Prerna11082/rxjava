@@ -20,6 +20,8 @@ import io.reactivex.core.MaybeObserver;
 import io.reactivex.core.MaybeSource;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.NotificationLite;
 import io.reactivex.core.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;

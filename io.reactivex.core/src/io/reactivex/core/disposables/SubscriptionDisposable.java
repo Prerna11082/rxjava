@@ -10,28 +10,25 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.common.disposables;
+package io.reactivex.core.disposables;
 
 import io.reactivex.common.annotations.NonNull;
+import io.reactivex.core.disposables.ReferenceDisposable;
+import org.reactivestreams.Subscription;
 
 /**
- * A disposable container that manages a Runnable instance.
+ * A Disposable container that handles a {@link Subscription}.
  */
-final class RunnableDisposable extends ReferenceDisposable<Runnable> {
+final class SubscriptionDisposable extends ReferenceDisposable<Subscription> {
 
-    private static final long serialVersionUID = -8219729196779211169L;
+    private static final long serialVersionUID = -707001650852963139L;
 
-    RunnableDisposable(Runnable value) {
+    SubscriptionDisposable(Subscription value) {
         super(value);
     }
 
     @Override
-    protected void onDisposed(@NonNull Runnable value) {
-        value.run();
-    }
-
-    @Override
-    public String toString() {
-        return "RunnableDisposable(disposed=" + isDisposed() + ", " + get() + ")";
+    protected void onDisposed(@NonNull Subscription value) {
+        value.cancel();
     }
 }

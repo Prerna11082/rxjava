@@ -10,26 +10,28 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.common.disposables;
+package io.reactivex.core.disposables;
 
 import io.reactivex.common.annotations.NonNull;
-import io.reactivex.common.functions.Action;
-import io.reactivex.common.internal.util.ExceptionHelper;
 
-final class ActionDisposable extends ReferenceDisposable<Action> {
+/**
+ * A disposable container that manages a Runnable instance.
+ */
+final class RunnableDisposable extends ReferenceDisposable<Runnable> {
 
     private static final long serialVersionUID = -8219729196779211169L;
 
-    ActionDisposable(Action value) {
+    RunnableDisposable(Runnable value) {
         super(value);
     }
 
     @Override
-    protected void onDisposed(@NonNull Action value) {
-        try {
-            value.run();
-        } catch (Throwable ex) {
-            throw ExceptionHelper.wrapOrThrow(ex);
-        }
+    protected void onDisposed(@NonNull Runnable value) {
+        value.run();
+    }
+
+    @Override
+    public String toString() {
+        return "RunnableDisposable(disposed=" + isDisposed() + ", " + get() + ")";
     }
 }

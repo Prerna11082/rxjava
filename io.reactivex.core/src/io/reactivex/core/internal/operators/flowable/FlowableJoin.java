@@ -27,6 +27,7 @@ import io.reactivex.core.internal.operators.flowable.FlowableGroupJoin.LeftRight
 import io.reactivex.core.internal.operators.flowable.FlowableGroupJoin.LeftRightSubscriber;
 import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;

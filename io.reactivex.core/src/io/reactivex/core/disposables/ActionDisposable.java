@@ -10,24 +10,26 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.common.disposables;
+package io.reactivex.core.disposables;
 
 import io.reactivex.common.annotations.NonNull;
-import org.reactivestreams.Subscription;
+import io.reactivex.common.functions.Action;
+import io.reactivex.common.internal.util.ExceptionHelper;
 
-/**
- * A Disposable container that handles a {@link Subscription}.
- */
-final class SubscriptionDisposable extends ReferenceDisposable<Subscription> {
+final class ActionDisposable extends ReferenceDisposable<Action> {
 
-    private static final long serialVersionUID = -707001650852963139L;
+    private static final long serialVersionUID = -8219729196779211169L;
 
-    SubscriptionDisposable(Subscription value) {
+    ActionDisposable(Action value) {
         super(value);
     }
 
     @Override
-    protected void onDisposed(@NonNull Subscription value) {
-        value.cancel();
+    protected void onDisposed(@NonNull Action value) {
+        try {
+            value.run();
+        } catch (Throwable ex) {
+            throw ExceptionHelper.wrapOrThrow(ex);
+        }
     }
 }

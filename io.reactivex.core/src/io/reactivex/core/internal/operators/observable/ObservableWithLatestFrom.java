@@ -18,7 +18,7 @@ import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiFunction;
 import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.observers.SerializedObserver;
+import io.reactivex.core.observers.SerializedObserver;
 
 import java.util.concurrent.atomic.AtomicReference;
 
