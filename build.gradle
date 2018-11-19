@@ -133,6 +133,13 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 */
 
+
+
+
+sourceSets {
+    test.java.srcDirs = ['io.reactivex.tests/src']
+}
+
 compileTestJava {
     doFirst {
         options.compilerArgs = [
