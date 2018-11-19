@@ -18,14 +18,16 @@ import static org.junit.Assert.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.core.Flowable;
+import io.reactivex.tests.TestHelper;
 import org.junit.Test;
 
 import io.reactivex.*;
-import io.reactivex.exceptions.TestException;
-import io.reactivex.functions.*;
-import io.reactivex.internal.functions.Functions;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.tests.exceptions.TestException;
+import io.reactivex.common.functions.*;
+import io.reactivex.core.internal.functions.Functions;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.schedulers.Schedulers;
 
 public class ParallelMapTest {
 

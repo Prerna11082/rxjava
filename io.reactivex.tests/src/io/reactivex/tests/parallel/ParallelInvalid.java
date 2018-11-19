@@ -13,10 +13,10 @@
 
 package io.reactivex.tests.parallel;
 
+import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import io.reactivex.core.parallel.ParallelFlowable;
+import io.reactivex.tests.exceptions.TestException;
 import org.reactivestreams.Subscriber;
-
-import io.reactivex.exceptions.TestException;
-import io.reactivex.internal.subscriptions.EmptySubscription;
 
 /**
  * Signals two onErrors to each subscriber for testing purposes.

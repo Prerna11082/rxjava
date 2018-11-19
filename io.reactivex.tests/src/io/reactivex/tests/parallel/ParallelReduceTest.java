@@ -14,17 +14,19 @@
 package io.reactivex.tests.parallel;
 
 import static org.junit.Assert.*;
+
 import java.util.*;
 import java.util.concurrent.Callable;
 
+import io.reactivex.tests.TestHelper;
 import org.junit.Test;
 
-import io.reactivex.*;
-import io.reactivex.exceptions.TestException;
-import io.reactivex.functions.*;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.processors.PublishProcessor;
-import io.reactivex.subscribers.TestSubscriber;
+import io.reactivex.core.*;
+import io.reactivex.tests.exceptions.TestException;
+import io.reactivex.common.functions.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.processors.PublishProcessor;
+import io.reactivex.core.subscribers.TestSubscriber;
 
 public class ParallelReduceTest {
 

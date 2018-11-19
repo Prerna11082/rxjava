@@ -27,7 +27,7 @@ import io.reactivex.core.plugins.RxJavaPlugins;
  */
 public final class SafeSubscriber<T> implements FlowableSubscriber<T>, Subscription {
     /** The actual Subscriber. */
-    final Subscriber<? super T> downstream;
+    public final Subscriber<? super T> downstream;
     /** The subscription. */
     Subscription upstream;
     /** Indicates a terminal state. */
