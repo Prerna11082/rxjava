@@ -13,16 +13,23 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.processors.*;
-import io.reactivex.subscribers.SerializedSubscriber;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionArbiter;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.subscribers.SerializedSubscriber;
+import io.reactivex.core.processors.*;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class FlowableRepeatWhen<T> extends AbstractFlowableWithUpstream<T, T> {
     final Function<? super Flowable<Object>, ? extends Publisher<?>> handler;

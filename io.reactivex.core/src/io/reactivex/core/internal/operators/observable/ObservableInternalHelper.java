@@ -10,14 +10,17 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.core.internal.operators.observable;
-
-import java.util.List;
-import java.util.concurrent.*;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
 import io.reactivex.common.functions.*;
-import io.reactivex.internal.functions.*;
-import io.reactivex.observables.ConnectableObservable;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.*;
+import io.reactivex.core.internal.functions.Functions;
+import io.reactivex.core.observables.ConnectableObservable;
+
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Helper utility class to support Observable with inner classes.

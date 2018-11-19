@@ -13,15 +13,14 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.Callable;
-
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.subscriptions.DeferredScalarSubscription;
+import io.reactivex.core.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.Flowable;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.subscriptions.DeferredScalarSubscription;
-import io.reactivex.plugins.RxJavaPlugins;
+import java.util.concurrent.Callable;
 
 public final class FlowableFromCallable<T> extends Flowable<T> implements Callable<T> {
     final Callable<? extends T> callable;

@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-package io.reactivex.core.internal.schedulers;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.Scheduler;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.*;
+import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Scheduler;
+import io.reactivex.core.disposables.Disposables;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Schedules work on the current thread but does not execute immediately. Work is put in a queue and executed

@@ -11,18 +11,21 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import java.util.concurrent.atomic.*;
-
-import io.reactivex.disposables.*;
+import io.reactivex.core.*;
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.util.AtomicThrowable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.internal.util.AtomicThrowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Maps upstream values into SingleSources and merges their signals into one sequence.

@@ -11,17 +11,22 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.*;
-
-import io.reactivex.ObservableSource;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.core.ObservableSource;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.internal.util.*;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.internal.util.BlockingHelper;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 
 public final class BlockingObservableIterable<T> implements Iterable<T> {
     final ObservableSource<? extends T> source;
@@ -42,7 +47,7 @@ public final class BlockingObservableIterable<T> implements Iterable<T> {
 
     static final class BlockingObservableIterator<T>
     extends AtomicReference<Disposable>
-    implements io.reactivex.Observer<T>, Iterator<T>, Disposable {
+    implements Observer<T>, Iterator<T>, Disposable {
 
         private static final long serialVersionUID = 6695226475494099826L;
 

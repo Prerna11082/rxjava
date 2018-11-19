@@ -11,10 +11,10 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.schedulers;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
 
+import io.reactivex.common.annotations.NonNull;
 import io.reactivex.core.Scheduler;
-import io.reactivex.common.annotations.*;
 
 /**
  * Allows retrieving multiple workers from the implementing

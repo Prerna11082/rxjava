@@ -11,15 +11,15 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Maps the success value of the source SingleSource into a Completable.

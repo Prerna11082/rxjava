@@ -11,17 +11,17 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
-import java.util.Iterator;
-
-import io.reactivex.annotations.Nullable;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.observers.BasicIntQueueDisposable;
+import io.reactivex.core.internal.observers.BasicIntQueueDisposable;
+
+import java.util.Iterator;
 
 /**
  * Maps a success value into an Iterable and streams it back as an Observable.

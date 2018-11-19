@@ -13,16 +13,20 @@
 
 package io.reactivex.core.internal.operators.parallel;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiFunction;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.parallel.ParallelFlowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.internal.subscriptions.DeferredScalarSubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.parallel.ParallelFlowable;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Reduces all 'rails' into a single value which then gets reduced into a single

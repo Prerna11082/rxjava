@@ -13,9 +13,9 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.observers.BasicQueueDisposable;
+import io.reactivex.core.internal.observers.BasicQueueDisposable;
 
 /**
  * Wraps a Completable and exposes it as an Observable.

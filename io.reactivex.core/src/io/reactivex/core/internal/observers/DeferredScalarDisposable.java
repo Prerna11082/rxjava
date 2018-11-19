@@ -13,8 +13,8 @@
 
 package io.reactivex.core.internal.observers;
 
-import io.reactivex.core.Observer;
 import io.reactivex.common.annotations.Nullable;
+import io.reactivex.core.Observer;
 import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**

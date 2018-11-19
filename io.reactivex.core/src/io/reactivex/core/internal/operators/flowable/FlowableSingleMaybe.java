@@ -12,13 +12,13 @@
  */
 
 package io.reactivex.core.internal.operators.flowable;
+import io.reactivex.core.*;
 
-import org.reactivestreams.Subscription;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.fuseable.FuseToFlowable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscription;
 
 public final class FlowableSingleMaybe<T> extends Maybe<T> implements FuseToFlowable<T> {
 

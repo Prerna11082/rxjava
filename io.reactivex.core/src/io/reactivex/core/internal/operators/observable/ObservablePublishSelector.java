@@ -11,16 +11,20 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.subjects.PublishSubject;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Observable;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+import io.reactivex.core.subjects.PublishSubject;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Shares a source Observable for the duration of a selector function.

@@ -12,13 +12,12 @@
  */
 package io.reactivex.core.internal.util;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 import io.reactivex.common.internal.util.AtomicThrowable;
-import org.reactivestreams.Subscriber;
-
 import io.reactivex.core.Observer;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Utility methods to perform half-serialization: a form of serialization

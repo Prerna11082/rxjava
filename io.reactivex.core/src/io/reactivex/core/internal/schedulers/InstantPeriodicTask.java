@@ -14,14 +14,17 @@
  * limitations under the License.
  */
 
-package io.reactivex.core.internal.schedulers;
-
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicReference;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.functions.Functions;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Wrapper for a regular task that gets immediately rescheduled when the task completed.

@@ -11,15 +11,16 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import java.util.concurrent.Callable;
-
-import io.reactivex.core.*;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Observable;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.observers.DeferredScalarDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.Callable;
 
 /**
  * Calls a Callable and emits its resulting single value or signals its exception.

@@ -11,10 +11,10 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
-import io.reactivex.annotations.Experimental;
-import io.reactivex.internal.operators.mixed.MaterializeSingleObserver;
+import io.reactivex.common.annotations.Experimental;
+import io.reactivex.core.internal.operators.mixed.MaterializeSingleObserver;
 
 /**
  * Turn the signal types of a Single source into a single Notification of

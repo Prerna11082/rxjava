@@ -11,17 +11,20 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import io.reactivex.internal.functions.ObjectHelper;
-import java.util.concurrent.atomic.*;
+import io.reactivex.core.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.observers.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.observers.*;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObservableDebounce<T, U> extends AbstractObservableWithUpstream<T, T> {
     final Function<? super T, ? extends ObservableSource<U>> debounceSelector;

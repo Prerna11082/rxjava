@@ -13,25 +13,33 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.flowables.GroupedFlowable;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.internal.subscriptions.BasicIntQueueSubscription;
+import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.EmptyComponent;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.annotations.Nullable;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.flowables.GroupedFlowable;
-import io.reactivex.common.functions.Consumer;
-import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.BackpressureHelper;
-import io.reactivex.internal.util.EmptyComponent;
-import io.reactivex.plugins.RxJavaPlugins;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class FlowableGroupBy<T, K, V> extends AbstractFlowableWithUpstream<T, GroupedFlowable<K, V>> {
     final Function<? super T, ? extends K> keySelector;
@@ -41,7 +49,7 @@ public final class FlowableGroupBy<T, K, V> extends AbstractFlowableWithUpstream
     final Function<? super Consumer<Object>, ? extends Map<K, Object>> mapFactory;
 
     public FlowableGroupBy(Flowable<T> source, Function<? super T, ? extends K> keySelector, Function<? super T, ? extends V> valueSelector,
-            int bufferSize, boolean delayError, Function<? super Consumer<Object>, ? extends Map<K, Object>> mapFactory) {
+                           int bufferSize, boolean delayError, Function<? super Consumer<Object>, ? extends Map<K, Object>> mapFactory) {
         super(source);
         this.keySelector = keySelector;
         this.valueSelector = valueSelector;

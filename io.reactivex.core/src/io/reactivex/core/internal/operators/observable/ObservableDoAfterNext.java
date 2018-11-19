@@ -11,11 +11,12 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
+import io.reactivex.core.*;
 
-import io.reactivex.annotations.Nullable;
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.functions.Consumer;
-import io.reactivex.internal.observers.BasicFuseableObserver;
+import io.reactivex.core.internal.observers.BasicFuseableObserver;
 
 /**
  * Calls a consumer after pushing the current item to the downstream.

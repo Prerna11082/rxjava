@@ -13,12 +13,13 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import org.reactivestreams.Subscriber;
+import io.reactivex.core.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.fuseable.HasUpstreamMaybeSource;
 import io.reactivex.core.internal.subscriptions.DeferredScalarSubscription;
+import org.reactivestreams.Subscriber;
 
 /**
  * Wraps a MaybeSource and exposes it as a Flowable, relaying signals in a backpressure-aware manner

@@ -13,14 +13,13 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.Callable;
-
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.subscriptions.EmptySubscription;
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.Flowable;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import java.util.concurrent.Callable;
 
 public final class FlowableError<T> extends Flowable<T> {
     final Callable<? extends Throwable> errorSupplier;

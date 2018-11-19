@@ -10,12 +10,15 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import org.reactivestreams.*;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.Observable;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscription;
 
 public final class ObservableFromPublisher<T> extends Observable<T> {
 

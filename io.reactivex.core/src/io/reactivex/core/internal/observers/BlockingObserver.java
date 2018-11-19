@@ -13,13 +13,13 @@
 
 package io.reactivex.core.internal.observers;
 
-import java.util.Queue;
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.core.Observer;
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.util.NotificationLite;
+
+import java.util.Queue;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class BlockingObserver<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable {
 

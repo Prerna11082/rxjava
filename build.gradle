@@ -64,6 +64,10 @@ subprojects {
 	}
 }
 
+dependencies{
+    compile project (':io.reactivex.core')
+}
+
 apply plugin: "checkstyle"
 apply plugin: "jacoco"
 apply plugin: "ru.vyarus.animalsniffer"

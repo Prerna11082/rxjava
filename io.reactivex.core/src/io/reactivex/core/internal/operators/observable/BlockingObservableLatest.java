@@ -11,18 +11,20 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import java.util.*;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.core.*;
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.core.Notification;
 import io.reactivex.core.Observable;
-import io.reactivex.common.internal.util.*;
+import io.reactivex.core.ObservableSource;
 import io.reactivex.core.internal.util.BlockingHelper;
 import io.reactivex.core.observers.DisposableObserver;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Wait for and iterate over the latest values of the source observable. If the source works faster than the

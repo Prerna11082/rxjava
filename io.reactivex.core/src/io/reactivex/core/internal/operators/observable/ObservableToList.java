@@ -11,15 +11,17 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
+
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+import io.reactivex.common.internal.functions.*;
+import io.reactivex.core.internal.functions.Functions;
 
 import java.util.Collection;
 import java.util.concurrent.Callable;
-
-import io.reactivex.disposables.Disposable;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.internal.functions.*;
 
 public final class ObservableToList<T, U extends Collection<? super T>>
 extends AbstractObservableWithUpstream<T, U> {
@@ -29,7 +31,7 @@ extends AbstractObservableWithUpstream<T, U> {
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public ObservableToList(ObservableSource<T> source, final int defaultCapacityHint) {
         super(source);
-        this.collectionSupplier = (Callable)Functions.createArrayList(defaultCapacityHint);
+        this.collectionSupplier = (Callable) Functions.createArrayList(defaultCapacityHint);
     }
 
     public ObservableToList(ObservableSource<T> source, Callable<U> collectionSupplier) {

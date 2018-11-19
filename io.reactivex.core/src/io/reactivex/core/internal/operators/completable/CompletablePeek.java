@@ -13,11 +13,14 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.common.exceptions.*;
-import io.reactivex.common.functions.*;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Action;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public final class CompletablePeek extends Completable {
 

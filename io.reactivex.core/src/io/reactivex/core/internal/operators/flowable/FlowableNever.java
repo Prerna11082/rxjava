@@ -12,10 +12,9 @@
  */
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.Subscriber;
-
-import io.reactivex.Flowable;
+import io.reactivex.core.Flowable;
 import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import org.reactivestreams.Subscriber;
 
 public final class FlowableNever extends Flowable<Object> {
     public static final Flowable<Object> INSTANCE = new FlowableNever();

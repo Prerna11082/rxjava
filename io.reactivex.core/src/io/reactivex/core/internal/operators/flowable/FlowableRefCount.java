@@ -13,18 +13,24 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.disposables.Disposable;
-import io.reactivex.flowables.ConnectableFlowable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.functions.Consumer;
-import io.reactivex.internal.disposables.*;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.Scheduler;
+import io.reactivex.core.flowables.ConnectableFlowable;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.ResettableConnectable;
+import io.reactivex.core.internal.disposables.SequentialDisposable;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.schedulers.Schedulers;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Returns an observable sequence that stays connected to the source as long as

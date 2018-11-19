@@ -11,16 +11,16 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
-import io.reactivex.Single;
-import io.reactivex.SingleObserver;
-import io.reactivex.SingleSource;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
+import io.reactivex.core.SingleSource;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Action;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Calls an action after pushing the current item or an error to the downstream.

@@ -11,13 +11,13 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
-
-import io.reactivex.internal.functions.ObjectHelper;
-import java.util.concurrent.Callable;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
 import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
+
+import java.util.concurrent.Callable;
 
 public final class SingleError<T> extends Single<T> {
 

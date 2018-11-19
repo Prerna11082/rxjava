@@ -13,9 +13,9 @@
 
 package io.reactivex.core.internal.disposables;
 
-import java.util.concurrent.atomic.AtomicReferenceArray;
-
 import io.reactivex.common.disposables.Disposable;
+
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
 /**
  * A composite disposable with a fixed number of slots.

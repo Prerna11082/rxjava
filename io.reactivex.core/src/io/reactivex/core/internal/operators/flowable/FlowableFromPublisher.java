@@ -13,9 +13,9 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.*;
-
-import io.reactivex.Flowable;
+import io.reactivex.core.Flowable;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
 
 public final class FlowableFromPublisher<T> extends Flowable<T> {
     final Publisher<? extends T> publisher;

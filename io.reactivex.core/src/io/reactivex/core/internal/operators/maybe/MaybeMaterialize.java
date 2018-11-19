@@ -13,8 +13,11 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import io.reactivex.core.*;
 import io.reactivex.common.annotations.Experimental;
+import io.reactivex.core.Maybe;
+import io.reactivex.core.Notification;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
 import io.reactivex.core.internal.operators.mixed.MaterializeSingleObserver;
 
 /**

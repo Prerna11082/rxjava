@@ -13,18 +13,17 @@
 
 package io.reactivex.core.internal.subscribers;
 
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.internal.util.BlockingHelper;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscription;
+
 import java.util.NoSuchElementException;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicReference;
 
-import org.reactivestreams.Subscription;
-
-import io.reactivex.FlowableSubscriber;
-import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.BlockingHelper;
-import io.reactivex.plugins.RxJavaPlugins;
-
-import static io.reactivex.internal.util.ExceptionHelper.timeoutMessage;
+import static io.reactivex.common.internal.util.ExceptionHelper.timeoutMessage;
 
 /**
  * A Subscriber + Future that expects exactly one upstream value and provides it

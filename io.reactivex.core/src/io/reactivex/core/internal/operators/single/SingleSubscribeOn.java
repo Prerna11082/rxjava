@@ -11,12 +11,17 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
+
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.Scheduler;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
+import io.reactivex.core.SingleSource;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.SequentialDisposable;
 
 import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.disposables.*;
 
 public final class SingleSubscribeOn<T> extends Single<T> {
     final SingleSource<? extends T> source;

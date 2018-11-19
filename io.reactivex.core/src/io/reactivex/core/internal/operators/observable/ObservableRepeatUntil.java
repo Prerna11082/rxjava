@@ -11,14 +11,14 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BooleanSupplier;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public final class ObservableRepeatUntil<T> extends AbstractObservableWithUpstream<T, T> {
     final BooleanSupplier until;

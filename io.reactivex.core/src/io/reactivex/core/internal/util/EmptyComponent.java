@@ -13,11 +13,11 @@
 
 package io.reactivex.core.internal.util;
 
-import org.reactivestreams.*;
-
-import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.*;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 /**
  * Singleton implementing many interfaces as empty.

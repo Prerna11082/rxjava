@@ -12,13 +12,13 @@
  */
 package io.reactivex.core.internal.util;
 
-import java.io.Serializable;
-
-import org.reactivestreams.*;
-
-import io.reactivex.core.Observer;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Observer;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.io.Serializable;
 
 /**
  * Lightweight notification handling utility class.

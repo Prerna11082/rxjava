@@ -13,13 +13,13 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Action;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Execute an action after an onError, onComplete or a dispose event.

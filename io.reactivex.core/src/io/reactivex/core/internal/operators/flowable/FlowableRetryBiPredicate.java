@@ -13,13 +13,17 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-import org.reactivestreams.*;
-
-import io.reactivex.common.exceptions.*;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiPredicate;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionArbiter;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public final class FlowableRetryBiPredicate<T> extends AbstractFlowableWithUpstream<T, T> {
     final BiPredicate<? super Integer, ? super Throwable> predicate;

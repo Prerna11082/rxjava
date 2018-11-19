@@ -11,12 +11,12 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
 
 public final class SingleMap<T, R> extends Single<R> {
     final SingleSource<? extends T> source;

@@ -13,16 +13,22 @@
 
 package io.reactivex.core.internal.operators.mixed;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeSource;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Maps the success value of a Maybe onto a Publisher and

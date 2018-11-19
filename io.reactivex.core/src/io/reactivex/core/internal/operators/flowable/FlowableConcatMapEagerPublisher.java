@@ -13,12 +13,12 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.*;
-
-import io.reactivex.Flowable;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.operators.flowable.FlowableConcatMapEager.ConcatMapEagerDelayErrorSubscriber;
-import io.reactivex.internal.util.ErrorMode;
+import io.reactivex.common.internal.util.ErrorMode;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.operators.flowable.FlowableConcatMapEager.ConcatMapEagerDelayErrorSubscriber;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
 
 /**
  * ConcatMapEager which works with an arbitrary Publisher source.

@@ -13,12 +13,15 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.NoSuchElementException;
-
-import org.reactivestreams.*;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.Single;
+import io.reactivex.core.SingleObserver;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscription;
+
+import java.util.NoSuchElementException;
 
 /**
  * Consumes the source Publisher and emits its last item or the defaultItem

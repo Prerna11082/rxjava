@@ -11,18 +11,15 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
-import io.reactivex.core.Maybe;
-import io.reactivex.core.MaybeObserver;
-import io.reactivex.core.MaybeSource;
-import io.reactivex.core.SingleObserver;
-import io.reactivex.core.SingleSource;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.*;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+
 import java.util.concurrent.atomic.AtomicReference;
 
 public final class SingleFlatMapMaybe<T, R> extends Maybe<R> {

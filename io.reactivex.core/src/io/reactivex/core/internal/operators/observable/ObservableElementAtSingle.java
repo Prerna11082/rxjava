@@ -11,14 +11,15 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.*;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.fuseable.FuseToObservable;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 import java.util.NoSuchElementException;
-import io.reactivex.plugins.RxJavaPlugins;
 
 public final class ObservableElementAtSingle<T> extends Single<T> implements FuseToObservable<T> {
     final ObservableSource<T> source;

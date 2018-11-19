@@ -13,10 +13,10 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.*;
-
-import io.reactivex.Flowable;
-import io.reactivex.internal.operators.flowable.FlowableTake.TakeSubscriber;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.operators.flowable.FlowableTake.TakeSubscriber;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
 
 /**
  * Take with a generic Publisher source.

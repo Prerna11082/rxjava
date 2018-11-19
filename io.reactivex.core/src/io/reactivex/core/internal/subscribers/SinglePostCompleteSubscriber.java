@@ -13,13 +13,13 @@
 
 package io.reactivex.core.internal.subscribers;
 
-import java.util.concurrent.atomic.AtomicLong;
-
-import org.reactivestreams.*;
-
-import io.reactivex.FlowableSubscriber;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Relays signals from upstream according to downstream requests and allows

@@ -12,10 +12,9 @@
  */
 package io.reactivex.core.internal.operators.flowable;
 
+import io.reactivex.core.Flowable;
+import io.reactivex.core.subscribers.SerializedSubscriber;
 import org.reactivestreams.Subscriber;
-
-import io.reactivex.Flowable;
-import io.reactivex.subscribers.SerializedSubscriber;
 
 public final class FlowableSerialized<T> extends AbstractFlowableWithUpstream<T, T> {
     public FlowableSerialized(Flowable<T> source) {

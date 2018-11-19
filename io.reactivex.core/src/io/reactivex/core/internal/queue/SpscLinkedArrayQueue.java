@@ -18,11 +18,12 @@
 
 package io.reactivex.core.internal.queue;
 
-import java.util.concurrent.atomic.*;
-
 import io.reactivex.common.annotations.Nullable;
-import io.reactivex.core.internal.fuseable.SimplePlainQueue;
 import io.reactivex.common.internal.util.Pow2;
+import io.reactivex.core.internal.fuseable.SimplePlainQueue;
+
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
 /**
  * A single-producer single-consumer array-backed queue which can allocate new arrays in case the consumer is slower

@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package io.reactivex.core.internal.schedulers;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
 
-import java.util.concurrent.*;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.functions.Functions;
+import io.reactivex.core.schedulers.SchedulerRunnableIntrospection;
+
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.functions.Functions;
-import io.reactivex.schedulers.SchedulerRunnableIntrospection;
 
 /**
  * Base functionality for direct tasks that manage a runnable and cancellation/completion.

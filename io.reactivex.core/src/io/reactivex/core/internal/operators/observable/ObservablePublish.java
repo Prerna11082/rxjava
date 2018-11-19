@@ -11,18 +11,19 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import java.util.concurrent.atomic.*;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Consumer;
+import io.reactivex.common.internal.util.ExceptionHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.fuseable.HasUpstreamObservableSource;
-import io.reactivex.internal.util.ExceptionHelper;
-import io.reactivex.observables.ConnectableObservable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.observables.ConnectableObservable;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A connectable observable which shares an underlying source and dispatches source values to observers in a backpressure-aware

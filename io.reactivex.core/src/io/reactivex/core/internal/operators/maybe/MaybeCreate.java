@@ -13,13 +13,18 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Cancellable;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.Maybe;
+import io.reactivex.core.MaybeEmitter;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeOnSubscribe;
+import io.reactivex.core.internal.disposables.CancellableDisposable;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Provides an API over MaybeObserver that serializes calls to onXXX and manages cancellation

@@ -12,13 +12,14 @@
  */
 
 package io.reactivex.core.internal.operators.maybe;
+import io.reactivex.core.*;
+
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.disposables.Disposable;
-import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.plugins.RxJavaPlugins;
 
 /**
  * Switches to the fallback Maybe if the other MaybeSource signals a success or completes, or

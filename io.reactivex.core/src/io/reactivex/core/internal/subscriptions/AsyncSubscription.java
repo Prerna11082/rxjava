@@ -13,12 +13,12 @@
 
 package io.reactivex.core.internal.subscriptions;
 
-import java.util.concurrent.atomic.*;
-
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 import org.reactivestreams.Subscription;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.disposables.DisposableHelper;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A subscription implementation that arbitrates exactly one other Subscription and can

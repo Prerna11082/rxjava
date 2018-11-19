@@ -13,13 +13,17 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.*;
-
-import io.reactivex.common.exceptions.*;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionArbiter;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 public final class FlowableOnErrorNext<T> extends AbstractFlowableWithUpstream<T, T> {
     final Function<? super Throwable, ? extends Publisher<? extends T>> nextSupplier;

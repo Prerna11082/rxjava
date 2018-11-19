@@ -13,14 +13,14 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.Callable;
-
-import org.reactivestreams.*;
-
-import io.reactivex.Flowable;
 import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
 import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+
+import java.util.concurrent.Callable;
 
 public final class FlowableDefer<T> extends Flowable<T> {
     final Callable<? extends Publisher<? extends T>> supplier;

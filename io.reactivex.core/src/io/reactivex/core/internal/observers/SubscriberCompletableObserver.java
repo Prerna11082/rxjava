@@ -13,11 +13,11 @@
 
 package io.reactivex.core.internal.observers;
 
-import org.reactivestreams.*;
-
-import io.reactivex.core.CompletableObserver;
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.CompletableObserver;
 import io.reactivex.core.internal.disposables.DisposableHelper;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 public final class SubscriberCompletableObserver<T> implements CompletableObserver, Subscription {
     final Subscriber<? super T> subscriber;

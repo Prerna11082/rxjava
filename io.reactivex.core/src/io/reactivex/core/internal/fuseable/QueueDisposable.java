@@ -12,9 +12,9 @@
  */
 package io.reactivex.core.internal.fuseable;
 
-import java.util.Queue;
-
 import io.reactivex.common.disposables.Disposable;
+
+import java.util.Queue;
 
 /**
  * An interface extending Queue and Disposable and allows negotiating

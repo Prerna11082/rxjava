@@ -11,15 +11,15 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
-
-import java.util.concurrent.Callable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiFunction;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.operators.observable.ObservableReduceSeedSingle.ReduceSeedObserver;
+import io.reactivex.core.internal.operators.observable.ObservableReduceSeedSingle.ReduceSeedObserver;
+
+import java.util.concurrent.Callable;
 
 /**
  * Reduce a sequence of values, starting from a generated seed value and by using

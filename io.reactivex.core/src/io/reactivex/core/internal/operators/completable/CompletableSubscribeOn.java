@@ -13,10 +13,11 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import java.util.concurrent.atomic.AtomicReference;
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.SequentialDisposable;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.disposables.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class CompletableSubscribeOn extends Completable {
     final CompletableSource source;

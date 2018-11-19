@@ -11,10 +11,11 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.common.exceptions.*;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
 
 public final class SingleOnErrorReturn<T> extends Single<T> {

@@ -13,8 +13,12 @@
 
 package io.reactivex.core.internal.operators.mixed;
 
-import io.reactivex.annotations.Experimental;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.annotations.Experimental;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.CompletableObserver;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.Notification;
+import io.reactivex.core.SingleObserver;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**

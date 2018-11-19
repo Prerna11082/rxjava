@@ -13,11 +13,10 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.Publisher;
-
-import io.reactivex.core.Flowable;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
 import io.reactivex.core.internal.fuseable.HasUpstreamPublisher;
+import org.reactivestreams.Publisher;
 
 /**
  * Abstract base class for operators that take an upstream

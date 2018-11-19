@@ -13,17 +13,23 @@
 
 package io.reactivex.core.internal.operators.mixed;
 
-import java.util.concurrent.atomic.*;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.common.internal.util.ErrorMode;
+import io.reactivex.core.Observable;
+import io.reactivex.core.Observer;
+import io.reactivex.core.SingleObserver;
+import io.reactivex.core.SingleSource;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.fuseable.SimplePlainQueue;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.internal.util.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Maps each upstream item into a {@link SingleSource}, subscribes to them one after the other terminates

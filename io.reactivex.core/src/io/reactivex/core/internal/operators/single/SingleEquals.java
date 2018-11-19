@@ -11,13 +11,14 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
+
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.disposables.*;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.plugins.RxJavaPlugins;
 
 public final class SingleEquals<T> extends Single<Boolean> {
 

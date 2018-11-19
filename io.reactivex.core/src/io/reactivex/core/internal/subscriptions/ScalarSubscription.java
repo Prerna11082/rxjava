@@ -13,12 +13,11 @@
 
 package io.reactivex.core.internal.subscriptions;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.annotations.Nullable;
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.core.internal.fuseable.QueueSubscription;
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.internal.fuseable.QueueSubscription;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * A Subscription that holds a constant value and emits it only when requested.

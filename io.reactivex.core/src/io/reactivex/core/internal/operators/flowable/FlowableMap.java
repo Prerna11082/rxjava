@@ -13,14 +13,14 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.Subscriber;
-
-import io.reactivex.Flowable;
-import io.reactivex.annotations.Nullable;
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
-import io.reactivex.internal.subscribers.*;
+import io.reactivex.core.internal.subscribers.BasicFuseableConditionalSubscriber;
+import io.reactivex.core.internal.subscribers.BasicFuseableSubscriber;
+import org.reactivestreams.Subscriber;
 
 public final class FlowableMap<T, U> extends AbstractFlowableWithUpstream<T, U> {
     final Function<? super T, ? extends U> mapper;

@@ -12,16 +12,16 @@
  */
 
 package io.reactivex.core.internal.operators.maybe;
-
-import java.util.Iterator;
-
-import io.reactivex.annotations.Nullable;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.observers.BasicQueueDisposable;
+import io.reactivex.core.internal.observers.BasicQueueDisposable;
+
+import java.util.Iterator;
 
 /**
  * Maps a success value into an Iterable and streams it back as a Flowable.

@@ -13,14 +13,17 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import org.reactivestreams.*;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeSource;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Relays the main source's event unless the other Publisher signals an item first or just completes

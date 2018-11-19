@@ -13,11 +13,14 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.concurrent.Callable;
-
 import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Maybe;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeSource;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
-import io.reactivex.internal.functions.ObjectHelper;
+
+import java.util.concurrent.Callable;
 
 /**
  * Defers the creation of the actual Maybe the incoming MaybeObserver is subscribed to.

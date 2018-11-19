@@ -25,12 +25,13 @@ package io.reactivex.core.internal.subscriptions;
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-import java.util.concurrent.atomic.*;
-
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
 import org.reactivestreams.Subscription;
 
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.util.BackpressureHelper;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Arbitrates requests and cancellation between Subscriptions.

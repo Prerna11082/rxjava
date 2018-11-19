@@ -11,15 +11,16 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
-
-import java.util.*;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.operators.single.SingleZipArray.ZipCoordinator;
+import io.reactivex.core.internal.operators.single.SingleZipArray.ZipCoordinator;
+
+import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 public final class SingleZipIterable<T, R> extends Single<R> {
 

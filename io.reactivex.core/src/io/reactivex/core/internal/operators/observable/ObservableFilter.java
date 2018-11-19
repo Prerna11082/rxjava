@@ -11,11 +11,11 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
-
-import io.reactivex.annotations.Nullable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
+import io.reactivex.core.*;
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.functions.Predicate;
-import io.reactivex.internal.observers.BasicFuseableObserver;
+import io.reactivex.core.internal.observers.BasicFuseableObserver;
 
 public final class ObservableFilter<T> extends AbstractObservableWithUpstream<T, T> {
     final Predicate<? super T> predicate;

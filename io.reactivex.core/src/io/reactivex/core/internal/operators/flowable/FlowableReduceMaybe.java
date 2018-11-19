@@ -13,15 +13,20 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.*;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiFunction;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.fuseable.*;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.Maybe;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.internal.fuseable.FuseToFlowable;
+import io.reactivex.core.internal.fuseable.HasUpstreamPublisher;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscription;
 
 /**
  * Reduce a Flowable into a single value exposed as Single or signal NoSuchElementException.

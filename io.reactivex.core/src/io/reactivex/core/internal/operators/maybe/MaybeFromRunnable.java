@@ -13,13 +13,14 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.concurrent.Callable;
-
-import io.reactivex.core.*;
-import io.reactivex.common.disposables.*;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.core.Maybe;
+import io.reactivex.core.MaybeObserver;
 import io.reactivex.core.disposables.Disposables;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.Callable;
 
 /**
  * Executes an Runnable and signals its exception or completes normally.

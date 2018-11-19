@@ -13,13 +13,17 @@
 
 package io.reactivex.core.internal.subscribers;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.FlowableSubscriber;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.*;
+import io.reactivex.core.internal.util.HalfSerializer;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Ensures that the event flow between the upstream and downstream follow

@@ -13,11 +13,10 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.Subscriber;
-
-import io.reactivex.Flowable;
+import io.reactivex.core.Flowable;
 import io.reactivex.core.internal.fuseable.ScalarCallable;
 import io.reactivex.core.internal.subscriptions.ScalarSubscription;
+import org.reactivestreams.Subscriber;
 
 /**
  * Represents a constant scalar value.

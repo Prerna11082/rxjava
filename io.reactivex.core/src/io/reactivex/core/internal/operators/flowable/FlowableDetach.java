@@ -13,10 +13,12 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.*;
-
+import io.reactivex.core.internal.util.EmptyComponent;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.EmptyComponent;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 public final class FlowableDetach<T> extends AbstractFlowableWithUpstream<T, T> {
 

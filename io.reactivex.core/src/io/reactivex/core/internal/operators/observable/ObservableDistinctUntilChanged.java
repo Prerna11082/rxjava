@@ -11,11 +11,13 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import io.reactivex.core.*;
 import io.reactivex.common.annotations.Nullable;
-import io.reactivex.common.functions.*;
+import io.reactivex.common.functions.BiPredicate;
+import io.reactivex.common.functions.Function;
+import io.reactivex.core.ObservableSource;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.observers.BasicFuseableObserver;
 
 public final class ObservableDistinctUntilChanged<T, K> extends AbstractObservableWithUpstream<T, T> {

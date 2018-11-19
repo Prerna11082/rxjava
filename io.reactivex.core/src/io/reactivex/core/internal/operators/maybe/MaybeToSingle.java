@@ -13,11 +13,13 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.NoSuchElementException;
+import io.reactivex.core.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.fuseable.HasUpstreamMaybeSource;
+
+import java.util.NoSuchElementException;
 
 /**
  * Wraps a MaybeSource and exposes its onSuccess and onError signals and signals

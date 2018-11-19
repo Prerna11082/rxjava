@@ -10,11 +10,13 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.core.*;
+
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.observers.DeferredScalarDisposable;
+import io.reactivex.core.internal.observers.DeferredScalarDisposable;
 
 /**
  * Wraps a Single and exposes it as an Observable.

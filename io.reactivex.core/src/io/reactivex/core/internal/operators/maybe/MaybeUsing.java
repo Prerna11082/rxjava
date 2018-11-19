@@ -13,15 +13,21 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.CompositeException;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Maybe;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeSource;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+import io.reactivex.core.plugins.RxJavaPlugins;
+
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.disposables.Disposable;
-import io.reactivex.common.exceptions.*;
-import io.reactivex.common.functions.*;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.plugins.RxJavaPlugins;
 
 /**
  * Creates a resource and a dependent Maybe for each incoming Observer and optionally

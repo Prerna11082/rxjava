@@ -13,14 +13,20 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.CompletableObserver;
+import io.reactivex.core.CompletableSource;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.internal.util.*;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Merges a Flowable and a Completable by emitting the items of the Flowable and waiting until

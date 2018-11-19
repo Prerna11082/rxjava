@@ -11,9 +11,9 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
 
-import io.reactivex.disposables.Disposables;
+import io.reactivex.core.disposables.Disposables;
 
 public final class SingleJust<T> extends Single<T> {
 

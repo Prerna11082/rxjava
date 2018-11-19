@@ -11,21 +11,25 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
+
+import io.reactivex.core.*;
+
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.common.internal.util.ErrorMode;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.fuseable.QueueDisposable;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.observers.*;
 
 import java.util.ArrayDeque;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.disposables.Disposable;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.common.functions.Function;
-import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.internal.observers.*;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-import io.reactivex.internal.util.*;
-import io.reactivex.plugins.RxJavaPlugins;
 
 public final class ObservableConcatMapEager<T, R> extends AbstractObservableWithUpstream<T, R> {
 

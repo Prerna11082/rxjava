@@ -13,11 +13,13 @@
 
 package io.reactivex.core.internal.operators.completable;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-import io.reactivex.core.*;
-import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable; import io.reactivex.core.*;
+import io.reactivex.core.Completable;
+import io.reactivex.core.CompletableObserver;
+import io.reactivex.core.CompletableSource;
 import io.reactivex.core.internal.disposables.SequentialDisposable;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public final class CompletableConcatArray extends Completable {
     final CompletableSource[] sources;

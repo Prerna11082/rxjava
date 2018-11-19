@@ -11,11 +11,14 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.schedulers;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
 
-import java.util.concurrent.*;
+import io.reactivex.common.disposables.Disposable;
 
-import io.reactivex.disposables.Disposable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Implements the Future interface and calls dispose() on cancel() but

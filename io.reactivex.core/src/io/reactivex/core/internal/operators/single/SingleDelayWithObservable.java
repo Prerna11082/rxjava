@@ -11,14 +11,15 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.single;
+package io.reactivex.core.internal.operators.single; import io.reactivex.core.*;
+
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.*;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.observers.ResumeSingleObserver;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.disposables.Disposable;
-import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.observers.ResumeSingleObserver;
-import io.reactivex.plugins.RxJavaPlugins;
 
 public final class SingleDelayWithObservable<T, U> extends Single<T> {
 

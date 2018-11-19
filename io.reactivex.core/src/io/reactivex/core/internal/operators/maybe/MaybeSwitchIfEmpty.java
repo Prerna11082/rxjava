@@ -12,11 +12,12 @@
  */
 
 package io.reactivex.core.internal.operators.maybe;
+import io.reactivex.core.*;
+
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.disposables.DisposableHelper;
 
 import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.disposables.Disposable;
-import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**
  * Subscribes to the other source if the main source is empty.

@@ -11,17 +11,18 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import io.reactivex.annotations.Nullable;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.internal.observers.BasicIntQueueDisposable;
-import io.reactivex.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.core.internal.fuseable.QueueDisposable;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.core.internal.schedulers.TrampolineScheduler;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.observers.BasicIntQueueDisposable;
 
 public final class ObservableObserveOn<T> extends AbstractObservableWithUpstream<T, T> {
     final Scheduler scheduler;

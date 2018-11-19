@@ -13,11 +13,13 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.*;
-
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Predicate;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 public final class FlowableSkipWhile<T> extends AbstractFlowableWithUpstream<T, T> {
     final Predicate<? super T> predicate;

@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package io.reactivex.core.internal.schedulers;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicReference;
 

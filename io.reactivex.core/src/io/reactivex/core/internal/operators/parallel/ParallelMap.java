@@ -13,16 +13,16 @@
 
 package io.reactivex.core.internal.operators.parallel;
 
-import org.reactivestreams.*;
-
-import io.reactivex.FlowableSubscriber;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
-import io.reactivex.parallel.ParallelFlowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.parallel.ParallelFlowable;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 /**
  * Maps each 'rail' of the source ParallelFlowable with a mapper function.

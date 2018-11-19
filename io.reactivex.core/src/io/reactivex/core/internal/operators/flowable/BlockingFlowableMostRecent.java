@@ -13,11 +13,13 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.*;
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.util.NotificationLite;
+import io.reactivex.core.subscribers.DefaultSubscriber;
 
-import io.reactivex.Flowable;
-import io.reactivex.internal.util.*;
-import io.reactivex.subscribers.DefaultSubscriber;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Returns an Iterable that always returns the item most recently emitted by an Observable, or a

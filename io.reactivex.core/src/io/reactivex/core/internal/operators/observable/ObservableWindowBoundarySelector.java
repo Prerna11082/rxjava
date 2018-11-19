@@ -11,25 +11,29 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import java.util.*;
-import java.util.concurrent.atomic.*;
-
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.functions.Function;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.Observable;
 import io.reactivex.core.ObservableSource;
 import io.reactivex.core.Observer;
-import io.reactivex.common.disposables.*;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.common.functions.Function;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.observers.QueueDrainObserver;
 import io.reactivex.core.internal.queue.MpscLinkedQueue;
 import io.reactivex.core.internal.util.NotificationLite;
-import io.reactivex.core.observers.*;
+import io.reactivex.core.observers.DisposableObserver;
+import io.reactivex.core.observers.SerializedObserver;
 import io.reactivex.core.plugins.RxJavaPlugins;
 import io.reactivex.core.subjects.UnicastSubject;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final ObservableSource<B> open;

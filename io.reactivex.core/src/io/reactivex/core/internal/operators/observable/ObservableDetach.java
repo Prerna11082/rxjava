@@ -11,11 +11,12 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
+import io.reactivex.core.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.internal.util.EmptyComponent;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.internal.util.EmptyComponent;
 
 /**
  * Breaks the links between the upstream and the downstream (the Disposable and

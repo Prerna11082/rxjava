@@ -12,11 +12,13 @@
  */
 
 package io.reactivex.core.internal.operators.maybe;
+import io.reactivex.core.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.disposables.DisposableHelper;
-import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.fuseable.FuseToMaybe;
+import io.reactivex.core.internal.fuseable.HasUpstreamMaybeSource;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Signals true if the source Maybe signals onComplete, signals false if the source Maybe

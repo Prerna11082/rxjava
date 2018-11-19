@@ -13,17 +13,18 @@
 
 package io.reactivex.core.internal.operators.parallel;
 
-import java.util.concurrent.Callable;
-
-import org.reactivestreams.*;
-
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiConsumer;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
 import io.reactivex.core.internal.subscribers.DeferredScalarSubscriber;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.parallel.ParallelFlowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.parallel.ParallelFlowable;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.Callable;
 
 /**
  * Reduce the sequence of values in each 'rail' to a single value.

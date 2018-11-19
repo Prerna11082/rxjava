@@ -12,9 +12,9 @@
  */
 package io.reactivex.core.internal.fuseable;
 
-import java.util.Queue;
-
 import org.reactivestreams.Subscription;
+
+import java.util.Queue;
 
 /**
  * An interface extending Queue and Subscription and allows negotiating

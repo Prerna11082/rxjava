@@ -10,15 +10,18 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
 
-import io.reactivex.internal.functions.ObjectHelper;
-import java.util.concurrent.Callable;
+import io.reactivex.core.*;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.functions.BiConsumer;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.Callable;
 
 public final class ObservableCollect<T, U> extends AbstractObservableWithUpstream<T, U> {
     final Callable<? extends U> initialSupplier;

@@ -10,11 +10,12 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See
  * the License for the specific language governing permissions and limitations under the License.
  */
-package io.reactivex.core.internal.schedulers;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
 
-import io.reactivex.core.Scheduler;
 import io.reactivex.common.annotations.NonNull;
-import io.reactivex.common.disposables.*;
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.Scheduler;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 import io.reactivex.core.plugins.RxJavaPlugins;
 

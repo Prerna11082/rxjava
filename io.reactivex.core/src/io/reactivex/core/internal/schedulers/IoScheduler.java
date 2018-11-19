@@ -14,15 +14,17 @@
  * limitations under the License.
  */
 
-package io.reactivex.core.internal.schedulers;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
 
-import io.reactivex.Scheduler;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.*;
+import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.disposables.CompositeDisposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.Scheduler;
 import io.reactivex.core.internal.disposables.EmptyDisposable;
 
 import java.util.concurrent.*;
-import java.util.concurrent.atomic.*;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Scheduler that creates and caches a set of thread pools and reuses them if possible.

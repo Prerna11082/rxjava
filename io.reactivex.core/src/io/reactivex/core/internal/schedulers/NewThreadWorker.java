@@ -11,16 +11,17 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.schedulers;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
+
+import io.reactivex.common.annotations.NonNull;
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.internal.disposables.DisposableContainer;
+import io.reactivex.core.Scheduler;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 import java.util.concurrent.*;
-
-import io.reactivex.Scheduler;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.annotations.Nullable;
-import io.reactivex.disposables.*;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.plugins.RxJavaPlugins;
 
 /**
  * Base class that manages a single-threaded ScheduledExecutorService as a

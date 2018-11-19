@@ -13,9 +13,9 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import java.util.concurrent.atomic.*;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Consumes the source once and replays its signal to any current or future MaybeObservers.

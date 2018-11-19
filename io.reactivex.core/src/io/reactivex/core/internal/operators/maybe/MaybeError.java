@@ -13,7 +13,9 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import io.reactivex.disposables.Disposables;
+import io.reactivex.core.Maybe;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.disposables.Disposables;
 
 /**
  * Signals a constant Throwable.

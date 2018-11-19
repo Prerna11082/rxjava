@@ -12,18 +12,21 @@
  */
 package io.reactivex.core.internal.util;
 
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.exceptions.MissingBackpressureException;
+import io.reactivex.common.functions.BooleanSupplier;
+import io.reactivex.common.internal.util.QueueDrain;
+import io.reactivex.core.Observer;
+import io.reactivex.core.internal.fuseable.SimplePlainQueue;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
+import io.reactivex.core.internal.queue.SpscArrayQueue;
+import io.reactivex.core.internal.queue.SpscLinkedArrayQueue;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicLong;
-
-import io.reactivex.common.internal.util.QueueDrain;
-import org.reactivestreams.*;
-
-import io.reactivex.core.Observer;
-import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.exceptions.*;
-import io.reactivex.common.functions.BooleanSupplier;
-import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.core.internal.queue.*;
 
 /**
  * Utility class to help with the queue-drain serialization idiom.

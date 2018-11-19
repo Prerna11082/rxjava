@@ -12,20 +12,23 @@
  */
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.core.*;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.BiFunction;
 import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
 import io.reactivex.core.internal.fuseable.SimplePlainQueue;
 import io.reactivex.core.internal.queue.SpscArrayQueue;
-import io.reactivex.core.internal.subscriptions.*;
+import io.reactivex.core.internal.subscriptions.EmptySubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.core.internal.util.BackpressureHelper;
 import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 public final class FlowableScanSeed<T, R> extends AbstractFlowableWithUpstream<T, R> {
     final BiFunction<R, ? super T, R> accumulator;

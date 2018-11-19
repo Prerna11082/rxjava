@@ -13,11 +13,11 @@
 
 package io.reactivex.core.internal.util;
 
-import java.util.concurrent.CountDownLatch;
-
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.core.internal.schedulers.NonBlockingThread;
 import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.CountDownLatch;
 
 /**
  * Utility methods for helping common blocking operations.

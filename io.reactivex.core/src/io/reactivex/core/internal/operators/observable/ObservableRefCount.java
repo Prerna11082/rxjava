@@ -11,17 +11,20 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
+
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.internal.disposables.ResettableConnectable;
+import io.reactivex.core.internal.disposables.SequentialDisposable;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.schedulers.Schedulers;
+import io.reactivex.core.observables.ConnectableObservable;
 
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.*;
-
-import io.reactivex.disposables.Disposable;
-import io.reactivex.common.functions.Consumer;
-import io.reactivex.internal.disposables.*;
-import io.reactivex.observables.ConnectableObservable;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.schedulers.Schedulers;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Returns an observable sequence that stays connected to the source as long as

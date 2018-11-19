@@ -13,9 +13,11 @@
 
 package io.reactivex.core.internal.operators.maybe;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Predicate;
+import io.reactivex.core.MaybeObserver;
+import io.reactivex.core.MaybeSource;
 import io.reactivex.core.internal.disposables.DisposableHelper;
 
 /**

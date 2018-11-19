@@ -13,13 +13,13 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.Subscriber;
-
-import io.reactivex.Flowable;
-import io.reactivex.annotations.*;
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.functions.Consumer;
+import io.reactivex.core.Flowable;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
-import io.reactivex.internal.subscribers.*;
+import io.reactivex.core.internal.subscribers.BasicFuseableConditionalSubscriber;
+import io.reactivex.core.internal.subscribers.BasicFuseableSubscriber;
+import org.reactivestreams.Subscriber;
 
 /**
  * Calls a consumer after pushing the current item to the downstream.

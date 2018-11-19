@@ -11,15 +11,15 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.operators.observable;
+package io.reactivex.core.internal.operators.observable; import io.reactivex.core.*;
+import io.reactivex.core.*;
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.disposables.EmptyDisposable;
+import io.reactivex.core.internal.observers.BasicQueueDisposable;
 
 import java.util.Iterator;
-
-import io.reactivex.annotations.Nullable;
-import io.reactivex.common.exceptions.Exceptions;
-import io.reactivex.core.internal.disposables.EmptyDisposable;
-import io.reactivex.internal.functions.ObjectHelper;
-import io.reactivex.internal.observers.BasicQueueDisposable;
 
 public final class ObservableFromIterable<T> extends Observable<T> {
     final Iterable<? extends T> source;

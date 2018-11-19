@@ -13,20 +13,19 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.Collection;
-import java.util.concurrent.Callable;
-
-import org.reactivestreams.Subscriber;
-
-import io.reactivex.Flowable;
-import io.reactivex.annotations.Nullable;
+import io.reactivex.common.annotations.Nullable;
 import io.reactivex.common.exceptions.Exceptions;
 import io.reactivex.common.functions.Function;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.Flowable;
 import io.reactivex.core.internal.fuseable.QueueFuseable;
 import io.reactivex.core.internal.subscribers.BasicFuseableSubscriber;
 import io.reactivex.core.internal.subscriptions.EmptySubscription;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Subscriber;
+
+import java.util.Collection;
+import java.util.concurrent.Callable;
 
 public final class FlowableDistinct<T, K> extends AbstractFlowableWithUpstream<T, T> {
 

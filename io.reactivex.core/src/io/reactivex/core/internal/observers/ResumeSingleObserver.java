@@ -13,11 +13,11 @@
 
 package io.reactivex.core.internal.observers;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.reactivex.core.SingleObserver;
 import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.SingleObserver;
 import io.reactivex.core.internal.disposables.DisposableHelper;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A SingleObserver implementation used for subscribing to the actual SingleSource

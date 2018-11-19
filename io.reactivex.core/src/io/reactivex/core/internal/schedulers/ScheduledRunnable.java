@@ -11,14 +11,15 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.core.internal.schedulers;
+package io.reactivex.core.internal.schedulers; import io.reactivex.core.*;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicReferenceArray;
-
-import io.reactivex.disposables.Disposable;
+import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.internal.disposables.DisposableContainer;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.plugins.RxJavaPlugins;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
 public final class ScheduledRunnable extends AtomicReferenceArray<Object>
 implements Runnable, Callable<Object>, Disposable {

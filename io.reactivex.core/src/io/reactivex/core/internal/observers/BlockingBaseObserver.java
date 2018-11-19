@@ -12,12 +12,12 @@
  */
 package io.reactivex.core.internal.observers;
 
-import java.util.concurrent.CountDownLatch;
-
-import io.reactivex.core.Observer;
 import io.reactivex.common.disposables.Disposable;
-import io.reactivex.common.internal.util.*;
+import io.reactivex.common.internal.util.ExceptionHelper;
+import io.reactivex.core.Observer;
 import io.reactivex.core.internal.util.BlockingHelper;
+
+import java.util.concurrent.CountDownLatch;
 
 public abstract class BlockingBaseObserver<T> extends CountDownLatch
 implements Observer<T>, Disposable {

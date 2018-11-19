@@ -13,14 +13,14 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import org.reactivestreams.Subscriber;
-
-import io.reactivex.Flowable;
-import io.reactivex.annotations.Nullable;
-import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.common.annotations.Nullable;
+import io.reactivex.common.internal.functions.ObjectHelper;
+import io.reactivex.core.internal.util.BackpressureHelper;
+import io.reactivex.core.Flowable;
 import io.reactivex.core.internal.fuseable.ConditionalSubscriber;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.BackpressureHelper;
+import io.reactivex.core.internal.subscriptions.BasicQueueSubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import org.reactivestreams.Subscriber;
 
 public final class FlowableFromArray<T> extends Flowable<T> {
     final T[] array;

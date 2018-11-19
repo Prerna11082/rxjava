@@ -13,17 +13,24 @@
 
 package io.reactivex.core.internal.operators.flowable;
 
-import java.util.concurrent.atomic.*;
-
-import org.reactivestreams.*;
-
-import io.reactivex.common.exceptions.*;
+import io.reactivex.common.exceptions.Exceptions;
+import io.reactivex.common.exceptions.MissingBackpressureException;
 import io.reactivex.common.functions.BiPredicate;
-import io.reactivex.core.internal.fuseable.*;
-import io.reactivex.internal.queue.SpscArrayQueue;
-import io.reactivex.internal.subscriptions.*;
-import io.reactivex.internal.util.AtomicThrowable;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.common.internal.util.AtomicThrowable;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.internal.fuseable.QueueSubscription;
+import io.reactivex.core.internal.fuseable.SimpleQueue;
+import io.reactivex.core.internal.queue.SpscArrayQueue;
+import io.reactivex.core.internal.subscriptions.DeferredScalarSubscription;
+import io.reactivex.core.internal.subscriptions.SubscriptionHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class FlowableSequenceEqual<T> extends Flowable<Boolean> {
     final Publisher<? extends T> first;
