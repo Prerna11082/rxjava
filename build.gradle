@@ -14,19 +14,60 @@ buildscript {
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.5.2"
     }
 }
-repositories {
-    mavenCentral()
-    maven {
-        url "https://plugins.gradle.org/m2/"
-    }
-}
-
-group = "io.reactivex.rxjava2"
-ext.githubProjectName = "rxjava"
-
-version = project.properties["release.version"]
 
 apply plugin: "java-library"
+apply plugin: "maven"
+apply plugin: "eclipse"
+
+
+subprojects {
+ 	repositories {
+ 		jcenter()
+    	mavenCentral()
+    	maven {
+	        url "https://plugins.gradle.org/m2/"
+	    }
+  	}
+  	
+  	apply plugin: "java-library"
+	apply plugin: "maven"
+	apply plugin: "eclipse"
+
+	sourceCompatibility = JavaVersion.VERSION_1_9
+	targetCompatibility = JavaVersion.VERSION_1_9
+
+	if(project.name.startsWith('io.reactivex.core')){
+		dependencies{
+			compile project (':io.reactivex.common')
+		}
+	}
+
+	def reactiveStreamsVersion = "1.0.2"
+
+	dependencies {
+    	api "org.reactivestreams:reactive-streams:$reactiveStreamsVersion"
+    	api "org.reactivestreams:reactive-streams-tck:$reactiveStreamsVersion"
+    	api "org.reactivestreams:reactive-streams-examples:$reactiveStreamsVersion"
+	}
+
+	sourceSets {
+		main.java.srcDirs = ['src']
+	}    
+	
+	compileJava {
+    	doFirst {
+        	options.compilerArgs = [
+             	'--module-path', classpath.asPath
+        	]
+        	classpath = files()
+    	}
+	}
+}
+
+dependencies{
+			compile project (':io.reactivex.core')
+		}
+
 apply plugin: "checkstyle"
 apply plugin: "jacoco"
 apply plugin: "ru.vyarus.animalsniffer"
@@ -36,10 +77,19 @@ apply plugin: "me.champeau.gradle.jmh"
 apply plugin: "com.github.hierynomus.license"
 apply plugin: "com.jfrog.bintray"
 apply plugin: "com.jfrog.artifactory"
-apply plugin: "eclipse"
 
-sourceCompatibility = JavaVersion.VERSION_1_9
-targetCompatibility = JavaVersion.VERSION_1_9
+
+repositories {
+ 		jcenter()
+    	mavenCentral()
+    	maven {
+	        url "https://plugins.gradle.org/m2/"
+	    }
+  	}
+group = "io.reactivex.rxjava2"
+ext.githubProjectName = "rxjava"
+version = project.properties["release.version"]
+jar.enabled = false
 
 // Dependency versions
 // ---------------------------------------
@@ -56,10 +106,6 @@ def jacocoVersion = "0.8.0"
 dependencies {
     signature "org.codehaus.mojo.signature:java16:1.1@signature"
 
-    api "org.reactivestreams:reactive-streams:$reactiveStreamsVersion"
-    api "org.reactivestreams:reactive-streams-tck:$reactiveStreamsVersion"
-    api "org.reactivestreams:reactive-streams-examples:$reactiveStreamsVersion"
-    jmh "org.reactivestreams:reactive-streams:$reactiveStreamsVersion"
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.1'
@@ -70,10 +116,6 @@ dependencies {
     testImplementation "com.google.guava:guava:$guavaVersion"
 }
 
-
-	
-
- 
 
 javadoc {
     doFirst {
