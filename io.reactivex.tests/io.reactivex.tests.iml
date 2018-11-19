@@ -7,8 +7,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="io.reactivex.common" level="project" />
-    <orderEntry type="library" name="io.reactivex.core" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.testng:testng:6.11" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.testng:testng:5.14.10" level="project" />
     <orderEntry type="library" name="Gradle: org.reactivestreams:reactive-streams-examples:1.0.2" level="project" />
@@ -19,6 +17,8 @@
     <orderEntry type="library" name="Gradle: org.junit.platform:junit-platform-commons:1.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.1.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="module" module-name="io.reactivex.common" />
+    <orderEntry type="module" module-name="io.reactivex.core" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit-4.12" level="project" />
   </component>
 </module>

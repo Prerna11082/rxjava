@@ -3,6 +3,8 @@ module io.reactivex.core {
     requires io.reactivex.common;
 
     exports io.reactivex.core;
+    exports io.reactivex.core.annotations;
+    exports io.reactivex.core.disposables;
     exports io.reactivex.core.flowables;
     exports io.reactivex.core.internal.fuseable;
     exports io.reactivex.core.internal.observers;
@@ -29,7 +31,6 @@ module io.reactivex.core {
     exports io.reactivex.core.schedulers;
     exports io.reactivex.core.subjects;
     exports io.reactivex.core.subscribers;
-    exports io.reactivex.core.disposables;
     exports io.reactivex.core.internal.disposables;
 
     requires org.reactivestreams.tck;

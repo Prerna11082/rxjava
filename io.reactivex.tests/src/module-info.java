@@ -15,4 +15,5 @@ module io.reactivex.tests {
 	requires mockito.core;
 	requires org.reactivestreams;
 	requires org.reactivestreams.tck;
+	requires junit;
 }

@@ -333,7 +333,7 @@ implements FlowableSubscriber<T>, Subscription, Disposable {
      * @param mode the mode to establish, see the {@link QueueSubscription} constants
      * @return this
      */
-    final TestSubscriber<T> setInitialFusionMode(int mode) {
+    public final TestSubscriber<T> setInitialFusionMode(int mode) {
         this.initialFusionMode = mode;
         return this;
     }
@@ -345,7 +345,7 @@ implements FlowableSubscriber<T>, Subscription, Disposable {
      * @param mode the expected mode
      * @return this
      */
-    final TestSubscriber<T> assertFusionMode(int mode) {
+    public final TestSubscriber<T> assertFusionMode(int mode) {
         int m = establishedFusionMode;
         if (m != mode) {
             if (qs != null) {
@@ -373,7 +373,7 @@ implements FlowableSubscriber<T>, Subscription, Disposable {
      * Use SubscriberFusion to work with such tests.
      * @return this
      */
-    final TestSubscriber<T> assertFuseable() {
+    public final TestSubscriber<T> assertFuseable() {
         if (qs == null) {
             throw new AssertionError("Upstream is not fuseable.");
         }
@@ -386,7 +386,7 @@ implements FlowableSubscriber<T>, Subscription, Disposable {
      * Use SubscriberFusion to work with such tests.
      * @return this
      */
-    final TestSubscriber<T> assertNotFuseable() {
+    public final TestSubscriber<T> assertNotFuseable() {
         if (qs != null) {
             throw new AssertionError("Upstream is fuseable.");
         }
