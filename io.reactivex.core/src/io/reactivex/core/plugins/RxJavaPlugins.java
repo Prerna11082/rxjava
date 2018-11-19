@@ -391,7 +391,7 @@ public final class RxJavaPlugins {
      * @return true if the error should pass through, false if
      * it may be wrapped into an UndeliverableException
      */
-    static boolean isBug(Throwable error) {
+    public static boolean isBug(Throwable error) {
         // user forgot to add the onError handler in subscribe
         if (error instanceof OnErrorNotImplementedException) {
             return true;
@@ -643,7 +643,7 @@ public final class RxJavaPlugins {
     /**
      * Revokes the lockdown, only for testing purposes.
      */
-    /* test. */static void unlock() {
+    /* test. */public static void unlock() {
         lockdown = false;
     }
 
