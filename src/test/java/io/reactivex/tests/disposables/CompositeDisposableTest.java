@@ -11,7 +11,7 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.disposables;
+package io.reactivex.tests.disposables;
 
 import static org.junit.Assert.*;
 
@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.junit.Test;
 
-import io.reactivex.TestHelper;
+import io.reactivex.tests.TestHelper;
 import io.reactivex.common.disposables.CompositeDisposable;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.CompositeException;

@@ -34,7 +34,7 @@ import org.reactivestreams.Processor;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-import org.reactivestreams.tck.flow.support.TestException;
+
 
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.exceptions.CompositeException;
@@ -76,6 +76,7 @@ import io.reactivex.core.processors.PublishProcessor;
 import io.reactivex.core.schedulers.Schedulers;
 import io.reactivex.core.subjects.Subject;
 import io.reactivex.core.subscribers.TestSubscriber;
+import io.reactivex.tests.exceptions.TestException;
 
 /**
  * Common methods for helping with tests from 1.x mostly.

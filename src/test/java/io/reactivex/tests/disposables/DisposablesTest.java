@@ -11,7 +11,7 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.disposables;
+package io.reactivex.tests.disposables;
 
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -24,10 +24,12 @@ import java.util.concurrent.atomic.*;
 import org.junit.Test;
 import org.reactivestreams.Subscription;
 
-import io.reactivex.TestHelper;
-import io.reactivex.functions.Action;
-import io.reactivex.internal.disposables.DisposableHelper;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.tests.TestHelper;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.functions.Action;
+import io.reactivex.core.disposables.Disposables;
+import io.reactivex.core.internal.disposables.DisposableHelper;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public class DisposablesTest {
 

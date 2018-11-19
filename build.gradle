@@ -8,7 +8,7 @@ buildscript {
     }
     dependencies {
         classpath "ru.vyarus:gradle-animalsniffer-plugin:1.2.0"
-        classpath "gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.13.1"
+       // classpath "gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.13.1"
         classpath "me.champeau.gradle:jmh-gradle-plugin:0.4.5"
         classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3"
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.5.2"
@@ -68,13 +68,13 @@ dependencies{
     compile project (':io.reactivex.core')
 }
 
-apply plugin: "checkstyle"
+//apply plugin: "checkstyle"
 apply plugin: "jacoco"
 apply plugin: "ru.vyarus.animalsniffer"
 apply plugin: "maven"
 apply plugin: "osgi"
 apply plugin: "me.champeau.gradle.jmh"
-apply plugin: "com.github.hierynomus.license"
+//apply plugin: "com.github.hierynomus.license"
 apply plugin: "com.jfrog.bintray"
 apply plugin: "com.jfrog.artifactory"
 
@@ -94,7 +94,7 @@ jar.enabled = false
 // Dependency versions
 // ---------------------------------------
 
-def junitVersion = "5.0"
+def junitVersion = "4.12"
 def reactiveStreamsVersion = "1.0.2"
 def mockitoVersion = "2.1.0"
 def jmhLibVersion = "1.20"
@@ -106,7 +106,7 @@ def jacocoVersion = "0.8.0"
 dependencies {
     signature "org.codehaus.mojo.signature:java16:1.1@signature"
 
-   	testCompile 'junit:junit:5.0'
+   	testCompile 'junit:junit:4.12'
    	testCompile project(':io.reactivex.common')
    	testCompile project(':io.reactivex.core')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.1'
@@ -118,41 +118,6 @@ dependencies {
     testImplementation "com.google.guava:guava:$guavaVersion"
 }
 
-javadoc {
-    doFirst {
-        options.addStringOption('-module-path', classpath.asPath)
-        options.addStringOption("-class-path", "")
-        
-    }
-    failOnError = false
-    exclude "**/internal/**"
-    exclude "**/test/**"
-    exclude "**/perf/**"
-    exclude "**/jmh/**"
-    options {
-        windowTitle = "RxJava Javadoc ${project.version}"
-    }
-    // Clear the following options to make the docs consistent with the old format
-    options.addStringOption("top").value = ""
-    options.addStringOption("doctitle").value = ""
-    options.addStringOption("header").value = ""
-    options.stylesheetFile = new File(projectDir, "gradle/stylesheet.css");
-
-    source = sourceSets.main.allJava
-
-
-    options.links(
-            "https://docs.oracle.com/javase/7/docs/api/",
-            "http://www.reactive-streams.org/reactive-streams-${reactiveStreamsVersion}-javadoc/"
-    )
-
-
-    if (JavaVersion.current().isJava7()) {
-        // "./gradle/stylesheet.css" only supports Java 7
-        options.addStringOption("stylesheetfile", rootProject.file("./gradle/stylesheet.css").toString())
-    }
-}
-
 animalsniffer {
     annotation = "io.reactivex.internal.util.SuppressAnimalSniffer"
 }
@@ -161,12 +126,12 @@ task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = "sources"
     from sourceSets.main.allSource
 }
-
+/*
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = "javadoc"
     from javadoc.destinationDir
 }
-
+*/
 
 compileTestJava {
     doFirst {
@@ -175,20 +140,24 @@ compileTestJava {
             '--add-modules', 'org.junit.jupiter.api',
             '--add-modules','io.reactivex.common',
             '--add-modules','io.reactivex.core',
-            '--patch-module', "rxJava=" + files(sourceSets.test.java.srcDirs).asPath,
+            '--patch-module', "io.reactivex.tests=" + files(sourceSets.test.java.srcDirs).asPath,
             '--add-reads', "rxJava=org.junit.jupiter.api"
         ]
         classpath = files()
     }
 }
 
+tasks.withType(Test) {
+    scanForTestClasses = false
+    include "**/*Test.class" 
+}
 
 
 test {
 
  	doFirst {
         jvmArgs += [
-            '--add-exports', "io.reactivex.common/io.reactivex.common.disposables=junit",
+//            '--add-exports', "io.reactivex.tests/io.reactivex.com=junit",
         ]
     }
     testLogging  {
@@ -274,11 +243,11 @@ jacocoTestReport {
 jacocoTestReport.dependsOn GCandMem
 
 build.dependsOn jacocoTestReport
-
+/*
 checkstyle {
     configFile file("checkstyle.xml")
     ignoreFailures = true
     toolVersion ="8.14"
 }
-
-apply from: file("gradle/javadoc_cleanup.gradle")
+*/
+//apply from: file("gradle/javadoc_cleanup.gradle")
