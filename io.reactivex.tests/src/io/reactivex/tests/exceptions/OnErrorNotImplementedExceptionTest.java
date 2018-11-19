@@ -22,7 +22,7 @@ import io.reactivex.core.*;
 import io.reactivex.tests.TestHelper;
 import org.junit.*;
 
-import io.reactivex.*;
+import io.reactivex.core.*;
 import io.reactivex.core.internal.functions.Functions;
 import io.reactivex.core.plugins.RxJavaPlugins;
 

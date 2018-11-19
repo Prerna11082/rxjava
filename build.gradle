@@ -160,6 +160,7 @@ tasks.withType(Test) {
 
 test {
 
+    exclude 'io/reactivex/tests/tck/**'
     testLogging  {
         // showing skipped occasionally should prevent CI timeout due to lack of standard output
         events=["skipped", "failed"] // "started", "passed"
@@ -235,7 +236,7 @@ jacocoTestReport {
     afterEvaluate {
         classDirectories = files(classDirectories.files.collect {
             fileTree(dir: it,
-                    exclude: ["io/reactivex/tck/**"])
+                    exclude: ["io/reactivex/tests/tck/**"])
         })
     }
 }

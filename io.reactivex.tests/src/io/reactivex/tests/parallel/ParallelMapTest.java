@@ -22,7 +22,7 @@ import io.reactivex.core.Flowable;
 import io.reactivex.tests.TestHelper;
 import org.junit.Test;
 
-import io.reactivex.*;
+import io.reactivex.core.*;
 import io.reactivex.tests.exceptions.TestException;
 import io.reactivex.common.functions.*;
 import io.reactivex.core.internal.functions.Functions;

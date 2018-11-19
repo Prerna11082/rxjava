@@ -23,7 +23,7 @@ import io.reactivex.core.Observable;
 import io.reactivex.core.Observer;
 import org.junit.*;
 
-import io.reactivex.*;
+import io.reactivex.core.*;
 import io.reactivex.common.disposables.Disposable;
 import io.reactivex.common.functions.Function;
 
