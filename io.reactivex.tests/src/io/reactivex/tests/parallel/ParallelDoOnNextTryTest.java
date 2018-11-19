@@ -17,14 +17,17 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
+import io.reactivex.core.parallel.ParallelFailureHandling;
+import io.reactivex.tests.TestHelper;
+import io.reactivex.tests.exceptions.TestException;
 import org.junit.Test;
 
-import io.reactivex.*;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.*;
-import io.reactivex.internal.functions.Functions;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.subscribers.TestSubscriber;
+import io.reactivex.core.*;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.*;
+import io.reactivex.core.internal.functions.Functions;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.subscribers.TestSubscriber;
 
 public class ParallelDoOnNextTryTest implements Consumer<Object> {
 

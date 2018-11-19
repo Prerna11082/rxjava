@@ -17,13 +17,14 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import io.reactivex.tests.TestHelper;
 import org.junit.Test;
 
-import io.reactivex.*;
-import io.reactivex.exceptions.TestException;
-import io.reactivex.functions.Predicate;
-import io.reactivex.internal.functions.Functions;
-import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.core.*;
+import io.reactivex.tests.exceptions.TestException;
+import io.reactivex.common.functions.Predicate;
+import io.reactivex.core.internal.functions.Functions;
+import io.reactivex.core.plugins.RxJavaPlugins;
 
 public class ParallelFilterTest {
 

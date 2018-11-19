@@ -18,18 +18,19 @@ import static org.junit.Assert.*;
 import java.util.*;
 import java.util.concurrent.*;
 
+import io.reactivex.tests.exceptions.TestException;
 import org.junit.Test;
 import org.reactivestreams.*;
 
-import io.reactivex.*;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.*;
-import io.reactivex.internal.functions.Functions;
-import io.reactivex.internal.fuseable.*;
-import io.reactivex.internal.subscribers.BasicFuseableSubscriber;
-import io.reactivex.internal.subscriptions.BooleanSubscription;
-import io.reactivex.processors.UnicastProcessor;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.core.*;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.*;
+import io.reactivex.core.internal.functions.Functions;
+import io.reactivex.core.internal.fuseable.*;
+import io.reactivex.core.internal.subscribers.BasicFuseableSubscriber;
+import io.reactivex.core.internal.subscriptions.BooleanSubscription;
+import io.reactivex.core.processors.UnicastProcessor;
+import io.reactivex.core.schedulers.Schedulers;
 
 public class ParallelFromPublisherTest {
 

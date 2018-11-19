@@ -358,7 +358,7 @@ implements FlowableSubscriber<T>, Subscription, Disposable {
         return this;
     }
 
-    static String fusionModeToString(int mode) {
+    public static String fusionModeToString(int mode) {
         switch (mode) {
         case QueueSubscription.NONE : return "NONE";
         case QueueSubscription.SYNC : return "SYNC";
@@ -422,7 +422,7 @@ implements FlowableSubscriber<T>, Subscription, Disposable {
     /**
      * A subscriber that ignores all events and does not report errors.
      */
-    enum EmptySubscriber implements FlowableSubscriber<Object> {
+    public enum EmptySubscriber implements FlowableSubscriber<Object> {
         INSTANCE;
 
         @Override

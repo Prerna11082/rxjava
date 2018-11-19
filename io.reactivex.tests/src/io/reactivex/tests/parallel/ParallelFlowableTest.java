@@ -19,18 +19,25 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.*;
 
+import io.reactivex.common.internal.util.ListAddBiConsumer;
+import io.reactivex.common.internal.util.MergerBiFunction;
+import io.reactivex.core.parallel.ParallelFlowable;
+import io.reactivex.core.parallel.ParallelFlowableConverter;
+import io.reactivex.core.parallel.ParallelTransformer;
+import io.reactivex.tests.TestHelper;
+import io.reactivex.tests.exceptions.TestException;
 import org.junit.*;
 import org.reactivestreams.*;
 
-import io.reactivex.*;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.*;
-import io.reactivex.internal.functions.Functions;
-import io.reactivex.internal.util.*;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.processors.UnicastProcessor;
-import io.reactivex.schedulers.Schedulers;
-import io.reactivex.subscribers.TestSubscriber;
+import io.reactivex.core.*;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.*;
+import io.reactivex.core.internal.functions.Functions;
+import io.reactivex.core.internal.util.*;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.processors.UnicastProcessor;
+import io.reactivex.core.schedulers.Schedulers;
+import io.reactivex.core.subscribers.TestSubscriber;
 
 public class ParallelFlowableTest {
 

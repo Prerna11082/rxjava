@@ -18,6 +18,7 @@ import static org.junit.Assert.*;
 import java.util.*;
 import java.util.concurrent.Callable;
 
+import io.reactivex.tests.TestHelper;
 import org.junit.Test;
 
 import io.reactivex.core.*;

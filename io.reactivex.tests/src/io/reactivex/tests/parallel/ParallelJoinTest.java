@@ -15,14 +15,17 @@ package io.reactivex.tests.parallel;
 
 import java.util.List;
 
+import io.reactivex.core.parallel.ParallelFlowable;
+import io.reactivex.tests.TestHelper;
+import io.reactivex.tests.exceptions.TestException;
 import org.junit.Test;
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.*;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.Function;
-import io.reactivex.internal.subscriptions.BooleanSubscription;
-import io.reactivex.subscribers.TestSubscriber;
+import io.reactivex.core.*;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.Function;
+import io.reactivex.core.internal.subscriptions.BooleanSubscription;
+import io.reactivex.core.subscribers.TestSubscriber;
 
 public class ParallelJoinTest {
 

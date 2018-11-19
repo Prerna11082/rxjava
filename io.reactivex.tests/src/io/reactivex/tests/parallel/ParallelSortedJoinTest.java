@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.core.parallel.ParallelFlowable;
+import io.reactivex.tests.TestHelper;
 import org.junit.Test;
 
 import io.reactivex.core.*;

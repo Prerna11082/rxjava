@@ -18,6 +18,9 @@ import static org.junit.Assert.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.core.parallel.ParallelFlowable;
+import io.reactivex.tests.TestHelper;
+import io.reactivex.tests.exceptions.TestException;
 import org.junit.Test;
 import org.reactivestreams.Subscriber;
 
@@ -26,11 +29,11 @@ import io.reactivex.common.exceptions.*;
 import io.reactivex.common.functions.Predicate;
 import io.reactivex.core.internal.functions.Functions;
 import io.reactivex.core.internal.schedulers.ImmediateThinScheduler;
-import io.reactivex.cointernal.subscriptions.BooleanSubscription;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.processors.PublishProcessor;
-import io.reactivex.schedulers.Schedulers;
-import io.reactivex.subscribers.TestSubscriber;
+import io.reactivex.core.internal.subscriptions.BooleanSubscription;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.processors.PublishProcessor;
+import io.reactivex.core.schedulers.Schedulers;
+import io.reactivex.core.subscribers.TestSubscriber;
 
 public class ParallelRunOnTest {
 
