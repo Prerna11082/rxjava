@@ -29,6 +29,7 @@ module io.reactivex.core {
     exports io.reactivex.core.schedulers;
     exports io.reactivex.core.subjects;
     exports io.reactivex.core.subscribers;
+    exports io.reactivex.core.disposables;
 
     requires org.reactivestreams.tck;
     requires org.reactivestreams;
