@@ -102,7 +102,9 @@ def jacocoVersion = "0.8.0"
 dependencies {
     signature "org.codehaus.mojo.signature:java16:1.1@signature"
 
-
+   	testCompile 'junit:junit:5.0'
+   	testCompile project(':io.reactivex.common')
+   	testCompile project(':io.reactivex.core')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.1'
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
@@ -112,11 +114,11 @@ dependencies {
     testImplementation "com.google.guava:guava:$guavaVersion"
 }
 
-
 javadoc {
     doFirst {
         options.addStringOption('-module-path', classpath.asPath)
         options.addStringOption("-class-path", "")
+        
     }
     failOnError = false
     exclude "**/internal/**"
@@ -162,9 +164,29 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 
 
+compileTestJava {
+    doFirst {
+        options.compilerArgs = [
+            '--module-path', classpath.asPath,
+            '--add-modules', 'org.junit.jupiter.api',
+            '--add-modules','io.reactivex.common',
+            '--add-modules','io.reactivex.core',
+            '--patch-module', "rxJava=" + files(sourceSets.test.java.srcDirs).asPath,
+            '--add-reads', "rxJava=org.junit.jupiter.api"
+        ]
+        classpath = files()
+    }
+}
+
+
 
 test {
 
+ 	doFirst {
+        jvmArgs += [
+            '--add-exports', "io.reactivex.common/io.reactivex.common.disposables=junit",
+        ]
+    }
     testLogging  {
         // showing skipped occasionally should prevent CI timeout due to lack of standard output
         events=["skipped", "failed"] // "started", "passed"
