@@ -13,26 +13,34 @@
 
 package io.reactivex.tests.processors;
 
-import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.*;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.common.functions.Function;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.subscriptions.BooleanSubscription;
+import io.reactivex.core.processors.FlowableProcessor;
+import io.reactivex.core.processors.ReplayProcessor;
+import io.reactivex.core.schedulers.Schedulers;
+import io.reactivex.core.schedulers.TestScheduler;
+import io.reactivex.core.subscribers.DefaultSubscriber;
+import io.reactivex.core.subscribers.TestSubscriber;
+import io.reactivex.tests.TestHelper;
+import io.reactivex.tests.exceptions.TestException;
+import org.junit.Test;
+import org.mockito.InOrder;
+import org.mockito.Mockito;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 import java.util.Arrays;
-import java.util.concurrent.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
-import org.junit.Test;
-import org.mockito.*;
-import org.reactivestreams.*;
-
-import io.reactivex.*;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.TestException;
-import io.reactivex.functions.Function;
-import io.reactivex.internal.subscriptions.BooleanSubscription;
-import io.reactivex.processors.ReplayProcessor.*;
-import io.reactivex.schedulers.*;
-import io.reactivex.subscribers.*;
+import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.notNull;
+import static org.mockito.Mockito.*;
 
 public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
 
@@ -375,7 +383,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
             src.onNext(v);
             System.out.printf("Turn: %d%n", i);
             src.firstElement().toFlowable()
-                .flatMap(new Function<String, Flowable<String>>() {
+                .flatMap(new Function<String, Publisher<String>>() {
 
                     @Override
                     public Flowable<String> apply(String t1) {
@@ -1559,7 +1567,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
         source.onNext(2);
         source.onComplete();
 
-        SizeBoundReplayBuffer<Integer> buf = (SizeBoundReplayBuffer<Integer>)source.buffer;
+        ReplayProcessor.SizeBoundReplayBuffer<Integer> buf = (ReplayProcessor.SizeBoundReplayBuffer<Integer>)source.buffer;
 
         assertNull(buf.head.value);
 
@@ -1578,7 +1586,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
         source.onNext(2);
         source.onError(new TestException());
 
-        SizeBoundReplayBuffer<Integer> buf = (SizeBoundReplayBuffer<Integer>)source.buffer;
+        ReplayProcessor.SizeBoundReplayBuffer<Integer> buf = (ReplayProcessor.SizeBoundReplayBuffer<Integer>)source.buffer;
 
         assertNull(buf.head.value);
 
@@ -1608,7 +1616,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
         source.onNext(1);
         source.onNext(2);
 
-        SizeBoundReplayBuffer<Integer> buf = (SizeBoundReplayBuffer<Integer>)source.buffer;
+        ReplayProcessor.SizeBoundReplayBuffer<Integer> buf = (ReplayProcessor.SizeBoundReplayBuffer<Integer>)source.buffer;
 
         assertNotNull(buf.head.value);
 
@@ -1631,7 +1639,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
         source.onNext(2);
         source.onComplete();
 
-        SizeAndTimeBoundReplayBuffer<Integer> buf = (SizeAndTimeBoundReplayBuffer<Integer>)source.buffer;
+        ReplayProcessor.SizeAndTimeBoundReplayBuffer<Integer> buf = (ReplayProcessor.SizeAndTimeBoundReplayBuffer<Integer>)source.buffer;
 
         assertNull(buf.head.value);
 
@@ -1650,7 +1658,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
         source.onNext(2);
         source.onError(new TestException());
 
-        SizeAndTimeBoundReplayBuffer<Integer> buf = (SizeAndTimeBoundReplayBuffer<Integer>)source.buffer;
+        ReplayProcessor.SizeAndTimeBoundReplayBuffer<Integer> buf = (ReplayProcessor.SizeAndTimeBoundReplayBuffer<Integer>)source.buffer;
 
         assertNull(buf.head.value);
 
@@ -1673,7 +1681,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
 
         source.onNext(2);
 
-        SizeAndTimeBoundReplayBuffer<Integer> buf = (SizeAndTimeBoundReplayBuffer<Integer>)source.buffer;
+        ReplayProcessor.SizeAndTimeBoundReplayBuffer<Integer> buf = (ReplayProcessor.SizeAndTimeBoundReplayBuffer<Integer>)source.buffer;
 
         assertNotNull(buf.head.value);
 

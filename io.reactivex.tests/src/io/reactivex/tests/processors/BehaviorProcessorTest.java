@@ -13,26 +13,32 @@
 
 package io.reactivex.tests.processors;
 
+import io.reactivex.common.exceptions.MissingBackpressureException;
+import io.reactivex.common.functions.Function;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.Scheduler;
+import io.reactivex.core.internal.subscriptions.BooleanSubscription;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.processors.BehaviorProcessor;
+import io.reactivex.core.processors.BehaviorProcessor.BehaviorSubscription;
+import io.reactivex.core.processors.FlowableProcessor;
+import io.reactivex.core.schedulers.Schedulers;
+import io.reactivex.core.subscribers.DefaultSubscriber;
+import io.reactivex.core.subscribers.TestSubscriber;
+import io.reactivex.tests.TestHelper;
+import io.reactivex.tests.exceptions.TestException;
+import org.mockito.InOrder;
+import org.mockito.Mockito;
+import org.reactivestreams.Subscriber;
+
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
+import org.junit.*;
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
-
-import java.util.List;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicReference;
-
-import org.junit.*;
-import org.mockito.*;
-import org.reactivestreams.Subscriber;
-
-import io.reactivex.*;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.Function;
-import io.reactivex.internal.subscriptions.BooleanSubscription;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.processors.BehaviorProcessor.BehaviorSubscription;
-import io.reactivex.schedulers.Schedulers;
-import io.reactivex.subscribers.*;
 
 public class BehaviorProcessorTest extends FlowableProcessorTest<Object> {
 

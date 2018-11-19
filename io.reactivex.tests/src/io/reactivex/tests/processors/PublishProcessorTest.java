@@ -13,23 +13,29 @@
 
 package io.reactivex.tests.processors;
 
-import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+import io.reactivex.common.exceptions.*;
+import io.reactivex.common.functions.*;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.FlowableSubscriber;
+import io.reactivex.core.processors.FlowableProcessor;
+import io.reactivex.core.processors.PublishProcessor;
+import io.reactivex.core.schedulers.Schedulers;
+import io.reactivex.core.subscribers.*;
+import io.reactivex.tests.TestHelper;
+import io.reactivex.tests.exceptions.TestException;
+import org.junit.Test;
+import org.mockito.InOrder;
+import org.mockito.Mockito;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.junit.Test;
-import org.mockito.*;
-import org.reactivestreams.*;
-
-import io.reactivex.*;
-import io.reactivex.exceptions.*;
-import io.reactivex.functions.*;
-import io.reactivex.schedulers.Schedulers;
-import io.reactivex.subscribers.*;
+import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 public class PublishProcessorTest extends FlowableProcessorTest<Object> {
 

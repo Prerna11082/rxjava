@@ -13,17 +13,19 @@
 
 package io.reactivex.tests.processors;
 
-import static org.junit.Assert.*;
-
-import java.util.*;
-
+import io.reactivex.core.Flowable;
+import io.reactivex.core.internal.subscriptions.BooleanSubscription;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.processors.*;
+import io.reactivex.core.subscribers.TestSubscriber;
+import io.reactivex.tests.TestHelper;
+import io.reactivex.tests.exceptions.TestException;
 import org.junit.Test;
 
-import io.reactivex.*;
-import io.reactivex.exceptions.TestException;
-import io.reactivex.internal.subscriptions.BooleanSubscription;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.subscribers.TestSubscriber;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 public class SerializedProcessorTest {
 

@@ -13,24 +13,26 @@
 
 package io.reactivex.tests.processors;
 
-import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.*;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.core.internal.fuseable.QueueFuseable;
+import io.reactivex.core.internal.subscriptions.BooleanSubscription;
+import io.reactivex.core.processors.AsyncProcessor;
+import io.reactivex.core.processors.FlowableProcessor;
+import io.reactivex.core.subscribers.TestSubscriber;
+import io.reactivex.tests.TestHelper;
+import io.reactivex.tests.exceptions.TestException;
+import org.mockito.InOrder;
+import org.mockito.Mockito;
+import org.reactivestreams.Subscriber;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
 import org.junit.*;
-import org.mockito.*;
-import org.reactivestreams.Subscriber;
-import io.reactivex.core.processors.AsyncProcessor;
-import io.reactivex.core.processors.FlowableProcessor;
-import io.reactivex.tests.TestHelper;
-import io.reactivex.tests.exceptions.TestException;
-import io.reactivex.common.functions.Consumer;
-import io.reactivex.core.internal.fuseable.QueueFuseable;
-import io.reactivex.core.internal.subscriptions.BooleanSubscription;
-import io.reactivex.core.subscribers.*;
+import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.*;
 
 public class AsyncProcessorTest extends FlowableProcessorTest<Object> {
 

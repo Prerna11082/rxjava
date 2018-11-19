@@ -13,20 +13,23 @@
 
 package io.reactivex.tests.processors;
 
-import static org.junit.Assert.*;
+import io.reactivex.common.disposables.Disposable;
+import io.reactivex.core.Observable;
+import io.reactivex.core.internal.fuseable.QueueFuseable;
+import io.reactivex.core.internal.subscriptions.BooleanSubscription;
+import io.reactivex.core.plugins.RxJavaPlugins;
+import io.reactivex.core.processors.FlowableProcessor;
+import io.reactivex.core.processors.UnicastProcessor;
+import io.reactivex.core.subscribers.TestSubscriber;
+import io.reactivex.tests.TestHelper;
+import io.reactivex.tests.exceptions.TestException;
+import io.reactivex.tests.subscribers.SubscriberFusion;
+import org.junit.Test;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.junit.Test;
-
-import io.reactivex.*;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.exceptions.TestException;
-import io.reactivex.internal.fuseable.*;
-import io.reactivex.internal.subscriptions.BooleanSubscription;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.subscribers.*;
+import static org.junit.Assert.*;
 
 public class UnicastProcessorTest extends FlowableProcessorTest<Object> {
 

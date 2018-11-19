@@ -26,7 +26,7 @@ import io.reactivex.core.plugins.RxJavaPlugins;
  *
  * @param <T> the item value type
  */
-/* public */ final class SerializedProcessor<T> extends FlowableProcessor<T> {
+  public final class SerializedProcessor<T> extends FlowableProcessor<T> {
     /** The actual subscriber to serialize Subscriber calls to. */
     final FlowableProcessor<T> actual;
     /** Indicates an emission is going on, guarded by this. */
@@ -40,7 +40,7 @@ import io.reactivex.core.plugins.RxJavaPlugins;
      * Constructor that wraps an actual subject.
      * @param actual the subject wrapped
      */
-    SerializedProcessor(final FlowableProcessor<T> actual) {
+    public SerializedProcessor(final FlowableProcessor<T> actual) {
         this.actual = actual;
     }
 

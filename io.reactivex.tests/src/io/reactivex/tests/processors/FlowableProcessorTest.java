@@ -13,9 +13,10 @@
 
 package io.reactivex.tests.processors;
 
-import static org.junit.Assert.*;
-
+import io.reactivex.core.processors.FlowableProcessor;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public abstract class FlowableProcessorTest<T> {
 

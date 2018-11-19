@@ -145,17 +145,17 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
     /** An empty array to avoid allocation in getValues(). */
     private static final Object[] EMPTY_ARRAY = new Object[0];
 
-    final ReplayBuffer<T> buffer;
+    public final ReplayBuffer<T> buffer;
 
     boolean done;
 
     final AtomicReference<ReplaySubscription<T>[]> subscribers;
 
     @SuppressWarnings("rawtypes")
-    static final ReplaySubscription[] EMPTY = new ReplaySubscription[0];
+    public static final ReplaySubscription[] EMPTY = new ReplaySubscription[0];
 
     @SuppressWarnings("rawtypes")
-    static final ReplaySubscription[] TERMINATED = new ReplaySubscription[0];
+    public static final ReplaySubscription[] TERMINATED = new ReplaySubscription[0];
 
     /**
      * Creates an unbounded ReplayProcessor.
@@ -236,7 +236,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
      *          the type of items observed and emitted by this type of processor
      * @return the created processor
      */
-    /* test */ static <T> ReplayProcessor<T> createUnbounded() {
+    /* test */public static <T> ReplayProcessor<T> createUnbounded() {
         return new ReplayProcessor<T>(new SizeBoundReplayBuffer<T>(Integer.MAX_VALUE));
     }
 
@@ -323,7 +323,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
      * @param buffer the ReplayBuffer instance, not null (not verified)
      */
     @SuppressWarnings("unchecked")
-    ReplayProcessor(ReplayBuffer<T> buffer) {
+    public ReplayProcessor(ReplayBuffer<T> buffer) {
         this.buffer = buffer;
         this.subscribers = new AtomicReference<ReplaySubscription<T>[]>(EMPTY);
     }
@@ -408,7 +408,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
         return subscribers.get().length != 0;
     }
 
-    /* test */ int subscriberCount() {
+    /* test */public int subscriberCount() {
         return subscribers.get().length;
     }
 
@@ -498,7 +498,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
         return buffer.size() != 0; // NOPMD
     }
 
-    /* test*/ int size() {
+    /* test*/ public int size() {
         return buffer.size();
     }
 
@@ -626,7 +626,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
     static final class UnboundedReplayBuffer<T>
     implements ReplayBuffer<T> {
 
-        final List<T> buffer;
+        public final List<T> buffer;
 
         Throwable error;
         volatile boolean done;
@@ -796,22 +796,22 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
         }
     }
 
-    static final class Node<T> extends AtomicReference<Node<T>> {
+    public static final class Node<T> extends AtomicReference<Node<T>> {
 
         private static final long serialVersionUID = 6404226426336033100L;
 
-        final T value;
+        public final T value;
 
         Node(T value) {
             this.value = value;
         }
     }
 
-    static final class TimedNode<T> extends AtomicReference<TimedNode<T>> {
+    public static final class TimedNode<T> extends AtomicReference<TimedNode<T>> {
 
         private static final long serialVersionUID = 6404226426336033100L;
 
-        final T value;
+        public final T value;
         final long time;
 
         TimedNode(T value, long time) {
@@ -820,13 +820,13 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
         }
     }
 
-    static final class SizeBoundReplayBuffer<T>
+    public static final class SizeBoundReplayBuffer<T>
     implements ReplayBuffer<T> {
 
         final int maxSize;
         int size;
 
-        volatile Node<T> head;
+        public volatile Node<T> head;
 
         Node<T> tail;
 
@@ -1033,7 +1033,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
         }
     }
 
-    static final class SizeAndTimeBoundReplayBuffer<T>
+    public static final class SizeAndTimeBoundReplayBuffer<T>
     implements ReplayBuffer<T> {
 
         final int maxSize;
@@ -1042,14 +1042,14 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
         final Scheduler scheduler;
         int size;
 
-        volatile TimedNode<T> head;
+        public volatile TimedNode<T> head;
 
         TimedNode<T> tail;
 
         Throwable error;
         volatile boolean done;
 
-        SizeAndTimeBoundReplayBuffer(int maxSize, long maxAge, TimeUnit unit, Scheduler scheduler) {
+        public SizeAndTimeBoundReplayBuffer(int maxSize, long maxAge, TimeUnit unit, Scheduler scheduler) {
             this.maxSize = ObjectHelper.verifyPositive(maxSize, "maxSize");
             this.maxAge = ObjectHelper.verifyPositive(maxAge, "maxAge");
             this.unit = ObjectHelper.requireNonNull(unit, "unit is null");

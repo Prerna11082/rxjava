@@ -349,7 +349,7 @@ public final class BehaviorProcessor<T> extends FlowableProcessor<T> {
         return subscribers.get().length != 0;
     }
 
-    /* test support*/ int subscriberCount() {
+    /* test support*/ public int subscriberCount() {
         return subscribers.get().length;
     }
 
@@ -522,7 +522,7 @@ public final class BehaviorProcessor<T> extends FlowableProcessor<T> {
         wl.unlock();
     }
 
-    static final class BehaviorSubscription<T> extends AtomicLong implements Subscription, NonThrowingPredicate<Object> {
+    public static final class BehaviorSubscription<T> extends AtomicLong implements Subscription, NonThrowingPredicate<Object> {
 
         private static final long serialVersionUID = 3293175281126227086L;
 
@@ -530,16 +530,16 @@ public final class BehaviorProcessor<T> extends FlowableProcessor<T> {
         final BehaviorProcessor<T> state;
 
         boolean next;
-        boolean emitting;
-        AppendOnlyLinkedArrayList<Object> queue;
+        public boolean emitting;
+        public AppendOnlyLinkedArrayList<Object> queue;
 
         boolean fastPath;
 
-        volatile boolean cancelled;
+        public volatile boolean cancelled;
 
         long index;
 
-        BehaviorSubscription(Subscriber<? super T> actual, BehaviorProcessor<T> state) {
+        public BehaviorSubscription(Subscriber<? super T> actual, BehaviorProcessor<T> state) {
             this.downstream = actual;
             this.state = state;
         }
@@ -560,7 +560,7 @@ public final class BehaviorProcessor<T> extends FlowableProcessor<T> {
             }
         }
 
-        void emitFirst() {
+        public void emitFirst() {
             if (cancelled) {
                 return;
             }
@@ -594,7 +594,7 @@ public final class BehaviorProcessor<T> extends FlowableProcessor<T> {
             }
         }
 
-        void emitNext(Object value, long stateIndex) {
+        public void emitNext(Object value, long stateIndex) {
             if (cancelled) {
                 return;
             }
@@ -651,7 +651,7 @@ public final class BehaviorProcessor<T> extends FlowableProcessor<T> {
             return true;
         }
 
-        void emitLoop() {
+        public void emitLoop() {
             for (;;) {
                 if (cancelled) {
                     return;

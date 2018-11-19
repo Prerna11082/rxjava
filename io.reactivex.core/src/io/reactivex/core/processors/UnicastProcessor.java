@@ -150,7 +150,7 @@ import io.reactivex.core.plugins.RxJavaPlugins;
  */
 public final class UnicastProcessor<T> extends FlowableProcessor<T> {
 
-    final SpscLinkedArrayQueue<T> queue;
+    public final SpscLinkedArrayQueue<T> queue;
 
     final AtomicReference<Runnable> onTerminate;
 
@@ -339,7 +339,7 @@ public final class UnicastProcessor<T> extends FlowableProcessor<T> {
         }
     }
 
-    void drainFused(Subscriber<? super T> a) {
+    public void drainFused(Subscriber<? super T> a) {
         int missed = 1;
 
         final SpscLinkedArrayQueue<T> q = queue;
@@ -408,7 +408,7 @@ public final class UnicastProcessor<T> extends FlowableProcessor<T> {
         }
     }
 
-    boolean checkTerminated(boolean failFast, boolean d, boolean empty, Subscriber<? super T> a, SpscLinkedArrayQueue<T> q) {
+    public boolean checkTerminated(boolean failFast, boolean d, boolean empty, Subscriber<? super T> a, SpscLinkedArrayQueue<T> q) {
         if (cancelled) {
             q.clear();
             downstream.lazySet(null);
@@ -504,7 +504,7 @@ public final class UnicastProcessor<T> extends FlowableProcessor<T> {
         }
     }
 
-    final class UnicastQueueSubscription extends BasicIntQueueSubscription<T> {
+    public final class UnicastQueueSubscription extends BasicIntQueueSubscription<T> {
 
         private static final long serialVersionUID = -4896760517184205454L;
 

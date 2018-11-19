@@ -13,19 +13,28 @@
 
 package io.reactivex.tests.processors;
 
-import static org.junit.Assert.assertEquals;
 
-import java.util.*;
-import java.util.concurrent.*;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.core.Flowable;
+import io.reactivex.core.Scheduler;
+import io.reactivex.core.processors.ReplayProcessor;
+import io.reactivex.core.schedulers.Schedulers;
+import io.reactivex.core.subscribers.DefaultSubscriber;
+import io.reactivex.core.subscribers.TestSubscriber;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-
 import org.junit.*;
-import org.reactivestreams.*;
-
-import io.reactivex.*;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
-import io.reactivex.subscribers.*;
+import static org.junit.Assert.assertEquals;
 
 public class ReplayProcessorConcurrencyTest {
 
