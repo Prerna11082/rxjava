@@ -31,7 +31,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public abstract class QueueDrainObserver<T, U, V> extends QueueDrainSubscriberPad2 implements Observer<T>, ObservableQueueDrain<U, V> {
     protected final Observer<? super V> downstream;
-    protected final SimplePlainQueue<U> queue;
+    public final SimplePlainQueue<U> queue;
 
     protected volatile boolean cancelled;
 

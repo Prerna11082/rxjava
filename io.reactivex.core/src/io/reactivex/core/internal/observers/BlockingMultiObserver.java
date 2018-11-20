@@ -45,7 +45,7 @@ implements SingleObserver<T>, CompletableObserver, MaybeObserver<T> {
         super(1);
     }
 
-    void dispose() {
+    public void dispose() {
         cancelled = true;
         Disposable d = this.upstream;
         if (d != null) {

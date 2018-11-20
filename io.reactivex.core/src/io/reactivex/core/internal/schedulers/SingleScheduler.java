@@ -160,9 +160,9 @@ public final class SingleScheduler extends Scheduler {
         }
     }
 
-    static final class ScheduledWorker extends Scheduler.Worker {
+    public static final class ScheduledWorker extends Scheduler.Worker {
 
-        final ScheduledExecutorService executor;
+        public final ScheduledExecutorService executor;
 
         final CompositeDisposable tasks;
 

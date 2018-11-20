@@ -22,8 +22,8 @@ import java.util.concurrent.CountDownLatch;
 public abstract class BlockingBaseObserver<T> extends CountDownLatch
 implements Observer<T>, Disposable {
 
-    T value;
-    Throwable error;
+    public T value;
+    public Throwable error;
 
     Disposable upstream;
 

@@ -28,7 +28,7 @@ implements FlowableSubscriber<T> {
 
     Subscription upstream;
 
-    volatile boolean cancelled;
+    public volatile boolean cancelled;
 
     public BlockingBaseSubscriber() {
         super(1);

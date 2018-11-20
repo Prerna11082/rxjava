@@ -146,17 +146,17 @@ public class SchedulerWhen extends Scheduler implements Disposable {
         return worker;
     }
 
-    static final Disposable SUBSCRIBED = new SubscribedDisposable();
+    public static final Disposable SUBSCRIBED = new SubscribedDisposable();
 
     static final Disposable DISPOSED = Disposables.disposed();
 
     @SuppressWarnings("serial")
-    abstract static class ScheduledAction extends AtomicReference<Disposable> implements Disposable {
-        ScheduledAction() {
+    public abstract static class ScheduledAction extends AtomicReference<Disposable> implements Disposable {
+        public ScheduledAction() {
             super(SUBSCRIBED);
         }
 
-        void call(Worker actualWorker, CompletableObserver actionCompletable) {
+        public void call(Worker actualWorker, CompletableObserver actionCompletable) {
             Disposable oldState = get();
             // either SUBSCRIBED or UNSUBSCRIBED
             if (oldState == DISPOSED) {
@@ -240,11 +240,11 @@ public class SchedulerWhen extends Scheduler implements Disposable {
         }
     }
 
-    static class OnCompletedAction implements Runnable {
+    public static class OnCompletedAction implements Runnable {
         final CompletableObserver actionCompletable;
         final Runnable action;
 
-        OnCompletedAction(Runnable action, CompletableObserver actionCompletable) {
+        public OnCompletedAction(Runnable action, CompletableObserver actionCompletable) {
             this.action = action;
             this.actionCompletable = actionCompletable;
         }
@@ -286,12 +286,12 @@ public class SchedulerWhen extends Scheduler implements Disposable {
         }
     }
 
-    static final class QueueWorker extends Worker {
+    public static final class QueueWorker extends Worker {
         private final AtomicBoolean unsubscribed;
         private final FlowableProcessor<ScheduledAction> actionProcessor;
         private final Worker actualWorker;
 
-        QueueWorker(FlowableProcessor<ScheduledAction> actionProcessor, Worker actualWorker) {
+        public QueueWorker(FlowableProcessor<ScheduledAction> actionProcessor, Worker actualWorker) {
             this.actionProcessor = actionProcessor;
             this.actualWorker = actualWorker;
             unsubscribed = new AtomicBoolean();

@@ -97,7 +97,7 @@ public final class Functions {
 
     public static final Action EMPTY_ACTION = new EmptyAction();
 
-    static final Consumer<Object> EMPTY_CONSUMER = new EmptyConsumer();
+    public static final Consumer<Object> EMPTY_CONSUMER = new EmptyConsumer();
 
     /**
      * Returns an empty consumer that does nothing.
@@ -271,7 +271,7 @@ public final class Functions {
         return new EqualsPredicate<T>(value);
     }
 
-    enum HashSetCallable implements Callable<Set<Object>> {
+    public enum HashSetCallable implements Callable<Set<Object>> {
         INSTANCE;
         @Override
         public Set<Object> call() throws Exception {
@@ -481,7 +481,7 @@ public final class Functions {
         return new ToMultimapKeyValueSelector<K, V, T>(collectionFactory, valueSelector, keySelector);
     }
 
-    enum NaturalComparator implements Comparator<Object> {
+    public enum NaturalComparator implements Comparator<Object> {
         INSTANCE;
 
         @SuppressWarnings("unchecked")

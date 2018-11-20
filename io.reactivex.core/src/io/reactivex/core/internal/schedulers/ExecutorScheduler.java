@@ -296,7 +296,7 @@ public final class ExecutorScheduler extends Scheduler {
         }
     }
 
-    static final class DelayedRunnable extends AtomicReference<Runnable>
+    public static final class DelayedRunnable extends AtomicReference<Runnable>
             implements Runnable, Disposable, SchedulerRunnableIntrospection {
 
         private static final long serialVersionUID = -4101336210206799084L;
@@ -305,7 +305,7 @@ public final class ExecutorScheduler extends Scheduler {
 
         final SequentialDisposable direct;
 
-        DelayedRunnable(Runnable run) {
+        public DelayedRunnable(Runnable run) {
             super(run);
             this.timed = new SequentialDisposable();
             this.direct = new SequentialDisposable();

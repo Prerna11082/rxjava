@@ -231,7 +231,7 @@ public final class QueueDrainHelper {
         s.request(prefetch < 0 ? Long.MAX_VALUE : prefetch);
     }
 
-    static final long COMPLETED_MASK = 0x8000000000000000L;
+    public static final long COMPLETED_MASK = 0x8000000000000000L;
     static final long REQUESTED_MASK = 0x7FFFFFFFFFFFFFFFL;
 
     /**
@@ -282,7 +282,7 @@ public final class QueueDrainHelper {
 
     }
 
-    static boolean isCancelled(BooleanSupplier cancelled) {
+    public static boolean isCancelled(BooleanSupplier cancelled) {
         try {
             return cancelled.getAsBoolean();
         } catch (Throwable ex) {

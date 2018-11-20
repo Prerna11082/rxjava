@@ -33,7 +33,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public final class ComputationScheduler extends Scheduler implements SchedulerMultiWorkerSupport {
     /** This will indicate no pool is active. */
-    static final FixedSchedulerPool NONE;
+    public static final FixedSchedulerPool NONE;
     /** Manages a fixed number of workers. */
     private static final String THREAD_NAME_PREFIX = "RxComputationThreadPool";
     static final RxThreadFactory THREAD_FACTORY;
@@ -43,9 +43,9 @@ public final class ComputationScheduler extends Scheduler implements SchedulerMu
      */
     static final String KEY_MAX_THREADS = "rx2.computation-threads";
     /** The maximum number of computation scheduler threads. */
-    static final int MAX_THREADS;
+    public static final int MAX_THREADS;
 
-    static final PoolWorker SHUTDOWN_WORKER;
+    public static final PoolWorker SHUTDOWN_WORKER;
 
     final ThreadFactory threadFactory;
     final AtomicReference<FixedSchedulerPool> pool;
@@ -67,11 +67,11 @@ public final class ComputationScheduler extends Scheduler implements SchedulerMu
         NONE.shutdown();
     }
 
-    static int cap(int cpuCount, int paramThreads) {
+    public static int cap(int cpuCount, int paramThreads) {
         return paramThreads <= 0 || paramThreads > cpuCount ? cpuCount : paramThreads;
     }
 
-    static final class FixedSchedulerPool implements SchedulerMultiWorkerSupport {
+    public static final class FixedSchedulerPool implements SchedulerMultiWorkerSupport {
         final int cores;
 
         final PoolWorker[] eventLoops;

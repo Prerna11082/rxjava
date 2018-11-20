@@ -40,7 +40,7 @@ public class DeferredScalarSubscription<T> extends BasicIntQueueSubscription<T> 
     protected final Subscriber<? super T> downstream;
 
     /** The value is stored here if there is no request yet or in fusion mode. */
-    protected T value;
+    public T value;
 
     /** Indicates this Subscription has no value and not requested yet. */
     static final int NO_REQUEST_NO_VALUE = 0;
@@ -59,7 +59,7 @@ public class DeferredScalarSubscription<T> extends BasicIntQueueSubscription<T> 
     /** Indicates this Subscription is in fusion mode and has a value. */
     static final int FUSED_READY = 16;
     /** Indicates this Subscription is in fusion mode and its value has been consumed. */
-    static final int FUSED_CONSUMED = 32;
+    public static final int FUSED_CONSUMED = 32;
 
     /**
      * Creates a DeferredScalarSubscription by wrapping the given Subscriber.

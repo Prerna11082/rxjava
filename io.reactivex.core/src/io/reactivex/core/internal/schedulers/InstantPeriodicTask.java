@@ -29,7 +29,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * Wrapper for a regular task that gets immediately rescheduled when the task completed.
  */
-final class InstantPeriodicTask implements Callable<Void>, Disposable {
+public final class InstantPeriodicTask implements Callable<Void>, Disposable {
 
     final Runnable task;
 
@@ -39,11 +39,11 @@ final class InstantPeriodicTask implements Callable<Void>, Disposable {
 
     final ExecutorService executor;
 
-    Thread runner;
+    public Thread runner;
 
     static final FutureTask<Void> CANCELLED = new FutureTask<Void>(Functions.EMPTY_RUNNABLE, null);
 
-    InstantPeriodicTask(Runnable task, ExecutorService executor) {
+    public InstantPeriodicTask(Runnable task, ExecutorService executor) {
         super();
         this.task = task;
         this.first = new AtomicReference<Future<?>>();
@@ -82,7 +82,7 @@ final class InstantPeriodicTask implements Callable<Void>, Disposable {
         return first.get() == CANCELLED;
     }
 
-    void setFirst(Future<?> f) {
+    public void setFirst(Future<?> f) {
         for (;;) {
             Future<?> current = first.get();
             if (current == CANCELLED) {
@@ -95,7 +95,7 @@ final class InstantPeriodicTask implements Callable<Void>, Disposable {
         }
     }
 
-    void setRest(Future<?> f) {
+    public void setRest(Future<?> f) {
         for (;;) {
             Future<?> current = rest.get();
             if (current == CANCELLED) {

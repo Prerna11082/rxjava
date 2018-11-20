@@ -38,7 +38,7 @@ public abstract class QueueDrainSubscriber<T, U, V> extends QueueDrainSubscriber
 
     protected final Subscriber<? super V> downstream;
 
-    protected final SimplePlainQueue<U> queue;
+    public final SimplePlainQueue<U> queue;
 
     protected volatile boolean cancelled;
 

@@ -39,7 +39,7 @@ public final class SpscLinkedArrayQueue<T> implements SimplePlainQueue<T> {
 
     final int producerMask;
 
-    AtomicReferenceArray<Object> producerBuffer;
+    public AtomicReferenceArray<Object> producerBuffer;
     final int consumerMask;
     AtomicReferenceArray<Object> consumerBuffer;
     final AtomicLong consumerIndex = new AtomicLong();

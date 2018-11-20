@@ -43,24 +43,24 @@ public class SubscriptionArbiter extends AtomicInteger implements Subscription {
     /**
      * The current subscription which may null if no Subscriptions have been set.
      */
-    Subscription actual;
+    public Subscription actual;
 
     /**
      * The current outstanding request amount.
      */
-    long requested;
+    public long requested;
 
-    final AtomicReference<Subscription> missedSubscription;
+    public final AtomicReference<Subscription> missedSubscription;
 
-    final AtomicLong missedRequested;
+    public final AtomicLong missedRequested;
 
-    final AtomicLong missedProduced;
+    public final AtomicLong missedProduced;
 
     final boolean cancelOnReplace;
 
-    volatile boolean cancelled;
+    public volatile boolean cancelled;
 
-    protected boolean unbounded;
+    public boolean unbounded;
 
     public SubscriptionArbiter(boolean cancelOnReplace) {
         this.cancelOnReplace = cancelOnReplace;
@@ -191,7 +191,7 @@ public class SubscriptionArbiter extends AtomicInteger implements Subscription {
         drainLoop();
     }
 
-    final void drainLoop() {
+    public final void drainLoop() {
         int missed = 1;
 
         long requestAmount = 0L;

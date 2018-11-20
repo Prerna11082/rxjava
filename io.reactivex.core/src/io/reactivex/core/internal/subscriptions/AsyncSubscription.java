@@ -30,7 +30,7 @@ public final class AsyncSubscription extends AtomicLong implements Subscription,
 
     private static final long serialVersionUID = 7028635084060361255L;
 
-    final AtomicReference<Subscription> actual;
+    public final AtomicReference<Subscription> actual;
 
     final AtomicReference<Disposable> resource;
 

@@ -28,17 +28,17 @@ implements Runnable, Callable<Object>, Disposable {
     final Runnable actual;
 
     /** Indicates that the parent tracking this task has been notified about its completion. */
-    static final Object PARENT_DISPOSED = new Object();
+    public static final Object PARENT_DISPOSED = new Object();
     /** Indicates the dispose() was called from within the run/call method. */
-    static final Object SYNC_DISPOSED = new Object();
+    public static final Object SYNC_DISPOSED = new Object();
     /** Indicates the dispose() was called from another thread. */
-    static final Object ASYNC_DISPOSED = new Object();
+    public static final Object ASYNC_DISPOSED = new Object();
 
-    static final Object DONE = new Object();
+    public static final Object DONE = new Object();
 
-    static final int PARENT_INDEX = 0;
-    static final int FUTURE_INDEX = 1;
-    static final int THREAD_INDEX = 2;
+    public static final int PARENT_INDEX = 0;
+    public static final int FUTURE_INDEX = 1;
+    public static final int THREAD_INDEX = 2;
 
     /**
      * Creates a ScheduledRunnable by wrapping the given action and setting

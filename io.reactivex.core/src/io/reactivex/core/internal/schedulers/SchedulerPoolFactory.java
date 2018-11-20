@@ -31,26 +31,26 @@ public final class SchedulerPoolFactory {
         throw new IllegalStateException("No instances!");
     }
 
-    static final String PURGE_ENABLED_KEY = "rx2.purge-enabled";
+    public static final String PURGE_ENABLED_KEY = "rx2.purge-enabled";
 
     /**
      * Indicates the periodic purging of the ScheduledExecutorService is enabled.
      */
     public static final boolean PURGE_ENABLED;
 
-    static final String PURGE_PERIOD_SECONDS_KEY = "rx2.purge-period-seconds";
+    public static final String PURGE_PERIOD_SECONDS_KEY = "rx2.purge-period-seconds";
 
     /**
      * Indicates the purge period of the ScheduledExecutorServices created by create().
      */
     public static final int PURGE_PERIOD_SECONDS;
 
-    static final AtomicReference<ScheduledExecutorService> PURGE_THREAD =
+    public static final AtomicReference<ScheduledExecutorService> PURGE_THREAD =
             new AtomicReference<ScheduledExecutorService>();
 
     // Upcast to the Map interface here to avoid 8.x compatibility issues.
     // See http://stackoverflow.com/a/32955708/61158
-    static final Map<ScheduledThreadPoolExecutor, Object> POOLS =
+    public static final Map<ScheduledThreadPoolExecutor, Object> POOLS =
             new ConcurrentHashMap<ScheduledThreadPoolExecutor, Object>();
 
     /**
@@ -60,7 +60,7 @@ public final class SchedulerPoolFactory {
         tryStart(PURGE_ENABLED);
     }
 
-    static void tryStart(boolean purgeEnabled) {
+    public static void tryStart(boolean purgeEnabled) {
         if (purgeEnabled) {
             for (;;) {
                 ScheduledExecutorService curr = PURGE_THREAD.get();
@@ -103,13 +103,13 @@ public final class SchedulerPoolFactory {
         start();
     }
 
-    static final class PurgeProperties {
+    public static final class PurgeProperties {
 
-        boolean purgeEnable;
+        public boolean purgeEnable;
 
-        int purgePeriod;
+        public int purgePeriod;
 
-        void load(Properties properties) {
+        public void load(Properties properties) {
             if (properties.containsKey(PURGE_ENABLED_KEY)) {
                 purgeEnable = Boolean.parseBoolean(properties.getProperty(PURGE_ENABLED_KEY));
             } else {
@@ -139,7 +139,7 @@ public final class SchedulerPoolFactory {
         return exec;
     }
 
-    static void tryPutIntoPool(boolean purgeEnabled, ScheduledExecutorService exec) {
+    public static void tryPutIntoPool(boolean purgeEnabled, ScheduledExecutorService exec) {
         if (purgeEnabled && exec instanceof ScheduledThreadPoolExecutor) {
             ScheduledThreadPoolExecutor e = (ScheduledThreadPoolExecutor) exec;
             POOLS.put(e, exec);

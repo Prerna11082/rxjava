@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * Base functionality for direct tasks that manage a runnable and cancellation/completion.
  * @since 2.0.8
  */
-abstract class AbstractDirectTask
+public abstract class AbstractDirectTask
 extends AtomicReference<Future<?>>
 implements Disposable, SchedulerRunnableIntrospection {
 
@@ -36,13 +36,13 @@ implements Disposable, SchedulerRunnableIntrospection {
 
     protected final Runnable runnable;
 
-    protected Thread runner;
+    public Thread runner;
 
-    protected static final FutureTask<Void> FINISHED = new FutureTask<Void>(Functions.EMPTY_RUNNABLE, null);
+    public static final FutureTask<Void> FINISHED = new FutureTask<Void>(Functions.EMPTY_RUNNABLE, null);
 
-    protected static final FutureTask<Void> DISPOSED = new FutureTask<Void>(Functions.EMPTY_RUNNABLE, null);
+    public static final FutureTask<Void> DISPOSED = new FutureTask<Void>(Functions.EMPTY_RUNNABLE, null);
 
-    AbstractDirectTask(Runnable runnable) {
+    public AbstractDirectTask(Runnable runnable) {
         this.runnable = runnable;
     }
 

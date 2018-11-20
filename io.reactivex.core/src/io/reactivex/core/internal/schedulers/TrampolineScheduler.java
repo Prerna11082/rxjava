@@ -68,7 +68,7 @@ public final class TrampolineScheduler extends Scheduler {
         return EmptyDisposable.INSTANCE;
     }
 
-    static final class TrampolineWorker extends Scheduler.Worker implements Disposable {
+    public static final class TrampolineWorker extends Scheduler.Worker implements Disposable {
         final PriorityBlockingQueue<TimedRunnable> queue = new PriorityBlockingQueue<TimedRunnable>();
 
         private final AtomicInteger wip = new AtomicInteger();
@@ -175,12 +175,12 @@ public final class TrampolineScheduler extends Scheduler {
         }
     }
 
-    static final class SleepingRunnable implements Runnable {
+    public static final class SleepingRunnable implements Runnable {
         private final Runnable run;
         private final TrampolineWorker worker;
         private final long execTime;
 
-        SleepingRunnable(Runnable run, TrampolineWorker worker, long execTime) {
+        public SleepingRunnable(Runnable run, TrampolineWorker worker, long execTime) {
             this.run = run;
             this.worker = worker;
             this.execTime = execTime;
