@@ -55,14 +55,14 @@ public final class TestScheduler extends Scheduler {
         time = unit.toNanos(delayTime);
     }
 
-    static final class TimedRunnable implements Comparable<TimedRunnable> {
+    public static final class TimedRunnable implements Comparable<TimedRunnable> {
 
         final long time;
         final Runnable run;
         final TestWorker scheduler;
         final long count; // for differentiating tasks at same time
 
-        TimedRunnable(TestWorker scheduler, long time, Runnable run, long count) {
+        public TimedRunnable(TestWorker scheduler, long time, Runnable run, long count) {
             this.time = time;
             this.run = run;
             this.scheduler = scheduler;
@@ -145,7 +145,7 @@ public final class TestScheduler extends Scheduler {
         return new TestWorker();
     }
 
-    final class TestWorker extends Worker {
+    public final class TestWorker extends Worker {
 
         volatile boolean disposed;
 

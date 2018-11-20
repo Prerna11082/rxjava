@@ -56,19 +56,19 @@ public final class Schedulers {
     @NonNull
     static final Scheduler NEW_THREAD;
 
-    static final class SingleHolder {
+    public static final class SingleHolder {
         static final Scheduler DEFAULT = new SingleScheduler();
     }
 
-    static final class ComputationHolder {
+    public static final class ComputationHolder {
         static final Scheduler DEFAULT = new ComputationScheduler();
     }
 
-    static final class IoHolder {
+    public static final class IoHolder {
         static final Scheduler DEFAULT = new IoScheduler();
     }
 
-    static final class NewThreadHolder {
+    public static final class NewThreadHolder {
         static final Scheduler DEFAULT = new NewThreadScheduler();
     }
 
