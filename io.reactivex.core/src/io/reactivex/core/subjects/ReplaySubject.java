@@ -132,7 +132,7 @@ import io.reactivex.core.plugins.RxJavaPlugins;
  * @param <T> the value type
  */
 public final class ReplaySubject<T> extends Subject<T> {
-    final ReplayBuffer<T> buffer;
+    public final ReplayBuffer<T> buffer;
 
     final AtomicReference<ReplayDisposable<T>[]> observers;
 
@@ -223,7 +223,7 @@ public final class ReplaySubject<T> extends Subject<T> {
      *          the type of items observed and emitted by the Subject
      * @return the created subject
      */
-    /* test */ static <T> ReplaySubject<T> createUnbounded() {
+    /* test */ public static <T> ReplaySubject<T> createUnbounded() {
         return new ReplaySubject<T>(new SizeBoundReplayBuffer<T>(Integer.MAX_VALUE));
     }
 
@@ -396,7 +396,7 @@ public final class ReplaySubject<T> extends Subject<T> {
         return observers.get().length != 0;
     }
 
-    /* test */ int observerCount() {
+    /* test */ public int observerCount() {
         return observers.get().length;
     }
 
@@ -490,7 +490,7 @@ public final class ReplaySubject<T> extends Subject<T> {
         return buffer.size() != 0; // NOPMD
     }
 
-    /* test*/ int size() {
+    /* test*/ public int size() {
         return buffer.size();
     }
 
@@ -798,22 +798,22 @@ public final class ReplaySubject<T> extends Subject<T> {
         }
     }
 
-    static final class Node<T> extends AtomicReference<Node<T>> {
+    public static final class Node<T> extends AtomicReference<Node<T>> {
 
         private static final long serialVersionUID = 6404226426336033100L;
 
-        final T value;
+        public final T value;
 
         Node(T value) {
             this.value = value;
         }
     }
 
-    static final class TimedNode<T> extends AtomicReference<TimedNode<T>> {
+    public static final class TimedNode<T> extends AtomicReference<TimedNode<T>> {
 
         private static final long serialVersionUID = 6404226426336033100L;
 
-        final T value;
+        public final T value;
         final long time;
 
         TimedNode(T value, long time) {
@@ -822,7 +822,7 @@ public final class ReplaySubject<T> extends Subject<T> {
         }
     }
 
-    static final class SizeBoundReplayBuffer<T>
+    public static final class SizeBoundReplayBuffer<T>
     extends AtomicReference<Object>
     implements ReplayBuffer<T> {
 
@@ -831,7 +831,7 @@ public final class ReplaySubject<T> extends Subject<T> {
         final int maxSize;
         int size;
 
-        volatile Node<Object> head;
+        public volatile Node<Object> head;
 
         Node<Object> tail;
 
@@ -1032,7 +1032,7 @@ public final class ReplaySubject<T> extends Subject<T> {
         }
     }
 
-    static final class SizeAndTimeBoundReplayBuffer<T>
+    public static final class SizeAndTimeBoundReplayBuffer<T>
     extends AtomicReference<Object>
     implements ReplayBuffer<T> {
 
@@ -1044,7 +1044,7 @@ public final class ReplaySubject<T> extends Subject<T> {
         final Scheduler scheduler;
         int size;
 
-        volatile TimedNode<Object> head;
+        public volatile TimedNode<Object> head;
 
         TimedNode<Object> tail;
 

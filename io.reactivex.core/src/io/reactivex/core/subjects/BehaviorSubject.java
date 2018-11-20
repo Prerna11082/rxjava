@@ -300,7 +300,7 @@ public final class BehaviorSubject<T> extends Subject<T> {
         return subscribers.get().length != 0;
     }
 
-    /* test support*/ int subscriberCount() {
+    /* test support*/ public int subscriberCount() {
         return subscribers.get().length;
     }
 
@@ -469,14 +469,14 @@ public final class BehaviorSubject<T> extends Subject<T> {
         writeLock.unlock();
     }
 
-    static final class BehaviorDisposable<T> implements Disposable, NonThrowingPredicate<Object> {
+    public static final class BehaviorDisposable<T> implements Disposable, NonThrowingPredicate<Object> {
 
         final Observer<? super T> downstream;
         final BehaviorSubject<T> state;
 
         boolean next;
-        boolean emitting;
-        AppendOnlyLinkedArrayList<Object> queue;
+        public boolean emitting;
+        public AppendOnlyLinkedArrayList<Object> queue;
 
         boolean fastPath;
 
@@ -484,7 +484,7 @@ public final class BehaviorSubject<T> extends Subject<T> {
 
         long index;
 
-        BehaviorDisposable(Observer<? super T> actual, BehaviorSubject<T> state) {
+        public BehaviorDisposable(Observer<? super T> actual, BehaviorSubject<T> state) {
             this.downstream = actual;
             this.state = state;
         }
@@ -503,7 +503,7 @@ public final class BehaviorSubject<T> extends Subject<T> {
             return cancelled;
         }
 
-        void emitFirst() {
+        public void emitFirst() {
             if (cancelled) {
                 return;
             }
@@ -537,7 +537,7 @@ public final class BehaviorSubject<T> extends Subject<T> {
             }
         }
 
-        void emitNext(Object value, long stateIndex) {
+        public void emitNext(Object value, long stateIndex) {
             if (cancelled) {
                 return;
             }

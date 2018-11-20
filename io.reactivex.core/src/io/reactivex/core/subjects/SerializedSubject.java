@@ -27,7 +27,7 @@ import io.reactivex.core.plugins.RxJavaPlugins;
  *
  * @param <T> the item value type
  */
-/* public */ final class SerializedSubject<T> extends Subject<T> implements NonThrowingPredicate<Object> {
+/* public */ public final class SerializedSubject<T> extends Subject<T> implements NonThrowingPredicate<Object> {
     /** The actual subscriber to serialize Subscriber calls to. */
     final Subject<T> actual;
     /** Indicates an emission is going on, guarded by this. */
@@ -41,7 +41,7 @@ import io.reactivex.core.plugins.RxJavaPlugins;
      * Constructor that wraps an actual subject.
      * @param actual the subject wrapped
      */
-    SerializedSubject(final Subject<T> actual) {
+    public SerializedSubject(final Subject<T> actual) {
         this.actual = actual;
     }
 

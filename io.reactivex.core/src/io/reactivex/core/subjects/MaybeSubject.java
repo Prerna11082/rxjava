@@ -320,7 +320,7 @@ public final class MaybeSubject<T> extends Maybe<T> implements MaybeObserver<T> 
      * Returns the number of current observers.
      * @return the number of current observers
      */
-    /* test */ int observerCount() {
+    /* test */ public int observerCount() {
         return observers.get().length;
     }
 

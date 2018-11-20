@@ -281,7 +281,7 @@ public final class SingleSubject<T> extends Single<T> implements SingleObserver<
      * Returns the number of current observers.
      * @return the number of current observers
      */
-    /* test */ int observerCount() {
+    /* test */ public int observerCount() {
         return observers.get().length;
     }
 

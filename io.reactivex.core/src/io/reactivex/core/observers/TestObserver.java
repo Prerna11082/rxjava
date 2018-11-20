@@ -282,7 +282,7 @@ implements Observer<T>, Disposable, MaybeObserver<T>, SingleObserver<T>, Complet
      * @param mode the mode to establish, see the {@link QueueDisposable} constants
      * @return this
      */
-    final TestObserver<T> setInitialFusionMode(int mode) {
+    public final TestObserver<T> setInitialFusionMode(int mode) {
         this.initialFusionMode = mode;
         return this;
     }
@@ -294,7 +294,7 @@ implements Observer<T>, Disposable, MaybeObserver<T>, SingleObserver<T>, Complet
      * @param mode the expected mode
      * @return this
      */
-    final TestObserver<T> assertFusionMode(int mode) {
+    public final TestObserver<T> assertFusionMode(int mode) {
         int m = establishedFusionMode;
         if (m != mode) {
             if (qd != null) {
@@ -322,7 +322,7 @@ implements Observer<T>, Disposable, MaybeObserver<T>, SingleObserver<T>, Complet
      * Use ObserverFusion to work with such tests.
      * @return this
      */
-    final TestObserver<T> assertFuseable() {
+    public final TestObserver<T> assertFuseable() {
         if (qd == null) {
             throw new AssertionError("Upstream is not fuseable.");
         }
@@ -335,7 +335,7 @@ implements Observer<T>, Disposable, MaybeObserver<T>, SingleObserver<T>, Complet
      * Use ObserverFusion to work with such tests.
      * @return this
      */
-    final TestObserver<T> assertNotFuseable() {
+    public final TestObserver<T> assertNotFuseable() {
         if (qd != null) {
             throw new AssertionError("Upstream is fuseable.");
         }

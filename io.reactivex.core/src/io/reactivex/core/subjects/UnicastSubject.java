@@ -158,7 +158,7 @@ public final class UnicastSubject<T> extends Subject<T> {
     volatile boolean disposed;
 
     /** Indicates the source has terminated. */
-    volatile boolean done;
+    public volatile boolean done;
     /**
      * The terminal error if not null.
      * Must be set before writing to done and read after done == true.
@@ -275,7 +275,7 @@ public final class UnicastSubject<T> extends Subject<T> {
      * @since 2.0
      *
      * */
-    UnicastSubject(int capacityHint, Runnable onTerminate) {
+    public UnicastSubject(int capacityHint, Runnable onTerminate) {
         this(capacityHint, onTerminate, true);
     }
 
@@ -410,7 +410,7 @@ public final class UnicastSubject<T> extends Subject<T> {
         }
     }
 
-    void drainFused(Observer<? super T> a) {
+    public void drainFused(Observer<? super T> a) {
         int missed = 1;
 
         final SpscLinkedArrayQueue<T> q = queue;

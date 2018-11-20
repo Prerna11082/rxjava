@@ -140,7 +140,7 @@ public final class AsyncSubject<T> extends Subject<T> {
      * @since 2.0
      */
     @SuppressWarnings("unchecked")
-    AsyncSubject() {
+    public AsyncSubject() {
         this.subscribers = new AtomicReference<AsyncDisposable<T>[]>(EMPTY);
     }
 
