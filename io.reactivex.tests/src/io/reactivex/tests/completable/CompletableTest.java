@@ -4499,7 +4499,7 @@ public class CompletableTest {
             .subscribe(ts);
         ts.assertNoValues();
         ts.assertError(e);
-        Assert.assertFalse("Should not have subscribed to observable when completable errors", hasRun.get());
+        Assert.assertFalse("Should not have subscribed to observables when completable errors", hasRun.get());
     }
 
     @Test

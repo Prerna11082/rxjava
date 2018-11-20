@@ -83,7 +83,7 @@ public final class FlowableBlockingSubscribe {
     }
 
     /**
-     * Runs the source observable to a terminal event, ignoring any values and rethrowing any exception.
+     * Runs the source observables to a terminal event, ignoring any values and rethrowing any exception.
      * @param o the source publisher
      * @param <T> the value type
      */

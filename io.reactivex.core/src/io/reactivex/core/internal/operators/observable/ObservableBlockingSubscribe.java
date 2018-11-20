@@ -76,7 +76,7 @@ public final class ObservableBlockingSubscribe {
     }
 
     /**
-     * Runs the source observable to a terminal event, ignoring any values and rethrowing any exception.
+     * Runs the source observables to a terminal event, ignoring any values and rethrowing any exception.
      * @param o the source ObservableSource
      * @param <T> the value type
      */

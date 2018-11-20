@@ -30,7 +30,7 @@ public final class BlockingHelper {
 
     public static void awaitForComplete(CountDownLatch latch, Disposable subscription) {
         if (latch.getCount() == 0) {
-            // Synchronous observable completes before awaiting for it.
+            // Synchronous observables completes before awaiting for it.
             // Skip await so InterruptedException will never be thrown.
             return;
         }

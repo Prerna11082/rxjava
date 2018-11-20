@@ -27,8 +27,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Returns an observable sequence that stays connected to the source as long as
- * there is at least one subscription to the observable sequence.
+ * Returns an observables sequence that stays connected to the source as long as
+ * there is at least one subscription to the observables sequence.
  *
  * @param <T>
  *            the value type

@@ -39,7 +39,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * A connectable observable which shares an underlying source and dispatches source values to subscribers in a backpressure-aware
+ * A connectable observables which shares an underlying source and dispatches source values to subscribers in a backpressure-aware
  * manner.
  * @param <T> the value type
  */
@@ -50,9 +50,9 @@ public final class FlowablePublish<T> extends ConnectableFlowable<T> implements 
      */
     static final long CANCELLED = Long.MIN_VALUE;
 
-    /** The source observable. */
+    /** The source observables. */
     final Flowable<T> source;
-    /** Holds the current subscriber that is, will be or just was subscribed to the source observable. */
+    /** Holds the current subscriber that is, will be or just was subscribed to the source observables. */
     final AtomicReference<PublishSubscriber<T>> current;
 
     /** The size of the prefetch buffer. */
@@ -61,11 +61,11 @@ public final class FlowablePublish<T> extends ConnectableFlowable<T> implements 
     final Publisher<T> onSubscribe;
 
     /**
-     * Creates a OperatorPublish instance to publish values of the given source observable.
+     * Creates a OperatorPublish instance to publish values of the given source observables.
      * @param <T> the source value type
-     * @param source the source observable
+     * @param source the source observables
      * @param bufferSize the size of the prefetch buffer
-     * @return the connectable observable
+     * @return the connectable observables
      */
     public static <T> ConnectableFlowable<T> create(Flowable<T> source, final int bufferSize) {
         // the current connection to source needs to be shared between the operator and its onSubscribe call

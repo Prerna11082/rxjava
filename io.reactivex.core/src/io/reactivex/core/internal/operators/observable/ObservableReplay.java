@@ -41,9 +41,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 public final class ObservableReplay<T> extends ConnectableObservable<T> implements HasUpstreamObservableSource<T>, ResettableConnectable {
-    /** The source observable. */
+    /** The source observables. */
     final ObservableSource<T> source;
-    /** Holds the current subscriber that is, will be or just was subscribed to the source observable. */
+    /** Holds the current subscriber that is, will be or just was subscribed to the source observables. */
     final AtomicReference<ReplayObserver<T>> current;
     /** A factory that creates the appropriate buffer for the ReplayObserver. */
     final BufferSupplier<T> bufferFactory;
@@ -58,7 +58,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     static final BufferSupplier DEFAULT_UNBOUNDED_FACTORY = new UnBoundedFactory();
 
     /**
-     * Given a connectable observable factory, it multicasts over the generated
+     * Given a connectable observables factory, it multicasts over the generated
      * ConnectableObservable via a selector function.
      * @param <U> the value type of the ConnectableObservable
      * @param <R> the result value type
@@ -76,7 +76,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
      * Child Observers will observe the events of the ConnectableObservable on the
      * specified scheduler.
      * @param <T> the value type
-     * @param co the connectable observable instance
+     * @param co the connectable observables instance
      * @param scheduler the target scheduler
      * @return the new ConnectableObservable instance
      */
@@ -88,7 +88,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     /**
      * Creates a replaying ConnectableObservable with an unbounded buffer.
      * @param <T> the value type
-     * @param source the source observable
+     * @param source the source observables
      * @return the new ConnectableObservable instance
      */
     @SuppressWarnings("unchecked")
@@ -141,10 +141,10 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     }
 
     /**
-     * Creates a OperatorReplay instance to replay values of the given source observable.
-     * @param source the source observable
-     * @param bufferFactory the factory to instantiate the appropriate buffer when the observable becomes active
-     * @return the connectable observable
+     * Creates a OperatorReplay instance to replay values of the given source observables.
+     * @param source the source observables
+     * @param bufferFactory the factory to instantiate the appropriate buffer when the observables becomes active
+     * @return the connectable observables
      */
     static <T> ConnectableObservable<T> create(ObservableSource<T> source,
             final BufferSupplier<T> bufferFactory) {

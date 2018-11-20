@@ -46,9 +46,9 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 
 public final class FlowableReplay<T> extends ConnectableFlowable<T> implements HasUpstreamPublisher<T>, ResettableConnectable {
-    /** The source observable. */
+    /** The source observables. */
     final Flowable<T> source;
-    /** Holds the current subscriber that is, will be or just was subscribed to the source observable. */
+    /** Holds the current subscriber that is, will be or just was subscribed to the source observables. */
     final AtomicReference<ReplaySubscriber<T>> current;
     /** A factory that creates the appropriate buffer for the ReplaySubscriber. */
     final Callable<? extends ReplayBuffer<T>> bufferFactory;
@@ -59,9 +59,9 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
     static final Callable DEFAULT_UNBOUNDED_FACTORY = new DefaultUnboundedFactory();
 
     /**
-     * Given a connectable observable factory, it multicasts over the generated
+     * Given a connectable observables factory, it multicasts over the generated
      * ConnectableObservable via a selector function.
-     * @param <U> the connectable observable type
+     * @param <U> the connectable observables type
      * @param <R> the result type
      * @param connectableFactory the factory that returns a ConnectableFlowable for each individual subscriber
      * @param selector the function that receives a Flowable and should return another Flowable that will be subscribed to
@@ -142,10 +142,10 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
     }
 
     /**
-     * Creates a OperatorReplay instance to replay values of the given source observable.
-     * @param source the source observable
-     * @param bufferFactory the factory to instantiate the appropriate buffer when the observable becomes active
-     * @return the connectable observable
+     * Creates a OperatorReplay instance to replay values of the given source observables.
+     * @param source the source observables
+     * @param bufferFactory the factory to instantiate the appropriate buffer when the observables becomes active
+     * @return the connectable observables
      */
     static <T> ConnectableFlowable<T> create(Flowable<T> source,
             final Callable<? extends ReplayBuffer<T>> bufferFactory) {

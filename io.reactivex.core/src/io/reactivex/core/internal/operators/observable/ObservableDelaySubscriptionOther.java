@@ -21,7 +21,7 @@ import io.reactivex.core.plugins.RxJavaPlugins;
 
 /**
  * Delays the subscription to the main source until the other
- * observable fires an event or completes.
+ * observables fires an event or completes.
  * @param <T> the main type
  * @param <U> the other value type, ignored
  */

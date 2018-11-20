@@ -22,8 +22,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * An observable which auto-connects to another observable, caches the elements
- * from that observable but allows terminating the connection and completing the cache.
+ * An observables which auto-connects to another observables, caches the elements
+ * from that observables but allows terminating the connection and completing the cache.
  *
  * @param <T> the source element type
  */
@@ -118,7 +118,7 @@ implements Observer<T> {
     }
 
     /**
-     * Check if this cached observable is connected to its source.
+     * Check if this cached observables is connected to its source.
      * @return true if already connected
      */
     /* public */boolean isConnected() {
@@ -126,7 +126,7 @@ implements Observer<T> {
     }
 
     /**
-     * Returns true if there are observers subscribed to this observable.
+     * Returns true if there are observers subscribed to this observables.
      * @return true if the cache has observers
      */
     /* public */ boolean hasObservers() {

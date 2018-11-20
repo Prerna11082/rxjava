@@ -102,7 +102,7 @@ public final class BlockingObservableNext<T> implements Iterable<T> {
                 next = nextNotification.getValue();
                 return true;
             }
-            // If an observable is completed or fails,
+            // If an observables is completed or fails,
             // hasNext() always return false.
             hasNext = false;
             if (nextNotification.isOnComplete()) {

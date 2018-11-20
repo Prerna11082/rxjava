@@ -13,28 +13,21 @@
 
 package io.reactivex.tests.processors;
 
-import io.reactivex.common.functions.Consumer;
-import io.reactivex.core.Flowable;
-import io.reactivex.core.Scheduler;
-import io.reactivex.core.processors.ReplayProcessor;
-import io.reactivex.core.schedulers.Schedulers;
-import io.reactivex.core.subscribers.DefaultSubscriber;
-import io.reactivex.core.subscribers.TestSubscriber;
-import org.reactivestreams.Publisher;
-import org.reactivestreams.Subscriber;
+import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.TimeUnit;
+import java.util.*;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static org.junit.Assert.assertEquals;
+import io.reactivex.core.processors.ReplayProcessor;
 import org.junit.*;
+import org.reactivestreams.*;
+
+import io.reactivex.core.*;
+import io.reactivex.common.functions.Consumer;
+import io.reactivex.core.schedulers.Schedulers;
+import io.reactivex.core.subscribers.*;
+
 public class ReplayProcessorBoundedConcurrencyTest {
 
     @Test(timeout = 4000)
@@ -362,35 +355,35 @@ public class ReplayProcessorBoundedConcurrencyTest {
                 rs
 //                .doOnSubscribe(v -> System.out.println("!! " + j))
 //                .doOnNext(e -> System.out.println(">> " + j))
-                .subscribeOn(s)
-                .observeOn(Schedulers.io())
+                        .subscribeOn(s)
+                        .observeOn(Schedulers.io())
 //                .doOnNext(e -> System.out.println(">>> " + j))
-                .subscribe(new DefaultSubscriber<Object>() {
+                        .subscribe(new DefaultSubscriber<Object>() {
 
-                    @Override
-                    protected void onStart() {
-                        super.onStart();
-                    }
+                            @Override
+                            protected void onStart() {
+                                super.onStart();
+                            }
 
-                    @Override
-                    public void onComplete() {
-                        o.set(-1);
-                        finish.countDown();
-                    }
+                            @Override
+                            public void onComplete() {
+                                o.set(-1);
+                                finish.countDown();
+                            }
 
-                    @Override
-                    public void onError(Throwable e) {
-                        o.set(e);
-                        finish.countDown();
-                    }
+                            @Override
+                            public void onError(Throwable e) {
+                                o.set(e);
+                                finish.countDown();
+                            }
 
-                    @Override
-                    public void onNext(Object t) {
-                        o.set(t);
-                        finish.countDown();
-                    }
+                            @Override
+                            public void onNext(Object t) {
+                                o.set(t);
+                                finish.countDown();
+                            }
 
-                });
+                        });
                 start.countDown();
 
                 if (!finish.await(5, TimeUnit.SECONDS)) {

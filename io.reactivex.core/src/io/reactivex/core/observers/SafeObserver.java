@@ -28,7 +28,7 @@ import io.reactivex.core.plugins.RxJavaPlugins;
  */
 public final class SafeObserver<T> implements Observer<T>, Disposable {
     /** The actual Subscriber. */
-    final Observer<? super T> downstream;
+    public final Observer<? super T> downstream;
     /** The subscription. */
     Disposable upstream;
     /** Indicates a terminal state. */

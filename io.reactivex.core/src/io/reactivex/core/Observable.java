@@ -5392,7 +5392,7 @@ public abstract class Observable<T> implements ObservableSource<T> {
     }
 
     /**
-     * Runs the source observable to a terminal event, ignoring any values and rethrowing any exception.
+     * Runs the source observables to a terminal event, ignoring any values and rethrowing any exception.
      * <p>
      * <img width="640" height="270" src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/blockingSubscribe.o.0.png" alt="">
      * <p>
