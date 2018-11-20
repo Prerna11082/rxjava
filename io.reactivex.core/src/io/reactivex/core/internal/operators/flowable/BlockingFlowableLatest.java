@@ -27,7 +27,7 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Wait for and iterate over the latest values of the source observable. If the source works faster than the
+ * Wait for and iterate over the latest values of the source observables. If the source works faster than the
  * iterator, values may be skipped, but not the {@code onError} or {@code onComplete} events.
  * @param <T> the value type emitted
  */

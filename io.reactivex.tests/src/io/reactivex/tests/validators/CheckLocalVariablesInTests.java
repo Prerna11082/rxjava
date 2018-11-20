@@ -28,7 +28,7 @@ import org.junit.Test;
  * <li>{@code PublishSubject} named as {@code pp*}</li>
  * <li>{@code Subscription} with single letter name such as "s" or "d"</li>
  * <li>{@code Disposable} with single letter name such as "s" or "d"</li>
- * <li>{@code Flowable} named as {@code o|observable} + number</li>
+ * <li>{@code Flowable} named as {@code o|observables} + number</li>
  * <li>{@code Observable} named as {@code f|flowable} + number</li>
  * <li>{@code Subscriber} named as "o" or "observer"</li>
  * <li>{@code Observer} named as "s" or "subscriber"</li>
@@ -224,7 +224,7 @@ public class CheckLocalVariablesInTests {
 
     @Test
     public void singleAsObservable() throws Exception {
-        findPattern("Single<.*>\\s+observable\\b");
+        findPattern("Single<.*>\\s+observables\\b");
     }
 
     @Test
@@ -254,7 +254,7 @@ public class CheckLocalVariablesInTests {
 
     @Test
     public void flowableAsObservable() throws Exception {
-        findPattern("Flowable<.*>\\s+observable[0-9]?\\b");
+        findPattern("Flowable<.*>\\s+observables[0-9]?\\b");
     }
 
     @Test
@@ -269,7 +269,7 @@ public class CheckLocalVariablesInTests {
 
     @Test
     public void flowableNoArgAsObservable() throws Exception {
-        findPattern("Flowable\\s+observable[0-9]?\\b");
+        findPattern("Flowable\\s+observables[0-9]?\\b");
     }
 
     @Test
@@ -279,7 +279,7 @@ public class CheckLocalVariablesInTests {
 
     @Test
     public void maybeAsObservable() throws Exception {
-        findPattern("Maybe<.*>\\s+observable\\b");
+        findPattern("Maybe<.*>\\s+observables\\b");
     }
 
     @Test
@@ -289,7 +289,7 @@ public class CheckLocalVariablesInTests {
 
     @Test
     public void completableAsObservable() throws Exception {
-        findPattern("Completable\\s+observable\\b");
+        findPattern("Completable\\s+observables\\b");
     }
 
     @Test

@@ -26,23 +26,23 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * A connectable observable which shares an underlying source and dispatches source values to observers in a backpressure-aware
+ * A connectable observables which shares an underlying source and dispatches source values to observers in a backpressure-aware
  * manner.
  * @param <T> the value type
  */
 public final class ObservablePublish<T> extends ConnectableObservable<T> implements HasUpstreamObservableSource<T> {
-    /** The source observable. */
+    /** The source observables. */
     final ObservableSource<T> source;
-    /** Holds the current subscriber that is, will be or just was subscribed to the source observable. */
+    /** Holds the current subscriber that is, will be or just was subscribed to the source observables. */
     final AtomicReference<PublishObserver<T>> current;
 
     final ObservableSource<T> onSubscribe;
 
     /**
-     * Creates a OperatorPublish instance to publish values of the given source observable.
+     * Creates a OperatorPublish instance to publish values of the given source observables.
      * @param <T> the source value type
-     * @param source the source observable
-     * @return the connectable observable
+     * @param source the source observables
+     * @return the connectable observables
      */
     public static <T> ConnectableObservable<T> create(ObservableSource<T> source) {
         // the current connection to source needs to be shared between the operator and its onSubscribe call

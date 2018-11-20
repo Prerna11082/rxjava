@@ -524,7 +524,7 @@ public abstract class Completable implements CompletableSource {
     @CheckReturnValue
     @SchedulerSupport(SchedulerSupport.NONE)
     public static <T> Completable fromObservable(final ObservableSource<T> observable) {
-        ObjectHelper.requireNonNull(observable, "observable is null");
+        ObjectHelper.requireNonNull(observable, "observables is null");
         return RxJavaPlugins.onAssembly(new CompletableFromObservable<T>(observable));
     }
 
@@ -765,7 +765,7 @@ public abstract class Completable implements CompletableSource {
 
     /**
      * Returns a CompletableConsumable that subscribes to all Completables in the source array and delays
-     * any error emitted by either the sources observable or any of the inner Completables until all of
+     * any error emitted by either the sources observables or any of the inner Completables until all of
      * them terminate in a way or another.
      * <p>
      * <img width="640" height="430" src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/Completable.mergeArrayDelayError.png" alt="">
@@ -786,7 +786,7 @@ public abstract class Completable implements CompletableSource {
 
     /**
      * Returns a Completable that subscribes to all Completables in the source sequence and delays
-     * any error emitted by either the sources observable or any of the inner Completables until all of
+     * any error emitted by either the sources observables or any of the inner Completables until all of
      * them terminate in a way or another.
      * <p>
      * <img width="640" height="475" src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/Completable.mergeDelayError.png" alt="">
@@ -807,7 +807,7 @@ public abstract class Completable implements CompletableSource {
 
     /**
      * Returns a Completable that subscribes to all Completables in the source sequence and delays
-     * any error emitted by either the sources observable or any of the inner Completables until all of
+     * any error emitted by either the sources observables or any of the inner Completables until all of
      * them terminate in a way or another.
      * <p>
      * <img width="640" height="466" src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/Completable.mergeDelayError.p.png" alt="">
@@ -832,7 +832,7 @@ public abstract class Completable implements CompletableSource {
     /**
      * Returns a Completable that subscribes to a limited number of inner Completables at once in
      * the source sequence and delays any error emitted by either the sources
-     * observable or any of the inner Completables until all of
+     * observables or any of the inner Completables until all of
      * them terminate in a way or another.
      * <p>
      * <img width="640" height="440" src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/Completable.mergeDelayError.pn.png" alt="">

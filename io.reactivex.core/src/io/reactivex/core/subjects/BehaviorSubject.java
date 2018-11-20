@@ -60,15 +60,15 @@ import io.reactivex.core.plugins.RxJavaPlugins;
  *
  * final Integer EMPTY = Integer.MIN_VALUE;
  *
- * Observable&lt;Integer&gt; observable = subject.filter(v -&gt; v != EMPTY);
+ * Observable&lt;Integer&gt; observables = subject.filter(v -&gt; v != EMPTY);
  *
- * TestObserver&lt;Integer&gt; to1 = observable.test();
+ * TestObserver&lt;Integer&gt; to1 = observables.test();
  *
- * observable.onNext(1);
+ * observables.onNext(1);
  * // this will "clear" the cache
- * observable.onNext(EMPTY);
+ * observables.onNext(EMPTY);
  *
- * TestObserver&lt;Integer&gt; to2 = observable.test();
+ * TestObserver&lt;Integer&gt; to2 = observables.test();
  *
  * subject.onNext(2);
  * subject.onComplete();
@@ -82,7 +82,7 @@ import io.reactivex.core.plugins.RxJavaPlugins;
  *
  * // Observers coming after the subject was terminated receive
  * // no items and only the onComplete event in this case.
- * observable.test().assertResult();
+ * observables.test().assertResult();
  * </code></pre>
  * <p>
  * Even though {@code BehaviorSubject} implements the {@code Observer} interface, calling

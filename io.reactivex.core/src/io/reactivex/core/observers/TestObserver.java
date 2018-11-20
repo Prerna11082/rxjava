@@ -307,7 +307,7 @@ implements Observer<T>, Disposable, MaybeObserver<T>, SingleObserver<T>, Complet
         return this;
     }
 
-    static String fusionModeToString(int mode) {
+    public static String fusionModeToString(int mode) {
         switch (mode) {
         case QueueFuseable.NONE : return "NONE";
         case QueueFuseable.SYNC : return "SYNC";
@@ -351,7 +351,7 @@ implements Observer<T>, Disposable, MaybeObserver<T>, SingleObserver<T>, Complet
     /**
      * An observer that ignores all events and does not report errors.
      */
-    enum EmptyObserver implements Observer<Object> {
+    public enum EmptyObserver implements Observer<Object> {
         INSTANCE;
 
         @Override
