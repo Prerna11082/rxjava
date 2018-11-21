@@ -48,7 +48,7 @@ public final class BlockingFlowableNext<T> implements Iterable<T> {
     }
 
     // test needs to access the observer.waiting flag
-    static final class NextIterator<T> implements Iterator<T> {
+    public static final class NextIterator<T> implements Iterator<T> {
 
         private final NextSubscriber<T> subscriber;
         private final Publisher<? extends T> items;
@@ -58,7 +58,7 @@ public final class BlockingFlowableNext<T> implements Iterable<T> {
         private Throwable error;
         private boolean started;
 
-        NextIterator(Publisher<? extends T> items, NextSubscriber<T> subscriber) {
+        public NextIterator(Publisher<? extends T> items, NextSubscriber<T> subscriber) {
             this.items = items;
             this.subscriber = subscriber;
         }
@@ -134,7 +134,7 @@ public final class BlockingFlowableNext<T> implements Iterable<T> {
         }
     }
 
-    static final class NextSubscriber<T> extends DisposableSubscriber<Notification<T>> {
+    public static final class NextSubscriber<T> extends DisposableSubscriber<Notification<T>> {
         private final BlockingQueue<Notification<T>> buf = new ArrayBlockingQueue<Notification<T>>(1);
         final AtomicInteger waiting = new AtomicInteger();
 
@@ -170,7 +170,7 @@ public final class BlockingFlowableNext<T> implements Iterable<T> {
             BlockingHelper.verifyNonBlocking();
             return buf.take();
         }
-        void setWaiting() {
+        public void setWaiting() {
             waiting.set(1);
         }
     }

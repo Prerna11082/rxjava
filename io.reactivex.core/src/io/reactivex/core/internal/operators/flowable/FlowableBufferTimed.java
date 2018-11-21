@@ -84,7 +84,7 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
                 bufferSupplier, timespan, timeskip, unit, w));
     }
 
-    static final class BufferExactUnboundedSubscriber<T, U extends Collection<? super T>>
+    public static final class BufferExactUnboundedSubscriber<T, U extends Collection<? super T>>
     extends QueueDrainSubscriber<T, U, U> implements Subscription, Runnable, Disposable {
         final Callable<U> bufferSupplier;
         final long timespan;
@@ -93,11 +93,11 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
 
         Subscription upstream;
 
-        U buffer;
+        public U buffer;
 
         final AtomicReference<Disposable> timer = new AtomicReference<Disposable>();
 
-        BufferExactUnboundedSubscriber(
+        public BufferExactUnboundedSubscriber(
                 Subscriber<? super U> actual, Callable<U> bufferSupplier,
                 long timespan, TimeUnit unit, Scheduler scheduler) {
             super(actual, new MpscLinkedQueue<U>());
@@ -230,7 +230,7 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
         }
     }
 
-    static final class BufferSkipBoundedSubscriber<T, U extends Collection<? super T>>
+    public static final class BufferSkipBoundedSubscriber<T, U extends Collection<? super T>>
     extends QueueDrainSubscriber<T, U, U> implements Subscription, Runnable {
         final Callable<U> bufferSupplier;
         final long timespan;
@@ -241,7 +241,7 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
 
         Subscription upstream;
 
-        BufferSkipBoundedSubscriber(Subscriber<? super U> actual,
+        public BufferSkipBoundedSubscriber(Subscriber<? super U> actual,
                 Callable<U> bufferSupplier, long timespan,
                 long timeskip, TimeUnit unit, Worker w) {
             super(actual, new MpscLinkedQueue<U>());
@@ -386,7 +386,7 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
         }
     }
 
-    static final class BufferExactBoundedSubscriber<T, U extends Collection<? super T>>
+    public static final class BufferExactBoundedSubscriber<T, U extends Collection<? super T>>
     extends QueueDrainSubscriber<T, U, U> implements Subscription, Runnable, Disposable {
         final Callable<U> bufferSupplier;
         final long timespan;
@@ -401,11 +401,11 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
 
         Subscription upstream;
 
-        long producerIndex;
+        public long producerIndex;
 
         long consumerIndex;
 
-        BufferExactBoundedSubscriber(
+        public BufferExactBoundedSubscriber(
                 Subscriber<? super U> actual,
                 Callable<U> bufferSupplier,
                 long timespan, TimeUnit unit, int maxSize,

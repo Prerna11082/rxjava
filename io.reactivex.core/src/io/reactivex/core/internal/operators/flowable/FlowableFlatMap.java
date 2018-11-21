@@ -69,7 +69,7 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
         return new MergeSubscriber<T, U>(s, mapper, delayErrors, maxConcurrency, bufferSize);
     }
 
-    static final class MergeSubscriber<T, U> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
+    public static final class MergeSubscriber<T, U> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
 
         private static final long serialVersionUID = -2117620485640801370L;
 
@@ -93,7 +93,7 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
 
         static final InnerSubscriber<?, ?>[] CANCELLED = new InnerSubscriber<?, ?>[0];
 
-        final AtomicLong requested = new AtomicLong();
+        public final AtomicLong requested = new AtomicLong();
 
         Subscription upstream;
 
@@ -104,7 +104,7 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
         int scalarEmitted;
         final int scalarLimit;
 
-        MergeSubscriber(Subscriber<? super U> actual, Function<? super T, ? extends Publisher<? extends U>> mapper,
+        public MergeSubscriber(Subscriber<? super U> actual, Function<? super T, ? extends Publisher<? extends U>> mapper,
                 boolean delayErrors, int maxConcurrency, int bufferSize) {
             this.downstream = actual;
             this.mapper = mapper;
@@ -371,7 +371,7 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
             }
         }
 
-        void drain() {
+        public void drain() {
             if (getAndIncrement() == 0) {
                 drainLoop();
             }

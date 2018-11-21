@@ -49,7 +49,7 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
     /** The source observables. */
     final Flowable<T> source;
     /** Holds the current subscriber that is, will be or just was subscribed to the source observables. */
-    final AtomicReference<ReplaySubscriber<T>> current;
+    public final AtomicReference<ReplaySubscriber<T>> current;
     /** A factory that creates the appropriate buffer for the ReplaySubscriber. */
     final Callable<? extends ReplayBuffer<T>> bufferFactory;
 
@@ -147,7 +147,7 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
      * @param bufferFactory the factory to instantiate the appropriate buffer when the observables becomes active
      * @return the connectable observables
      */
-    static <T> ConnectableFlowable<T> create(Flowable<T> source,
+    public static <T> ConnectableFlowable<T> create(Flowable<T> source,
             final Callable<? extends ReplayBuffer<T>> bufferFactory) {
         // the current connection to source needs to be shared between the operator and its onSubscribe call
         final AtomicReference<ReplaySubscriber<T>> curr = new AtomicReference<ReplaySubscriber<T>>();
@@ -243,12 +243,12 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
     }
 
     @SuppressWarnings("rawtypes")
-    static final class ReplaySubscriber<T>
+    public static final class ReplaySubscriber<T>
     extends AtomicReference<Subscription>
     implements FlowableSubscriber<T>, Disposable {
         private static final long serialVersionUID = 7224554242710036740L;
         /** Holds notifications from upstream. */
-        final ReplayBuffer<T> buffer;
+        public final ReplayBuffer<T> buffer;
         /** Indicates this Subscriber received a terminal event. */
         boolean done;
 
@@ -594,7 +594,7 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
      *
      * @param <T> the value type
      */
-    interface ReplayBuffer<T> {
+    public interface ReplayBuffer<T> {
         /**
          * Adds a regular value to the buffer.
          * @param value the next value to store
@@ -718,13 +718,13 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
     /**
      * Represents a node in a bounded replay buffer's linked list.
      */
-    static final class Node extends AtomicReference<Node> {
+    public static final class Node extends AtomicReference<Node> {
 
         private static final long serialVersionUID = 245354315435971818L;
-        final Object value;
+        public final Object value;
         final long index;
 
-        Node(Object value, long index) {
+        public Node(Object value, long index) {
             this.value = value;
             this.index = index;
         }
@@ -736,16 +736,16 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
      *
      * @param <T> the value type
      */
-    static class BoundedReplayBuffer<T> extends AtomicReference<Node> implements ReplayBuffer<T> {
+    public static class BoundedReplayBuffer<T> extends AtomicReference<Node> implements ReplayBuffer<T> {
 
         private static final long serialVersionUID = 2346567790059478686L;
 
         Node tail;
-        int size;
+        public int size;
 
         long index;
 
-        BoundedReplayBuffer() {
+        public BoundedReplayBuffer() {
             Node n = new Node(null, 0);
             tail = n;
             set(n);
@@ -755,7 +755,7 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
          * Add a new node to the linked list.
          * @param n the Node instance to add
          */
-        final void addLast(Node n) {
+        public final void addLast(Node n) {
             tail.set(n);
             tail = n;
             size++;
@@ -763,7 +763,7 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
         /**
          * Remove the first node from the linked list.
          */
-        final void removeFirst() {
+        public final void removeFirst() {
             Node head = get();
             Node next = head.get();
             if (next == null) {
@@ -774,7 +774,7 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
             // can't null out the head's value because of late replayers would see null
             setFirst(next);
         }
-        /* test */ final void removeSome(int n) {
+        public /* test */ final void removeSome(int n) {
             Node head = get();
             while (n > 0) {
                 head = head.get();
@@ -816,7 +816,7 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
             truncateFinal();
         }
 
-        final void trimHead() {
+        public final void trimHead() {
             Node head = get();
             if (head.value != null) {
                 Node n = new Node(null, 0L);
@@ -930,7 +930,12 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
         void truncateFinal() {
             trimHead();
         }
-        /* test */ final  void collect(Collection<? super T> output) {
+
+        public int getSize() {
+            return size;
+        }
+
+        public /* test */ final  void collect(Collection<? super T> output) {
             Node n = getHead();
             for (;;) {
                 Node next = n.get();
@@ -947,10 +952,10 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
                 }
             }
         }
-        /* test */ boolean hasError() {
+        public /* test */ boolean hasError() {
             return tail.value != null && NotificationLite.isError(leaveTransform(tail.value));
         }
-        /* test */ boolean hasCompleted() {
+        public /* test */ boolean hasCompleted() {
             return tail.value != null && NotificationLite.isComplete(leaveTransform(tail.value));
         }
 
@@ -964,12 +969,12 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
      *
      * @param <T> the value type
      */
-    static final class SizeBoundReplayBuffer<T> extends BoundedReplayBuffer<T> {
+    public static final class SizeBoundReplayBuffer<T> extends BoundedReplayBuffer<T> {
 
         private static final long serialVersionUID = -5898283885385201806L;
 
         final int limit;
-        SizeBoundReplayBuffer(int limit) {
+        public SizeBoundReplayBuffer(int limit) {
             this.limit = limit;
         }
 
@@ -989,14 +994,14 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
      *
      * @param <T> the buffered value type
      */
-    static final class SizeAndTimeBoundReplayBuffer<T> extends BoundedReplayBuffer<T> {
+    public static final class SizeAndTimeBoundReplayBuffer<T> extends BoundedReplayBuffer<T> {
 
         private static final long serialVersionUID = 3457957419649567404L;
         final Scheduler scheduler;
         final long maxAge;
         final TimeUnit unit;
         final int limit;
-        SizeAndTimeBoundReplayBuffer(int limit, long maxAge, TimeUnit unit, Scheduler scheduler) {
+        public SizeAndTimeBoundReplayBuffer(int limit, long maxAge, TimeUnit unit, Scheduler scheduler) {
             this.scheduler = scheduler;
             this.limit = limit;
             this.maxAge = maxAge;

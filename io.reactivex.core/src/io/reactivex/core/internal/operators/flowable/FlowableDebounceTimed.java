@@ -51,7 +51,7 @@ public final class FlowableDebounceTimed<T> extends AbstractFlowableWithUpstream
                 timeout, unit, scheduler.createWorker()));
     }
 
-    static final class DebounceTimedSubscriber<T> extends AtomicLong
+    public static final class DebounceTimedSubscriber<T> extends AtomicLong
     implements FlowableSubscriber<T>, Subscription {
 
         private static final long serialVersionUID = -9102637559663639004L;
@@ -68,7 +68,7 @@ public final class FlowableDebounceTimed<T> extends AbstractFlowableWithUpstream
 
         boolean done;
 
-        DebounceTimedSubscriber(Subscriber<? super T> actual, long timeout, TimeUnit unit, Worker worker) {
+        public DebounceTimedSubscriber(Subscriber<? super T> actual, long timeout, TimeUnit unit, Worker worker) {
             this.downstream = actual;
             this.timeout = timeout;
             this.unit = unit;
@@ -169,7 +169,7 @@ public final class FlowableDebounceTimed<T> extends AbstractFlowableWithUpstream
         }
     }
 
-    static final class DebounceEmitter<T> extends AtomicReference<Disposable> implements Runnable, Disposable {
+    public static final class DebounceEmitter<T> extends AtomicReference<Disposable> implements Runnable, Disposable {
 
         private static final long serialVersionUID = 6812032969491025141L;
 
@@ -179,7 +179,7 @@ public final class FlowableDebounceTimed<T> extends AbstractFlowableWithUpstream
 
         final AtomicBoolean once = new AtomicBoolean();
 
-        DebounceEmitter(T value, long idx, DebounceTimedSubscriber<T> parent) {
+        public DebounceEmitter(T value, long idx, DebounceTimedSubscriber<T> parent) {
             this.value = value;
             this.idx = idx;
             this.parent = parent;
@@ -190,7 +190,7 @@ public final class FlowableDebounceTimed<T> extends AbstractFlowableWithUpstream
             emit();
         }
 
-        void emit() {
+        public void emit() {
             if (once.compareAndSet(false, true)) {
                 parent.emit(idx, value, this);
             }

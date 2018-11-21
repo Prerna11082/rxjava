@@ -63,7 +63,7 @@ final Scheduler scheduler;
         }
     }
 
-    abstract static class BaseObserveOnSubscriber<T>
+    public abstract static class BaseObserveOnSubscriber<T>
     extends BasicIntQueueSubscription<T>
     implements FlowableSubscriber<T>, Runnable {
         private static final long serialVersionUID = -8241002408341274697L;
@@ -76,11 +76,11 @@ final Scheduler scheduler;
 
         final int limit;
 
-        final AtomicLong requested;
+        public final AtomicLong requested;
 
         Subscription upstream;
 
-        SimpleQueue<T> queue;
+        public SimpleQueue<T> queue;
 
         volatile boolean cancelled;
 
@@ -88,7 +88,7 @@ final Scheduler scheduler;
 
         Throwable error;
 
-        int sourceMode;
+        public int sourceMode;
 
         long produced;
 
@@ -165,7 +165,7 @@ final Scheduler scheduler;
             }
         }
 
-        final void trySchedule() {
+        public final void trySchedule() {
             if (getAndIncrement() != 0) {
                 return;
             }

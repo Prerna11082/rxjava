@@ -82,7 +82,7 @@ public final class FlowableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> exte
         other.subscribe(right);
     }
 
-    interface JoinSupport {
+    public interface JoinSupport {
 
         void innerError(Throwable ex);
 
@@ -398,7 +398,7 @@ public final class FlowableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> exte
         }
     }
 
-    static final class LeftRightSubscriber
+    public static final class LeftRightSubscriber
     extends AtomicReference<Subscription>
     implements FlowableSubscriber<Object>, Disposable {
 
@@ -408,7 +408,7 @@ public final class FlowableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> exte
 
         final boolean isLeft;
 
-        LeftRightSubscriber(JoinSupport parent, boolean isLeft) {
+        public LeftRightSubscriber(JoinSupport parent, boolean isLeft) {
             this.parent = parent;
             this.isLeft = isLeft;
         }
@@ -445,7 +445,7 @@ public final class FlowableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> exte
 
     }
 
-    static final class LeftRightEndSubscriber
+    public static final class LeftRightEndSubscriber
     extends AtomicReference<Subscription>
     implements FlowableSubscriber<Object>, Disposable {
 
@@ -457,7 +457,7 @@ public final class FlowableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> exte
 
         final int index;
 
-        LeftRightEndSubscriber(JoinSupport parent,
+        public LeftRightEndSubscriber(JoinSupport parent,
                 boolean isLeft, int index) {
             this.parent = parent;
             this.isLeft = isLeft;

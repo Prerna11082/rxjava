@@ -52,7 +52,7 @@ public final class FlowableSubscribeOn<T> extends AbstractFlowableWithUpstream<T
         w.schedule(sos);
     }
 
-    static final class SubscribeOnSubscriber<T> extends AtomicReference<Thread>
+    public static final class SubscribeOnSubscriber<T> extends AtomicReference<Thread>
     implements FlowableSubscriber<T>, Subscription, Runnable {
 
         private static final long serialVersionUID = 8094547886072529208L;
@@ -69,7 +69,7 @@ public final class FlowableSubscribeOn<T> extends AbstractFlowableWithUpstream<T
 
         Publisher<T> source;
 
-        SubscribeOnSubscriber(Subscriber<? super T> actual, Scheduler.Worker worker, Publisher<T> source, boolean requestOn) {
+        public SubscribeOnSubscriber(Subscriber<? super T> actual, Scheduler.Worker worker, Publisher<T> source, boolean requestOn) {
             this.downstream = actual;
             this.worker = worker;
             this.source = source;

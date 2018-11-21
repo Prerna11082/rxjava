@@ -47,7 +47,7 @@ public final class BlockingFlowableIterable<T> implements Iterable<T> {
         return it;
     }
 
-    static final class BlockingFlowableIterator<T>
+    public static final class BlockingFlowableIterator<T>
     extends AtomicReference<Subscription>
     implements FlowableSubscriber<T>, Iterator<T>, Runnable, Disposable {
 
@@ -68,7 +68,7 @@ public final class BlockingFlowableIterable<T> implements Iterable<T> {
         volatile boolean done;
         Throwable error;
 
-        BlockingFlowableIterator(int batchSize) {
+        public BlockingFlowableIterator(int batchSize) {
             this.queue = new SpscArrayQueue<T>(batchSize);
             this.batchSize = batchSize;
             this.limit = batchSize - (batchSize >> 2);

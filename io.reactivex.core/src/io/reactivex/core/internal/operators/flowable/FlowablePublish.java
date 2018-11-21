@@ -53,7 +53,7 @@ public final class FlowablePublish<T> extends ConnectableFlowable<T> implements 
     /** The source observables. */
     final Flowable<T> source;
     /** Holds the current subscriber that is, will be or just was subscribed to the source observables. */
-    final AtomicReference<PublishSubscriber<T>> current;
+    public final AtomicReference<PublishSubscriber<T>> current;
 
     /** The size of the prefetch buffer. */
     final int bufferSize;
@@ -142,7 +142,7 @@ public final class FlowablePublish<T> extends ConnectableFlowable<T> implements 
     }
 
     @SuppressWarnings("rawtypes")
-    static final class PublishSubscriber<T>
+    public static final class PublishSubscriber<T>
     extends AtomicInteger
     implements FlowableSubscriber<T>, Disposable {
         private static final long serialVersionUID = -202316842419149694L;
@@ -273,7 +273,7 @@ public final class FlowablePublish<T> extends ConnectableFlowable<T> implements 
          * @param producer the producer to add
          * @return true if succeeded, false otherwise
          */
-        boolean add(InnerSubscriber<T> producer) {
+        public boolean add(InnerSubscriber<T> producer) {
             // the state can change so we do a CAS loop to achieve atomicity
             for (;;) {
                 // get the current producer array
@@ -303,7 +303,7 @@ public final class FlowablePublish<T> extends ConnectableFlowable<T> implements 
          * @param producer the producer to remove
          */
         @SuppressWarnings("unchecked")
-        void remove(InnerSubscriber<T> producer) {
+        public void remove(InnerSubscriber<T> producer) {
             // the state can change so we do a CAS loop to achieve atomicity
             for (;;) {
                 // let's read the current subscribers array
@@ -600,7 +600,7 @@ public final class FlowablePublish<T> extends ConnectableFlowable<T> implements 
      * child subscriber in thread-safe manner.
      * @param <T> the value type
      */
-    static final class InnerSubscriber<T> extends AtomicLong implements Subscription {
+    public static final class InnerSubscriber<T> extends AtomicLong implements Subscription {
 
         private static final long serialVersionUID = -4453897557930727610L;
         /** The actual child subscriber. */
@@ -614,7 +614,7 @@ public final class FlowablePublish<T> extends ConnectableFlowable<T> implements 
         /** Track the number of emitted items (avoids decrementing the request counter). */
         long emitted;
 
-        InnerSubscriber(Subscriber<? super T> child) {
+        public InnerSubscriber(Subscriber<? super T> child) {
             this.child = child;
         }
 

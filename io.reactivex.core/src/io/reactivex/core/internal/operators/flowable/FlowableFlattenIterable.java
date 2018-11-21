@@ -88,7 +88,7 @@ public final class FlowableFlattenIterable<T, R> extends AbstractFlowableWithUps
         source.subscribe(new FlattenIterableSubscriber<T, R>(s, mapper, prefetch));
     }
 
-    static final class FlattenIterableSubscriber<T, R>
+    public static final class FlattenIterableSubscriber<T, R>
     extends BasicIntQueueSubscription<R>
     implements FlowableSubscriber<T> {
 
@@ -106,9 +106,9 @@ public final class FlowableFlattenIterable<T, R> extends AbstractFlowableWithUps
 
         Subscription upstream;
 
-        SimpleQueue<T> queue;
+        public SimpleQueue<T> queue;
 
-        volatile boolean done;
+        public volatile boolean done;
 
         volatile boolean cancelled;
 
@@ -118,9 +118,9 @@ public final class FlowableFlattenIterable<T, R> extends AbstractFlowableWithUps
 
         int consumed;
 
-        int fusionMode;
+        public int fusionMode;
 
-        FlattenIterableSubscriber(Subscriber<? super R> actual,
+        public FlattenIterableSubscriber(Subscriber<? super R> actual,
                 Function<? super T, ? extends Iterable<? extends R>> mapper, int prefetch) {
             this.downstream = actual;
             this.mapper = mapper;

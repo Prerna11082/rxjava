@@ -51,7 +51,7 @@ extends AbstractFlowableWithUpstream<T, U> {
         source.subscribe(new BufferBoundarySupplierSubscriber<T, U, B>(new SerializedSubscriber<U>(s), bufferSupplier, boundarySupplier));
     }
 
-    static final class BufferBoundarySupplierSubscriber<T, U extends Collection<? super T>, B>
+    public static final class BufferBoundarySupplierSubscriber<T, U extends Collection<? super T>, B>
     extends QueueDrainSubscriber<T, U, U> implements FlowableSubscriber<T>, Subscription, Disposable {
 
         final Callable<U> bufferSupplier;
@@ -59,11 +59,11 @@ extends AbstractFlowableWithUpstream<T, U> {
 
         Subscription upstream;
 
-        final AtomicReference<Disposable> other = new AtomicReference<Disposable>();
+        public final AtomicReference<Disposable> other = new AtomicReference<Disposable>();
 
-        U buffer;
+        public U buffer;
 
-        BufferBoundarySupplierSubscriber(Subscriber<? super U> actual, Callable<U> bufferSupplier,
+        public BufferBoundarySupplierSubscriber(Subscriber<? super U> actual, Callable<U> bufferSupplier,
                                                 Callable<? extends Publisher<B>> boundarySupplier) {
             super(actual, new MpscLinkedQueue<U>());
             this.bufferSupplier = bufferSupplier;
@@ -173,7 +173,7 @@ extends AbstractFlowableWithUpstream<T, U> {
             DisposableHelper.dispose(other);
         }
 
-        void next() {
+        public void next() {
 
             U next;
 

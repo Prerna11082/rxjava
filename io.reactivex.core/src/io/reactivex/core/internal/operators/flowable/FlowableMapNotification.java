@@ -45,7 +45,7 @@ public final class FlowableMapNotification<T, R> extends AbstractFlowableWithUps
         source.subscribe(new MapNotificationSubscriber<T, R>(s, onNextMapper, onErrorMapper, onCompleteSupplier));
     }
 
-    static final class MapNotificationSubscriber<T, R>
+    public static final class MapNotificationSubscriber<T, R>
     extends SinglePostCompleteSubscriber<T, R> {
 
         private static final long serialVersionUID = 2757120512858778108L;
@@ -53,7 +53,7 @@ public final class FlowableMapNotification<T, R> extends AbstractFlowableWithUps
         final Function<? super Throwable, ? extends R> onErrorMapper;
         final Callable<? extends R> onCompleteSupplier;
 
-        MapNotificationSubscriber(Subscriber<? super R> actual,
+        public MapNotificationSubscriber(Subscriber<? super R> actual,
                 Function<? super T, ? extends R> onNextMapper,
                 Function<? super Throwable, ? extends R> onErrorMapper,
                 Callable<? extends R> onCompleteSupplier) {

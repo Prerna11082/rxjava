@@ -354,12 +354,12 @@ public final class FlowableConcatMap<T, R> extends AbstractFlowableWithUpstream<
         }
     }
 
-    static final class WeakScalarSubscription<T> implements Subscription {
+    public static final class WeakScalarSubscription<T> implements Subscription {
         final Subscriber<? super T> downstream;
         final T value;
         boolean once;
 
-        WeakScalarSubscription(T value, Subscriber<? super T> downstream) {
+        public WeakScalarSubscription(T value, Subscriber<? super T> downstream) {
             this.value = value;
             this.downstream = downstream;
         }

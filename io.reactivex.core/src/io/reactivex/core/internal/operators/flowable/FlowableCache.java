@@ -126,7 +126,7 @@ implements FlowableSubscriber<T> {
      * Check if this cached observables is connected to its source.
      * @return true if already connected
      */
-    /* public */boolean isConnected() {
+    public /* public */boolean isConnected() {
         return once.get();
     }
 
@@ -134,7 +134,7 @@ implements FlowableSubscriber<T> {
      * Returns true if there are observers subscribed to this observables.
      * @return true if the cache has Subscribers
      */
-    /* public */ boolean hasSubscribers() {
+    public /* public */ boolean hasSubscribers() {
         return subscribers.get().length != 0;
     }
 
@@ -142,7 +142,7 @@ implements FlowableSubscriber<T> {
      * Returns the number of events currently cached.
      * @return the number of currently cached event count
      */
-    /* public */ long cachedEventCount() {
+    public /* public */ long cachedEventCount() {
         return size;
     }
 
