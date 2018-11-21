@@ -31,7 +31,7 @@ import java.util.concurrent.Callable;
  * <p>History: 2.1.11 - experimental
  * @since 2.2
  */
-final class ScalarXMapZHelper {
+public final class ScalarXMapZHelper {
 
     private ScalarXMapZHelper() {
         throw new IllegalStateException("No instances!");

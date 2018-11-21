@@ -66,7 +66,7 @@ public final class ObservableConcatMapSingle<T, R> extends Observable<R> {
         }
     }
 
-    static final class ConcatMapSingleMainObserver<T, R>
+    public static final class ConcatMapSingleMainObserver<T, R>
     extends AtomicInteger
     implements Observer<T>, Disposable {
 
@@ -80,7 +80,7 @@ public final class ObservableConcatMapSingle<T, R> extends Observable<R> {
 
         final ConcatMapSingleObserver<R> inner;
 
-        final SimplePlainQueue<T> queue;
+        public final SimplePlainQueue<T> queue;
 
         final ErrorMode errorMode;
 
@@ -101,7 +101,7 @@ public final class ObservableConcatMapSingle<T, R> extends Observable<R> {
         /** The inner SingleSource succeeded with a value in {@link #item}. */
         static final int STATE_RESULT_VALUE = 2;
 
-        ConcatMapSingleMainObserver(Observer<? super R> downstream,
+        public ConcatMapSingleMainObserver(Observer<? super R> downstream,
                 Function<? super T, ? extends SingleSource<? extends R>> mapper,
                         int prefetch, ErrorMode errorMode) {
             this.downstream = downstream;

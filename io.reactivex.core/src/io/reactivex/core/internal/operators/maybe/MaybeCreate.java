@@ -53,7 +53,7 @@ public final class MaybeCreate<T> extends Maybe<T> {
         }
     }
 
-    static final class Emitter<T>
+    public static final class Emitter<T>
     extends AtomicReference<Disposable>
     implements MaybeEmitter<T>, Disposable {
 

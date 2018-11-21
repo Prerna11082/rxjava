@@ -74,7 +74,7 @@ public final class MaybeMergeArray<T> extends Flowable<T> {
         }
     }
 
-    static final class MergeMaybeObserver<T>
+    public static final class MergeMaybeObserver<T>
     extends BasicIntQueueSubscription<T> implements MaybeObserver<T> {
 
         private static final long serialVersionUID = -660395290758764731L;
@@ -85,7 +85,7 @@ public final class MaybeMergeArray<T> extends Flowable<T> {
 
         final AtomicLong requested;
 
-        final SimpleQueueWithConsumerIndex<Object> queue;
+        public final SimpleQueueWithConsumerIndex<Object> queue;
 
         final AtomicThrowable error;
 
@@ -306,7 +306,7 @@ public final class MaybeMergeArray<T> extends Flowable<T> {
         }
     }
 
-    interface SimpleQueueWithConsumerIndex<T> extends SimpleQueue<T> {
+    public interface SimpleQueueWithConsumerIndex<T> extends SimpleQueue<T> {
 
         @Nullable
         @Override

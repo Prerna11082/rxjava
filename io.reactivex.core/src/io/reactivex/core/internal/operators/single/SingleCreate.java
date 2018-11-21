@@ -43,7 +43,7 @@ public final class SingleCreate<T> extends Single<T> {
         }
     }
 
-    static final class Emitter<T>
+    public static final class Emitter<T>
     extends AtomicReference<Disposable>
     implements SingleEmitter<T>, Disposable {
 

@@ -66,7 +66,7 @@ public final class ObservableConcatMapMaybe<T, R> extends Observable<R> {
         }
     }
 
-    static final class ConcatMapMaybeMainObserver<T, R>
+    public static final class ConcatMapMaybeMainObserver<T, R>
     extends AtomicInteger
     implements Observer<T>, Disposable {
 
@@ -80,7 +80,7 @@ public final class ObservableConcatMapMaybe<T, R> extends Observable<R> {
 
         final ConcatMapMaybeObserver<R> inner;
 
-        final SimplePlainQueue<T> queue;
+        public final SimplePlainQueue<T> queue;
 
         final ErrorMode errorMode;
 
@@ -101,7 +101,7 @@ public final class ObservableConcatMapMaybe<T, R> extends Observable<R> {
         /** The inner MaybeSource succeeded with a value in {@link #item}. */
         static final int STATE_RESULT_VALUE = 2;
 
-        ConcatMapMaybeMainObserver(Observer<? super R> downstream,
+        public ConcatMapMaybeMainObserver(Observer<? super R> downstream,
                 Function<? super T, ? extends MaybeSource<? extends R>> mapper,
                         int prefetch, ErrorMode errorMode) {
             this.downstream = downstream;

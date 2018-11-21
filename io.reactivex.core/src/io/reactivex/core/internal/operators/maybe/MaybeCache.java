@@ -30,7 +30,7 @@ public final class MaybeCache<T> extends Maybe<T> implements MaybeObserver<T> {
     @SuppressWarnings("rawtypes")
     static final CacheDisposable[] TERMINATED = new CacheDisposable[0];
 
-    final AtomicReference<MaybeSource<T>> source;
+    public final AtomicReference<MaybeSource<T>> source;
 
     final AtomicReference<CacheDisposable<T>[]> observers;
 

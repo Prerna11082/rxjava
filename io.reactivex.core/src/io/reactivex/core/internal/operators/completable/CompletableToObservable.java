@@ -35,14 +35,14 @@ public final class CompletableToObservable<T> extends Observable<T> {
         source.subscribe(new ObserverCompletableObserver(observer));
     }
 
-    static final class ObserverCompletableObserver extends BasicQueueDisposable<Void>
+    public static final class ObserverCompletableObserver extends BasicQueueDisposable<Void>
     implements CompletableObserver {
 
         final Observer<?> observer;
 
         Disposable upstream;
 
-        ObserverCompletableObserver(Observer<?> observer) {
+        public ObserverCompletableObserver(Observer<?> observer) {
             this.observer = observer;
         }
 

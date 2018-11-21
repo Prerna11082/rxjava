@@ -70,7 +70,7 @@ public final class FlowableConcatMapSingle<T, R> extends Flowable<R> {
         source.subscribe(new ConcatMapSingleSubscriber<T, R>(s, mapper, prefetch, errorMode));
     }
 
-    static final class ConcatMapSingleSubscriber<T, R>
+    public static final class ConcatMapSingleSubscriber<T, R>
     extends AtomicInteger
     implements FlowableSubscriber<T>, Subscription {
 
@@ -88,7 +88,7 @@ public final class FlowableConcatMapSingle<T, R> extends Flowable<R> {
 
         final ConcatMapSingleObserver<R> inner;
 
-        final SimplePlainQueue<T> queue;
+        public final SimplePlainQueue<T> queue;
 
         final ErrorMode errorMode;
 
@@ -113,7 +113,7 @@ public final class FlowableConcatMapSingle<T, R> extends Flowable<R> {
         /** The inner SingleSource succeeded with a value in {@link #item}. */
         static final int STATE_RESULT_VALUE = 2;
 
-        ConcatMapSingleSubscriber(Subscriber<? super R> downstream,
+        public ConcatMapSingleSubscriber(Subscriber<? super R> downstream,
                 Function<? super T, ? extends SingleSource<? extends R>> mapper,
                         int prefetch, ErrorMode errorMode) {
             this.downstream = downstream;

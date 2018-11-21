@@ -91,12 +91,12 @@ public final class CompletableAmb extends Completable {
         }
     }
 
-    static final class Amb implements CompletableObserver {
+    public static final class Amb implements CompletableObserver {
         private final AtomicBoolean once;
         private final CompositeDisposable set;
         private final CompletableObserver downstream;
 
-        Amb(AtomicBoolean once, CompositeDisposable set, CompletableObserver observer) {
+        public Amb(AtomicBoolean once, CompositeDisposable set, CompletableObserver observer) {
             this.once = once;
             this.set = set;
             this.downstream = observer;

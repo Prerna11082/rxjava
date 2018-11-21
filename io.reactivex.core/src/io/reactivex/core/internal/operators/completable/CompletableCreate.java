@@ -43,7 +43,7 @@ public final class CompletableCreate extends Completable {
         }
     }
 
-    static final class Emitter
+    public static final class Emitter
     extends AtomicReference<Disposable>
     implements CompletableEmitter, Disposable {
 

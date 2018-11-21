@@ -54,13 +54,13 @@ public final class CompletableTimeout extends Completable {
         source.subscribe(new TimeOutObserver(set, once, observer));
     }
 
-    static final class TimeOutObserver implements CompletableObserver {
+    public static final class TimeOutObserver implements CompletableObserver {
 
         private final CompositeDisposable set;
         private final AtomicBoolean once;
         private final CompletableObserver downstream;
 
-        TimeOutObserver(CompositeDisposable set, AtomicBoolean once, CompletableObserver observer) {
+        public TimeOutObserver(CompositeDisposable set, AtomicBoolean once, CompletableObserver observer) {
             this.set = set;
             this.once = once;
             this.downstream = observer;

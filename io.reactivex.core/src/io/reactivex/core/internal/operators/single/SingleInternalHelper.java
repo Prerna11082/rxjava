@@ -33,7 +33,7 @@ public final class SingleInternalHelper {
         throw new IllegalStateException("No instances!");
     }
 
-    enum NoSuchElementCallable implements Callable<NoSuchElementException> {
+    public enum NoSuchElementCallable implements Callable<NoSuchElementException> {
         INSTANCE;
 
         @Override
@@ -47,7 +47,7 @@ public final class SingleInternalHelper {
     }
 
     @SuppressWarnings("rawtypes")
-    enum ToFlowable implements Function<SingleSource, Publisher> {
+    public enum ToFlowable implements Function<SingleSource, Publisher> {
         INSTANCE;
         @SuppressWarnings("unchecked")
         @Override
@@ -103,7 +103,7 @@ public final class SingleInternalHelper {
     }
 
     @SuppressWarnings("rawtypes")
-    enum ToObservable implements Function<SingleSource, Observable> {
+    public enum ToObservable implements Function<SingleSource, Observable> {
         INSTANCE;
         @SuppressWarnings("unchecked")
         @Override
