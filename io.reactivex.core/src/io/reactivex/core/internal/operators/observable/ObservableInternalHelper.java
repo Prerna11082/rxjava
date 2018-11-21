@@ -192,7 +192,7 @@ public final class ObservableInternalHelper {
         return new FlatMapIntoIterable<T, U>(mapper);
     }
 
-    enum MapToInt implements Function<Object, Object> {
+    public enum MapToInt implements Function<Object, Object> {
         INSTANCE;
         @Override
         public Object apply(Object t) throws Exception {

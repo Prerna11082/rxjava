@@ -40,14 +40,14 @@ public final class ObservableTimer extends Observable<Long> {
         ios.setResource(d);
     }
 
-    static final class TimerObserver extends AtomicReference<Disposable>
+    public static final class TimerObserver extends AtomicReference<Disposable>
     implements Disposable, Runnable {
 
         private static final long serialVersionUID = -2809475196591179431L;
 
         final Observer<? super Long> downstream;
 
-        TimerObserver(Observer<? super Long> downstream) {
+        public TimerObserver(Observer<? super Long> downstream) {
             this.downstream = downstream;
         }
 

@@ -76,7 +76,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
         other.subscribe(right);
     }
 
-    interface JoinSupport {
+    public interface JoinSupport {
 
         void innerError(Throwable ex);
 
@@ -382,7 +382,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
         }
     }
 
-    static final class LeftRightObserver
+    public static final class LeftRightObserver
     extends AtomicReference<Disposable>
     implements Observer<Object>, Disposable {
 
@@ -392,7 +392,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
 
         final boolean isLeft;
 
-        LeftRightObserver(JoinSupport parent, boolean isLeft) {
+        public LeftRightObserver(JoinSupport parent, boolean isLeft) {
             this.parent = parent;
             this.isLeft = isLeft;
         }
@@ -429,7 +429,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
 
     }
 
-    static final class LeftRightEndObserver
+    public static final class LeftRightEndObserver
     extends AtomicReference<Disposable>
     implements Observer<Object>, Disposable {
 
@@ -441,7 +441,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
 
         final int index;
 
-        LeftRightEndObserver(JoinSupport parent,
+        public LeftRightEndObserver(JoinSupport parent,
                 boolean isLeft, int index) {
             this.parent = parent;
             this.isLeft = isLeft;

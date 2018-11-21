@@ -48,7 +48,7 @@ public final class BlockingObservableNext<T> implements Iterable<T> {
     }
 
     // test needs to access the observer.waiting flag
-    static final class NextIterator<T> implements Iterator<T> {
+    public static final class NextIterator<T> implements Iterator<T> {
 
         private final NextObserver<T> observer;
         private final ObservableSource<T> items;
@@ -133,7 +133,7 @@ public final class BlockingObservableNext<T> implements Iterable<T> {
         }
     }
 
-    static final class NextObserver<T> extends DisposableObserver<Notification<T>> {
+    public static final class NextObserver<T> extends DisposableObserver<Notification<T>> {
         private final BlockingQueue<Notification<T>> buf = new ArrayBlockingQueue<Notification<T>>(1);
         final AtomicInteger waiting = new AtomicInteger();
 
@@ -169,7 +169,7 @@ public final class BlockingObservableNext<T> implements Iterable<T> {
             BlockingHelper.verifyNonBlocking();
             return buf.take();
         }
-        void setWaiting() {
+        public void setWaiting() {
             waiting.set(1);
         }
     }

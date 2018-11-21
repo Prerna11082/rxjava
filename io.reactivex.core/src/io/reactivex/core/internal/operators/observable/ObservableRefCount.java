@@ -35,7 +35,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public final class ObservableRefCount<T> extends Observable<T> {
 
-    final ConnectableObservable<T> source;
+    public final ConnectableObservable<T> source;
 
     final int n;
 
@@ -45,7 +45,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
 
     final Scheduler scheduler;
 
-    RefConnection connection;
+    public RefConnection connection;
 
     public ObservableRefCount(ConnectableObservable<T> source) {
         this(source, 1, 0L, TimeUnit.NANOSECONDS, Schedulers.trampoline());
@@ -91,7 +91,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
         }
     }
 
-    void cancel(RefConnection rc) {
+    public void cancel(RefConnection rc) {
         SequentialDisposable sd;
         synchronized (this) {
             if (connection == null || connection != rc) {
@@ -131,7 +131,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
         }
     }
 
-    void timeout(RefConnection rc) {
+    public void timeout(RefConnection rc) {
         synchronized (this) {
             if (rc.subscriberCount == 0 && rc == connection) {
                 connection = null;
@@ -151,7 +151,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
         }
     }
 
-    static final class RefConnection extends AtomicReference<Disposable>
+    public static final class RefConnection extends AtomicReference<Disposable>
     implements Runnable, Consumer<Disposable> {
 
         private static final long serialVersionUID = -4552101107598366241L;
@@ -160,13 +160,13 @@ public final class ObservableRefCount<T> extends Observable<T> {
 
         Disposable timer;
 
-        long subscriberCount;
+        public long subscriberCount;
 
-        boolean connected;
+        public boolean connected;
 
         boolean disconnectedEarly;
 
-        RefConnection(ObservableRefCount<?> parent) {
+        public RefConnection(ObservableRefCount<?> parent) {
             this.parent = parent;
         }
 

@@ -61,7 +61,7 @@ public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstrea
         source.subscribe(new MergeObserver<T, U>(t, mapper, delayErrors, maxConcurrency, bufferSize));
     }
 
-    static final class MergeObserver<T, U> extends AtomicInteger implements Disposable, Observer<T> {
+    public static final class MergeObserver<T, U> extends AtomicInteger implements Disposable, Observer<T> {
 
         private static final long serialVersionUID = -2117620485640801370L;
 
@@ -95,7 +95,7 @@ public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstrea
 
         int wip;
 
-        MergeObserver(Observer<? super U> actual, Function<? super T, ? extends ObservableSource<? extends U>> mapper,
+        public MergeObserver(Observer<? super U> actual, Function<? super T, ? extends ObservableSource<? extends U>> mapper,
                 boolean delayErrors, int maxConcurrency, int bufferSize) {
             this.downstream = actual;
             this.mapper = mapper;
@@ -333,7 +333,7 @@ public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstrea
             }
         }
 
-        void drainLoop() {
+        public void drainLoop() {
             final Observer<? super U> child = this.downstream;
             int missed = 1;
             for (;;) {

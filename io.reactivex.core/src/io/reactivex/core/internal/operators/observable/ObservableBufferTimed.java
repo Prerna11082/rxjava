@@ -84,7 +84,7 @@ extends AbstractObservableWithUpstream<T, U> {
 
     }
 
-    static final class BufferExactUnboundedObserver<T, U extends Collection<? super T>>
+    public static final class BufferExactUnboundedObserver<T, U extends Collection<? super T>>
     extends QueueDrainObserver<T, U, U> implements Runnable, Disposable {
         final Callable<U> bufferSupplier;
         final long timespan;
@@ -93,11 +93,11 @@ extends AbstractObservableWithUpstream<T, U> {
 
         Disposable upstream;
 
-        U buffer;
+        public U buffer;
 
         final AtomicReference<Disposable> timer = new AtomicReference<Disposable>();
 
-        BufferExactUnboundedObserver(
+        public BufferExactUnboundedObserver(
                 Observer<? super U> actual, Callable<U> bufferSupplier,
                 long timespan, TimeUnit unit, Scheduler scheduler) {
             super(actual, new MpscLinkedQueue<U>());
@@ -220,7 +220,7 @@ extends AbstractObservableWithUpstream<T, U> {
         }
     }
 
-    static final class BufferSkipBoundedObserver<T, U extends Collection<? super T>>
+    public static final class BufferSkipBoundedObserver<T, U extends Collection<? super T>>
     extends QueueDrainObserver<T, U, U> implements Runnable, Disposable {
         final Callable<U> bufferSupplier;
         final long timespan;
@@ -231,7 +231,7 @@ extends AbstractObservableWithUpstream<T, U> {
 
         Disposable upstream;
 
-        BufferSkipBoundedObserver(Observer<? super U> actual,
+        public BufferSkipBoundedObserver(Observer<? super U> actual,
                 Callable<U> bufferSupplier, long timespan,
                 long timeskip, TimeUnit unit, Worker w) {
             super(actual, new MpscLinkedQueue<U>());
@@ -391,7 +391,7 @@ extends AbstractObservableWithUpstream<T, U> {
         }
     }
 
-    static final class BufferExactBoundedObserver<T, U extends Collection<? super T>>
+    public static final class BufferExactBoundedObserver<T, U extends Collection<? super T>>
     extends QueueDrainObserver<T, U, U> implements Runnable, Disposable {
         final Callable<U> bufferSupplier;
         final long timespan;
@@ -406,11 +406,11 @@ extends AbstractObservableWithUpstream<T, U> {
 
         Disposable upstream;
 
-        long producerIndex;
+        public long producerIndex;
 
         long consumerIndex;
 
-        BufferExactBoundedObserver(
+        public BufferExactBoundedObserver(
                 Observer<? super U> actual,
                 Callable<U> bufferSupplier,
                 long timespan, TimeUnit unit, int maxSize,

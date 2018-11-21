@@ -45,7 +45,7 @@ public final class BlockingObservableIterable<T> implements Iterable<T> {
         return it;
     }
 
-    static final class BlockingObservableIterator<T>
+    public static final class BlockingObservableIterator<T>
     extends AtomicReference<Disposable>
     implements Observer<T>, Iterator<T>, Disposable {
 
@@ -60,7 +60,7 @@ public final class BlockingObservableIterable<T> implements Iterable<T> {
         volatile boolean done;
         Throwable error;
 
-        BlockingObservableIterator(int batchSize) {
+        public BlockingObservableIterator(int batchSize) {
             this.queue = new SpscLinkedArrayQueue<T>(batchSize);
             this.lock = new ReentrantLock();
             this.condition = lock.newCondition();

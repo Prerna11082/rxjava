@@ -52,7 +52,7 @@ public final class ObservableInterval extends Observable<Long> {
         }
     }
 
-    static final class IntervalObserver
+    public static final class IntervalObserver
     extends AtomicReference<Disposable>
     implements Disposable, Runnable {
 
@@ -62,7 +62,7 @@ public final class ObservableInterval extends Observable<Long> {
 
         long count;
 
-        IntervalObserver(Observer<? super Long> downstream) {
+        public IntervalObserver(Observer<? super Long> downstream) {
             this.downstream = downstream;
         }
 

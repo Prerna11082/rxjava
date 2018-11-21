@@ -44,7 +44,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     /** The source observables. */
     final ObservableSource<T> source;
     /** Holds the current subscriber that is, will be or just was subscribed to the source observables. */
-    final AtomicReference<ReplayObserver<T>> current;
+    public final AtomicReference<ReplayObserver<T>> current;
     /** A factory that creates the appropriate buffer for the ReplayObserver. */
     final BufferSupplier<T> bufferFactory;
 
@@ -235,12 +235,12 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     }
 
     @SuppressWarnings("rawtypes")
-    static final class ReplayObserver<T>
+    public static final class ReplayObserver<T>
     extends AtomicReference<Disposable>
     implements Observer<T>, Disposable {
         private static final long serialVersionUID = -533785617179540163L;
         /** Holds notifications from upstream. */
-        final ReplayBuffer<T> buffer;
+        public final ReplayBuffer<T> buffer;
         /** Indicates this Observer received a terminal event. */
         boolean done;
 
@@ -478,7 +478,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
      *
      * @param <T> the value type
      */
-    interface ReplayBuffer<T> {
+    public interface ReplayBuffer<T> {
         /**
          * Adds a regular value to the buffer.
          * @param value the value to be stored in the buffer
@@ -578,11 +578,11 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     /**
      * Represents a node in a bounded replay buffer's linked list.
      */
-    static final class Node extends AtomicReference<Node> {
+    public static final class Node extends AtomicReference<Node> {
 
         private static final long serialVersionUID = 245354315435971818L;
-        final Object value;
-        Node(Object value) {
+        public final Object value;
+        public Node(Object value) {
             this.value = value;
         }
     }
@@ -593,14 +593,14 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
      *
      * @param <T> the value type
      */
-    abstract static class BoundedReplayBuffer<T> extends AtomicReference<Node> implements ReplayBuffer<T> {
+    public abstract static class BoundedReplayBuffer<T> extends AtomicReference<Node> implements ReplayBuffer<T> {
 
         private static final long serialVersionUID = 2346567790059478686L;
 
         Node tail;
-        int size;
+        public int size;
 
-        BoundedReplayBuffer() {
+        public BoundedReplayBuffer() {
             Node n = new Node(null);
             tail = n;
             set(n);
@@ -610,7 +610,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
          * Add a new node to the linked list.
          * @param n the Node instance to add as last
          */
-        final void addLast(Node n) {
+        public final void addLast(Node n) {
             tail.set(n);
             tail = n;
             size++;
@@ -618,7 +618,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
         /**
          * Remove the first node from the linked list.
          */
-        final void removeFirst() {
+        public final void removeFirst() {
             Node head = get();
             Node next = head.get();
             size--;
@@ -627,7 +627,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
             setFirst(next);
         }
 
-        final void trimHead() {
+        public final void trimHead() {
             Node head = get();
             if (head.value != null) {
                 Node n = new Node(null);
@@ -636,7 +636,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
             }
         }
 
-        /* test */ final void removeSome(int n) {
+        public /* test */ final void removeSome(int n) {
             Node head = get();
             while (n > 0) {
                 head = head.get();
@@ -743,7 +743,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
          * Override this method to truncate a non-terminated buffer
          * based on its current properties.
          */
-        abstract void truncate();
+        public abstract void truncate();
 
         /**
          * Override this method to truncate a terminated buffer
@@ -752,7 +752,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
         void truncateFinal() {
             trimHead();
         }
-        /* test */ final  void collect(Collection<? super T> output) {
+        public /* test */ final  void collect(Collection<? super T> output) {
             Node n = getHead();
             for (;;) {
                 Node next = n.get();
@@ -769,10 +769,10 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
                 }
             }
         }
-        /* test */ boolean hasError() {
+        public /* test */ boolean hasError() {
             return tail.value != null && NotificationLite.isError(leaveTransform(tail.value));
         }
-        /* test */ boolean hasCompleted() {
+        public /* test */ boolean hasCompleted() {
             return tail.value != null && NotificationLite.isComplete(leaveTransform(tail.value));
         }
 
@@ -786,12 +786,12 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
      *
      * @param <T> the value type
      */
-    static final class SizeBoundReplayBuffer<T> extends BoundedReplayBuffer<T> {
+    public static final class SizeBoundReplayBuffer<T> extends BoundedReplayBuffer<T> {
 
         private static final long serialVersionUID = -5898283885385201806L;
 
         final int limit;
-        SizeBoundReplayBuffer(int limit) {
+        public SizeBoundReplayBuffer(int limit) {
             this.limit = limit;
         }
 
@@ -811,14 +811,14 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
      *
      * @param <T> the buffered value type
      */
-    static final class SizeAndTimeBoundReplayBuffer<T> extends BoundedReplayBuffer<T> {
+    public static final class SizeAndTimeBoundReplayBuffer<T> extends BoundedReplayBuffer<T> {
 
         private static final long serialVersionUID = 3457957419649567404L;
         final Scheduler scheduler;
         final long maxAge;
         final TimeUnit unit;
         final int limit;
-        SizeAndTimeBoundReplayBuffer(int limit, long maxAge, TimeUnit unit, Scheduler scheduler) {
+        public SizeAndTimeBoundReplayBuffer(int limit, long maxAge, TimeUnit unit, Scheduler scheduler) {
             this.scheduler = scheduler;
             this.limit = limit;
             this.maxAge = maxAge;

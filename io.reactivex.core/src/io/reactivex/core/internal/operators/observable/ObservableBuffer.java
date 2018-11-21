@@ -51,7 +51,7 @@ public final class ObservableBuffer<T, U extends Collection<? super T>> extends 
         }
     }
 
-    static final class BufferExactObserver<T, U extends Collection<? super T>> implements Observer<T>, Disposable {
+    public static final class BufferExactObserver<T, U extends Collection<? super T>> implements Observer<T>, Disposable {
         final Observer<? super U> downstream;
         final int count;
         final Callable<U> bufferSupplier;
@@ -61,7 +61,7 @@ public final class ObservableBuffer<T, U extends Collection<? super T>> extends 
 
         Disposable upstream;
 
-        BufferExactObserver(Observer<? super U> actual, int count, Callable<U> bufferSupplier) {
+        public BufferExactObserver(Observer<? super U> actual, int count, Callable<U> bufferSupplier) {
             this.downstream = actual;
             this.count = count;
             this.bufferSupplier = bufferSupplier;

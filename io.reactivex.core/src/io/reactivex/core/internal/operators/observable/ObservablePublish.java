@@ -34,7 +34,7 @@ public final class ObservablePublish<T> extends ConnectableObservable<T> impleme
     /** The source observables. */
     final ObservableSource<T> source;
     /** Holds the current subscriber that is, will be or just was subscribed to the source observables. */
-    final AtomicReference<PublishObserver<T>> current;
+    public final AtomicReference<PublishObserver<T>> current;
 
     final ObservableSource<T> onSubscribe;
 
@@ -118,7 +118,7 @@ public final class ObservablePublish<T> extends ConnectableObservable<T> impleme
     }
 
     @SuppressWarnings("rawtypes")
-    static final class PublishObserver<T>
+    public static final class PublishObserver<T>
     implements Observer<T>, Disposable {
         /** Holds onto the current connected PublishObserver. */
         final AtomicReference<PublishObserver<T>> current;
@@ -232,7 +232,7 @@ public final class ObservablePublish<T> extends ConnectableObservable<T> impleme
          * @param producer the producer to remove
          */
         @SuppressWarnings("unchecked")
-        void remove(InnerDisposable<T> producer) {
+        public void remove(InnerDisposable<T> producer) {
             // the state can change so we do a CAS loop to achieve atomicity
             for (;;) {
                 // let's read the current observers array

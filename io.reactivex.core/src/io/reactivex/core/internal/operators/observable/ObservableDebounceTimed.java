@@ -44,7 +44,7 @@ public final class ObservableDebounceTimed<T> extends AbstractObservableWithUpst
                 timeout, unit, scheduler.createWorker()));
     }
 
-    static final class DebounceTimedObserver<T>
+    public static final class DebounceTimedObserver<T>
     implements Observer<T>, Disposable {
         final Observer<? super T> downstream;
         final long timeout;
@@ -59,7 +59,7 @@ public final class ObservableDebounceTimed<T> extends AbstractObservableWithUpst
 
         boolean done;
 
-        DebounceTimedObserver(Observer<? super T> actual, long timeout, TimeUnit unit, Worker worker) {
+        public DebounceTimedObserver(Observer<? super T> actual, long timeout, TimeUnit unit, Worker worker) {
             this.downstream = actual;
             this.timeout = timeout;
             this.unit = unit;
@@ -148,7 +148,7 @@ public final class ObservableDebounceTimed<T> extends AbstractObservableWithUpst
         }
     }
 
-    static final class DebounceEmitter<T> extends AtomicReference<Disposable> implements Runnable, Disposable {
+    public static final class DebounceEmitter<T> extends AtomicReference<Disposable> implements Runnable, Disposable {
 
         private static final long serialVersionUID = 6812032969491025141L;
 
@@ -158,7 +158,7 @@ public final class ObservableDebounceTimed<T> extends AbstractObservableWithUpst
 
         final AtomicBoolean once = new AtomicBoolean();
 
-        DebounceEmitter(T value, long idx, DebounceTimedObserver<T> parent) {
+        public DebounceEmitter(T value, long idx, DebounceTimedObserver<T> parent) {
             this.value = value;
             this.idx = idx;
             this.parent = parent;

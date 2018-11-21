@@ -121,7 +121,7 @@ implements Observer<T> {
      * Check if this cached observables is connected to its source.
      * @return true if already connected
      */
-    /* public */boolean isConnected() {
+    public /* public */boolean isConnected() {
         return once.get();
     }
 
@@ -129,7 +129,7 @@ implements Observer<T> {
      * Returns true if there are observers subscribed to this observables.
      * @return true if the cache has observers
      */
-    /* public */ boolean hasObservers() {
+    public /* public */ boolean hasObservers() {
         return observers.get().length != 0;
     }
 
@@ -137,7 +137,7 @@ implements Observer<T> {
      * Returns the number of events currently cached.
      * @return the number of currently cached event count
      */
-    /* public */ long cachedEventCount() {
+    public /* public */ long cachedEventCount() {
         return size;
     }
 

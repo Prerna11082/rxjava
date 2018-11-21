@@ -46,7 +46,7 @@ public final class ObservableObserveOn<T> extends AbstractObservableWithUpstream
         }
     }
 
-    static final class ObserveOnObserver<T> extends BasicIntQueueDisposable<T>
+    public static final class ObserveOnObserver<T> extends BasicIntQueueDisposable<T>
     implements Observer<T>, Runnable {
 
         private static final long serialVersionUID = 6576896619930983584L;
@@ -55,7 +55,7 @@ public final class ObservableObserveOn<T> extends AbstractObservableWithUpstream
         final boolean delayError;
         final int bufferSize;
 
-        SimpleQueue<T> queue;
+        public SimpleQueue<T> queue;
 
         Disposable upstream;
 
@@ -68,7 +68,7 @@ public final class ObservableObserveOn<T> extends AbstractObservableWithUpstream
 
         boolean outputFused;
 
-        ObserveOnObserver(Observer<? super T> actual, Scheduler.Worker worker, boolean delayError, int bufferSize) {
+        public ObserveOnObserver(Observer<? super T> actual, Scheduler.Worker worker, boolean delayError, int bufferSize) {
             this.downstream = actual;
             this.worker = worker;
             this.delayError = delayError;
@@ -156,7 +156,7 @@ public final class ObservableObserveOn<T> extends AbstractObservableWithUpstream
             return disposed;
         }
 
-        void schedule() {
+        public void schedule() {
             if (getAndIncrement() == 0) {
                 worker.schedule(this);
             }

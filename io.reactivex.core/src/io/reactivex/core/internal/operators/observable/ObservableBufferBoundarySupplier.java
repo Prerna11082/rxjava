@@ -46,7 +46,7 @@ extends AbstractObservableWithUpstream<T, U> {
         source.subscribe(new BufferBoundarySupplierObserver<T, U, B>(new SerializedObserver<U>(t), bufferSupplier, boundarySupplier));
     }
 
-    static final class BufferBoundarySupplierObserver<T, U extends Collection<? super T>, B>
+    public static final class BufferBoundarySupplierObserver<T, U extends Collection<? super T>, B>
     extends QueueDrainObserver<T, U, U> implements Observer<T>, Disposable {
 
         final Callable<U> bufferSupplier;
@@ -54,11 +54,11 @@ extends AbstractObservableWithUpstream<T, U> {
 
         Disposable upstream;
 
-        final AtomicReference<Disposable> other = new AtomicReference<Disposable>();
+        public final AtomicReference<Disposable> other = new AtomicReference<Disposable>();
 
-        U buffer;
+        public U buffer;
 
-        BufferBoundarySupplierObserver(Observer<? super U> actual, Callable<U> bufferSupplier,
+        public BufferBoundarySupplierObserver(Observer<? super U> actual, Callable<U> bufferSupplier,
                                                 Callable<? extends ObservableSource<B>> boundarySupplier) {
             super(actual, new MpscLinkedQueue<U>());
             this.bufferSupplier = bufferSupplier;
@@ -165,7 +165,7 @@ extends AbstractObservableWithUpstream<T, U> {
             DisposableHelper.dispose(other);
         }
 
-        void next() {
+        public void next() {
 
             U next;
 

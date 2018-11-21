@@ -47,7 +47,7 @@ public final class ObservableCreate<T> extends Observable<T> {
         }
     }
 
-    static final class CreateEmitter<T>
+    public static final class CreateEmitter<T>
     extends AtomicReference<Disposable>
     implements ObservableEmitter<T>, Disposable {
 
