@@ -13,7 +13,7 @@
 
 package io.reactivex.tests.internal.operators.observable;
 
-public class ObservableMulticastTest {
+public class ObservableMulticastTestIgnore {
     // FIXME operator multicast not supported
 //
 //    @Test

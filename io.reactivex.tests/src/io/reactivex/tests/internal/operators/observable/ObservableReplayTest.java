@@ -719,7 +719,7 @@ public class ObservableReplayTest {
             private static final long serialVersionUID = -5182053207244406872L;
 
             @Override
-            void truncate() {
+            public void truncate() {
             }
         };
         buf.addLast(new Node(1));

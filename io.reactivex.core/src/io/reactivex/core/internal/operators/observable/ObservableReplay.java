@@ -796,7 +796,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
         }
 
         @Override
-        void truncate() {
+        public void truncate() {
             // overflow can be at most one element
             if (size > limit) {
                 removeFirst();
@@ -836,7 +836,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
         }
 
         @Override
-        void truncate() {
+        public void truncate() {
             long timeLimit = scheduler.now(unit) - maxAge;
 
             Node prev = get();
